@@ -1,6 +1,6 @@
 # Composio Take-Home: 100-App Integration Feasibility & Agent Research
 
-Autonomous AI Product Ops research agent that analyzes **100 enterprise and consumer platforms** to evaluate authentication mechanisms, credential gating, API surfaces, and MCP ecosystem readiness for Composio toolkits.
+Autonomous AI research agent that analyzes **100 enterprise and consumer platforms** to evaluate authentication mechanisms, credential gating, API surfaces, and MCP ecosystem readiness for Composio toolkits.
 
 ---
 
@@ -67,7 +67,7 @@ Autonomous AI Product Ops research agent that analyzes **100 enterprise and cons
 +------------------------------------------------------------------------+
 |               Pattern Analyzer & Strategic Roadmap                     |
 |  - Auth & Gating Statistical Clustering                                |
-|  - 4 Product Ops Tiers (Immediate Wins, OAuth Pipeline, Sales Gated)   |
+|  - 4 Strategic Tiers (Immediate Wins, OAuth Pipeline, Sales Gated)     |
 +-----------------------------------+------------------------------------+
                                     |
                                     v
@@ -196,7 +196,7 @@ Composio_THA/
 
 ## Candidate Submission Profile
 - **Candidate:** Arvind Nandigam
-- **Role Applied:** AI Product Ops Intern (Composio)
+- **Project:** Composio Take-Home Assignment
 - **Email:** nandigamarvind@gmail.com
 - **Phone:** +91 9940355525
 - **LinkedIn:** https://linkedin.com/in/arvind-nandigam-329635286
