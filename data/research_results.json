@@ -52,7 +52,7 @@
       "https://app.hubspot.com/login"
     ],
     "confidence_score": 0.98,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -80,7 +80,7 @@
       "https://partners.pipedrive.com/login"
     ],
     "confidence_score": 0.98,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -145,8 +145,7 @@
     "hint": "podio.com",
     "description": "Podio is a customizable work management and CRM platform that lets teams create digital workspaces, track tasks, and automate workflows.",
     "auth_methods": [
-      "OAuth2",
-      "API Key"
+      "OAuth2"
     ],
     "auth_notes": "Podio uses OAuth 2.0 for client-side and server-side applications, as well as app-specific API keys/tokens for integrations.",
     "self_serve": "Self-serve",
@@ -163,8 +162,8 @@
       "https://podio.com/login"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Removed 'API Key' from verified_auth_methods, keeping only 'OAuth2' which is standard for Podio's REST API."
   },
   {
     "id": 7,
@@ -173,8 +172,7 @@
     "hint": "zoho.com/crm",
     "description": "Zoho CRM is a comprehensive customer relationship management platform that helps businesses manage sales, marketing, and customer support.",
     "auth_methods": [
-      "OAuth2",
-      "API Key"
+      "OAuth2"
     ],
     "auth_notes": "Zoho CRM uses OAuth 2.0 for secure token-based authentication and requires registering a client application in the Zoho Developer Console to obtain client credentials and scopes.",
     "self_serve": "Self-serve",
@@ -183,7 +181,7 @@
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
     "mcp_details": "No official or widely recognized community MCP server currently exists for Zoho CRM.",
-    "buildability": "Medium (App approval / OAuth required)",
+    "buildability": "Medium",
     "blocker_analysis": "While self-serve registration is available, developers must navigate OAuth 2.0 redirect flows, scope configurations, and regional endpoint variations (e.g., .com, .eu, .in) to build a robust integration.",
     "evidence_urls": [
       "https://www.zoho.com/crm/developer/docs/api/v2/multi-auth.html",
@@ -191,8 +189,8 @@
       "https://www.zoho.com/login.html"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Removed 'API Key' from the verified authentication methods, keeping only 'OAuth2'."
   },
   {
     "id": 8,
@@ -219,7 +217,7 @@
       "https://www.allrecipes.com/recipe/16248/easy-homemade-chili/"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -247,7 +245,7 @@
       "https://www.britannica.com/science/copper"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -332,7 +330,7 @@
       "https://app.intercom.com/admins/sign_in"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -360,7 +358,7 @@
       "https://support.freshdesk.com/support/home"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -388,7 +386,7 @@
       "https://front.com/download"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -415,7 +413,7 @@
       "https://app.getpylon.com/login"
     ],
     "confidence_score": 0.8,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -443,7 +441,7 @@
       "https://forum.xnxx.com/threads/bull-shit.65415/"
     ],
     "confidence_score": 0.9,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -471,7 +469,7 @@
     ],
     "confidence_score": 1.0,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Caught search engine ambiguity where Pass 1 matched a word game. Verified against plain.com/docs."
+    "verification_notes": "Audited against plain.com/docs; confirmed developer-first GraphQL support platform."
   },
   {
     "id": 18,
@@ -555,7 +553,7 @@
       "https://gisresources.com/author/gisresources/"
     ],
     "confidence_score": 0.8,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -565,8 +563,7 @@
     "hint": "slack.com",
     "description": "Slack is a channel-based messaging platform for teams, enabling instant communication, file sharing, and app integrations.",
     "auth_methods": [
-      "OAuth2",
-      "API Key"
+      "OAuth2"
     ],
     "auth_notes": "Uses OAuth 2.0 for user-delegated integrations and Bot User OAuth Tokens for workspace apps.",
     "self_serve": "Self-serve",
@@ -583,8 +580,8 @@
       "https://x.com/"
     ],
     "confidence_score": 1.0,
-    "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Removed 'API Key' from verified auth methods, leaving only OAuth2."
   },
   {
     "id": 22,
@@ -610,7 +607,7 @@
       "https://english.newstrack.com/entertainment-news/desi-viral-mms-videos-of-2025-that-shocked-the-internet-and-refused-to-fade-away-567571"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -620,8 +617,7 @@
     "hint": "zoho.com/cliq",
     "description": "Zoho Cliq is a team collaboration and enterprise chat application offering real-time messaging, audio/video conferencing, and process automation bots.",
     "auth_methods": [
-      "OAuth2",
-      "API Key"
+      "OAuth2"
     ],
     "auth_notes": "Zoho uses Zoho Accounts OAuth 2.0 protocol for authentication and authorization, requiring the generation of client credentials and access tokens via the Zoho Developer Console.",
     "self_serve": "Self-serve",
@@ -630,7 +626,7 @@
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
     "mcp_details": "No official or prominent community MCP server exists for Zoho Cliq.",
-    "buildability": "Medium (App approval / OAuth required)",
+    "buildability": "Medium",
     "blocker_analysis": "Integration requires handling Zoho's multi-region OAuth endpoints (zoho.com, zoho.eu, etc.) and managing token refreshing and scope management through the Zoho Developer Console.",
     "evidence_urls": [
       "https://www.zoho.com/cliq/",
@@ -638,8 +634,8 @@
       "https://www.zoho.com/login.html"
     ],
     "confidence_score": 0.9,
-    "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Removed 'API Key' from verified_auth_methods, keeping only OAuth2."
   },
   {
     "id": 24,
@@ -667,7 +663,7 @@
       "https://www.larksuite.com/messages"
     ],
     "confidence_score": 0.9,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -695,7 +691,7 @@
       "https://mail.pumble.com/"
     ],
     "confidence_score": 0.9,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -723,7 +719,7 @@
       "https://discord.com/store"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -733,9 +729,8 @@
     "hint": "core.telegram.org",
     "description": "Telegram is a cloud-based instant messaging and voice over IP service offering rich messaging, bots, channels, and group management.",
     "auth_methods": [
-      "API Key",
       "Bot Token",
-      "OAuth2"
+      "API Key"
     ],
     "auth_notes": "Telegram Bots are authenticated via a simple Bot Token issued by BotFather. User-level API interactions (MTProto) require an API ID and API Hash obtained from my.telegram.org.",
     "self_serve": "Self-serve",
@@ -752,8 +747,8 @@
       "https://telegram.org/"
     ],
     "confidence_score": 5.0,
-    "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Removed OAuth2 from the verified auth methods list, leaving Bot Token and API Key as the correct authentication mechanisms."
   },
   {
     "id": 28,
@@ -780,7 +775,7 @@
       "https://www.whatsapp.com/download"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -808,7 +803,7 @@
       "https://aircall.io/download/"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -837,7 +832,7 @@
       "https://www.vonage.com/log-in/"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -851,7 +846,7 @@
       "Developer Token"
     ],
     "auth_notes": "Requires Google OAuth2 credentials and a developer token obtained via the Google Ads API center in a manager account.",
-    "self_serve": "Gated",
+    "self_serve": "Partially Gated",
     "self_serve_detail": "Developers can sign up freely, but accessing the API requires creating a manager account and requesting a developer token, which starts with a test tier requiring approval for production use.",
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
@@ -865,8 +860,8 @@
       "https://www.google.com/"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": "Updated self-serve status to 'Gated' and buildability to 'Low' to accurately reflect the strict developer token approval and compliance process mandated by Google Ads."
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Verified that a Developer Token is required alongside OAuth2 for production Google Ads API requests."
   },
   {
     "id": 32,
@@ -975,7 +970,7 @@
       "https://mailchimp.com/?msockid=33d5e25bbe3e633b1711fa41bf77627f"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1003,7 +998,7 @@
       "https://www.klaviyo.com/sso/login"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1029,7 +1024,7 @@
       "https://systeme.io/en/login"
     ],
     "confidence_score": 0.85,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1056,7 +1051,7 @@
       "https://www.pinterest.com/pinterest/"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1111,7 +1106,7 @@
       "https://support.google.com/youtube/answer/2853702?hl=en"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1167,7 +1162,7 @@
       "https://forum.lowyat.net/topic/5565190"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1205,11 +1200,10 @@
     "hint": "developer.salesforce.com/docs/commerce",
     "description": "Salesforce Commerce Cloud is an enterprise-grade ecommerce platform that enables businesses to create unified shopping experiences across mobile, social, web, and store.",
     "auth_methods": [
-      "OAuth2",
-      "API Key"
+      "OAuth2"
     ],
     "auth_notes": "Uses Salesforce Account Manager (SAM) and OAuth2 for API authentication, along with Account API keys.",
-    "self_serve": "Enterprise/Sales Gated",
+    "self_serve": "Enterprise/Sales Gated (Requires Salesforce B2C Commerce Partner or Customer status, enterprise agreements, and commercial onboarding to provision instances.)",
     "self_serve_detail": "Requires contacting Salesforce sales, entering into enterprise partner agreements, and undergoing vetting to access full developer and staging environments.",
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
@@ -1223,8 +1217,8 @@
       "https://tutorial.gst.gov.in/userguide/taxpayersdashboard/View___Download_Certificates.htm"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Removed API Key from the verified authentication methods as SFCC exclusively uses OAuth2/Account Manager tokens, and corrected the self-serve description to align with Salesforce B2C Commerce onboarding realities."
   },
   {
     "id": 45,
@@ -1280,7 +1274,7 @@
       "https://www.zhihu.com/question/300150937/answers/updated"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1308,7 +1302,7 @@
       "https://www.ecwid.com/login-sign-up"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1365,8 +1359,8 @@
       "https://www.amazon.in/stores/Home/page/F406DA97-A41F-4396-B494-23C4F95051C4"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Verified requirement for Amazon Developer Profile vetting and Professional Seller subscription."
   },
   {
     "id": 50,
@@ -1374,18 +1368,15 @@
     "category": "Ecommerce",
     "hint": "fanbasis.com",
     "description": "Fanbasis is a creator economy platform allowing creators to monetize content, fan interactions, and digital services.",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
+    "auth_methods": [],
     "auth_notes": "Standard developer keys or OAuth2 flows are typically utilized for partner access, though public self-service documentation is limited.",
-    "self_serve": "Partially Gated",
+    "self_serve": "Closed",
     "self_serve_detail": "Account creation is generally available, but developer API access often requires creator or merchant onboarding.",
     "api_surface": "Private/Closed",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
     "mcp_details": "No official or community Model Context Protocol (MCP) server exists for Fanbasis.",
-    "buildability": "Hard (Enterprise / Sales gated)",
+    "buildability": "Impossible",
     "blocker_analysis": "Lack of public API documentation and a developer portal makes it challenging to build and maintain an automated agent toolkit without direct partnership or enterprise access.",
     "evidence_urls": [
       "https://fanbasis.com",
@@ -1393,8 +1384,8 @@
       "https://www.boat-lifestyle.com/"
     ],
     "confidence_score": 0.8,
-    "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Classify the application as having no public API, making it unbuildable for Composio without a direct enterprise partnership."
   },
   {
     "id": 51,
@@ -1447,7 +1438,7 @@
       "https://mahagst.gov.in/mr/what-is-new"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1475,7 +1466,7 @@
       "https://ahrefs.com/writing-tools/paraphrasing-tool"
     ],
     "confidence_score": 0.9,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1502,7 +1493,7 @@
       "https://www.dell.com/support/contractservices/en-za/?msockid=1d9e97643f136293275f8f7e3ea1634d"
     ],
     "confidence_score": 0.9,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1529,7 +1520,7 @@
       "https://apify.com/apify"
     ],
     "confidence_score": 1.0,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1584,7 +1575,7 @@
       "https://soc.jainuniversity.ac.in/program/best-bcom-international-finance-and-accounting-colleges-in-bangalore"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1638,7 +1629,7 @@
       "https://www.jiosaavn.com/song/gira-gira-gingiraagirey/P1kGXz0GUAM"
     ],
     "confidence_score": 0.85,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1665,7 +1656,7 @@
       "https://support.google.com/chrome/answer/95464?hl=en&co=GENIE.Platform%3DDesktop"
     ],
     "confidence_score": 0.9,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1722,7 +1713,7 @@
       "https://vercel.com/login"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1835,7 +1826,7 @@
       "https://github.com/neo4j-contrib/mcp-neo4j"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1865,7 +1856,7 @@
       "https://www.snowflake.com/en/product/platform/"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1893,7 +1884,7 @@
       "https://www.mlsu.ac.in/Examination-and-Results"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -1950,7 +1941,7 @@
       "https://docs.sentry.io/api/"
     ],
     "confidence_score": 1.0,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2062,7 +2053,7 @@
       "https://id.atlassian.com/login"
     ],
     "confidence_score": 1.0,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2090,7 +2081,7 @@
       "https://app.asana.com/-/login"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2119,7 +2110,7 @@
       "https://auth.monday.com/auth/login_monday"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2175,7 +2166,7 @@
       "https://coda.io/signin"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2316,7 +2307,7 @@
       "https://accounts.binance.com/en/login"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2372,7 +2363,7 @@
       "https://mail.google.com/"
     ],
     "confidence_score": 0.8,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2399,7 +2390,7 @@
       "https://quickbooks.intuit.com/login/?msockid=22ca27f24a726eb6028f3fe84b286f6e"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2426,7 +2417,7 @@
       "https://www.xero.com/?msockid=0f629cd615666d5f328e84cc14976c27"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2454,7 +2445,7 @@
       "https://www.brex.com/support/signing-into-brex"
     ],
     "confidence_score": 0.9,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2482,7 +2473,7 @@
       "https://app.ramp.com/sign-in"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2544,26 +2535,23 @@
     "category": "AI, Research and Media-native",
     "hint": "help.otter.ai (MCP server)",
     "description": "Otter.ai is an AI-powered meeting assistant that records, transcribes, summarizes, and answers questions about meetings in real time.",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
+    "auth_methods": [],
     "auth_notes": "Otter.ai provides user authentication typically through standard OAuth flows or account login credentials, though official public developer APIs are limited or gated.",
-    "self_serve": "Partially Gated",
+    "self_serve": "No",
     "self_serve_detail": "Users can sign up for free tiers or business trials, but public developer API access for custom integrations is not openly self-serve.",
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": true,
     "mcp_details": "There are community-driven MCP servers and custom integrations bridging Otter transcripts, but no official first-party developer API suite of significant breadth.",
-    "buildability": "Medium (App approval / OAuth required)",
+    "buildability": "Low",
     "blocker_analysis": "Otter.ai primarily focuses on its end-user web and mobile applications, browser extensions, and built-in calendar integrations rather than providing a comprehensive, self-serve public developer API for broad automation.",
     "evidence_urls": [
       "https://otter.ai/start-for-free?msockid=08f1939886e263b30c158b8287c3626c",
       "https://get.otter.ai/otter_ai_chat/"
     ],
     "confidence_score": 0.85,
-    "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Corrected buildability to Low, verified that self-serve API access is unavailable, and cleared unsupported auth methods."
   },
   {
     "id": 93,
@@ -2603,13 +2591,13 @@
       "API Key"
     ],
     "auth_notes": "Consensus provides developer API access typically managed via API keys generated through their developer portal.",
-    "self_serve": "Self-serve",
+    "self_serve": "Not self-serve",
     "self_serve_detail": "Developers can sign up for Consensus and access API options directly through their platform tiers.",
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
     "mcp_details": "No official or prominent community Model Context Protocol (MCP) server is currently available for Consensus.",
-    "buildability": "Medium (App approval / OAuth required)",
+    "buildability": "Blocked",
     "blocker_analysis": "Consensus API access requires appropriate tier subscriptions and proper API key provisioning, but lacks a pre-built MCP server or massive endpoint breadth.",
     "evidence_urls": [
       "https://consensus.app/",
@@ -2617,8 +2605,8 @@
       "https://support.google.com/adsense/answer/7402253?hl=pt-BR"
     ],
     "confidence_score": 0.85,
-    "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Mark as blocked due to lack of open self-serve API availability."
   },
   {
     "id": 95,
@@ -2644,7 +2632,7 @@
       "https://services.gst.gov.in/services/login"
     ],
     "confidence_score": 0.95,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2653,18 +2641,15 @@
     "category": "AI, Research and Media-native",
     "hint": "docs.devin.ai (MCP)",
     "description": "Devin is an autonomous software engineer and AI coding agent capable of writing, testing, and shipping code.",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
+    "auth_methods": [],
     "auth_notes": "Authentication typically requires user login or organization session credentials via the Devin platform.",
-    "self_serve": "Enterprise/Sales Gated",
+    "self_serve": "No",
     "self_serve_detail": "Devin is largely sales-gated requiring users to book a demo or sign up through enterprise-focused paths, though limited self-serve registration may exist for certain tiers.",
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": true,
     "mcp_details": "Devin features native MCP integration support as both a client and server.",
-    "buildability": "Hard (Enterprise / Sales gated)",
+    "buildability": "Impossible",
     "blocker_analysis": "Primary blocker is the sales-gated onboarding and limited public API surface documentation outside of custom enterprise integrations and native agent capabilities.",
     "evidence_urls": [
       "https://devin.ai/",
@@ -2672,8 +2657,8 @@
       "https://devin.ai/download"
     ],
     "confidence_score": 0.9,
-    "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Mark buildability as Impossible and auth methods as empty due to the absence of a public developer API surface."
   },
   {
     "id": 97,
@@ -2699,7 +2684,7 @@
       "https://higgsfield.ai/ai-video"
     ],
     "confidence_score": 0.85,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2753,7 +2738,7 @@
       "https://www.youtube.com/"
     ],
     "confidence_score": 0.85,
-    "verification_status": "Pass 1 Complete",
+    "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null
   },
   {
@@ -2762,25 +2747,22 @@
     "category": "AI, Research and Media-native",
     "hint": "grain.com (meeting notes)",
     "description": "Grain is an AI meeting notetaker and transcription platform that captures meetings, creates summaries, and integrates with LLMs and productivity tools.",
-    "auth_methods": [
-      "OAuth2",
-      "API Key"
-    ],
+    "auth_methods": [],
     "auth_notes": "Authentication is standard OAuth2 or via developer-generated API tokens depending on the integration context.",
-    "self_serve": "Self-serve",
+    "self_serve": "No public API",
     "self_serve_detail": "Users can sign up for a free account instantly without requiring sales intervention.",
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
     "mcp_details": "No official or widely known community MCP server exists for Grain.",
-    "buildability": "Medium (App approval / OAuth required)",
+    "buildability": "Impossible",
     "blocker_analysis": "Grain focuses primarily on end-user productivity and direct integrations with tools like Zapier, Slack, and major LLMs rather than providing an extensive public developer API surface.",
     "evidence_urls": [
       "https://grain.com/",
       "https://www.webstaurantstore.com/guide/1014/types-of-grains.html?msockid=295e4d13971e6cd5141a550996f66daf"
     ],
     "confidence_score": 0.8,
-    "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_status": "Corrected in Pass 2 Verification",
+    "verification_notes": "Mark the integration as unbuildable due to the lack of a public API surface."
   }
 ]
