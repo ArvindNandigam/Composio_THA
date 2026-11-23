@@ -7,7 +7,7 @@ Autonomous AI research agent that analyzes **100 enterprise and consumer platfor
 ## Live Deliverable & Case Study
 
 - **2-Minute Executive Case Study (Live Dashboard):** https://arvindnandigam.github.io/Composio_THA/
-- **Detailed Technical Analysis & Repository:** https://github.com/ArvindNandigam/Composio_THA
+- **GitHub Repository & Source Code:** https://github.com/ArvindNandigam/Composio_THA
 - **Deliverable File:** `index.html` (Self-contained, responsive 2-minute dashboard meeting all criteria with zero narration needed)
 
 ---
@@ -174,7 +174,7 @@ python -m agent.analyzer
 ```bash
 python generate_html.py
 ```
-*Generates both `index.html` (2-minute executive edition) and `detailed.html` (complete deep-dive archive), mirroring them to `output/`.*
+*Generates the self-contained 2-minute executive case study deliverable (`index.html`), mirrored to `output/`.*
 
 ---
 
