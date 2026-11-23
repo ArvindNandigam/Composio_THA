@@ -791,6 +791,7 @@ def build_html_deliverable():
                     <td class="py-3 px-4 max-w-xs">
                         <div class="flex items-center space-x-1.5">
                             <span class="font-bold text-white">${{app.name}}</span>
+                            ${{app.isCustom ? '<span class="text-[9px] px-1.5 py-0.2 rounded bg-purple-900/60 text-purple-300 font-mono border border-purple-700/50">Custom</span>' : ''}}
                             <a href="${{primaryDocUrl}}" target="_blank" title="Open Official Docs" class="text-gray-500 hover:text-brand-400 font-mono text-[10px] transition">[Docs]</a>
                         </div>
                         <div class="text-[11px] text-gray-400 font-normal line-clamp-1 mt-0.5 leading-snug" title="${{app.description || ''}}">
