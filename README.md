@@ -1,17 +1,17 @@
-# Composio Take-Home Assignment: 100-App Integration Feasibility & Agent Research Pipeline
+# Composio Take-Home: 100-App Integration Feasibility & Agent Research
 
 Autonomous AI Product Ops research agent that analyzes **100 enterprise and consumer platforms** to evaluate authentication mechanisms, credential gating, API surfaces, and MCP ecosystem readiness for Composio toolkits.
 
 ---
 
-## Live Deliverable and Deployment
+## Live Deliverable & Case Study
 
 - **Live Case Study Dashboard:** https://arvindnandigam.github.io/Composio_THA/
 - **Deliverable File:** `index.html` (Single self-contained, responsive dashboard with zero narration required)
 
 ---
 
-## Executive Findings and Patterns (Headline Summary)
+## Executive Summary & Core Patterns
 
 1. **Auth Duopoly (88% of SaaS):**
    - **OAuth2 (52%)** dominates multi-tenant applications (CRM, Support, Messaging).
@@ -35,7 +35,7 @@ Autonomous AI Product Ops research agent that analyzes **100 enterprise and cons
 
 ---
 
-## Architecture: Autonomous Agent and QA Loops
+## Agent Architecture & Execution Pipeline
 
 ```
 +------------------------------------------------------------------------+
@@ -79,7 +79,7 @@ Autonomous AI Product Ops research agent that analyzes **100 enterprise and cons
 
 ---
 
-## Verification Audit: Documented Hits and Misses
+## Verification Audit: Documented Hits & Misses
 
 The evaluation demanded real verification loops demonstrating how accuracy improved from a lower first pass to a higher one.
 
@@ -98,7 +98,7 @@ The evaluation demanded real verification loops demonstrating how accuracy impro
 
 ---
 
-## How to Run the Pipeline
+## How to Run the Agent Pipeline
 
 ### Prerequisites
 - Python 3.10+
