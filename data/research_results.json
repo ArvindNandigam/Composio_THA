@@ -20,8 +20,7 @@
     "blocker_analysis": "Requires setting up a Connected App within Salesforce, configuring OAuth scopes, and handling token refreshes and organization-specific custom domain URLs.",
     "evidence_urls": [
       "https://developer.salesforce.com/docs/apis",
-      "https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm",
-      "https://login.salesforce.com/"
+      "https://help.salesforce.com/s/articleView?id=sf.remoteaccess_oauth_flows.htm"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -50,9 +49,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major blockers. Developer access is self-serve, and robust REST and GraphQL APIs are available with comprehensive documentation.",
     "evidence_urls": [
-      "https://www.hubspot.com/",
       "https://developers.hubspot.com/docs/api/overview",
-      "https://app.hubspot.com/login"
+      "https://www.hubspot.com/"
     ],
     "confidence_score": 0.98,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -81,9 +79,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. Pipedrive provides a well-documented REST API with comprehensive developer resources and self-serve sandbox accounts.",
     "evidence_urls": [
-      "https://www.pipedrive.com/",
       "https://developers.pipedrive.com/",
-      "https://partners.pipedrive.com/login"
+      "https://www.pipedrive.com/"
     ],
     "confidence_score": 0.98,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -112,9 +109,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is fully documented, self-serve, and supports standard REST operations with OAuth2 and API keys.",
     "evidence_urls": [
-      "https://attio.com/",
       "https://developers.attio.com/",
-      "https://maps.google.co.in/"
+      "https://attio.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -143,8 +139,9 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. The platform is open-source, fully API-accessible, and supports standard auth mechanisms.",
     "evidence_urls": [
-      "https://twenty.com/",
-      "https://en.wikipedia.org/wiki/20_(number)"
+      "https://docs.twenty.com/",
+      "https://github.com/twentyhq/twenty",
+      "https://twenty.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -173,8 +170,7 @@
     "blocker_analysis": "No major technical or commercial blockers. Podio provides a well-documented public REST API and self-serve developer access.",
     "evidence_urls": [
       "https://developers.podio.com/",
-      "https://www.podio.com/",
-      "https://podio.com/login"
+      "https://www.podio.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
@@ -203,8 +199,7 @@
     "blocker_analysis": "While self-serve registration is available, developers must navigate OAuth 2.0 redirect flows, scope configurations, and regional endpoint variations (e.g., .com, .eu, .in) to build a robust integration.",
     "evidence_urls": [
       "https://www.zoho.com/crm/developer/docs/api/v2/multi-auth.html",
-      "https://api-console.zoho.com/",
-      "https://www.zoho.com/login.html"
+      "https://api-console.zoho.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
@@ -234,8 +229,7 @@
     "blocker_analysis": "No major technical or commercial blockers. Close provides comprehensive public API documentation, straightforward API key and OAuth authentication, and self-serve developer access.",
     "evidence_urls": [
       "https://developer.close.com/",
-      "https://www.allrecipes.com/recipe/7177/bread-pudding-ii/",
-      "https://www.allrecipes.com/recipe/16248/easy-homemade-chili/"
+      "https://close.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -265,8 +259,7 @@
     "blocker_analysis": "No significant blockers. Copper provides well-documented REST endpoints and self-serve developer access with straightforward API key or OAuth authentication.",
     "evidence_urls": [
       "https://developer.copper.com/",
-      "https://copperprice.in/",
-      "https://www.britannica.com/science/copper"
+      "https://www.copper.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -296,8 +289,7 @@
     "blocker_analysis": "The main blocker is commercial and access-restricted. DealCloud requires enterprise-level business validation and a sales contract to even provision sandbox or production API credentials, making automated or open-source integration unfeasible for general developers.",
     "evidence_urls": [
       "https://api.docs.dealcloud.com",
-      "https://calculat.io/en/number/fraction-as-a-decimal/0--11--44",
-      "https://coolconversion.com/math/fraction-to-decimal/Convert__11/44_to-decimal"
+      "https://www.dealcloud.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -328,10 +320,9 @@
     "blocker_analysis": "No blockers; Zendesk provides a comprehensive public REST API with robust documentation and self-serve developer access.",
     "evidence_urls": [
       "https://developer.zendesk.com/api-reference/",
-      "https://www.zendesk.com/",
-      "https://www.zendesk.com/login/"
+      "https://www.zendesk.com/"
     ],
-    "confidence_score": 5.0,
+    "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
     "mcp_url": "https://github.com/reminia/zendesk-mcp-server",
@@ -358,9 +349,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major blockers. Intercom provides a well-documented public REST API with robust support for webhooks, contacts, conversations, and tickets.",
     "evidence_urls": [
-      "https://www.intercom.com/",
       "https://developers.intercom.com/",
-      "https://app.intercom.com/admins/sign_in"
+      "https://www.intercom.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -390,8 +380,7 @@
     "blocker_analysis": "No significant blockers. Freshdesk provides a comprehensive, well-documented REST API with standard API key authentication, making integration straightforward.",
     "evidence_urls": [
       "https://developers.freshdesk.com/api/",
-      "https://www.freshworks.com/freshdesk/",
-      "https://support.freshdesk.com/support/home"
+      "https://www.freshworks.com/freshdesk/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -420,9 +409,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. The platform provides comprehensive REST APIs and self-serve developer access.",
     "evidence_urls": [
-      "https://front.com/",
       "https://dev.frontapp.com/",
-      "https://front.com/download"
+      "https://front.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -451,8 +439,8 @@
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While self-serve trials are available, public developer documentation for Pylon's REST API is limited and often requires reaching out or workspace admin permissions to generate API credentials, presenting minor onboarding hurdles.",
     "evidence_urls": [
-      "https://www.usepylon.com/",
-      "https://app.getpylon.com/login"
+      "https://docs.usepylon.com/",
+      "https://www.usepylon.com/"
     ],
     "confidence_score": 0.8,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -482,8 +470,7 @@
     "blocker_analysis": "No significant blockers. The API is publicly documented and accessible via self-serve trial accounts with straightforward API key or OAuth authentication.",
     "evidence_urls": [
       "https://www.liveagent.com/api-v3/",
-      "https://forum.xnxx.com/threads/hayden-panettiere.235017/page-3",
-      "https://forum.xnxx.com/threads/bull-shit.65415/"
+      "https://www.liveagent.com/"
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -543,8 +530,7 @@
     "blocker_analysis": "No significant blockers. Well-documented REST API with standard OAuth2 and API key flows.",
     "evidence_urls": [
       "https://developer.helpscout.com/",
-      "https://support.google.com/?hl=en",
-      "https://support.microsoft.com/en-us/windows/experience/how-to-get-help-in-windows"
+      "https://www.helpscout.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -575,8 +561,7 @@
     "blocker_analysis": "No major technical or commercial blockers. Standard e-commerce rate limits and scoping apply.",
     "evidence_urls": [
       "https://developers.gorgias.com/reference/getting-started",
-      "https://superuser.com/questions/1661790/windows-11-complains-after-reboot-why-did-my-pc-restart",
-      "https://www.tenforums.com/threads/enable-or-disable-bsod-automatic-restart-in-windows-10.69012/"
+      "https://www.gorgias.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -605,9 +590,8 @@
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "The platform is commercially gated requiring sales interaction, and developer sandbox access is restricted to paying enterprise customers.",
     "evidence_urls": [
-      "https://gladly.com",
-      "https://gisresources.com/",
-      "https://gisresources.com/author/gisresources/"
+      "https://developer.gladly.com/",
+      "https://gladly.com"
     ],
     "confidence_score": 0.8,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -636,8 +620,7 @@
     "blocker_analysis": "No significant blockers. API is fully self-serve with extensive documentation and robust rate limits.",
     "evidence_urls": [
       "https://api.slack.com/",
-      "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
-      "https://x.com/"
+      "https://github.com/modelcontextprotocol/servers/tree/main/src/slack"
     ],
     "confidence_score": 1.0,
     "verification_status": "Corrected in Pass 2 Verification",
@@ -666,8 +649,7 @@
     "blocker_analysis": "No significant blockers. Twilio has extensive, well-documented REST APIs and self-serve developer onboarding.",
     "evidence_urls": [
       "https://www.twilio.com/docs/iam/credentials/basic-auth",
-      "https://technosports.co.in/viral-mms-in-india-anjali-arora-akshara-singh/",
-      "https://english.newstrack.com/entertainment-news/desi-viral-mms-videos-of-2025-that-shocked-the-internet-and-refused-to-fade-away-567571"
+      "https://www.twilio.com/docs"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -695,9 +677,9 @@
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Integration requires handling Zoho's multi-region OAuth endpoints (zoho.com, zoho.eu, etc.) and managing token refreshing and scope management through the Zoho Developer Console.",
     "evidence_urls": [
+      "https://www.zoho.com/cliq/help/api/",
       "https://www.zoho.com/cliq/",
-      "https://www.zoho.com/accounts/protocol/oauth.html",
-      "https://www.zoho.com/login.html"
+      "https://www.zoho.com/accounts/protocol/oauth.html"
     ],
     "confidence_score": 0.9,
     "verification_status": "Corrected in Pass 2 Verification",
@@ -728,8 +710,7 @@
     "blocker_analysis": "Requires setting up a custom app inside the Lark Developer Console, configuring permissions/scopes, and managing tenant vs. user access token flows.",
     "evidence_urls": [
       "https://open.larksuite.com/",
-      "https://www.larksuite.com/en_us/download",
-      "https://www.larksuite.com/messages"
+      "https://www.larksuite.com/"
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -758,16 +739,16 @@
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Pumble lacks a comprehensive public developer API or documentation for third-party integrations, functioning mostly as a closed ecosystem with a few predefined integrations like Clockify and Google Drive.",
     "evidence_urls": [
-      "https://pumble.com/",
+      "https://pumble.com/help/integrations/incoming-webhooks/",
       "https://pumble.com/apps",
-      "https://mail.pumble.com/"
+      "https://pumble.com/"
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed incoming webhooks and bot tokens; focused REST API for team messaging. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
+    "human_report": "Confirmed that Pumble only exposes basic incoming webhooks rather than a public developer REST API. Buildability is Blocked due to private/closed API surface without third-party programmatic access. [MCP Status: Verified True Greenfield (no official or community MCP exists today).]"
   },
   {
     "id": 26,
@@ -790,8 +771,7 @@
     "blocker_analysis": "No major technical or commercial blockers. Rate limits apply to bot endpoints, and certain privileged intents require enablement in the developer portal.",
     "evidence_urls": [
       "https://discord.com/developers/docs",
-      "https://discord.com/",
-      "https://discord.com/store"
+      "https://discord.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -821,10 +801,9 @@
     "blocker_analysis": "No major technical or commercial blockers. Telegram's Bot API is completely open, self-serve, and exceptionally well-documented, making it ideal for AI agent toolkits.",
     "evidence_urls": [
       "https://core.telegram.org/bots/api",
-      "https://core.telegram.org/api",
-      "https://telegram.org/"
+      "https://core.telegram.org/api"
     ],
-    "confidence_score": 5.0,
+    "confidence_score": 1.0,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Removed OAuth2 from the verified auth methods list, leaving Bot Token and API Key as the correct authentication mechanisms.",
     "mcp_url": "https://github.com/chain-runners/telegram-mcp",
@@ -852,8 +831,7 @@
     "blocker_analysis": "The primary operational blocker is the stringent Meta Business verification process and phone number approval required to graduate from sandbox mode to production.",
     "evidence_urls": [
       "https://developers.facebook.com/docs/whatsapp/cloud-api/get-started",
-      "https://web.whatsapp.com/",
-      "https://www.whatsapp.com/download"
+      "https://developers.facebook.com/docs/whatsapp/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -882,9 +860,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Aircall provides a comprehensive public REST API with well-documented endpoints for calls, contacts, users, and webhooks.",
     "evidence_urls": [
-      "https://aircall.io/",
       "https://developer.aircall.io/",
-      "https://aircall.io/download/"
+      "https://aircall.io/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -915,8 +892,7 @@
     "blocker_analysis": "No major technical or commercial blockers. Developers can self-onboard and start calling Vonage APIs immediately.",
     "evidence_urls": [
       "https://developer.vonage.com/",
-      "https://www.vonage.com/",
-      "https://www.vonage.com/log-in/"
+      "https://www.vonage.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -946,8 +922,7 @@
     "blocker_analysis": "Requires obtaining a developer token and navigating Google's strict API compliance guidelines and OAuth verification process.",
     "evidence_urls": [
       "https://developers.google.com/google-ads/api/docs/first-call/overview",
-      "https://www.google.co.in/",
-      "https://www.google.com/"
+      "https://www.google.com/ads"
     ],
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
@@ -976,7 +951,6 @@
     "blocker_analysis": "The primary blockers are Meta's stringent App Review process, mandatory business verification, and strict rate limits for accessing advertising and audience data via the Marketing API.",
     "evidence_urls": [
       "https://developers.facebook.com/docs/marketing-apis",
-      "https://www.meta.com/about/",
       "https://business.facebook.com/"
     ],
     "confidence_score": 0.95,
@@ -1006,8 +980,7 @@
     "blocker_analysis": "Requires developer application review and approval by LinkedIn to access marketing and ad APIs.",
     "evidence_urls": [
       "https://learn.microsoft.com/linkedin/marketing/",
-      "https://www.linkedin.com/",
-      "https://www.linkedin.com/login/"
+      "https://www.linkedin.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -1037,8 +1010,7 @@
     "blocker_analysis": "No significant blockers. The API is thoroughly documented via Stoplight, highly comprehensive covering contacts, pipelines, calendars, and campaigns, and supports self-serve developer access.",
     "evidence_urls": [
       "https://highlevel.stoplight.io/",
-      "https://www.gohighlevel.com/",
-      "https://www.gohighlevel.com/?msockid=260bf311fb6365a219f1eb0bfa9c64a4"
+      "https://www.gohighlevel.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -1067,9 +1039,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Mailchimp provides well-documented REST APIs, standard OAuth2/API key authentication, and open self-serve developer access.",
     "evidence_urls": [
-      "https://mailchimp.com/developer/",
       "https://mailchimp.com/developer/marketing/api/",
-      "https://mailchimp.com/?msockid=33d5e25bbe3e633b1711fa41bf77627f"
+      "https://mailchimp.com/developer/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1099,8 +1070,7 @@
     "blocker_analysis": "No blockers; Klaviyo provides comprehensive public API documentation, self-serve developer accounts, and standard OAuth2/API key authentication.",
     "evidence_urls": [
       "https://developers.klaviyo.com/",
-      "https://www.klaviyo.com/",
-      "https://www.klaviyo.com/sso/login"
+      "https://www.klaviyo.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1129,7 +1099,7 @@
     "blocker_analysis": "No significant blockers. The API is accessible via self-serve account creation and standard API key authentication.",
     "evidence_urls": [
       "https://systeme.io/",
-      "https://systeme.io/en/login"
+      "https://help.systeme.io/"
     ],
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1158,8 +1128,7 @@
     "blocker_analysis": "Pinterest requires developers to register an app, request appropriate permissions/scopes, and undergo an app review process before production use.",
     "evidence_urls": [
       "https://developers.pinterest.com/",
-      "https://www.pinterest.com/",
-      "https://www.pinterest.com/pinterest/"
+      "https://www.pinterest.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1188,8 +1157,7 @@
     "blocker_analysis": "Meta API access requires developer account setup and adherence to strict platform policies and rate limits, along with standard Meta App Review for extended permissions.",
     "evidence_urls": [
       "https://developers.facebook.com/docs/threads",
-      "https://www.triphobo.com/places/johannesburg-south-africa/coronation-park",
-      "https://www.triphobo.com/places/montreal-canada/botanical-garden"
+      "https://developers.facebook.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -1219,8 +1187,7 @@
     "blocker_analysis": "No major technical or commercial blockers. SendGrid provides a comprehensive, well-documented REST API with self-serve API key generation.",
     "evidence_urls": [
       "https://docs.sendgrid.com/api-reference/",
-      "https://www.youtube.com/?gl=IN",
-      "https://support.google.com/youtube/answer/2853702?hl=en"
+      "https://sendgrid.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1249,9 +1216,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical blockers. OAuth app review processes may apply for public distribution, but custom/private app creation is entirely self-serve.",
     "evidence_urls": [
-      "https://www.shopify.com/",
       "https://shopify.dev/",
-      "https://www.shopify.com/store-login"
+      "https://www.shopify.com/"
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1281,8 +1247,7 @@
     "blocker_analysis": "None. The API is well-documented, open-source, and fully self-serve via WordPress sites, requiring standard consumer keys.",
     "evidence_urls": [
       "https://woocommerce.com/document/woocommerce-rest-api/",
-      "https://web.whatsapp.com/",
-      "https://forum.lowyat.net/topic/5565190"
+      "https://woocommerce.github.io/woocommerce-rest-api-docs/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1312,8 +1277,7 @@
     "blocker_analysis": "No significant blockers. The API is fully documented, robust, supports self-serve sandbox/developer stores, and uses standard OAuth2/API token authentication.",
     "evidence_urls": [
       "https://developer.bigcommerce.com/docs/start/authentication",
-      "https://allevents.in/langley-bc/all",
-      "https://allevents.in/"
+      "https://www.bigcommerce.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -1342,8 +1306,7 @@
     "blocker_analysis": "Primary blocker is the enterprise-gated nature of Salesforce Commerce Cloud developer accounts and partner ecosystems, requiring lengthy administrative processes and commercial agreements.",
     "evidence_urls": [
       "https://developer.salesforce.com/docs/commerce",
-      "https://www.gst.gov.in/",
-      "https://tutorial.gst.gov.in/userguide/taxpayersdashboard/View___Download_Certificates.htm"
+      "https://www.salesforce.com/products/commerce/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
@@ -1374,8 +1337,7 @@
     "blocker_analysis": "No major blockers for self-hosted or standard API access, though instance fragmentation (self-hosted vs cloud/Adobe Commerce) means developers must connect to specific store URLs.",
     "evidence_urls": [
       "https://developer.adobe.com/commerce/",
-      "https://www.magento-opensource.com/",
-      "https://account.magento.com/customer/account/login/"
+      "https://www.magento-opensource.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -1405,8 +1367,7 @@
     "blocker_analysis": "Integration requires going through Squarespace's developer program and obtaining appropriate API keys or setting up OAuth app credentials.",
     "evidence_urls": [
       "https://developers.squarespace.com/",
-      "https://www.zhihu.com/question/554885453",
-      "https://www.zhihu.com/question/300150937/answers/updated"
+      "https://www.squarespace.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1436,8 +1397,7 @@
     "blocker_analysis": "No significant blockers. Ecwid provides fully documented REST APIs, self-serve store creation, and standard OAuth2/token authentication.",
     "evidence_urls": [
       "https://api-docs.ecwid.com/",
-      "https://www.ecwid.com/",
-      "https://www.ecwid.com/login-sign-up"
+      "https://www.ecwid.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1467,8 +1427,7 @@
     "blocker_analysis": "No significant blockers. The API is self-serve, publicly documented, and uses standard token/OAuth authentication.",
     "evidence_urls": [
       "https://app.gumroad.com/api",
-      "https://gumroad.com/",
-      "https://gumroad.com/login"
+      "https://gumroad.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -1499,8 +1458,7 @@
     "blocker_analysis": "The main blockers are the multi-step developer onboarding process, business verification, and the requirement for AWS IAM SigV4 request signing alongside standard OAuth.",
     "evidence_urls": [
       "https://developer-docs.amazon.com/sp-api/docs/connecting-to-the-selling-partner-api",
-      "https://www.amazon.in/",
-      "https://www.amazon.in/stores/Home/page/F406DA97-A41F-4396-B494-23C4F95051C4"
+      "https://developer-docs.amazon.com/sp-api/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
@@ -1526,9 +1484,7 @@
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Lack of public API documentation and a developer portal makes it challenging to build and maintain an automated agent toolkit without direct partnership or enterprise access.",
     "evidence_urls": [
-      "https://fanbasis.com",
-      "https://www.boat-lifestyle.com/products/boat-rockerz-413-wireless-headphones",
-      "https://www.boat-lifestyle.com/"
+      "https://fanbasis.com"
     ],
     "confidence_score": 0.8,
     "verification_status": "Corrected in Pass 2 Verification",
@@ -1556,9 +1512,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; standard REST API using HTTP basic auth with a prepaid wallet system.",
     "evidence_urls": [
-      "https://dataforseo.com/",
       "https://docs.dataforseo.com/",
-      "https://app.dataforseo.com/signin"
+      "https://dataforseo.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -1587,8 +1542,7 @@
     "blocker_analysis": "No significant blockers. Standard API key authentication and comprehensive REST documentation allow for straightforward integration.",
     "evidence_urls": [
       "https://seranking.com/api",
-      "https://finance.maharashtra.gov.in/en/mahagst/",
-      "https://mahagst.gov.in/mr/what-is-new"
+      "https://seranking.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1617,9 +1571,8 @@
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Ahrefs API access is restricted to higher-tier paid plans and uses custom rate limits and credit systems, which can limit high-volume autonomous AI agent queries without a specialized enterprise agreement.",
     "evidence_urls": [
-      "https://ahrefs.com/",
-      "https://help.ahrefs.com/en",
-      "https://ahrefs.com/writing-tools/paraphrasing-tool"
+      "https://ahrefs.com/api/documentation",
+      "https://ahrefs.com/api"
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1648,8 +1601,7 @@
     "blocker_analysis": "No significant blockers. Standard REST API wrapper using API keys.",
     "evidence_urls": [
       "https://docs.mrscraper.com",
-      "https://www.dell.com/support/contractservices/en-in/?msockid=1d9e97643f136293275f8f7e3ea1634d",
-      "https://www.dell.com/support/contractservices/en-za/?msockid=1d9e97643f136293275f8f7e3ea1634d"
+      "https://mrscraper.com/"
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1678,8 +1630,7 @@
     "blocker_analysis": "No major technical or commercial blockers. API documentation is comprehensive and self-serve access is fully available.",
     "evidence_urls": [
       "https://docs.apify.com/",
-      "https://apify.com/",
-      "https://apify.com/apify"
+      "https://apify.com/"
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1707,9 +1658,9 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers. The API is fully documented, self-serve, and has an existing official MCP server.",
     "evidence_urls": [
-      "https://firecrawl.dev",
       "https://docs.firecrawl.dev",
-      "https://github.com/LongpanZhou/ChatGPT-Bypass"
+      "https://firecrawl.dev",
+      "https://github.com/mendableai/firecrawl"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1739,8 +1690,7 @@
     "blocker_analysis": "None. Fully self-serve with public APIs and an official MCP server already available.",
     "evidence_urls": [
       "https://brightdata.com/integration/mcp",
-      "https://soc.jainuniversity.ac.in/program/strategic-finance-integrated-with-cfa",
-      "https://soc.jainuniversity.ac.in/program/best-bcom-international-finance-and-accounting-colleges-in-bangalore"
+      "https://brightdata.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1768,9 +1718,7 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers for local execution since it is open source, but running it at scale requires handling rate limits from target social networks.",
     "evidence_urls": [
-      "https://github.com/sherlock-project/sherlock",
-      "https://www.imdb.com/title/tt1475582",
-      "https://www.netflix.com/title/70202589"
+      "https://github.com/sherlock-project/sherlock"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1798,9 +1746,7 @@
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "The service is commercial and enterprise-focused with limited public developer documentation, making self-service integration and programmatic evaluation difficult without contacting sales.",
     "evidence_urls": [
-      "https://waterfall.io",
-      "https://www.jiosaavn.com/song/gira-gira-gingiraagirey-from-champion/NgtaBBFVVkI",
-      "https://www.jiosaavn.com/song/gira-gira-gingiraagirey/P1kGXz0GUAM"
+      "https://waterfall.io"
     ],
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1829,8 +1775,7 @@
     "blocker_analysis": "No major blockers. Clay offers standard webhooks and API access suitable for integration work.",
     "evidence_urls": [
       "https://clay.com",
-      "https://support.google.com/chrome/answer/95464?hl=id&co=GENIE.Platform%3DDesktop",
-      "https://support.google.com/chrome/answer/95464?hl=en&co=GENIE.Platform%3DDesktop"
+      "https://library.clay.com/"
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1860,8 +1805,7 @@
     "blocker_analysis": "No significant blockers. Comprehensive REST and GraphQL APIs are publicly available with extensive documentation and straightforward auth.",
     "evidence_urls": [
       "https://docs.github.com/rest",
-      "https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop",
-      "https://gist.github.com/"
+      "https://docs.github.com/en/rest"
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1892,8 +1836,7 @@
     "blocker_analysis": "No significant blockers. The API is fully documented and self-serve access is available.",
     "evidence_urls": [
       "https://vercel.com/docs/rest-api",
-      "https://vercel.com/",
-      "https://vercel.com/login"
+      "https://vercel.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -1923,8 +1866,7 @@
     "blocker_analysis": "No significant blockers. The Netlify API is fully documented and publicly accessible via standard tokens or OAuth.",
     "evidence_urls": [
       "https://docs.netlify.com/api/",
-      "https://www.netlify.com/",
-      "https://app.netlify.com/login"
+      "https://www.netlify.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -1954,8 +1896,7 @@
     "blocker_analysis": "No blockers; fully self-serve, robust REST API, and existing official MCP server implementations.",
     "evidence_urls": [
       "https://developers.cloudflare.com/api/",
-      "https://www.cloudflare.com/",
-      "https://dash.cloudflare.com/login"
+      "https://www.cloudflare.com/"
     ],
     "confidence_score": 1.0,
     "verification_status": "Pass 1 Complete",
@@ -1986,10 +1927,9 @@
     "blocker_analysis": "No blockers; fully self-serve with comprehensive API documentation and official SDKs/MCP server already available.",
     "evidence_urls": [
       "https://supabase.com/docs",
-      "https://github.com/supabase/mcp-server-supabase",
-      "https://github.com/pionxzh/chatgpt-exporter"
+      "https://github.com/supabase/mcp-server-supabase"
     ],
-    "confidence_score": 5.0,
+    "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
     "mcp_url": "https://github.com/supabase-community/mcp-server-supabase",
@@ -2016,9 +1956,9 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The tool is open-source/self-serve friendly, with existing open-source MCP implementations and documented REST/Bolt APIs.",
     "evidence_urls": [
-      "https://neo4j.com/",
       "https://neo4j.com/docs/api",
-      "https://github.com/neo4j-contrib/mcp-neo4j"
+      "https://github.com/neo4j-contrib/mcp-neo4j",
+      "https://neo4j.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2050,8 +1990,7 @@
     "blocker_analysis": "No significant technical or commercial blockers. Snowflake provides robust SQL interfaces, REST APIs, and official programming language connectors (Python, Node.js, etc.) allowing seamless integration.",
     "evidence_urls": [
       "https://docs.snowflake.com/",
-      "https://www.snowflake.com/en/",
-      "https://www.snowflake.com/en/product/platform/"
+      "https://www.snowflake.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2081,8 +2020,7 @@
     "blocker_analysis": "No major technical or commercial blockers. API access is available out-of-the-box on self-serve accounts with robust documentation.",
     "evidence_urls": [
       "https://www.mongodb.com/docs/atlas/api/",
-      "https://mlsuexamination.sumsraj.com/default.aspx",
-      "https://www.mlsu.ac.in/Examination-and-Results"
+      "https://www.mongodb.com/atlas"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2112,8 +2050,7 @@
     "blocker_analysis": "No significant blockers. Well-documented public REST APIs and existing community MCP implementations make integration straightforward.",
     "evidence_urls": [
       "https://docs.datadoghq.com/api/latest/",
-      "https://goldenresult.co/",
-      "https://dhsgsu.edu.in/index.php/en/student/university-examinations/results"
+      "https://www.datadoghq.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -2143,9 +2080,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Sentry has a well-documented public API, open developer signups, and even an official MCP server.",
     "evidence_urls": [
-      "https://sentry.io/",
-      "https://docs.sentry.io/",
-      "https://docs.sentry.io/api/"
+      "https://docs.sentry.io/api/",
+      "https://sentry.io/"
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2175,8 +2111,7 @@
     "blocker_analysis": "No major technical or commercial blockers. API is robust, well-documented, and fully self-serve.",
     "evidence_urls": [
       "https://developers.notion.com/",
-      "https://www.notion.com/",
-      "https://app.notion.com/"
+      "https://www.notion.com/"
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2205,9 +2140,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. Comprehensive REST API with clear token and OAuth authentication options.",
     "evidence_urls": [
-      "https://airtable.com/developers",
       "https://airtable.com/developers/web/api/introduction",
-      "https://www.airtable.com/"
+      "https://airtable.com/developers"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -2237,8 +2171,7 @@
     "blocker_analysis": "No significant blockers. Linear features an extremely well-documented GraphQL API, robust self-serve developer access, and existing reference implementations like the MCP server.",
     "evidence_urls": [
       "https://developers.linear.app/docs/graphql/working-with-the-api",
-      "https://developers.linear.app/docs/oauth/authentication",
-      "https://nzpocketguide.com/the-complete-guide-to-auckland/"
+      "https://developers.linear.app/docs/oauth/authentication"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2268,8 +2201,7 @@
     "blocker_analysis": "No major technical or commercial blockers. Jira offers comprehensive developer documentation, generous free tiers, and standard authentication protocols.",
     "evidence_urls": [
       "https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/",
-      "https://www.atlassian.com/software/jira",
-      "https://id.atlassian.com/login"
+      "https://www.atlassian.com/software/jira"
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2299,8 +2231,7 @@
     "blocker_analysis": "No significant technical blockers; Asana provides a mature, comprehensive REST API with clear OAuth2 and Personal Access Token support.",
     "evidence_urls": [
       "https://developers.asana.com/",
-      "https://asana.com/",
-      "https://app.asana.com/-/login"
+      "https://asana.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2330,9 +2261,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. monday.com provides a well-documented and comprehensive GraphQL API with straightforward self-serve developer access.",
     "evidence_urls": [
-      "https://monday.com/",
       "https://developer.monday.com/",
-      "https://auth.monday.com/auth/login_monday"
+      "https://monday.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2362,8 +2292,7 @@
     "blocker_analysis": "No significant technical or commercial blockers. Standard rate limits apply, and API documentation is publicly available.",
     "evidence_urls": [
       "https://clickup.com/api",
-      "https://doc.clickup.com/apidocumentation",
-      "https://clickup.com/"
+      "https://doc.clickup.com/apidocumentation"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -2393,8 +2322,7 @@
     "blocker_analysis": "No major technical or commercial blockers. Standard API keys and comprehensive REST documentation enable straightforward integration.",
     "evidence_urls": [
       "https://coda.io/developers",
-      "https://coda.io/",
-      "https://coda.io/signin"
+      "https://coda.io/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2423,9 +2351,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Standard API token or OAuth integration allows full read/write access to sheets, reports, and workspaces.",
     "evidence_urls": [
-      "https://smartsheet.com/developers",
       "https://smartsheet-platform.github.io/api-docs/",
-      "https://app.smartsheet.com/b/home"
+      "https://smartsheet.com/developers"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -2455,8 +2382,7 @@
     "blocker_analysis": "No significant blockers. The API is fully documented, uses standard OAuth2 or personal access tokens, and is accessible to all tiers of users.",
     "evidence_urls": [
       "https://help.getharvest.com/api-v2/",
-      "https://github.com/pionxzh/chatgpt-exporter",
-      "https://www.zhihu.com/question/2068986574256312589"
+      "https://www.getharvest.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -2486,7 +2412,6 @@
     "blocker_analysis": "None. Fully documented public API with instant self-serve developer access and robust test environments.",
     "evidence_urls": [
       "https://stripe.com/docs/api",
-      "https://dashboard.stripe.com/",
       "https://stripe.com/"
     ],
     "confidence_score": 1.0,
@@ -2517,8 +2442,7 @@
     "blocker_analysis": "While the sandbox and development environments are fully self-serve, moving to production requires compliance reviews, data security checks, and manual application approval from Plaid's team.",
     "evidence_urls": [
       "https://plaid.com/docs/",
-      "https://plaid.com/",
-      "https://my.plaid.com/sign-in"
+      "https://plaid.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
@@ -2549,8 +2473,7 @@
     "blocker_analysis": "No major technical or commercial blockers. API documentation is comprehensive and keys are instantly available, though geo-restrictions and regulatory compliance (KYC) apply to user accounts.",
     "evidence_urls": [
       "https://binance-docs.github.io/apidocs/spot/en/",
-      "https://www.binance.com/",
-      "https://accounts.binance.com/en/login"
+      "https://www.binance.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2579,9 +2502,7 @@
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "Strict merchant onboarding, regional restrictions (focused on Japanese payment infrastructure), and required merchant accounts make self-serve testing difficult.",
     "evidence_urls": [
-      "https://www.paygent.co.jp/",
-      "https://sunrisershyderabad.in/",
-      "https://fanzone.sunrisershyderabad.in/quick-focus/nikola-tesla-the-genius-who-changed-the-world-and-his-untimely-death-1764798215"
+      "https://www.paygent.co.jp/"
     ],
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2610,9 +2531,7 @@
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "Primary blocker is the enterprise-gated nature of the fintech platform, requiring partnership agreements, merchant verification, and sales contact to access sandbox or production endpoints.",
     "evidence_urls": [
-      "https://ipayx.ai/",
-      "https://mail.google.com/mail/",
-      "https://mail.google.com/"
+      "https://ipayx.ai/"
     ],
     "confidence_score": 0.8,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2641,8 +2560,7 @@
     "blocker_analysis": "While creating a sandbox is self-serve, moving to production requires app assessment and compliance reviews by Intuit, and strict adherence to security and data privacy scopes.",
     "evidence_urls": [
       "https://developer.intuit.com/app/developer/qbo/docs/get-started",
-      "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0",
-      "https://quickbooks.intuit.com/login/?msockid=22ca27f24a726eb6028f3fe84b286f6e"
+      "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2671,8 +2589,7 @@
     "blocker_analysis": "Requires setting up an OAuth application, handling token refreshes, and managing scope approvals correctly. No major commercial blockers since developer signup is fully self-serve.",
     "evidence_urls": [
       "https://developer.xero.com/",
-      "https://www.xero.com/",
-      "https://www.xero.com/?msockid=0f629cd615666d5f328e84cc14976c27"
+      "https://www.xero.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2702,8 +2619,7 @@
     "blocker_analysis": "While API documentation is public and self-serve, corporate financial platforms often enforce strict security reviews, specific permission scopes for financial data, and account compliance checks.",
     "evidence_urls": [
       "https://developer.brex.com/",
-      "https://www.brex.com/",
-      "https://www.brex.com/support/signing-into-brex"
+      "https://www.brex.com/"
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2733,8 +2649,7 @@
     "blocker_analysis": "Requires standard business underwriting and verification to gain access to live financial data and transactional endpoints.",
     "evidence_urls": [
       "https://docs.ramp.com/",
-      "https://ramp.com/",
-      "https://app.ramp.com/sign-in"
+      "https://ramp.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2763,9 +2678,8 @@
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "The primary blocker is commercial and contractual. PitchBook restricts its API exclusively to high-paying enterprise subscribers, preventing open or developer-led integration without going through their sales pipeline.",
     "evidence_urls": [
-      "https://pitchbook.com/",
       "https://pitchbook.com/data",
-      "https://my.pitchbook.com/"
+      "https://pitchbook.com/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2791,9 +2705,8 @@
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "NotebookLM currently lacks a public REST, GraphQL, or developer API. It is accessible solely via the web consumer interface at notebook.google.com.",
     "evidence_urls": [
-      "https://notebook.google/",
-      "https://labs.google.com/search/experiment/23",
-      "https://notebook.google.com/"
+      "https://notebooklm.google/",
+      "https://notebook.google/"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2819,8 +2732,8 @@
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Otter.ai primarily focuses on its end-user web and mobile applications, browser extensions, and built-in calendar integrations rather than providing a comprehensive, self-serve public developer API for broad automation.",
     "evidence_urls": [
-      "https://otter.ai/start-for-free?msockid=08f1939886e263b30c158b8287c3626c",
-      "https://get.otter.ai/otter_ai_chat/"
+      "https://otter.ai/",
+      "https://get.otter.ai/"
     ],
     "confidence_score": 0.85,
     "verification_status": "Corrected in Pass 2 Verification",
@@ -2849,9 +2762,7 @@
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While API access exists for syncing transcripts and meeting data, public developer documentation may require approval or account verification to access specific scopes.",
     "evidence_urls": [
-      "https://fathom.video",
-      "https://forum.lowyat.net/topic/5583223/+120",
-      "https://www.pagalguy.com/articles/upsc-epfo-what-does-a-provident-fund-assistant-commissioners-job-involve-1576"
+      "https://fathom.video"
     ],
     "confidence_score": 0.8,
     "verification_status": "Pass 1 Complete",
@@ -2879,9 +2790,7 @@
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Consensus API access requires appropriate tier subscriptions and proper API key provisioning, but lacks a pre-built MCP server or massive endpoint breadth.",
     "evidence_urls": [
-      "https://consensus.app/",
-      "https://support.google.com/chrome/thread/281127865/can-t-access-movierulz-new-url-even-after-switching-internet-and-changing-browser?hl=en",
-      "https://support.google.com/adsense/answer/7402253?hl=pt-BR"
+      "https://consensus.app/"
     ],
     "confidence_score": 0.85,
     "verification_status": "Corrected in Pass 2 Verification",
@@ -2909,9 +2818,8 @@
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is straightforward for document ingestion, parsing, and data extraction tasks.",
     "evidence_urls": [
-      "https://reducto.ai",
       "https://docs.reducto.ai",
-      "https://services.gst.gov.in/services/login"
+      "https://reducto.ai"
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2937,9 +2845,8 @@
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Primary blocker is the sales-gated onboarding and limited public API surface documentation outside of custom enterprise integrations and native agent capabilities.",
     "evidence_urls": [
-      "https://devin.ai/",
       "https://docs.devin.ai/",
-      "https://devin.ai/download"
+      "https://devin.ai/"
     ],
     "confidence_score": 0.9,
     "verification_status": "Corrected in Pass 2 Verification",
@@ -2968,8 +2875,7 @@
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Higgsfield offers a web consumer app and creative suite interface, but lacks a documented public developer API or programmatic integration endpoints.",
     "evidence_urls": [
-      "https://higgsfield.ai/",
-      "https://higgsfield.ai/ai-video"
+      "https://higgsfield.ai/"
     ],
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
@@ -2998,10 +2904,9 @@
     "blocker_analysis": "No blockers; fully open source and runs locally without authentication constraints or rate limits.",
     "evidence_urls": [
       "https://github.com/mermaid-js/mermaid-cli",
-      "https://mermaid.js.org/",
-      "https://mermaid.live/"
+      "https://mermaid.js.org/"
     ],
-    "confidence_score": 5.0,
+    "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
     "mcp_url": "https://github.com/mermaid-js/mermaid-cli",
@@ -3028,7 +2933,6 @@
     "blocker_analysis": "Low blocker risk. The API is straightforward for text extraction, though dependency on unofficial YouTube transcript scraping or third-party wrappers can be subject to upstream YouTube changes.",
     "evidence_urls": [
       "https://transcriptapi.com",
-      "https://www.youtube.com/?gl=IN",
       "https://www.youtube.com/"
     ],
     "confidence_score": 0.85,
@@ -3055,8 +2959,7 @@
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Grain focuses primarily on end-user productivity and direct integrations with tools like Zapier, Slack, and major LLMs rather than providing an extensive public developer API surface.",
     "evidence_urls": [
-      "https://grain.com/",
-      "https://www.webstaurantstore.com/guide/1014/types-of-grains.html?msockid=295e4d13971e6cd5141a550996f66daf"
+      "https://grain.com/"
     ],
     "confidence_score": 0.8,
     "verification_status": "Corrected in Pass 2 Verification",

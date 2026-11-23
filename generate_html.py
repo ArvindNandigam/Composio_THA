@@ -257,7 +257,7 @@ def build_html_deliverable():
                 <div class="glass-panel p-4 rounded-xl border-t-2 border-t-teal-500">
                     <span class="font-mono font-bold text-teal-400 text-[11px] block mb-1">6. Product Ops Strategic Verdict</span>
                     <p class="text-gray-300 leading-relaxed">
-                        Composio's highest-leverage moat is managed OAuth proxying (Tier 2: 24 apps) and claiming the 70 greenfield MCP toolkits before native ecosystems build their own.
+                        Composio's highest-leverage moat is managed OAuth proxying (Tier 2: 21 apps) and claiming the 70 greenfield MCP toolkits before native ecosystems build their own.
                     </p>
                 </div>
             </div>
