@@ -27,7 +27,7 @@ Autonomous AI research agent that analyzes **100 enterprise and consumer platfor
    - Technical protocol complexity (REST vs GraphQL) is rarely the gating bottleneck.
 
 4. **Massive MCP Greenfield (70% Unclaimed):**
-   - 29 apps (29%) have an identified official or recognized community MCP server.
+   - 30 apps (30%) have an identified official or recognized community MCP server.
    - **70% represents open greenfield (70 apps)** where Composio can establish default reference toolkits.
 
 5. **Non-HTTP Subprocess Toolkits (6 Apps):**

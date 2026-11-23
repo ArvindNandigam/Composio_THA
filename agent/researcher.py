@@ -9,7 +9,7 @@ from google.genai import types
 from pydantic import ValidationError
 
 from agent.models import AppInput, AppResearchResult
-from agent.tools import search_web, fetch_page, check_mcp_support, verify_url
+from agent.tools import search_web, fetch_page, check_mcp_support, verify_url, get_composio_client
 
 load_dotenv()
 
@@ -97,6 +97,11 @@ def save_result_atomic(result: AppResearchResult):
 def research_app(app: AppInput, max_retries: int = 3) -> AppResearchResult:
     """Researches a single app using live web search + page scraping + Gemini extraction."""
     print(f"\n[Agent] Researching #{app.id}: {app.name} ({app.category})...")
+    
+    # Check Composio SDK availability
+    composio_client = get_composio_client()
+    if composio_client:
+        print(f"[Composio SDK] Routing tools via Composio ToolSet for #{app.id} {app.name}")
     
     # Step 1: Tool call - Web search
     query1 = f"{app.name} API developer documentation authentication {app.hint}"

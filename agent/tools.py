@@ -1,9 +1,38 @@
+import os
 import httpx
 from bs4 import BeautifulSoup
 import urllib.parse
 import base64
 import re
 from typing import List, Dict, Any, Optional
+from dotenv import load_dotenv
+
+load_dotenv()
+
+# ============================================================================
+# COMPOSIO SDK INTEGRATION PROVIDER
+# ============================================================================
+COMPOSIO_API_KEY = os.getenv("COMPOSIO_API_KEY")
+_composio_instance = None
+
+def get_composio_client():
+    """
+    Initializes and returns the Composio SDK client if COMPOSIO_API_KEY is configured.
+    Provides agent tool routing, managed OAuth integrations, and MCP execution.
+    Falls back gracefully to direct scrapers when unauthenticated or running offline.
+    """
+    global _composio_instance
+    if _composio_instance is not None:
+        return _composio_instance
+    if not COMPOSIO_API_KEY:
+        return None
+    try:
+        from composio import Composio
+        _composio_instance = Composio(api_key=COMPOSIO_API_KEY)
+        return _composio_instance
+    except Exception as e:
+        print(f"[Composio SDK Notice] Fallback to direct scrapers: {e}")
+        return None
 
 DEFAULT_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",

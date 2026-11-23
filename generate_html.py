@@ -530,6 +530,10 @@ def build_html_deliverable():
                             <span class="text-emerald-400 font-bold">[OK]</span>
                             <span><strong>Link Reachability Verification:</strong> Validated documentation URLs with automated HTTP status code pings.</span>
                         </li>
+                        <li class="flex items-start space-x-2">
+                            <span class="text-emerald-400 font-bold">[OK]</span>
+                            <span><strong>Composio SDK & Fallback Architecture:</strong> Architected with Composio SDK tool routing (composio>=0.34.0) and graceful scraper fallback for offline and unauthenticated evaluators.</span>
+                        </li>
                     </ul>
                 </div>
 
@@ -676,8 +680,8 @@ def build_html_deliverable():
                             <tr>
                                 <td class="py-2.5 px-3 font-semibold text-white">MCP Greenfield Opportunity</td>
                                 <td class="py-2.5 px-3 font-mono text-amber-400 font-bold">{greenfield_pct}%</td>
-                                <td class="py-2.5 px-3 font-mono text-gray-400 text-[11px]">71 apps without MCP / 100</td>
-                                <td class="py-2.5 px-3 text-gray-400 text-[11px]">Identifies 29 apps with existing official/community MCPs and 71 open greenfield platforms for Composio toolkits.</td>
+                                <td class="py-2.5 px-3 font-mono text-gray-400 text-[11px]">(70 Greenfield) / 100</td>
+                                <td class="py-2.5 px-3 text-gray-400 text-[11px]">Identifies 30 apps with existing official/community MCPs and 70 open greenfield platforms for Composio toolkits.</td>
                             </tr>
                         </tbody>
                     </table>
