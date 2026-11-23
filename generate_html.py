@@ -83,9 +83,9 @@ def generate_banner(is_detailed: bool = False) -> str:
     <!-- Top Announcement Banner: 2-Minute Executive Mode -->
     <div class="bg-gradient-to-r from-brand-900/90 via-indigo-900/90 to-purple-900/90 border-b border-brand-500/40 py-2.5 px-4 text-center text-xs font-medium text-white shadow-lg sticky top-0 z-50 flex flex-wrap items-center justify-center gap-3">
         <span class="px-2 py-0.5 rounded-full bg-brand-500/30 text-brand-200 font-mono text-[11px] font-bold border border-brand-400/40">2-Minute Executive Briefing</span>
-        <span>Fast-track executive overview: headline patterns, strategic roadmap, agent architecture, and skimmable 100-app matrix.</span>
-        <a href="detailed.html" class="px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-[11px] font-semibold border border-white/20 transition inline-flex items-center space-x-1 shrink-0">
-            <span>Open Full Deep-Dive Case Study & Evidence Archive (detailed.html) &rarr;</span>
+        <span>Review the executive summary below in ~90 seconds, or jump to the full detailed case study:</span>
+        <a href="#headline-insights" class="px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-[11px] font-semibold border border-white/20 transition inline-flex items-center space-x-1 shrink-0">
+            <span>Detailed Case Study & Evidence Archive (#headline-insights) &rarr;</span>
         </a>
     </div>"""
     else:
@@ -102,15 +102,15 @@ def generate_banner(is_detailed: bool = False) -> str:
 
 def generate_navbar(is_detailed: bool = False) -> str:
     switch_btn = """
-        <a href="detailed.html" class="px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-200 border border-indigo-500/40 text-xs font-semibold font-mono flex items-center space-x-1 transition">
-            <span>Full Deep Dive (detailed.html) &rarr;</span>
+        <a href="#headline-insights" class="px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-200 border border-indigo-500/40 text-xs font-semibold font-mono flex items-center space-x-1 transition">
+            <span>Detailed Case Study (#headline-insights) &rarr;</span>
         </a>""" if not is_detailed else """
         <a href="index.html" class="px-3 py-1.5 rounded-lg bg-brand-600/30 hover:bg-brand-600/50 text-brand-200 border border-brand-500/40 text-xs font-semibold font-mono flex items-center space-x-1 transition">
             <span>&larr; 2-Minute Summary (index.html)</span>
         </a>"""
 
-    charts_nav = '<a href="#charts" class="hover:text-white transition">Analytics</a>' if is_detailed else ''
-    mode_badge = "2-Minute Summary" if not is_detailed else "Deep-Dive Archive"
+    charts_nav = '<a href="#charts" class="hover:text-white transition">Analytics</a>'
+    mode_badge = "Executive & Detailed" if not is_detailed else "Deep-Dive Archive"
 
     return f"""
     <!-- Navbar -->
@@ -892,23 +892,23 @@ def generate_charts_section() -> str:
 
 
 def generate_matrix_section(is_detailed: bool = False) -> str:
-    section_num = "Section 6" if is_detailed else "Section 5"
+    section_num = "Section 6"
     cta_banner = """
-            <!-- Transition Card to detailed.html -->
+            <!-- Transition Card -->
             <div class="mt-8 p-6 rounded-2xl glass-panel border border-brand-500/40 bg-gradient-to-r from-gray-900 via-indigo-950/40 to-gray-900 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-400">Deep-Dive Analytics & Raw Evidence</span>
-                    <h3 class="text-base font-bold text-white mt-0.5">Want the full interactive charts and mathematical formula proofs?</h3>
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-400">Deep-Dive Technical Verification</span>
+                    <h3 class="text-base font-bold text-white mt-0.5">Explore the Complete Case Study from Top to Bottom</h3>
                     <p class="text-xs text-gray-400 mt-1">
-                        Explore all 4 interactive Chart.js visualizations, the 8-metric mathematical authenticity table, and the raw 20-row sample verification audit in the detailed case study.
+                        Revisit core patterns, integration shipping tiers, mathematical formulas, and verified documentation links.
                     </p>
                 </div>
-                <div class="shrink-0">
-                    <a href="detailed.html" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-mono text-xs font-bold shadow-lg shadow-brand-500/20 transition flex items-center space-x-2">
-                        <span>Open Detailed Deep-Dive Case Study &rarr;</span>
+                <div class="shrink-0 flex items-center space-x-2">
+                    <a href="#headline-insights" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-mono text-xs font-bold shadow-lg shadow-brand-500/20 transition flex items-center space-x-1.5">
+                        <span>Headline Patterns &uarr;</span>
                     </a>
                 </div>
-            </div>""" if not is_detailed else ""
+            </div>"""
 
     return f"""
     <!-- {section_num}: Interactive 100 Apps Matrix -->
@@ -1522,9 +1522,9 @@ def build_html_deliverable():
     greenfield_count = analysis['mcp_ecosystem']['greenfield_opportunity_count']
     greenfield_pct = analysis['mcp_ecosystem']['greenfield_opportunity_pct']
 
-    # 1. Build index.html (2-Minute Executive Summary Edition)
+    # 1. Build index.html (Complete All-in-One Deliverable: 2-Minute Briefing + Detailed Case Study at #headline-insights)
     index_html = (
-        generate_head("Composio Take-Home | 2-Minute Executive Case Study", is_detailed=False)
+        generate_head("Composio Take-Home Assignment | 100-App Integration Feasibility Case Study", is_detailed=True)
         + generate_banner(is_detailed=False)
         + generate_navbar(is_detailed=False)
         + generate_hero(viable_pct, viable_count, self_serve_pct, self_serve_count,
@@ -1537,16 +1537,17 @@ def build_html_deliverable():
         + generate_verification_section(pass1_acc, auto_verif_acc, auto_uplift,
                                       human_corrections, human_disc_rate, post_human_acc,
                                       viable_pct, self_serve_pct, greenfield_pct,
-                                      audit_records, is_detailed=False)
+                                      audit_records, is_detailed=True)
+        + generate_charts_section()
         + generate_matrix_section(is_detailed=False)
         + generate_modal()
         + generate_footer()
-        + generate_scripts(apps_json, analysis_json, audit_json, is_detailed=False)
+        + generate_scripts(apps_json, analysis_json, audit_json, is_detailed=True)
     )
 
-    # 2. Build detailed.html (Full Deep-Dive Case Study & Evidence Archive)
+    # 2. Build detailed.html (Full Deep-Dive Case Study & Evidence Archive Mirror)
     detailed_html = (
-        generate_head("Composio Take-Home | Detailed Deep-Dive Case Study & Evidence Archive", is_detailed=True)
+        generate_head("Composio Take-Home Assignment | 100-App Integration Feasibility Case Study", is_detailed=True)
         + generate_banner(is_detailed=True)
         + generate_navbar(is_detailed=True)
         + generate_hero(viable_pct, viable_count, self_serve_pct, self_serve_count,

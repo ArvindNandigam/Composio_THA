@@ -6,11 +6,10 @@ Autonomous AI research agent that analyzes **100 enterprise and consumer platfor
 
 ## Live Deliverables & Case Study
 
-- **2-Minute Executive Case Study (Fast Skim):** https://arvindnandigam.github.io/Composio_THA/
-- **Detailed Deep-Dive Case Study & Evidence Archive:** https://arvindnandigam.github.io/Composio_THA/detailed.html
-- **Deliverable Files:**
-  - `index.html` (Dedicated 2-minute executive edition with headline patterns, 4 roadmap tiers, agent architecture & proof, 3-stage verification funnel, and paginated 100-app matrix)
-  - `detailed.html` (Full deep-dive edition with interactive Chart.js visualizations, mathematical formula verification proofs, and raw 20-row sample verification audit)
+- **2-Minute Executive Summary (Fast Skim):** https://arvindnandigam.github.io/Composio_THA/
+- **Detailed Deep-Dive Case Study & Evidence Archive:** [Composio Take-Home Assignment | 100-App Integration Feasibility Case Study](https://arvindnandigam.github.io/Composio_THA/#headline-insights)
+- **Direct Deep-Dive Archive Mirror:** https://arvindnandigam.github.io/Composio_THA/detailed.html
+- **Deliverable File:** `index.html` (Complete, self-contained dashboard satisfying the "one HTML page" requirement, featuring the 2-minute executive briefing up top and the full technical evidence archive below)
 
 ---
 
@@ -208,4 +207,5 @@ Composio_THA/
 - **GitHub:** https://github.com/ArvindNandigam
 - **Take-Home Assignment Repository:** https://github.com/ArvindNandigam/Composio_THA
 - **2-Minute Executive Deliverable:** https://arvindnandigam.github.io/Composio_THA/
-- **Detailed Deep-Dive Archive:** https://arvindnandigam.github.io/Composio_THA/detailed.html
+- **Detailed Deep-Dive Case Study:** [Composio Take-Home Assignment | 100-App Integration Feasibility Case Study](https://arvindnandigam.github.io/Composio_THA/#headline-insights)
+- **Direct Deep-Dive Archive Mirror:** https://arvindnandigam.github.io/Composio_THA/detailed.html
