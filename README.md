@@ -130,19 +130,38 @@ python run_research.py
 ```
 *Note: Results are saved atomically to `data/research_results.json` after every app. If interrupted, re-running automatically resumes where it left off.*
 
-### 4. Run Verification Loop
+### 4. Evaluating Custom or Additional Products
+The pipeline accommodates new products, whether given only as a name, with partial details, or as batch catalogs:
+
+#### Option A: On Live GitHub Pages (Zero Setup)
+- Click **+ Evaluate New App** in the matrix toolbar or header.
+- Provide a name only (e.g., `PostHog`, `Resend`, `Retool`) or add optional details (Category, Docs Hint, Auth Notes).
+- Optional BYOK: paste a Gemini API key to run real-time live agent research directly inside your browser, or leave blank for instant offline heuristic classification.
+- Click **Import** to upload a batch `.json` or `.csv` catalog of arbitrary products.
+- Click **Export** to download the enriched catalog as JSON.
+
+#### Option B: Via Python CLI
+```bash
+# Research a single ad-hoc product (automatically updates dataset, charts, and index.html)
+python run_research.py --name "PostHog" --category "Developer, Infra and Data platforms" --hint "posthog.com"
+
+# Research an entire custom batch catalog
+python run_research.py --input custom_catalog.json
+```
+
+### 5. Run Verification Loop
 ```bash
 python -m agent.verifier
 ```
 *Audits apps, checks link status, cross-verifies claims, and outputs `data/verification_audit.json`.*
 
-### 5. Run Pattern Analyzer
+### 6. Run Pattern Analyzer
 ```bash
 python -m agent.analyzer
 ```
 *Computes statistical distributions, gating cross-tabulations, and roadmap tiers.*
 
-### 6. Build HTML Deliverable
+### 7. Build HTML Deliverable
 ```bash
 python generate_html.py
 ```
