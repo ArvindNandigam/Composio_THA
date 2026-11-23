@@ -4,12 +4,11 @@ Autonomous AI research agent that analyzes **100 enterprise and consumer platfor
 
 ---
 
-## Live Deliverables & Case Study
+## Live Deliverable & Case Study
 
-- **2-Minute Executive Summary (Fast Skim):** https://arvindnandigam.github.io/Composio_THA/
-- **Detailed Deep-Dive Case Study & Evidence Archive:** [Composio Take-Home Assignment | 100-App Integration Feasibility Case Study](https://arvindnandigam.github.io/Composio_THA/#headline-insights)
-- **Direct Deep-Dive Archive Mirror:** https://arvindnandigam.github.io/Composio_THA/detailed.html
-- **Deliverable File:** `index.html` (Complete, self-contained dashboard satisfying the "one HTML page" requirement, featuring the 2-minute executive briefing up top and the full technical evidence archive below)
+- **2-Minute Executive Case Study (Live Dashboard):** https://arvindnandigam.github.io/Composio_THA/
+- **Detailed Technical Analysis & Repository:** https://github.com/ArvindNandigam/Composio_THA
+- **Deliverable File:** `index.html` (Self-contained, responsive 2-minute dashboard meeting all criteria with zero narration needed)
 
 ---
 
@@ -183,12 +182,11 @@ python generate_html.py
 
 ```
 Composio_THA/
-├── index.html                  # 2-Minute Executive Case Study (Fast-track skim)
-├── detailed.html               # Detailed Deep-Dive Case Study & Evidence Archive
+├── index.html                  # 2-Minute Executive Case Study Deliverable
 ├── README.md                   # Project overview & reproduction guide
 ├── requirements.txt            # Python dependencies
 ├── run_research.py             # Main research orchestrator
-├── generate_html.py            # Dashboard compilation script (generates both editions)
+├── generate_html.py            # Dashboard compilation script
 ├── agent/
 │   ├── models.py               # Pydantic data schemas
 │   ├── tools.py                # Bing web search, doc scraper, MCP registry
@@ -215,6 +213,4 @@ Composio_THA/
 - **LinkedIn:** https://linkedin.com/in/arvind-nandigam-329635286
 - **GitHub:** https://github.com/ArvindNandigam
 - **Take-Home Assignment Repository:** https://github.com/ArvindNandigam/Composio_THA
-- **2-Minute Executive Deliverable:** https://arvindnandigam.github.io/Composio_THA/
-- **Detailed Deep-Dive Case Study:** [Composio Take-Home Assignment | 100-App Integration Feasibility Case Study](https://arvindnandigam.github.io/Composio_THA/#headline-insights)
-- **Direct Deep-Dive Archive Mirror:** https://arvindnandigam.github.io/Composio_THA/detailed.html
+- **Live 2-Minute Case Study:** https://arvindnandigam.github.io/Composio_THA/
