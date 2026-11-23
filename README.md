@@ -196,7 +196,12 @@ Composio_THA/
 
 ---
 
-## Author
+## Candidate Submission Profile
 - **Candidate:** Arvind Nandigam
-- **Role:** AI Product Ops Intern Take-Home Assignment
-- **Repository:** https://github.com/ArvindNandigam/Composio_THA
+- **Role Applied:** AI Product Ops Intern (Composio)
+- **Email:** nandigamarvind@gmail.com
+- **Phone:** +91 9940355525
+- **LinkedIn:** https://linkedin.com/in/arvind-nandigam-329635286
+- **GitHub:** https://github.com/ArvindNandigam
+- **Take-Home Assignment Repository:** https://github.com/ArvindNandigam/Composio_THA
+- **Live Deliverable Dashboard:** https://arvindnandigam.github.io/Composio_THA/
