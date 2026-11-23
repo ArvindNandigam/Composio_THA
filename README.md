@@ -130,37 +130,22 @@ python run_research.py
 ```
 *Note: Results are saved atomically to `data/research_results.json` after every app. If interrupted, re-running automatically resumes where it left off.*
 
-### 4. Evaluating Custom or Additional Products
-The research pipeline and deliverable are engineered to accommodate arbitrary new products, whether given as a bare name, with partial details, or as batch catalogs:
+### 4. Running the Agent on Custom or Additional Products
+The live GitHub Pages site serves as the clean, immutable case study deliverable presenting the 100-app findings and verification patterns. 
 
-#### 1. On Live GitHub Pages (Zero Backend / In-Browser Studio)
-A **"+ Evaluate New App"** studio is built directly into the deployed web dashboard:
-- **Product Name Only:** An evaluator can input just a name (e.g. `PostHog`, `Resend`, `Retool`, `LangSmith`, `Pinecone`, or internal tools). The engine automatically resolves the domain, infers category, and synthesizes the full 7-dimension feasibility profile.
-- **One or More Details:** The evaluator can optionally supply:
-  - **Category:** Specific category selection or Auto-Detect.
-  - **Website / Docs Hint:** (e.g. `posthog.com/docs`).
-  - **Known Notes:** Context such as *"Uses API key, requires enterprise tier for SSO"*.
-- **Real-Time Execution Modes:**
-  - **Instant Heuristic Engine (Default):** Runs offline using a built-in SaaS knowledge base and architectural pattern rules.
-  - **Live Browser LLM Agent (Optional BYOK):** The user can optionally paste a Gemini API key directly into the modal (stored in browser memory only). The browser executes a live `fetch()` call to the Gemini 2.5 Flash endpoint, generating structured research in real time.
-- **Dynamic Table and Chart Updates:**
-  - The evaluated product is immediately injected into the matrix as `#101` (or `#102`, etc.) with a distinct `Custom` badge.
-  - The table counter increments (*Showing 101 of 101 apps*).
-  - All Chart.js visualizations (Auth Distribution, Category Gating, and Buildability) recalculate and animate dynamically.
-- **Batch Multiple Products:**
-  - Clicking **"Import"** allows uploading a `.json` or `.csv` file with 5, 10, or 50 new app names. All are evaluated and appended in bulk.
-  - Clicking **"Export"** downloads the entire enriched dataset as a single JSON file.
+If an evaluator wishes to run the autonomous research agent on arbitrary new products (either by name only, with partial details, or as batch catalogs), it can be triggered directly from this repository:
 
-#### 2. Via Command Line (Python CLI)
-If someone prefers testing from the terminal:
 ```bash
-# Research a single app by name (with or without details)
-python run_research.py --name "PostHog" --category "Developer, Infra and Data platforms" --hint "posthog.com"
+# Research a single ad-hoc app by name (auto-infers domain and category)
+python run_research.py --name "PostHog"
 
-# Research a custom batch catalog
+# Research with specific details (category, docs hint)
+python run_research.py --name "Resend" --category "Communications and Messaging" --hint "resend.com/docs"
+
+# Research an entire custom batch catalog
 python run_research.py --input custom_catalog.json
 ```
-This automatically queries the agent, updates `data/research_results.json`, triggers the pattern analyzer, and rebuilds the `index.html` deliverable.
+*Note: Running `run_research.py` automatically executes the research agent, appends to `data/research_results.json`, triggers the pattern analyzer, and updates the `index.html` deliverable.*
 
 ### 5. Run Verification Loop
 ```bash
