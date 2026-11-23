@@ -94,8 +94,8 @@ def generate_banner(is_detailed: bool = False) -> str:
     <div class="bg-gradient-to-r from-indigo-950/90 via-gray-900/90 to-purple-950/90 border-b border-indigo-500/40 py-2.5 px-4 text-center text-xs font-medium text-white shadow-lg sticky top-0 z-50 flex flex-wrap items-center justify-center gap-3">
         <span class="px-2 py-0.5 rounded-full bg-indigo-500/30 text-indigo-200 font-mono text-[11px] font-bold border border-indigo-400/40">Full Deep-Dive Case Study</span>
         <span>Complete analytical visualizations, mathematical formulas, raw 20-row verification audit, and complete evidence archive.</span>
-        <a href="index.html" class="px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-[11px] font-semibold border border-white/20 transition inline-flex items-center space-x-1 shrink-0">
-            <span>&larr; Switch to 2-Minute Executive Summary (index.html)</span>
+        <a href="#executive-briefing" class="px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-[11px] font-semibold border border-white/20 transition inline-flex items-center space-x-1 shrink-0">
+            <span>&uarr; 2-Minute Executive Summary</span>
         </a>
     </div>"""
 
@@ -105,8 +105,8 @@ def generate_navbar(is_detailed: bool = False) -> str:
         <a href="#headline-insights" class="px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-200 border border-indigo-500/40 text-xs font-semibold font-mono flex items-center space-x-1 transition">
             <span>Detailed Case Study (#headline-insights) &rarr;</span>
         </a>""" if not is_detailed else """
-        <a href="index.html" class="px-3 py-1.5 rounded-lg bg-brand-600/30 hover:bg-brand-600/50 text-brand-200 border border-brand-500/40 text-xs font-semibold font-mono flex items-center space-x-1 transition">
-            <span>&larr; 2-Minute Summary (index.html)</span>
+        <a href="#executive-briefing" class="px-3 py-1.5 rounded-lg bg-brand-600/30 hover:bg-brand-600/50 text-brand-200 border border-brand-500/40 text-xs font-semibold font-mono flex items-center space-x-1 transition">
+            <span>&uarr; 2-Minute Summary</span>
         </a>"""
 
     charts_nav = '<a href="#charts" class="hover:text-white transition">Analytics</a>'
