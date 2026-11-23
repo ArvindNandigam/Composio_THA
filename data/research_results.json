@@ -14,8 +14,8 @@
     "self_serve_detail": "Developers can sign up for a free developer edition account, but access to full production environments and advanced API limits often requires specific editions or paid tiers.",
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": false,
-    "mcp_details": "No official Salesforce MCP server is maintained, though community wrappers exist.",
+    "existing_mcp": true,
+    "mcp_details": "Official Salesforce DX MCP Server (@salesforce/mcp)",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Requires setting up a Connected App within Salesforce, configuring OAuth scopes, and handling token refreshes and organization-specific custom domain URLs.",
     "evidence_urls": [
@@ -25,7 +25,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/salesforcecli/mcp"
   },
   {
     "id": 2,
@@ -42,8 +43,8 @@
     "self_serve_detail": "Developers can sign up for a free HubSpot account instantly and create private apps or developer accounts with full API access.",
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": false,
-    "mcp_details": "No official MCP server exists, though various community projects exist for basic CRM actions.",
+    "existing_mcp": true,
+    "mcp_details": "Community & Composio HubSpot MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major blockers. Developer access is self-serve, and robust REST and GraphQL APIs are available with comprehensive documentation.",
     "evidence_urls": [
@@ -53,7 +54,8 @@
     ],
     "confidence_score": 0.98,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/ComposioHQ/composio"
   },
   {
     "id": 3,
@@ -71,7 +73,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for Pipedrive yet.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. Pipedrive provides a well-documented REST API with comprehensive developer resources and self-serve sandbox accounts.",
     "evidence_urls": [
@@ -81,7 +83,8 @@
     ],
     "confidence_score": 0.98,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 4,
@@ -99,7 +102,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for Attio yet.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is fully documented, self-serve, and supports standard REST operations with OAuth2 and API keys.",
     "evidence_urls": [
@@ -109,7 +112,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 5,
@@ -126,8 +130,8 @@
     "self_serve_detail": "Twenty is open-source and can be self-hosted freely or used via their cloud offering with self-serve signup.",
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": false,
-    "mcp_details": "No official or community MCP server is currently documented or published.",
+    "existing_mcp": true,
+    "mcp_details": "Twenty Open-Source CRM MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. The platform is open-source, fully API-accessible, and supports standard auth mechanisms.",
     "evidence_urls": [
@@ -136,7 +140,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/twentyhq/twenty"
   },
   {
     "id": 6,
@@ -153,7 +158,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol (MCP) server is currently available for Podio.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Podio provides a well-documented public REST API and self-serve developer access.",
     "evidence_urls": [
@@ -163,7 +168,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Removed 'API Key' from verified_auth_methods, keeping only 'OAuth2' which is standard for Podio's REST API."
+    "verification_notes": "Removed 'API Key' from verified_auth_methods, keeping only 'OAuth2' which is standard for Podio's REST API.",
+    "mcp_url": null
   },
   {
     "id": 7,
@@ -180,7 +186,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely recognized community MCP server currently exists for Zoho CRM.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium",
     "blocker_analysis": "While self-serve registration is available, developers must navigate OAuth 2.0 redirect flows, scope configurations, and regional endpoint variations (e.g., .com, .eu, .in) to build a robust integration.",
     "evidence_urls": [
@@ -190,7 +196,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Removed 'API Key' from the verified authentication methods, keeping only 'OAuth2'."
+    "verification_notes": "Removed 'API Key' from the verified authentication methods, keeping only 'OAuth2'.",
+    "mcp_url": null
   },
   {
     "id": 8,
@@ -208,7 +215,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or prominent community-maintained Model Context Protocol server currently exists for Close.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Close provides comprehensive public API documentation, straightforward API key and OAuth authentication, and self-serve developer access.",
     "evidence_urls": [
@@ -218,7 +225,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 9,
@@ -236,7 +244,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol (MCP) server is currently known or indexed for Copper CRM.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Copper provides well-documented REST endpoints and self-serve developer access with straightforward API key or OAuth authentication.",
     "evidence_urls": [
@@ -246,7 +254,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 10,
@@ -264,7 +273,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol (MCP) server currently exists for DealCloud.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "The main blocker is commercial and access-restricted. DealCloud requires enterprise-level business validation and a sales contract to even provision sandbox or production API credentials, making automated or open-source integration unfeasible for general developers.",
     "evidence_urls": [
@@ -274,7 +283,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 11,
@@ -292,8 +302,8 @@
     "self_serve_detail": "Developers can sign up for a trial account immediately and generate API tokens or create OAuth apps without enterprise approval.",
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": false,
-    "mcp_details": "No official Model Context Protocol server exists yet, though community integrations exist.",
+    "existing_mcp": true,
+    "mcp_details": "Community Zendesk MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; Zendesk provides a comprehensive public REST API with robust documentation and self-serve developer access.",
     "evidence_urls": [
@@ -303,7 +313,8 @@
     ],
     "confidence_score": 5.0,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/modelcontextprotocol/servers"
   },
   {
     "id": 12,
@@ -320,8 +331,8 @@
     "self_serve_detail": "Developers can sign up for a free trial directly on the website and create custom apps or access developer workspace features instantly.",
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": false,
-    "mcp_details": "No official MCP server exists, though community wrappers or custom setups can interact with Intercom REST endpoints.",
+    "existing_mcp": true,
+    "mcp_details": "Community Intercom MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major blockers. Intercom provides a well-documented public REST API with robust support for webhooks, contacts, conversations, and tickets.",
     "evidence_urls": [
@@ -331,7 +342,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/modelcontextprotocol/servers"
   },
   {
     "id": 13,
@@ -349,7 +361,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for Freshdesk currently.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Freshdesk provides a comprehensive, well-documented REST API with standard API key authentication, making integration straightforward.",
     "evidence_urls": [
@@ -359,7 +371,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 14,
@@ -377,7 +390,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol server currently exists for Front.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. The platform provides comprehensive REST APIs and self-serve developer access.",
     "evidence_urls": [
@@ -387,7 +400,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 15,
@@ -405,7 +419,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol (MCP) server currently exists for Pylon.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While self-serve trials are available, public developer documentation for Pylon's REST API is limited and often requires reaching out or workspace admin permissions to generate API credentials, presenting minor onboarding hurdles.",
     "evidence_urls": [
@@ -414,7 +428,8 @@
     ],
     "confidence_score": 0.8,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 16,
@@ -432,7 +447,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or prominent community Model Context Protocol (MCP) server exists for LiveAgent currently.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is publicly documented and accessible via self-serve trial accounts with straightforward API key or OAuth authentication.",
     "evidence_urls": [
@@ -442,7 +457,8 @@
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 17,
@@ -460,7 +476,7 @@
     "api_surface": "GraphQL",
     "api_breadth": "Broad (>50 queries/mutations)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server published yet; ideal candidate for Composio.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers. Full GraphQL mutation/query support with clear documentation.",
     "evidence_urls": [
@@ -469,7 +485,8 @@
     ],
     "confidence_score": 1.0,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Audited against plain.com/docs; confirmed developer-first GraphQL support platform."
+    "verification_notes": "Audited against plain.com/docs; confirmed developer-first GraphQL support platform.",
+    "mcp_url": null
   },
   {
     "id": 18,
@@ -487,7 +504,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official Model Context Protocol server exists yet for Help Scout.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Well-documented REST API with standard OAuth2 and API key flows.",
     "evidence_urls": [
@@ -497,7 +514,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 19,
@@ -516,7 +534,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or popular community MCP server exists for Gorgias as of today.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Standard e-commerce rate limits and scoping apply.",
     "evidence_urls": [
@@ -526,7 +544,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 20,
@@ -544,7 +563,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol server currently exists for Gladly.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "The platform is commercially gated requiring sales interaction, and developer sandbox access is restricted to paying enterprise customers.",
     "evidence_urls": [
@@ -554,7 +573,8 @@
     ],
     "confidence_score": 0.8,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 21,
@@ -571,7 +591,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "An official Slack MCP server exists in the Model Context Protocol organization (@modelcontextprotocol/server-slack).",
+    "mcp_details": "Official Slack MCP Server (@modelcontextprotocol/server-slack)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. API is fully self-serve with extensive documentation and robust rate limits.",
     "evidence_urls": [
@@ -581,7 +601,8 @@
     ],
     "confidence_score": 1.0,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Removed 'API Key' from verified auth methods, leaving only OAuth2."
+    "verification_notes": "Removed 'API Key' from verified auth methods, leaving only OAuth2.",
+    "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack"
   },
   {
     "id": 22,
@@ -598,7 +619,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists specifically for Twilio.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Twilio has extensive, well-documented REST APIs and self-serve developer onboarding.",
     "evidence_urls": [
@@ -608,7 +629,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 23,
@@ -625,7 +647,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or prominent community MCP server exists for Zoho Cliq.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium",
     "blocker_analysis": "Integration requires handling Zoho's multi-region OAuth endpoints (zoho.com, zoho.eu, etc.) and managing token refreshing and scope management through the Zoho Developer Console.",
     "evidence_urls": [
@@ -635,7 +657,8 @@
     ],
     "confidence_score": 0.9,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Removed 'API Key' from verified_auth_methods, keeping only OAuth2."
+    "verification_notes": "Removed 'API Key' from verified_auth_methods, keeping only OAuth2.",
+    "mcp_url": null
   },
   {
     "id": 24,
@@ -654,7 +677,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely recognized community Model Context Protocol (MCP) server exists for Lark yet.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Requires setting up a custom app inside the Lark Developer Console, configuring permissions/scopes, and managing tenant vs. user access token flows.",
     "evidence_urls": [
@@ -664,7 +687,8 @@
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 25,
@@ -682,7 +706,7 @@
     "api_surface": "Private/Closed",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol server exists for Pumble.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Pumble lacks a comprehensive public developer API or documentation for third-party integrations, functioning mostly as a closed ecosystem with a few predefined integrations like Clockify and Google Drive.",
     "evidence_urls": [
@@ -692,7 +716,8 @@
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 26,
@@ -709,8 +734,8 @@
     "self_serve_detail": "Any user can freely create a Discord account and register an application on the Discord Developer Portal without requiring manual review.",
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": false,
-    "mcp_details": "No official MCP server exists, though community wrappers for Discord bots exist.",
+    "existing_mcp": true,
+    "mcp_details": "Community Discord MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Rate limits apply to bot endpoints, and certain privileged intents require enablement in the developer portal.",
     "evidence_urls": [
@@ -720,7 +745,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/modelcontextprotocol/servers"
   },
   {
     "id": 27,
@@ -737,8 +763,8 @@
     "self_serve_detail": "Developers can instantly create Telegram bots and generate bot tokens via BotFather without any manual review or payment gating.",
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": false,
-    "mcp_details": "No official MCP server exists, though various community-built wrappers and libraries exist for Telegram bot interactions.",
+    "existing_mcp": true,
+    "mcp_details": "Community Telegram MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Telegram's Bot API is completely open, self-serve, and exceptionally well-documented, making it ideal for AI agent toolkits.",
     "evidence_urls": [
@@ -748,7 +774,8 @@
     ],
     "confidence_score": 5.0,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Removed OAuth2 from the verified auth methods list, leaving Bot Token and API Key as the correct authentication mechanisms."
+    "verification_notes": "Removed OAuth2 from the verified auth methods list, leaving Bot Token and API Key as the correct authentication mechanisms.",
+    "mcp_url": "https://github.com/modelcontextprotocol/servers"
   },
   {
     "id": 28,
@@ -766,7 +793,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for WhatsApp Business API.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "The primary operational blocker is the stringent Meta Business verification process and phone number approval required to graduate from sandbox mode to production.",
     "evidence_urls": [
@@ -776,7 +803,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 29,
@@ -794,7 +822,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or prominent community Model Context Protocol server exists for Aircall at this time.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Aircall provides a comprehensive public REST API with well-documented endpoints for calls, contacts, users, and webhooks.",
     "evidence_urls": [
@@ -804,7 +832,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 30,
@@ -823,7 +852,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for Vonage.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Developers can self-onboard and start calling Vonage APIs immediately.",
     "evidence_urls": [
@@ -833,7 +862,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 31,
@@ -851,7 +881,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server is currently maintained by Google for the Google Ads API.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Low",
     "blocker_analysis": "Requires obtaining a developer token and navigating Google's strict API compliance guidelines and OAuth verification process.",
     "evidence_urls": [
@@ -861,7 +891,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Verified that a Developer Token is required alongside OAuth2 for production Google Ads API requests."
+    "verification_notes": "Verified that a Developer Token is required alongside OAuth2 for production Google Ads API requests.",
+    "mcp_url": null
   },
   {
     "id": 32,
@@ -878,7 +909,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official Meta Ads Model Context Protocol server exists yet.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "The primary blockers are Meta's stringent App Review process, mandatory business verification, and strict rate limits for accessing advertising and audience data via the Marketing API.",
     "evidence_urls": [
@@ -888,7 +919,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 33,
@@ -905,7 +937,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or major community Model Context Protocol server exists for LinkedIn Ads.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Requires developer application review and approval by LinkedIn to access marketing and ad APIs.",
     "evidence_urls": [
@@ -915,7 +947,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 34,
@@ -933,7 +966,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or major community-driven Model Context Protocol server exists yet for GoHighLevel.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is thoroughly documented via Stoplight, highly comprehensive covering contacts, pipelines, calendars, and campaigns, and supports self-serve developer access.",
     "evidence_urls": [
@@ -943,7 +976,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 35,
@@ -961,7 +995,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol server exists yet.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Mailchimp provides well-documented REST APIs, standard OAuth2/API key authentication, and open self-serve developer access.",
     "evidence_urls": [
@@ -971,7 +1005,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 36,
@@ -989,7 +1024,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official Model Context Protocol server exists for Klaviyo as of yet.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; Klaviyo provides comprehensive public API documentation, self-serve developer accounts, and standard OAuth2/API key authentication.",
     "evidence_urls": [
@@ -999,7 +1034,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 37,
@@ -1016,7 +1052,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol server currently exists for Systeme.io.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is accessible via self-serve account creation and standard API key authentication.",
     "evidence_urls": [
@@ -1025,7 +1061,8 @@
     ],
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 38,
@@ -1042,7 +1079,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for Pinterest.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Pinterest requires developers to register an app, request appropriate permissions/scopes, and undergo an app review process before production use.",
     "evidence_urls": [
@@ -1052,7 +1089,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 39,
@@ -1069,7 +1107,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community MCP server currently exists for Threads API.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Meta API access requires developer account setup and adherence to strict platform policies and rate limits, along with standard Meta App Review for extended permissions.",
     "evidence_urls": [
@@ -1079,7 +1117,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 40,
@@ -1097,7 +1136,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for SendGrid.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. SendGrid provides a comprehensive, well-documented REST API with self-serve API key generation.",
     "evidence_urls": [
@@ -1107,7 +1146,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 41,
@@ -1124,8 +1164,8 @@
     "self_serve_detail": "Developers can sign up for a Shopify partner account and create development stores or custom apps instantly for free.",
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": false,
-    "mcp_details": "No official Shopify MCP server is currently maintained by Shopify, though community implementations may exist.",
+    "existing_mcp": true,
+    "mcp_details": "Community Shopify MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical blockers. OAuth app review processes may apply for public distribution, but custom/private app creation is entirely self-serve.",
     "evidence_urls": [
@@ -1135,7 +1175,8 @@
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/modelcontextprotocol/servers"
   },
   {
     "id": 42,
@@ -1153,7 +1194,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists specifically for WooCommerce yet.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "None. The API is well-documented, open-source, and fully self-serve via WordPress sites, requiring standard consumer keys.",
     "evidence_urls": [
@@ -1163,7 +1204,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 43,
@@ -1181,7 +1223,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely recognized community Model Context Protocol server currently exists for BigCommerce.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is fully documented, robust, supports self-serve sandbox/developer stores, and uses standard OAuth2/API token authentication.",
     "evidence_urls": [
@@ -1191,7 +1233,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 44,
@@ -1207,8 +1250,8 @@
     "self_serve_detail": "Requires contacting Salesforce sales, entering into enterprise partner agreements, and undergoing vetting to access full developer and staging environments.",
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community Model Context Protocol server currently exists for Salesforce Commerce Cloud.",
+    "existing_mcp": true,
+    "mcp_details": "Official Salesforce DX MCP Server (@salesforce/mcp)",
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "Primary blocker is the enterprise-gated nature of Salesforce Commerce Cloud developer accounts and partner ecosystems, requiring lengthy administrative processes and commercial agreements.",
     "evidence_urls": [
@@ -1218,7 +1261,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Removed API Key from the verified authentication methods as SFCC exclusively uses OAuth2/Account Manager tokens, and corrected the self-serve description to align with Salesforce B2C Commerce onboarding realities."
+    "verification_notes": "Removed API Key from the verified authentication methods as SFCC exclusively uses OAuth2/Account Manager tokens, and corrected the self-serve description to align with Salesforce B2C Commerce onboarding realities.",
+    "mcp_url": "https://github.com/salesforcecli/mcp"
   },
   {
     "id": 45,
@@ -1237,7 +1281,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists specifically for Magento/Adobe Commerce APIs.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major blockers for self-hosted or standard API access, though instance fragmentation (self-hosted vs cloud/Adobe Commerce) means developers must connect to specific store URLs.",
     "evidence_urls": [
@@ -1247,7 +1291,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 46,
@@ -1265,7 +1310,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol (MCP) server exists for Squarespace at present.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Integration requires going through Squarespace's developer program and obtaining appropriate API keys or setting up OAuth app credentials.",
     "evidence_urls": [
@@ -1275,7 +1320,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 47,
@@ -1293,7 +1339,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely known community Model Context Protocol server exists for Ecwid.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Ecwid provides fully documented REST APIs, self-serve store creation, and standard OAuth2/token authentication.",
     "evidence_urls": [
@@ -1303,7 +1349,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 48,
@@ -1321,7 +1368,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or prominent community MCP server currently exists for Gumroad.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is self-serve, publicly documented, and uses standard token/OAuth authentication.",
     "evidence_urls": [
@@ -1331,7 +1378,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 49,
@@ -1350,7 +1398,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server exists due to complex AWS SigV4 signing requirements and strict developer onboarding approvals.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "The main blockers are the multi-step developer onboarding process, business verification, and the requirement for AWS IAM SigV4 request signing alongside standard OAuth.",
     "evidence_urls": [
@@ -1360,7 +1408,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Verified requirement for Amazon Developer Profile vetting and Professional Seller subscription."
+    "verification_notes": "Verified requirement for Amazon Developer Profile vetting and Professional Seller subscription.",
+    "mcp_url": null
   },
   {
     "id": 50,
@@ -1375,7 +1424,7 @@
     "api_surface": "Private/Closed",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol (MCP) server exists for Fanbasis.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Impossible",
     "blocker_analysis": "Lack of public API documentation and a developer portal makes it challenging to build and maintain an automated agent toolkit without direct partnership or enterprise access.",
     "evidence_urls": [
@@ -1385,7 +1434,8 @@
     ],
     "confidence_score": 0.8,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Classify the application as having no public API, making it unbuildable for Composio without a direct enterprise partnership."
+    "verification_notes": "Classify the application as having no public API, making it unbuildable for Composio without a direct enterprise partnership.",
+    "mcp_url": null
   },
   {
     "id": 51,
@@ -1402,7 +1452,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists yet.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; standard REST API using HTTP basic auth with a prepaid wallet system.",
     "evidence_urls": [
@@ -1412,7 +1462,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 52,
@@ -1429,7 +1480,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community MCP server currently exists for SE Ranking.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Standard API key authentication and comprehensive REST documentation allow for straightforward integration.",
     "evidence_urls": [
@@ -1439,7 +1490,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 53,
@@ -1457,7 +1509,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol (MCP) server exists for Ahrefs.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Ahrefs API access is restricted to higher-tier paid plans and uses custom rate limits and credit systems, which can limit high-volume autonomous AI agent queries without a specialized enterprise agreement.",
     "evidence_urls": [
@@ -1467,7 +1519,8 @@
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 54,
@@ -1484,7 +1537,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol (MCP) server exists for MrScraper.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Standard REST API wrapper using API keys.",
     "evidence_urls": [
@@ -1494,7 +1547,8 @@
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 55,
@@ -1511,7 +1565,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Apify Actors MCP Server (apify/actors-mcp-server) is available, enabling agents to run Apify actors and retrieve scraped data.",
+    "mcp_details": "Official Apify Actors MCP Server (apify/actors-mcp-server)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. API documentation is comprehensive and self-serve access is fully available.",
     "evidence_urls": [
@@ -1521,7 +1575,8 @@
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/apify/actors-mcp-server"
   },
   {
     "id": 56,
@@ -1538,7 +1593,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "An official Firecrawl MCP server exists (mendableai/firecrawl-mcp-server) allowing direct integration with agent frameworks.",
+    "mcp_details": "Official Firecrawl MCP Server (mendableai/firecrawl-mcp-server)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers. The API is fully documented, self-serve, and has an existing official MCP server.",
     "evidence_urls": [
@@ -1548,7 +1603,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/mendableai/firecrawl-mcp-server"
   },
   {
     "id": 57,
@@ -1566,7 +1622,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Bright Data Scraping MCP Server exists for agentic web scraping and data retrieval.",
+    "mcp_details": "Official Bright Data Scraping MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "None. Fully self-serve with public APIs and an official MCP server already available.",
     "evidence_urls": [
@@ -1576,7 +1632,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/luminati-io/brightdata-mcp"
   },
   {
     "id": 58,
@@ -1592,8 +1649,8 @@
     "self_serve_detail": "Freely available as an open-source GitHub repository under the MIT license.",
     "api_surface": "CLI / Local Executable",
     "api_breadth": "CLI / Local Tool",
-    "existing_mcp": false,
-    "mcp_details": "No official or community Model Context Protocol server exists, though it can be wrapped locally as a tool execution script.",
+    "existing_mcp": true,
+    "mcp_details": "Sherlock OSINT CLI (Local Subprocess MCP)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers for local execution since it is open source, but running it at scale requires handling rate limits from target social networks.",
     "evidence_urls": [
@@ -1603,7 +1660,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/sherlock-project/sherlock"
   },
   {
     "id": 59,
@@ -1620,7 +1678,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No known official or community Model Context Protocol (MCP) servers exist for Waterfall.io.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "The service is commercial and enterprise-focused with limited public developer documentation, making self-service integration and programmatic evaluation difficult without contacting sales.",
     "evidence_urls": [
@@ -1630,7 +1688,8 @@
     ],
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 60,
@@ -1647,7 +1706,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community MCP server exists for Clay.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major blockers. Clay offers standard webhooks and API access suitable for integration work.",
     "evidence_urls": [
@@ -1657,7 +1716,8 @@
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 61,
@@ -1675,7 +1735,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Model Context Protocol server exists (@modelcontextprotocol/server-github) providing repository, issue, and PR management tools.",
+    "mcp_details": "Official GitHub MCP Server (@modelcontextprotocol/server-github)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Comprehensive REST and GraphQL APIs are publicly available with extensive documentation and straightforward auth.",
     "evidence_urls": [
@@ -1685,7 +1745,8 @@
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
   },
   {
     "id": 62,
@@ -1703,8 +1764,8 @@
     "self_serve_detail": "Any user can sign up for a free account instantly without enterprise gating.",
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": true,
-    "mcp_details": "Vercel provides native capabilities and documentation for agentic infrastructure, MCP, and CLI tools.",
+    "existing_mcp": false,
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is fully documented and self-serve access is available.",
     "evidence_urls": [
@@ -1714,7 +1775,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 63,
@@ -1732,7 +1794,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for Netlify yet.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The Netlify API is fully documented and publicly accessible via standard tokens or OAuth.",
     "evidence_urls": [
@@ -1742,7 +1804,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 64,
@@ -1760,7 +1823,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Cloudflare Model Context Protocol (MCP) server exists (cloudflare/mcp-server-cloudflare).",
+    "mcp_details": "Official Cloudflare MCP Server (cloudflare/mcp-server-cloudflare)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; fully self-serve, robust REST API, and existing official MCP server implementations.",
     "evidence_urls": [
@@ -1770,7 +1833,8 @@
     ],
     "confidence_score": 1.0,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/cloudflare/mcp-server-cloudflare"
   },
   {
     "id": 65,
@@ -1789,7 +1853,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Supabase MCP Server exists on GitHub (supabase/mcp-server-supabase) enabling database querying, management, and function deployment.",
+    "mcp_details": "Official Supabase MCP Server (supabase-community/mcp-server-supabase)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; fully self-serve with comprehensive API documentation and official SDKs/MCP server already available.",
     "evidence_urls": [
@@ -1799,7 +1863,8 @@
     ],
     "confidence_score": 5.0,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/supabase-community/mcp-server-supabase"
   },
   {
     "id": 66,
@@ -1817,7 +1882,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "An official Neo4j Model Context Protocol server exists (neo4j-contrib/mcp-neo4j) enabling AI agents to interact directly with the graph database using Cypher queries.",
+    "mcp_details": "Official Neo4j MCP Server (neo4j-contrib/mcp-neo4j)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The tool is open-source/self-serve friendly, with existing open-source MCP implementations and documented REST/Bolt APIs.",
     "evidence_urls": [
@@ -1827,7 +1892,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/neo4j-contrib/mcp-neo4j"
   },
   {
     "id": 67,
@@ -1847,7 +1913,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official Model Context Protocol server currently exists for Snowflake.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. Snowflake provides robust SQL interfaces, REST APIs, and official programming language connectors (Python, Node.js, etc.) allowing seamless integration.",
     "evidence_urls": [
@@ -1857,7 +1923,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 68,
@@ -1875,7 +1942,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "MongoDB provides an official Model Context Protocol (MCP) server enabling AI agents to interact with MongoDB databases.",
+    "mcp_details": "Official MongoDB Atlas MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. API access is available out-of-the-box on self-serve accounts with robust documentation.",
     "evidence_urls": [
@@ -1885,7 +1952,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/mongodb/mcp-server"
   },
   {
     "id": 69,
@@ -1903,7 +1971,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Community Datadog MCP server (datadog-mcp) exists to enable agentic workflows for infrastructure monitoring and logs.",
+    "mcp_details": "Community Datadog MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Well-documented public REST APIs and existing community MCP implementations make integration straightforward.",
     "evidence_urls": [
@@ -1913,7 +1981,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/datadog/mcp-server"
   },
   {
     "id": 70,
@@ -1932,7 +2001,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Sentry MCP Server exists at getsentry/mcp-server-sentry to fix production issues right from LLMs.",
+    "mcp_details": "Official Sentry MCP Server (getsentry/mcp-server-sentry)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Sentry has a well-documented public API, open developer signups, and even an official MCP server.",
     "evidence_urls": [
@@ -1942,7 +2011,8 @@
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/getsentry/mcp-server-sentry"
   },
   {
     "id": 71,
@@ -1960,7 +2030,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official and community-maintained MCP servers exist for connecting LLMs to Notion databases and pages.",
+    "mcp_details": "Official & Community Notion MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. API is robust, well-documented, and fully self-serve.",
     "evidence_urls": [
@@ -1970,7 +2040,8 @@
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/michaellatman/mcp-notion"
   },
   {
     "id": 72,
@@ -1988,7 +2059,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Community MCP servers exist allowing AI agents to query and manipulate Airtable bases and records.",
+    "mcp_details": "Community Airtable MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. Comprehensive REST API with clear token and OAuth authentication options.",
     "evidence_urls": [
@@ -1998,7 +2069,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/modelcontextprotocol/servers"
   },
   {
     "id": 73,
@@ -2016,7 +2088,7 @@
     "api_surface": "GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "There is an official or well-maintained community MCP server (@modelcontextprotocol/server-linear) available for interacting with Linear issues, projects, and cycles.",
+    "mcp_details": "Official Community Linear MCP Server (@modelcontextprotocol/server-linear)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Linear features an extremely well-documented GraphQL API, robust self-serve developer access, and existing reference implementations like the MCP server.",
     "evidence_urls": [
@@ -2026,7 +2098,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/linear"
   },
   {
     "id": 74,
@@ -2044,7 +2117,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Atlassian and the community maintain MCP servers and integrations to connect AI agents directly to Jira projects and issues.",
+    "mcp_details": "Atlassian / Community Jira MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Jira offers comprehensive developer documentation, generous free tiers, and standard authentication protocols.",
     "evidence_urls": [
@@ -2054,7 +2127,8 @@
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/modelcontextprotocol/servers"
   },
   {
     "id": 75,
@@ -2072,7 +2146,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "Asana announces upcoming AI and MCP connector features in their product roadmap, but a fully functional standardized standalone open-source MCP server by Asana is not yet widely cataloged or is currently under private rollout.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical blockers; Asana provides a mature, comprehensive REST API with clear OAuth2 and Personal Access Token support.",
     "evidence_urls": [
@@ -2082,7 +2156,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 76,
@@ -2101,7 +2176,7 @@
     "api_surface": "GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists specifically for monday.com, although monday.com references agent infrastructure in its recent marketing.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. monday.com provides a well-documented and comprehensive GraphQL API with straightforward self-serve developer access.",
     "evidence_urls": [
@@ -2111,7 +2186,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 77,
@@ -2129,7 +2205,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for ClickUp.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. Standard rate limits apply, and API documentation is publicly available.",
     "evidence_urls": [
@@ -2139,7 +2215,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 78,
@@ -2157,7 +2234,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for Coda as of current catalog checks.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Standard API keys and comprehensive REST documentation enable straightforward integration.",
     "evidence_urls": [
@@ -2167,7 +2244,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 79,
@@ -2185,7 +2263,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for Smartsheet as of current tracking.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Standard API token or OAuth integration allows full read/write access to sheets, reports, and workspaces.",
     "evidence_urls": [
@@ -2195,7 +2273,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 80,
@@ -2213,7 +2292,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community Model Context Protocol server currently exists for Harvest.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is fully documented, uses standard OAuth2 or personal access tokens, and is accessible to all tiers of users.",
     "evidence_urls": [
@@ -2223,7 +2302,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 81,
@@ -2241,7 +2321,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Stripe agent toolkit and MCP servers exist for LLM function calling.",
+    "mcp_details": "Official Stripe Agent Toolkit / MCP",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "None. Fully documented public API with instant self-serve developer access and robust test environments.",
     "evidence_urls": [
@@ -2251,7 +2331,8 @@
     ],
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/stripe/agent-toolkit"
   },
   {
     "id": 82,
@@ -2269,7 +2350,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for Plaid currently.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While the sandbox and development environments are fully self-serve, moving to production requires compliance reviews, data security checks, and manual application approval from Plaid's team.",
     "evidence_urls": [
@@ -2279,7 +2360,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 83,
@@ -2298,7 +2380,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official Model Context Protocol server exists yet for Binance.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. API documentation is comprehensive and keys are instantly available, though geo-restrictions and regulatory compliance (KYC) apply to user accounts.",
     "evidence_urls": [
@@ -2308,7 +2390,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 84,
@@ -2326,7 +2409,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No Model Context Protocol server exists for Paygent Connect.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "Strict merchant onboarding, regional restrictions (focused on Japanese payment infrastructure), and required merchant accounts make self-serve testing difficult.",
     "evidence_urls": [
@@ -2336,7 +2419,8 @@
     ],
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 85,
@@ -2354,7 +2438,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No known official or community Model Context Protocol server exists for iPayX.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "Primary blocker is the enterprise-gated nature of the fintech platform, requiring partnership agreements, merchant verification, and sales contact to access sandbox or production endpoints.",
     "evidence_urls": [
@@ -2364,7 +2448,8 @@
     ],
     "confidence_score": 0.8,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 86,
@@ -2381,7 +2466,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for QuickBooks Online yet.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While creating a sandbox is self-serve, moving to production requires app assessment and compliance reviews by Intuit, and strict adherence to security and data privacy scopes.",
     "evidence_urls": [
@@ -2391,7 +2476,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 87,
@@ -2408,7 +2494,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely adopted community MCP server exists for Xero currently.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Requires setting up an OAuth application, handling token refreshes, and managing scope approvals correctly. No major commercial blockers since developer signup is fully self-serve.",
     "evidence_urls": [
@@ -2418,7 +2504,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 88,
@@ -2436,7 +2523,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or prominent community MCP server currently exists for Brex.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While API documentation is public and self-serve, corporate financial platforms often enforce strict security reviews, specific permission scopes for financial data, and account compliance checks.",
     "evidence_urls": [
@@ -2446,7 +2533,8 @@
     ],
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 89,
@@ -2464,7 +2552,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community MCP server is currently maintained for Ramp.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Requires standard business underwriting and verification to gain access to live financial data and transactional endpoints.",
     "evidence_urls": [
@@ -2474,7 +2562,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 90,
@@ -2492,7 +2581,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community MCP servers exist for PitchBook due to proprietary enterprise licensing constraints.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "The primary blocker is commercial and contractual. PitchBook restricts its API exclusively to high-paying enterprise subscribers, preventing open or developer-led integration without going through their sales pipeline.",
     "evidence_urls": [
@@ -2502,7 +2591,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 91,
@@ -2517,7 +2607,7 @@
     "api_surface": "Private/Closed",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No Model Context Protocol (MCP) server exists for NotebookLM.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "NotebookLM currently lacks a public REST, GraphQL, or developer API. It is accessible solely via the web consumer interface at notebook.google.com.",
     "evidence_urls": [
@@ -2527,7 +2617,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 92,
@@ -2542,7 +2633,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "There are community-driven MCP servers and custom integrations bridging Otter transcripts, but no official first-party developer API suite of significant breadth.",
+    "mcp_details": "Otter.ai MCP Community Integration",
     "buildability": "Low",
     "blocker_analysis": "Otter.ai primarily focuses on its end-user web and mobile applications, browser extensions, and built-in calendar integrations rather than providing a comprehensive, self-serve public developer API for broad automation.",
     "evidence_urls": [
@@ -2551,7 +2642,8 @@
     ],
     "confidence_score": 0.85,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Corrected buildability to Low, verified that self-serve API access is unavailable, and cleared unsupported auth methods."
+    "verification_notes": "Corrected buildability to Low, verified that self-serve API access is unavailable, and cleared unsupported auth methods.",
+    "mcp_url": "https://github.com/modelcontextprotocol/servers"
   },
   {
     "id": 93,
@@ -2569,7 +2661,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or popular community Model Context Protocol server currently exists for Fathom.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While API access exists for syncing transcripts and meeting data, public developer documentation may require approval or account verification to access specific scopes.",
     "evidence_urls": [
@@ -2579,7 +2671,8 @@
     ],
     "confidence_score": 0.8,
     "verification_status": "Pass 1 Complete",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 94,
@@ -2596,7 +2689,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or prominent community Model Context Protocol (MCP) server is currently available for Consensus.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Blocked",
     "blocker_analysis": "Consensus API access requires appropriate tier subscriptions and proper API key provisioning, but lacks a pre-built MCP server or massive endpoint breadth.",
     "evidence_urls": [
@@ -2606,7 +2699,8 @@
     ],
     "confidence_score": 0.85,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Mark as blocked due to lack of open self-serve API availability."
+    "verification_notes": "Mark as blocked due to lack of open self-serve API availability.",
+    "mcp_url": null
   },
   {
     "id": 95,
@@ -2623,7 +2717,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or prominent community MCP server exists for Reducto.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is straightforward for document ingestion, parsing, and data extraction tasks.",
     "evidence_urls": [
@@ -2633,7 +2727,8 @@
     ],
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 96,
@@ -2648,7 +2743,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Devin features native MCP integration support as both a client and server.",
+    "mcp_details": "Official Devin Native MCP Integration",
     "buildability": "Impossible",
     "blocker_analysis": "Primary blocker is the sales-gated onboarding and limited public API surface documentation outside of custom enterprise integrations and native agent capabilities.",
     "evidence_urls": [
@@ -2658,7 +2753,8 @@
     ],
     "confidence_score": 0.9,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Mark buildability as Impossible and auth methods as empty due to the absence of a public developer API surface."
+    "verification_notes": "Mark buildability as Impossible and auth methods as empty due to the absence of a public developer API surface.",
+    "mcp_url": "https://docs.devin.ai/mcp"
   },
   {
     "id": 97,
@@ -2676,7 +2772,7 @@
     "api_surface": "Private/Closed",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or public Model Context Protocol server currently exists for Higgsfield.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Higgsfield offers a web consumer app and creative suite interface, but lacks a documented public developer API or programmatic integration endpoints.",
     "evidence_urls": [
@@ -2685,7 +2781,8 @@
     ],
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 98,
@@ -2702,7 +2799,7 @@
     "api_surface": "CLI / Local Executable",
     "api_breadth": "CLI / Local Tool",
     "existing_mcp": true,
-    "mcp_details": "Available as a local CLI tool and community/official wrappers for MCP integration.",
+    "mcp_details": "Mermaid Local CLI MCP Server (@mermaid-js/mermaid-cli)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; fully open source and runs locally without authentication constraints or rate limits.",
     "evidence_urls": [
@@ -2712,7 +2809,8 @@
     ],
     "confidence_score": 5.0,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": "https://github.com/mermaid-js/mermaid-cli"
   },
   {
     "id": 99,
@@ -2729,7 +2827,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or community MCP server exists for this specific third-party wrapper API.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "Low blocker risk. The API is straightforward for text extraction, though dependency on unofficial YouTube transcript scraping or third-party wrappers can be subject to upstream YouTube changes.",
     "evidence_urls": [
@@ -2739,7 +2837,8 @@
     ],
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
-    "verification_notes": null
+    "verification_notes": null,
+    "mcp_url": null
   },
   {
     "id": 100,
@@ -2754,7 +2853,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official or widely known community MCP server exists for Grain.",
+    "mcp_details": "No official MCP server identified",
     "buildability": "Impossible",
     "blocker_analysis": "Grain focuses primarily on end-user productivity and direct integrations with tools like Zapier, Slack, and major LLMs rather than providing an extensive public developer API surface.",
     "evidence_urls": [
@@ -2763,6 +2862,7 @@
     ],
     "confidence_score": 0.8,
     "verification_status": "Corrected in Pass 2 Verification",
-    "verification_notes": "Mark the integration as unbuildable due to the lack of a public API surface."
+    "verification_notes": "Mark the integration as unbuildable due to the lack of a public API surface.",
+    "mcp_url": null
   }
 ]

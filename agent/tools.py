@@ -11,33 +11,166 @@ DEFAULT_HEADERS = {
     "Accept-Language": "en-US,en;q=0.9"
 }
 
-# Domains to filter out from evidence URLs
+# Domains to filter out from evidence URLs (blacklist unofficial and forum sites)
 IGNORE_DOMAINS = [
-    "wikipedia.org", "wiktionary.org", "facebook.com/policies", "youtube.com/watch",
-    "reddit.com", "quora.com", "tiktok.com", "instagram.com", "pinterest.com"
+    "wikipedia.org", "wiktionary.org", "facebook.com", "youtube.com/watch",
+    "reddit.com", "quora.com", "tiktok.com", "instagram.com", "pinterest.com",
+    "stackoverflow.com", "stackexchange.com", "medium.com", "dev.to",
+    "twitter.com", "x.com"
 ]
 
-# Curated reference map of established MCP servers (Official & Community)
+# Curated reference map of established MCP servers (Official & Authoritative Community)
 KNOWN_MCP_REGISTRY = {
-    "github": {"exists": True, "details": "Official GitHub MCP Server (@modelcontextprotocol/server-github)"},
-    "slack": {"exists": True, "details": "Official Slack MCP Server (@modelcontextprotocol/server-slack)"},
-    "notion": {"exists": True, "details": "Community & Composio Notion MCP Server"},
-    "sentry": {"exists": True, "details": "Official Sentry MCP Server (getsentry/mcp-server-sentry)"},
-    "supabase": {"exists": True, "details": "Official Supabase MCP Server (supabase/mcp-server-supabase)"},
-    "neo4j": {"exists": True, "details": "Official Neo4j MCP Server (neo4j-contrib/mcp-neo4j)"},
-    "firecrawl": {"exists": True, "details": "Official Firecrawl MCP Server (mendableai/firecrawl-mcp-server)"},
-    "cloudflare": {"exists": True, "details": "Official Cloudflare MCP Server (cloudflare/mcp-server-cloudflare)"},
-    "datadog": {"exists": True, "details": "Community Datadog MCP Server (datadog-mcp)"},
-    "devin": {"exists": True, "details": "Devin native MCP client / server integrations"},
-    "linear": {"exists": True, "details": "Community Linear MCP Server (@modelcontextprotocol/server-linear)"},
-    "airtable": {"exists": True, "details": "Community Airtable MCP Server"},
-    "jira": {"exists": True, "details": "Atlassian / Community Jira MCP Server"},
-    "stripe": {"exists": True, "details": "Official Stripe Agent Toolkit / Community MCP"},
-    "otter ai": {"exists": True, "details": "Otter MCP community integrations"},
-    "mermaid cli": {"exists": True, "details": "Mermaid local CLI / MCP wrapper (@mermaid-js/mermaid-cli)"},
-    "apify": {"exists": True, "details": "Official Apify Actors MCP Server (apify/actors-mcp-server)"},
-    "bright data": {"exists": True, "details": "Official Bright Data Scraping MCP Server"},
-    "mongodb atlas": {"exists": True, "details": "Official MongoDB MCP Server"}
+    "salesforce": {
+        "exists": True,
+        "details": "Official Salesforce DX MCP Server (@salesforce/mcp)",
+        "url": "https://github.com/salesforcecli/mcp"
+    },
+    "github": {
+        "exists": True,
+        "details": "Official GitHub MCP Server (@modelcontextprotocol/server-github)",
+        "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
+    },
+    "slack": {
+        "exists": True,
+        "details": "Official Slack MCP Server (@modelcontextprotocol/server-slack)",
+        "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack"
+    },
+    "notion": {
+        "exists": True,
+        "details": "Official & Community Notion MCP Server",
+        "url": "https://github.com/michaellatman/mcp-notion"
+    },
+    "sentry": {
+        "exists": True,
+        "details": "Official Sentry MCP Server (getsentry/mcp-server-sentry)",
+        "url": "https://github.com/getsentry/mcp-server-sentry"
+    },
+    "supabase": {
+        "exists": True,
+        "details": "Official Supabase MCP Server (supabase-community/mcp-server-supabase)",
+        "url": "https://github.com/supabase-community/mcp-server-supabase"
+    },
+    "neo4j": {
+        "exists": True,
+        "details": "Official Neo4j MCP Server (neo4j-contrib/mcp-neo4j)",
+        "url": "https://github.com/neo4j-contrib/mcp-neo4j"
+    },
+    "firecrawl": {
+        "exists": True,
+        "details": "Official Firecrawl MCP Server (mendableai/firecrawl-mcp-server)",
+        "url": "https://github.com/mendableai/firecrawl-mcp-server"
+    },
+    "cloudflare": {
+        "exists": True,
+        "details": "Official Cloudflare MCP Server (cloudflare/mcp-server-cloudflare)",
+        "url": "https://github.com/cloudflare/mcp-server-cloudflare"
+    },
+    "datadog": {
+        "exists": True,
+        "details": "Community Datadog MCP Server",
+        "url": "https://github.com/datadog/mcp-server"
+    },
+    "devin": {
+        "exists": True,
+        "details": "Official Devin Native MCP Integration",
+        "url": "https://docs.devin.ai/mcp"
+    },
+    "linear": {
+        "exists": True,
+        "details": "Official Community Linear MCP Server (@modelcontextprotocol/server-linear)",
+        "url": "https://github.com/modelcontextprotocol/servers/tree/main/src/linear"
+    },
+    "airtable": {
+        "exists": True,
+        "details": "Community Airtable MCP Server",
+        "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    "jira": {
+        "exists": True,
+        "details": "Atlassian / Community Jira MCP Server",
+        "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    "stripe": {
+        "exists": True,
+        "details": "Official Stripe Agent Toolkit / MCP",
+        "url": "https://github.com/stripe/agent-toolkit"
+    },
+    "otter ai": {
+        "exists": True,
+        "details": "Otter.ai MCP Community Integration",
+        "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    "mermaid cli": {
+        "exists": True,
+        "details": "Mermaid Local CLI MCP Server (@mermaid-js/mermaid-cli)",
+        "url": "https://github.com/mermaid-js/mermaid-cli"
+    },
+    "apify": {
+        "exists": True,
+        "details": "Official Apify Actors MCP Server (apify/actors-mcp-server)",
+        "url": "https://github.com/apify/actors-mcp-server"
+    },
+    "bright data": {
+        "exists": True,
+        "details": "Official Bright Data Scraping MCP Server",
+        "url": "https://github.com/luminati-io/brightdata-mcp"
+    },
+    "mongodb atlas": {
+        "exists": True,
+        "details": "Official MongoDB Atlas MCP Server",
+        "url": "https://github.com/mongodb/mcp-server"
+    },
+    "sherlock": {
+        "exists": True,
+        "details": "Sherlock OSINT CLI (Local Subprocess MCP)",
+        "url": "https://github.com/sherlock-project/sherlock"
+    },
+    "hubspot": {
+        "exists": True,
+        "details": "Community & Composio HubSpot MCP Server",
+        "url": "https://github.com/ComposioHQ/composio"
+    },
+    "zendesk": {
+        "exists": True,
+        "details": "Community Zendesk MCP Server",
+        "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    "intercom": {
+        "exists": True,
+        "details": "Community Intercom MCP Server",
+        "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    "shopify": {
+        "exists": True,
+        "details": "Community Shopify MCP Server",
+        "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    "discord": {
+        "exists": True,
+        "details": "Community Discord MCP Server",
+        "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    "telegram": {
+        "exists": True,
+        "details": "Community Telegram MCP Server",
+        "url": "https://github.com/modelcontextprotocol/servers"
+    },
+    "twenty": {
+        "exists": True,
+        "details": "Twenty Open-Source CRM MCP Server",
+        "url": "https://github.com/twentyhq/twenty"
+    },
+    "posthog": {
+        "exists": True,
+        "details": "Community PostHog MCP Server",
+        "url": "https://github.com/posthog/mcp-server"
+    },
+    "resend": {
+        "exists": True,
+        "details": "Community Resend MCP Server",
+        "url": "https://github.com/resend/mcp-server"
+    }
 }
 
 def decode_bing_url(u_param: str) -> str:
@@ -139,4 +272,4 @@ def check_mcp_support(app_name: str) -> Dict[str, Any]:
     for k, v in KNOWN_MCP_REGISTRY.items():
         if k in key or key in k:
             return v
-    return {"exists": False, "details": "None known"}
+    return {"exists": False, "details": "None known", "url": None}

@@ -21,6 +21,7 @@ class AppResearchResult(BaseModel):
     api_breadth: str = Field(description="Scope of API: 'Broad (>50 endpoints)', 'Medium (10-50 endpoints)', 'Narrow (<10 endpoints)', 'CLI / Local Tool'")
     existing_mcp: bool = Field(description="Whether an official or recognized community MCP server exists")
     mcp_details: str = Field(description="Name/link or details of existing MCP server or 'None known'")
+    mcp_url: Optional[str] = Field(default=None, description="Direct URL to official MCP repository or documentation")
     buildability: str = Field(description="'Easy (Ready today)', 'Medium (App approval / OAuth required)', 'Hard (Enterprise / Sales gated)', 'Blocked (No public API)'")
     blocker_analysis: str = Field(description="Primary blocker or technical hurdle for building a Composio toolkit")
     evidence_urls: List[str] = Field(description="List of verified docs URLs or developer portal links")

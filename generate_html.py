@@ -850,8 +850,10 @@ def build_html_deliverable():
                 ).join('');
 
                 const mcpBadge = app.existing_mcp 
-                    ? '<span class="text-emerald-400 font-bold" title="' + (app.mcp_details || '') + '">Yes</span>'
-                    : '<span class="text-gray-500">None</span>';
+                    ? (app.mcp_url 
+                        ? `<a href="${{app.mcp_url}}" target="_blank" class="px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-700/60 hover:bg-emerald-900 hover:text-white transition inline-flex items-center space-x-1" title="${{app.mcp_details}}"><span>MCP</span><svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a>`
+                        : `<span class="px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-700/60" title="${{app.mcp_details}}">Yes</span>`)
+                    : '<span class="text-gray-500 font-mono text-[10px]">None</span>';
 
                 const primaryDocUrl = (app.evidence_urls && app.evidence_urls[0]) || ('https://' + app.hint);
 
@@ -917,7 +919,15 @@ def build_html_deliverable():
             document.getElementById('modalGating').innerText = app.self_serve || '';
             document.getElementById('modalGatingDetail').innerText = app.self_serve_detail || '';
             document.getElementById('modalApi').innerText = `${{app.api_surface}} - ${{app.api_breadth}}`;
-            document.getElementById('modalMcp').innerText = app.existing_mcp ? `Yes: ${{app.mcp_details}}` : 'No known official MCP server';
+            if (app.existing_mcp) {{
+                let mcpContent = `<span class="text-emerald-400 font-semibold font-mono text-xs">Yes:</span> <span class="text-gray-200">${{app.mcp_details}}</span>`;
+                if (app.mcp_url) {{
+                    mcpContent += `<div class="mt-1.5"><a href="${{app.mcp_url}}" target="_blank" class="px-2 py-0.5 rounded bg-emerald-950/80 text-emerald-300 hover:text-white border border-emerald-700/60 font-mono text-[11px] inline-flex items-center space-x-1.5 transition"><span>Official Repo / Docs</span><svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg></a></div>`;
+                }}
+                document.getElementById('modalMcp').innerHTML = mcpContent;
+            }} else {{
+                document.getElementById('modalMcp').innerHTML = '<span class="text-gray-400 font-mono text-xs">None (Greenfield Opportunity)</span>';
+            }}
             
             const badge = document.getElementById('modalVerdictBadge');
             badge.innerText = app.buildability;

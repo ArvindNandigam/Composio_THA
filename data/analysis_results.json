@@ -178,9 +178,9 @@
     "Subprocess / Local Environment Dependency": 2
   },
   "mcp_ecosystem": {
-    "existing_mcp_count": 20,
-    "existing_mcp_pct": 20.0,
-    "greenfield_opportunity_count": 80
+    "existing_mcp_count": 29,
+    "existing_mcp_pct": 29.0,
+    "greenfield_opportunity_count": 71
   },
   "product_ops_action_tiers": {
     "tier1_immediate_wins": {
