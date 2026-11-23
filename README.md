@@ -15,7 +15,16 @@ Autonomous AI research agent that analyzes **100 enterprise and consumer platfor
 
 ## Executive Summary & Core Patterns
 
-1. **Auth Duopoly (88% of SaaS):**
+### Key Terminology & Definitions
+
+- **Composio Buildable (86%):** An application is defined as "Composio Buildable" if a developer or the Composio engineering team can build, authenticate, and ship a functional integration toolkit today without signing custom enterprise sales contracts, undergoing manual vendor underwriting, or hitting closed wall gardens. It combines **65 Easy** (instant self-serve API keys, PATs, or open OAuth) + **21 Medium** (standard developer portal app registration and scoped OAuth review, which is Composio's sweet spot). It excludes 7 Hard (sales gated) and 7 Blocked (no public API).
+- **Frictionless Access (76%):** Platforms with zero procurement lag: **70 Self-serve** web signups + **6 Open-Source Local** CLIs/containers.
+- **MCP Greenfield (70%):** Platforms with public APIs but zero existing official or recognized community Model Context Protocol (MCP) servers (70 apps), representing first-mover toolkit opportunity for Composio.
+- **Auth Duopoly (88%):** Concentration around **OAuth2 (73%)** for multi-tenant collaboration and **API Keys / PATs (61%)** for developer tooling.
+
+---
+
+### Core Patterns
    - **OAuth2 (73%)** dominates multi-tenant applications (CRM, Support, Messaging).
    - **API Keys (61%)** and **Personal Access Tokens (25%)** govern Developer Platforms and SEO/Scraping tools.
    - Basic Auth is virtually deprecated (8%), preserved only in legacy endpoints (Twilio, Gorgias).

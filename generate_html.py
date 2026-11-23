@@ -219,9 +219,13 @@ def generate_hero(viable_pct: float, viable_count: int, self_serve_pct: float, s
                     <p class="text-xs text-indigo-400 mt-1 font-mono">10 Diverse Categories</p>
                 </div>
                 <div class="glass-panel p-5 rounded-2xl border-l-4 border-l-emerald-500">
-                    <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Composio Buildable</p>
+                    <div class="flex items-center justify-between">
+                        <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Composio Buildable</p>
+                        <span class="text-[10px] font-mono px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30" title="Definition: Buildable today without enterprise sales contracts">Formula</span>
+                    </div>
                     <p class="text-3xl font-extrabold text-emerald-400 mt-1">{viable_pct}%</p>
-                    <p class="text-xs text-gray-400 mt-1">{viable_count}/100 (65 Easy + 21 Medium)</p>
+                    <p class="text-xs text-gray-300 mt-1 font-semibold">{viable_count}/100 (65 Easy + 21 Medium)</p>
+                    <p class="text-[11px] text-gray-400 mt-1 leading-tight">Buildable today via self-serve API keys or standard OAuth registration, without sales contracts or NDA walls.</p>
                 </div>
                 <div class="glass-panel p-5 rounded-2xl border-l-4 border-l-blue-500">
                     <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Self-Serve / Local</p>
@@ -272,7 +276,7 @@ def generate_executive_briefing(pass1_acc: float, auto_verif_acc: float, auto_up
                     <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
                         <div class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider mb-1">2. Product Ops Strategic Verdict</div>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            <strong>86% Composio Buildable Today:</strong> 65 Easy + 21 Medium apps viable without enterprise sales contracts.<br>
+                            <strong>What "Composio Buildable" Means:</strong> Platforms buildable today using self-serve credentials or standard OAuth registration (86 apps = 65 Easy + 21 Medium), with zero enterprise sales contracts, NDAs, or partner gatekeeping.<br>
                             <strong>Tier 1 (52 Apps):</strong> Immediate self-serve toolkits.<br>
                             <strong>Tier 2 (24 Apps):</strong> Managed OAuth pipeline (Composio's core sweet spot).<br>
                             <strong>Tier 4 (6 Apps):</strong> Local Subprocess MCPs (Sherlock, Mermaid CLI).
@@ -337,9 +341,46 @@ def generate_headline_insights() -> str:
     <!-- Section 1: Headline Insights -->
     <section id="headline-insights" class="py-12 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center space-x-3 mb-8">
+            <div class="flex items-center space-x-3 mb-6">
                 <span class="w-2.5 h-6 bg-brand-500 rounded-full"></span>
                 <h2 class="text-2xl font-bold text-white tracking-tight">Executive Summary & Core Patterns</h2>
+            </div>
+
+            <!-- Terminology & Methodology Reference Box -->
+            <div class="glass-panel p-6 rounded-2xl mb-8 border border-emerald-500/30 bg-gradient-to-r from-emerald-950/20 via-gray-900/90 to-indigo-950/20 shadow-xl">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                    <div class="flex items-center space-x-2.5">
+                        <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span>
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-white font-mono">Core Metric Definitions & Evaluation Criteria</h3>
+                    </div>
+                    <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-900/60 text-emerald-300 font-mono border border-emerald-700/50">Methodology Reference</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
+                    <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
+                        <span class="font-bold text-emerald-400 font-mono block mb-1">Composio Buildable (86%)</span>
+                        <p class="text-gray-300 leading-relaxed text-[11px]">
+                            <strong>Definition:</strong> Platforms buildable today without custom enterprise contracts, sales calls, or closed partner walls. Combines <strong>65 Easy</strong> (instant self-serve keys/PATs) + <strong>21 Medium</strong> (standard OAuth app registration). Excludes 7 Hard (sales gated) and 7 Blocked (no API).
+                        </p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
+                        <span class="font-bold text-blue-400 font-mono block mb-1">Frictionless Access (76%)</span>
+                        <p class="text-gray-300 leading-relaxed text-[11px]">
+                            <strong>Definition:</strong> Platforms offering immediate developer testing without procurement delays: <strong>70 Self-Serve</strong> web signups + <strong>6 Open-Source Local</strong> CLIs/binaries. 24% are gated behind manual sales review.
+                        </p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
+                        <span class="font-bold text-amber-400 font-mono block mb-1">MCP Greenfield (70%)</span>
+                        <p class="text-gray-300 leading-relaxed text-[11px]">
+                            <strong>Definition:</strong> Platforms with active APIs but <strong>zero existing official or recognized community MCP servers</strong> (70 apps), representing first-mover opportunity for Composio to establish standard reference toolkits.
+                        </p>
+                    </div>
+                    <div class="p-3.5 rounded-xl bg-gray-900/80 border border-gray-800">
+                        <span class="font-bold text-purple-400 font-mono block mb-1">Auth Duopoly (88%)</span>
+                        <p class="text-gray-300 leading-relaxed text-[11px]">
+                            <strong>Definition:</strong> The concentration of SaaS authentication around two standards: <strong>OAuth2 (73%)</strong> for multi-tenant collaboration and <strong>API Keys (61%)</strong> for developer tooling. Basic auth is legacy only (8%).
+                        </p>
+                    </div>
+                </div>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -717,10 +758,10 @@ def generate_verification_section(pass1_acc: float, auto_verif_acc: float, auto_
                                 <td class="py-2.5 px-3 text-gray-400 text-[11px]">Reflects the actual quality of the final deliverable dataset after all 23 human corrections were applied.</td>
                             </tr>
                             <tr>
-                                <td class="py-2.5 px-3 font-semibold text-white">Composio Viable (Easy + Med)</td>
+                                <td class="py-2.5 px-3 font-semibold text-white">Composio Buildable (Easy + Medium)</td>
                                 <td class="py-2.5 px-3 font-mono text-emerald-400 font-bold">{viable_pct}%</td>
                                 <td class="py-2.5 px-3 font-mono text-gray-400 text-[11px]">(65 Easy + 21 Medium) / 100</td>
-                                <td class="py-2.5 px-3 text-gray-400 text-[11px]">Measures proportion of apps buildable without custom enterprise sales contracts or closed partner onboarding.</td>
+                                <td class="py-2.5 px-3 text-gray-400 text-[11px]">Measures proportion of platforms where Composio can ship toolkits today using self-serve credentials (65 Easy) or standard OAuth app registration (21 Medium), without requiring enterprise sales contracts, NDAs, or partner gatekeeping. Excludes 7 Hard (enterprise sales gated) and 7 Blocked (no public API).</td>
                             </tr>
                             <tr>
                                 <td class="py-2.5 px-3 font-semibold text-white">Self-Serve / Local Access</td>
