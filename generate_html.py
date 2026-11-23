@@ -118,13 +118,14 @@ def build_html_deliverable():
                     <span class="text-xs px-2 py-0.5 rounded-full bg-brand-900/60 text-brand-300 font-mono ml-2 border border-brand-700/50">Take-Home Assignment</span>
                 </div>
             </div>
-            <nav class="hidden md:flex items-center space-x-6 text-sm font-medium text-gray-300">
+            <nav class="hidden md:flex items-center space-x-5 text-xs lg:text-sm font-medium text-gray-300">
+                <a href="#executive-briefing" class="hover:text-white transition">Executive Summary</a>
                 <a href="#headline-insights" class="hover:text-white transition">Headline Patterns</a>
-                <a href="#charts" class="hover:text-white transition">Analytics & Distribution</a>
                 <a href="#action-tiers" class="hover:text-white transition">Ship Roadmap</a>
-                <a href="#data-matrix" class="hover:text-white transition">100 Apps Matrix</a>
                 <a href="#agent-architecture" class="hover:text-white transition">Agent Architecture</a>
                 <a href="#verification-audit" class="hover:text-white transition">Verification Audit</a>
+                <a href="#charts" class="hover:text-white transition">Analytics</a>
+                <a href="#data-matrix" class="hover:text-white transition">100 Apps Matrix</a>
             </nav>
             <div class="flex items-center space-x-3">
                 <a href="https://github.com/ArvindNandigam/Composio_THA" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-xs font-semibold text-white shadow-lg shadow-brand-500/20 transition flex items-center space-x-2">
@@ -222,6 +223,89 @@ def build_html_deliverable():
                     <p class="text-xs text-purple-300 mt-1 font-mono">+{auto_uplift}% Auto | {human_corrections} Human Fixes</p>
                 </div>
             </div>
+
+            <!-- 2-Minute Reviewer Executive Briefing -->
+            <div id="executive-briefing" class="mt-8 p-6 rounded-2xl glass-panel border border-brand-500/50 bg-gradient-to-br from-brand-950/30 via-gray-900/90 to-indigo-950/30 shadow-2xl">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-gray-800">
+                    <div class="flex items-center space-x-2.5">
+                        <span class="w-3 h-3 rounded-full bg-brand-400 animate-pulse"></span>
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-white font-mono">2-Minute Reviewer Executive Briefing</h3>
+                        <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-brand-500/20 text-brand-300 border border-brand-500/40">Complete Case Study Summary - No Narration Required</span>
+                    </div>
+                    <div class="flex items-center space-x-2 text-xs font-mono text-gray-400">
+                        <span>Estimated Reading Time: ~90 Seconds</span>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-5">
+                    <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
+                        <div class="text-xs font-mono font-bold text-brand-400 uppercase tracking-wider mb-1">1. Headline Patterns (Up Top)</div>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            <strong>Auth Duopoly:</strong> OAuth2 (73%) and API Keys (61%) govern 88% of SaaS. Basic Auth is deprecated (8%).<br>
+                            <strong>Gating:</strong> 76% is frictionless (70% self-serve + 6% open-source local). Only 24% is enterprise or partially gated.<br>
+                            <strong>Primary Blocker:</strong> Administrative review / sales contracts (35%), not technical REST/GraphQL limits.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
+                        <div class="text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider mb-1">2. Product Ops Strategic Verdict</div>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            <strong>86% Composio Buildable Today:</strong> 65 Easy + 21 Medium apps viable without enterprise sales contracts.<br>
+                            <strong>Tier 1 (52 Apps):</strong> Immediate self-serve toolkits.<br>
+                            <strong>Tier 2 (24 Apps):</strong> Managed OAuth pipeline (Composio's core sweet spot).<br>
+                            <strong>Tier 4 (6 Apps):</strong> Local Subprocess MCPs (Sherlock, Mermaid CLI).
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
+                        <div class="text-xs font-mono font-bold text-amber-400 uppercase tracking-wider mb-1">3. MCP Ecosystem (70% Greenfield)</div>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            <strong>30 Verified MCPs (30%):</strong> Official/community servers exist for Salesforce, HubSpot, Stripe, GitHub, Discord, Snowflake, etc.<br>
+                            <strong>70 Greenfield Apps (70%):</strong> Massive first-mover territory for Composio to establish default reference MCP toolkits.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
+                        <div class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-wider mb-1">4. The Agent Built & Proof</div>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            <strong>Autonomous Pipeline:</strong> Multi-search tool calling + live doc scraper + Gemini 3.5 structured extraction + Composio SDK router (composio>=0.34.0) with offline fallback.<br>
+                            <strong>Atomic Checkpointing:</strong> Disk writes after every app. Resilient against 429 rate limits.<br>
+                            <strong>Proof:</strong> Runnable CLI (<code class="text-brand-300">python run_research.py</code>).
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
+                        <div class="text-xs font-mono font-bold text-purple-400 uppercase tracking-wider mb-1">5. The Verification Funnel</div>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            <strong>Pass 1 Agent Baseline:</strong> {pass1_acc}% (77/100 accurate).<br>
+                            <strong>Pass 2 Automated Verification:</strong> {auto_verif_acc}% (+{auto_uplift}% automated gain via link/API pings).<br>
+                            <strong>Pass 3 Human Audit Curation:</strong> {human_corrections} apps corrected (23.0% discrepancy rate) across commercial/semantic edge cases.<br>
+                            <strong>Published Ground Truth:</strong> 100.0%.
+                        </p>
+                    </div>
+
+                    <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
+                        <div class="text-xs font-mono font-bold text-teal-400 uppercase tracking-wider mb-1">6. Where Human Review Was Essential</div>
+                        <p class="text-xs text-gray-300 leading-relaxed">
+                            <strong>Plain (#17):</strong> Caught search engine collision with word puzzle game; redirected agent to GraphQL docs.<br>
+                            <strong>Amazon SP-API (#49):</strong> Docs public, but credentials require $39.99/mo seller account + AWS IAM vetting.<br>
+                            <strong>Sherlock (#58):</strong> Flagged as zero-auth OSINT CLI binary, not a REST webhook.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-4 pt-3 border-t border-gray-800/80 flex flex-wrap items-center justify-between text-xs text-gray-400 font-mono">
+                    <span class="text-gray-300">Quick Navigation: Jump directly to any section below</span>
+                    <div class="flex flex-wrap gap-2 mt-2 sm:mt-0">
+                        <a href="#headline-insights" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-gray-200 transition">Headline Patterns</a>
+                        <a href="#action-tiers" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-gray-200 transition">Roadmap Tiers</a>
+                        <a href="#agent-architecture" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-gray-200 transition">Agent Architecture</a>
+                        <a href="#verification-audit" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-gray-200 transition">Verification Audit</a>
+                        <a href="#charts" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-gray-200 transition">Analytics</a>
+                        <a href="#data-matrix" class="px-2.5 py-1 rounded bg-brand-600/30 hover:bg-brand-600/50 text-brand-300 border border-brand-500/40 transition">100 Apps Matrix</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -304,46 +388,6 @@ def build_html_deliverable():
     </section>
 
     <!-- Section 2: Analytics & Visual Charts -->
-    <section id="charts" class="py-12 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex items-center space-x-3 mb-8">
-                <span class="w-2.5 h-6 bg-brand-500 rounded-full"></span>
-                <h2 class="text-2xl font-bold text-white tracking-tight">Dataset Analytics & Distribution</h2>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <div class="glass-panel p-6 rounded-2xl">
-                    <h3 class="text-base font-bold text-white mb-4">Auth Method Distribution</h3>
-                    <div class="h-64 flex items-center justify-center">
-                        <canvas id="authChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="glass-panel p-6 rounded-2xl">
-                    <h3 class="text-base font-bold text-white mb-4">Self-Serve vs. Gated by Category</h3>
-                    <div class="h-64 flex items-center justify-center">
-                        <canvas id="categoryGatingChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="glass-panel p-6 rounded-2xl">
-                    <h3 class="text-base font-bold text-white mb-4">Toolkit Buildability Verdicts</h3>
-                    <div class="h-64 flex items-center justify-center">
-                        <canvas id="buildabilityChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="glass-panel p-6 rounded-2xl">
-                    <h3 class="text-base font-bold text-white mb-4">Top Integration Blockers</h3>
-                    <div class="h-64 flex items-center justify-center">
-                        <canvas id="blockerChart"></canvas>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 3: Strategic Integration Tiers (Roadmap) -->
     <section id="action-tiers" class="py-12 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center space-x-3 mb-8">
@@ -408,68 +452,6 @@ def build_html_deliverable():
     </section>
 
     <!-- Section 4: Interactive 100 Apps Matrix -->
-    <section id="data-matrix" class="py-12 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
-                <div>
-                    <div class="flex items-center space-x-3">
-                        <span class="w-2.5 h-6 bg-brand-500 rounded-full"></span>
-                        <h2 class="text-2xl font-bold text-white tracking-tight">100-App Research Matrix</h2>
-                    </div>
-                    <p class="text-xs text-gray-400 mt-1">Filter by category, search by protocol, or inspect verified documentation evidence.</p>
-                </div>
-                <div class="flex items-center space-x-3">
-                    <div class="relative">
-                        <input type="text" id="searchInput" placeholder="Search by app, category, auth, or verdict..." 
-                               class="bg-gray-900 border border-gray-700 text-gray-200 text-sm rounded-xl px-4 py-2 pl-9 focus:outline-none focus:border-brand-500 w-72">
-                        <svg class="w-4 h-4 text-gray-500 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Filters -->
-            <div class="flex flex-wrap items-center gap-2 mb-6">
-                <button class="cat-pill active px-3 py-1 rounded-lg text-xs font-semibold bg-brand-600 text-white border border-brand-500" onclick="filterCategory('All', this)">All (100)</button>
-                <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('CRM and Sales', this)">CRM & Sales</button>
-                <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Support and Helpdesk', this)">Support</button>
-                <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Communications and Messaging', this)">Messaging</button>
-                <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Marketing, Ads, Email and Social', this)">Marketing</button>
-                <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Ecommerce', this)">Ecommerce</button>
-                <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Data, SEO and Scraping', this)">Data & Scraping</button>
-                <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Developer, Infra and Data platforms', this)">Dev & Infra</button>
-                <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Productivity and Project Management', this)">Productivity</button>
-                <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Finance and Fintech', this)">Finance</button>
-                <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('AI, Research and Media-native', this)">AI & Media</button>
-            </div>
-
-            <!-- Table Container -->
-            <div class="glass-panel rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
-                <div class="overflow-x-auto">
-                    <table class="w-full text-left border-collapse text-xs">
-                        <thead>
-                            <tr class="bg-gray-900/80 border-b border-gray-800 text-gray-400 font-semibold uppercase tracking-wider">
-                                <th class="py-3 px-4 w-12 text-center">#</th>
-                                <th class="py-3 px-4 min-w-[220px]">Application</th>
-                                <th class="py-3 px-4 min-w-[130px]">Category</th>
-                                <th class="py-3 px-4 min-w-[140px]">Auth Method(s)</th>
-                                <th class="py-3 px-4 min-w-[130px]">Credential Gating</th>
-                                <th class="py-3 px-4 min-w-[150px]">API Surface</th>
-                                <th class="py-3 px-4 text-center min-w-[80px]">MCP</th>
-                                <th class="py-3 px-4 min-w-[130px]">Verdict</th>
-                                <th class="py-3 px-4 min-w-[340px]">Human Report</th>
-                                <th class="py-3 px-4 text-center min-w-[90px]">Evidence</th>
-                            </tr>
-                        </thead>
-                        <tbody id="matrixTableBody" class="divide-y divide-gray-800/60 font-sans">
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div id="tableCounter" class="text-xs text-gray-400 mt-3 text-right">Showing 100 of 100 apps</div>
-        </div>
-    </section>
-
-    <!-- Section 5: Agent Architecture -->
     <section id="agent-architecture" class="py-12 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center space-x-3 mb-8">
@@ -733,6 +715,131 @@ def build_html_deliverable():
         </div>
     </section>
 
+    <section id="charts" class="py-12 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center space-x-3 mb-8">
+                <span class="w-2.5 h-6 bg-brand-500 rounded-full"></span>
+                <h2 class="text-2xl font-bold text-white tracking-tight">Dataset Analytics & Distribution</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="glass-panel p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-4">Auth Method Distribution</h3>
+                    <div class="h-64 flex items-center justify-center">
+                        <canvas id="authChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-4">Self-Serve vs. Gated by Category</h3>
+                    <div class="h-64 flex items-center justify-center">
+                        <canvas id="categoryGatingChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-4">Toolkit Buildability Verdicts</h3>
+                    <div class="h-64 flex items-center justify-center">
+                        <canvas id="buildabilityChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-6 rounded-2xl">
+                    <h3 class="text-base font-bold text-white mb-4">Top Integration Blockers</h3>
+                    <div class="h-64 flex items-center justify-center">
+                        <canvas id="blockerChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Strategic Integration Tiers (Roadmap) -->
+    <section id="data-matrix" class="py-12 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                <div>
+                    <div class="flex items-center space-x-3">
+                        <span class="w-2.5 h-6 bg-brand-500 rounded-full"></span>
+                        <h2 class="text-2xl font-bold text-white tracking-tight">100-App Research Matrix</h2>
+                    </div>
+                    <p class="text-xs text-gray-400 mt-1">Filter by category, search by protocol, or inspect verified documentation evidence.</p>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <div class="relative">
+                        <input type="text" id="searchInput" placeholder="Search by app, category, auth, or verdict..." 
+                               class="bg-gray-900 border border-gray-700 text-gray-200 text-sm rounded-xl px-4 py-2 pl-9 focus:outline-none focus:border-brand-500 w-72">
+                        <svg class="w-4 h-4 text-gray-500 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filters & Row Density -->
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 mb-6">
+                <!-- Filters -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <button class="cat-pill active px-3 py-1 rounded-lg text-xs font-semibold bg-brand-600 text-white border border-brand-500" onclick="filterCategory('All', this)">All (100)</button>
+                    <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('CRM and Sales', this)">CRM & Sales</button>
+                    <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Support and Helpdesk', this)">Support</button>
+                    <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Communications and Messaging', this)">Messaging</button>
+                    <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Marketing, Ads, Email and Social', this)">Marketing</button>
+                    <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Ecommerce', this)">Ecommerce</button>
+                    <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Data, SEO and Scraping', this)">Data & Scraping</button>
+                    <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Developer, Infra and Data platforms', this)">Dev & Infra</button>
+                    <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Productivity and Project Management', this)">Productivity</button>
+                    <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('Finance and Fintech', this)">Finance</button>
+                    <button class="cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700" onclick="filterCategory('AI, Research and Media-native', this)">AI & Media</button>
+                </div>
+                <!-- Density Controls -->
+                <div class="flex items-center space-x-2 text-xs font-mono text-gray-400 shrink-0 bg-gray-900/80 px-3 py-1.5 rounded-xl border border-gray-800">
+                    <span class="text-gray-400 font-semibold">Rows:</span>
+                    <button class="page-size-btn active px-2 py-0.5 rounded bg-brand-600 text-white font-bold transition" onclick="setPageSize(15, this)">15</button>
+                    <button class="page-size-btn px-2 py-0.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition" onclick="setPageSize(25, this)">25</button>
+                    <button class="page-size-btn px-2 py-0.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition" onclick="setPageSize(50, this)">50</button>
+                    <button class="page-size-btn px-2 py-0.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition" onclick="setPageSize('all', this)">All (100)</button>
+                </div>
+            </div>
+
+            <!-- Table Container -->
+            <div class="glass-panel rounded-2xl overflow-hidden border border-gray-800 shadow-2xl">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse text-xs">
+                        <thead>
+                            <tr class="bg-gray-900/80 border-b border-gray-800 text-gray-400 font-semibold uppercase tracking-wider">
+                                <th class="py-3 px-4 w-12 text-center">#</th>
+                                <th class="py-3 px-4 min-w-[220px]">Application</th>
+                                <th class="py-3 px-4 min-w-[130px]">Category</th>
+                                <th class="py-3 px-4 min-w-[140px]">Auth Method(s)</th>
+                                <th class="py-3 px-4 min-w-[130px]">Credential Gating</th>
+                                <th class="py-3 px-4 min-w-[150px]">API Surface</th>
+                                <th class="py-3 px-4 text-center min-w-[80px]">MCP</th>
+                                <th class="py-3 px-4 min-w-[130px]">Verdict</th>
+                                <th class="py-3 px-4 min-w-[340px]">Human Report</th>
+                                <th class="py-3 px-4 text-center min-w-[90px]">Evidence</th>
+                            </tr>
+                        </thead>
+                        <tbody id="matrixTableBody" class="divide-y divide-gray-800/60 font-sans">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- Table Pagination & Counter Bar -->
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mt-4 text-xs font-mono text-gray-400">
+                <div id="tableCounter">Showing 1 to 15 of 100 apps</div>
+                <div id="paginationControls" class="flex items-center space-x-2">
+                    <button id="prevPageBtn" onclick="changePage(-1)" class="px-3 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition">
+                        Previous
+                    </button>
+                    <span id="pageIndicator" class="px-3 py-1 text-gray-300 font-semibold">Page 1 of 7</span>
+                    <button id="nextPageBtn" onclick="changePage(1)" class="px-3 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-200 border border-gray-700 disabled:opacity-30 disabled:cursor-not-allowed transition">
+                        Next
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Agent Architecture -->
     <!-- Modal for App Deep Dive with Evidence Highlights -->
     <div id="appModal" style="display: none;" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm items-center justify-center p-4">
         <div class="glass-panel bg-dark-900 border border-gray-700 rounded-2xl max-w-3xl w-full p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
@@ -870,6 +977,25 @@ def build_html_deliverable():
         let authChartInst = null;
         let catChartInst = null;
         let bChartInst = null;
+        let pageSize = 15;
+        let currentPage = 1;
+
+        function setPageSize(size, btn) {{
+            pageSize = size;
+            currentPage = 1;
+            document.querySelectorAll('.page-size-btn').forEach(b => {{
+                b.className = 'page-size-btn px-2 py-0.5 rounded bg-gray-800 text-gray-300 hover:bg-gray-700 transition';
+            }});
+            btn.className = 'page-size-btn active px-2 py-0.5 rounded bg-brand-600 text-white font-bold transition';
+            renderTable();
+        }}
+
+        function changePage(delta) {{
+            currentPage += delta;
+            renderTable();
+            const elem = document.getElementById('data-matrix');
+            if (elem) elem.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+        }}
 
         // Audited benchmark apps that were verified in Pass 2
         const BENCHMARK_AUDITED_IDS = [1, 11, 21, 22, 31, 49, 58, 71, 81, 98];
@@ -934,7 +1060,38 @@ def build_html_deliverable():
                 return matchCat && matchSearch;
             }});
 
-            filtered.forEach(app => {{
+            const total = filtered.length;
+            let totalPages = 1;
+            let displayRows = filtered;
+
+            if (pageSize !== 'all') {{
+                const limit = parseInt(pageSize, 10);
+                totalPages = Math.ceil(total / limit) || 1;
+                if (currentPage > totalPages) currentPage = totalPages;
+                if (currentPage < 1) currentPage = 1;
+                const start = (currentPage - 1) * limit;
+                displayRows = filtered.slice(start, start + limit);
+                
+                const end = Math.min(start + limit, total);
+                const counterEl = document.getElementById('tableCounter');
+                if (counterEl) counterEl.innerText = total > 0 ? `Showing ${{start + 1}} to ${{end}} of ${{total}} apps` : 'Showing 0 apps';
+                const pageIndEl = document.getElementById('pageIndicator');
+                if (pageIndEl) pageIndEl.innerText = `Page ${{currentPage}} of ${{totalPages}}`;
+                const prevBtn = document.getElementById('prevPageBtn');
+                if (prevBtn) prevBtn.disabled = (currentPage <= 1);
+                const nextBtn = document.getElementById('nextPageBtn');
+                if (nextBtn) nextBtn.disabled = (currentPage >= totalPages);
+                const pagCtrl = document.getElementById('paginationControls');
+                if (pagCtrl) pagCtrl.style.display = 'flex';
+            }} else {{
+                currentPage = 1;
+                const counterEl = document.getElementById('tableCounter');
+                if (counterEl) counterEl.innerText = `Showing all ${{total}} of ${{total}} apps`;
+                const pagCtrl = document.getElementById('paginationControls');
+                if (pagCtrl) pagCtrl.style.display = 'none';
+            }}
+
+            displayRows.forEach(app => {{
                 const tr = document.createElement('tr');
                 tr.className = 'hover:bg-gray-800/40 transition border-b border-gray-800/60';
                 
@@ -992,11 +1149,12 @@ def build_html_deliverable():
                 tbody.appendChild(tr);
             }});
 
-            document.getElementById('tableCounter').innerText = `Showing ${{filtered.length}} of ${{APPS_DATA.length}} apps`;
+            // Counter updated above
         }}
 
         function filterCategory(cat, btn) {{
             currentCategory = cat;
+            currentPage = 1;
             document.querySelectorAll('.cat-pill').forEach(b => {{
                 b.className = 'cat-pill px-3 py-1 rounded-lg text-xs font-semibold bg-gray-900 hover:bg-gray-800 text-gray-300 border border-gray-700';
             }});
@@ -1006,6 +1164,7 @@ def build_html_deliverable():
 
         document.getElementById('searchInput').addEventListener('input', (e) => {{
             searchQuery = e.target.value;
+            currentPage = 1;
             renderTable();
         }});
 
