@@ -404,15 +404,15 @@
                         <thead>
                             <tr class="bg-gray-900/80 border-b border-gray-800 text-gray-400 font-semibold uppercase tracking-wider">
                                 <th class="py-3 px-4 w-12 text-center">#</th>
-                                <th class="py-3 px-4">Application</th>
-                                <th class="py-3 px-4">Category</th>
-                                <th class="py-3 px-4">Auth Method(s)</th>
-                                <th class="py-3 px-4">Credential Gating</th>
-                                <th class="py-3 px-4">API Surface</th>
-                                <th class="py-3 px-4 text-center">MCP</th>
-                                <th class="py-3 px-4">Verdict</th>
-                                <th class="py-3 px-4 min-w-[260px]">Human Report</th>
-                                <th class="py-3 px-4 text-center">Evidence</th>
+                                <th class="py-3 px-4 min-w-[220px]">Application</th>
+                                <th class="py-3 px-4 min-w-[130px]">Category</th>
+                                <th class="py-3 px-4 min-w-[140px]">Auth Method(s)</th>
+                                <th class="py-3 px-4 min-w-[130px]">Credential Gating</th>
+                                <th class="py-3 px-4 min-w-[150px]">API Surface</th>
+                                <th class="py-3 px-4 text-center min-w-[80px]">MCP</th>
+                                <th class="py-3 px-4 min-w-[130px]">Verdict</th>
+                                <th class="py-3 px-4 min-w-[340px]">Human Report</th>
+                                <th class="py-3 px-4 text-center min-w-[90px]">Evidence</th>
                             </tr>
                         </thead>
                         <tbody id="matrixTableBody" class="divide-y divide-gray-800/60 font-sans">
@@ -562,30 +562,30 @@
                         <thead>
                             <tr class="bg-gray-900/80 border-b border-gray-800 text-gray-400 font-semibold uppercase tracking-wider">
                                 <th class="py-3 px-4 w-12 text-center">#</th>
-                                <th class="py-3 px-4">Application</th>
-                                <th class="py-3 px-4">Category</th>
-                                <th class="py-3 px-4">Pass 1 Finding</th>
-                                <th class="py-3 px-4 text-center">Discrepancy?</th>
-                                <th class="py-3 px-4">Type</th>
-                                <th class="py-3 px-4">Verification Resolution</th>
-                                <th class="py-3 px-4">Verified Evidence Link</th>
+                                <th class="py-3 px-4 min-w-[140px]">Application</th>
+                                <th class="py-3 px-4 min-w-[140px]">Category</th>
+                                <th class="py-3 px-4 min-w-[220px]">Pass 1 Finding</th>
+                                <th class="py-3 px-4 text-center min-w-[110px]">Discrepancy?</th>
+                                <th class="py-3 px-4 min-w-[140px]">Type</th>
+                                <th class="py-3 px-4 min-w-[300px]">Verification Resolution</th>
+                                <th class="py-3 px-4 min-w-[120px]">Verified Evidence Link</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-800/60 font-sans">
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">1</td>
-                                <td class="py-3 px-4 font-bold text-white">Salesforce</td>
-                                <td class="py-3 px-4 text-gray-400">CRM and Sales</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'API Key'] | Gating: Partially Gated | Verdict: Medium (App approval / OAuth required)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Salesforce</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">CRM and Sales</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Partially Gated | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Accept Pass 1 findings as accurate.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as accurate.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://developer.salesforce.com/docs/apis" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -594,17 +594,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">2</td>
-                                <td class="py-3 px-4 font-bold text-white">HubSpot</td>
-                                <td class="py-3 px-4 text-gray-400">CRM and Sales</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'Private App Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">HubSpot</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">CRM and Sales</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'Private App Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Accept Pass 1 findings without modification.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings without modification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://www.hubspot.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -613,17 +613,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">3</td>
-                                <td class="py-3 px-4 font-bold text-white">Pipedrive</td>
-                                <td class="py-3 px-4 text-gray-400">CRM and Sales</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Pipedrive</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">CRM and Sales</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Accept Pass 1 findings as verified.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://www.pipedrive.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -632,17 +632,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">4</td>
-                                <td class="py-3 px-4 font-bold text-white">Attio</td>
-                                <td class="py-3 px-4 text-gray-400">CRM and Sales</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Attio</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">CRM and Sales</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Confirmed via heuristic developer documentation verification.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://attio.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -651,17 +651,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">5</td>
-                                <td class="py-3 px-4 font-bold text-white">Twenty</td>
-                                <td class="py-3 px-4 text-gray-400">CRM and Sales</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['API Key', 'OAuth2'] | Gating: Open Source / Local | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Twenty</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">CRM and Sales</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Open Source / Local | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Maintain Pass 1 findings as verified.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Maintain Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://twenty.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -670,17 +670,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">6</td>
-                                <td class="py-3 px-4 font-bold text-white">Podio</td>
-                                <td class="py-3 px-4 text-gray-400">CRM and Sales</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Podio</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">CRM and Sales</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
                                         FLAGGED
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">Auth Misclassification</td>
-                                <td class="py-3 px-4 text-gray-300">Removed 'API Key' from verified_auth_methods, keeping only 'OAuth2' which is standard for Podio's REST API.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Auth Misclassification</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Removed 'API Key' from verified_auth_methods, keeping only 'OAuth2' which is standard for Podio's REST API.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://developers.podio.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -689,17 +689,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">7</td>
-                                <td class="py-3 px-4 font-bold text-white">Zoho CRM</td>
-                                <td class="py-3 px-4 text-gray-400">CRM and Sales</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2'] | Gating: Self-serve | Verdict: Medium</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Zoho CRM</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">CRM and Sales</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Gating: Self-serve | Verdict: Medium</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
                                         FLAGGED
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">Auth Misclassification</td>
-                                <td class="py-3 px-4 text-gray-300">Removed 'API Key' from the verified authentication methods, keeping only 'OAuth2'.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Auth Misclassification</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Removed 'API Key' from the verified authentication methods, keeping only 'OAuth2'.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://www.zoho.com/crm/developer/docs/api/v2/multi-auth.html" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -708,17 +708,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">8</td>
-                                <td class="py-3 px-4 font-bold text-white">Close</td>
-                                <td class="py-3 px-4 text-gray-400">CRM and Sales</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Close</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">CRM and Sales</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Accept Pass 1 findings as valid.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as valid.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://developer.close.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -727,17 +727,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">9</td>
-                                <td class="py-3 px-4 font-bold text-white">Copper</td>
-                                <td class="py-3 px-4 text-gray-400">CRM and Sales</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Copper</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">CRM and Sales</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Accept Pass 1 findings as accurate.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as accurate.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://developer.copper.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -746,17 +746,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">10</td>
-                                <td class="py-3 px-4 font-bold text-white">DealCloud</td>
-                                <td class="py-3 px-4 text-gray-400">CRM and Sales</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['API Key', 'OAuth2'] | Gating: Enterprise/Sales Gated | Verdict: Hard (Enterprise / Sales gated)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">DealCloud</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">CRM and Sales</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Enterprise/Sales Gated | Verdict: Hard (Enterprise / Sales gated)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Confirmed via heuristic developer documentation verification.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://api.docs.dealcloud.com" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -765,17 +765,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">11</td>
-                                <td class="py-3 px-4 font-bold text-white">Zendesk</td>
-                                <td class="py-3 px-4 text-gray-400">Support and Helpdesk</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'API Token', 'Basic Auth'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Zendesk</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Support and Helpdesk</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Token', 'Basic Auth'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Accept Pass 1 findings as fully accurate.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as fully accurate.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://developer.zendesk.com/api-reference/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -784,17 +784,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">12</td>
-                                <td class="py-3 px-4 font-bold text-white">Intercom</td>
-                                <td class="py-3 px-4 text-gray-400">Support and Helpdesk</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'Access Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Intercom</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Support and Helpdesk</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'Access Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Accept Pass 1 findings as fully accurate.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as fully accurate.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://www.intercom.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -803,17 +803,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">13</td>
-                                <td class="py-3 px-4 font-bold text-white">Freshdesk</td>
-                                <td class="py-3 px-4 text-gray-400">Support and Helpdesk</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Freshdesk</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Support and Helpdesk</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Accept Pass 1 findings as verified and correct.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified and correct.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://developers.freshdesk.com/api/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -822,17 +822,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">14</td>
-                                <td class="py-3 px-4 font-bold text-white">Front</td>
-                                <td class="py-3 px-4 text-gray-400">Support and Helpdesk</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'API Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Front</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Support and Helpdesk</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Retain Pass 1 findings.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Retain Pass 1 findings.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://front.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -841,17 +841,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">15</td>
-                                <td class="py-3 px-4 font-bold text-white">Pylon</td>
-                                <td class="py-3 px-4 text-gray-400">Support and Helpdesk</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Medium (App approval / OAuth required)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Pylon</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Support and Helpdesk</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Retain Pass 1 findings.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Retain Pass 1 findings.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://www.usepylon.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -860,17 +860,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">16</td>
-                                <td class="py-3 px-4 font-bold text-white">LiveAgent</td>
-                                <td class="py-3 px-4 text-gray-400">Support and Helpdesk</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">LiveAgent</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Support and Helpdesk</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Accept Pass 1 findings as verified.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://www.liveagent.com/api-v3/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -879,17 +879,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">17</td>
-                                <td class="py-3 px-4 font-bold text-white">Plain</td>
-                                <td class="py-3 px-4 text-gray-400">Support and Helpdesk</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Verdict: Blocked (No public API) | Auth: [] | Gating: Open Source / Local</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Plain</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Support and Helpdesk</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Verdict: Blocked (No public API) | Auth: [] | Gating: Open Source / Local</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
                                         FLAGGED
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">Semantic Search Collision</td>
-                                <td class="py-3 px-4 text-gray-300">Audited against plain.com/docs; confirmed developer-first GraphQL support platform.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Semantic Search Collision</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Audited against plain.com/docs; confirmed developer-first GraphQL support platform.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://www.plain.com/docs/api-reference" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -898,17 +898,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">18</td>
-                                <td class="py-3 px-4 font-bold text-white">Help Scout</td>
-                                <td class="py-3 px-4 text-gray-400">Support and Helpdesk</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Help Scout</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Support and Helpdesk</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Confirmed via heuristic developer documentation verification.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://developer.helpscout.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -917,17 +917,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">19</td>
-                                <td class="py-3 px-4 font-bold text-white">Gorgias</td>
-                                <td class="py-3 px-4 text-gray-400">Support and Helpdesk</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['Basic Auth', 'API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Gorgias</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Support and Helpdesk</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['Basic Auth', 'API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Confirmed via heuristic developer documentation verification.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://developers.gorgias.com/reference/getting-started" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -936,17 +936,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">20</td>
-                                <td class="py-3 px-4 font-bold text-white">Gladly</td>
-                                <td class="py-3 px-4 text-gray-400">Support and Helpdesk</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'API Key'] | Gating: Enterprise/Sales Gated | Verdict: Hard (Enterprise / Sales gated)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Gladly</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Support and Helpdesk</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Enterprise/Sales Gated | Verdict: Hard (Enterprise / Sales gated)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Maintain Pass 1 findings.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Maintain Pass 1 findings.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://gladly.com" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -955,17 +955,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">21</td>
-                                <td class="py-3 px-4 font-bold text-white">Slack</td>
-                                <td class="py-3 px-4 text-gray-400">Communications and Messaging</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Slack</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Communications and Messaging</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
                                         FLAGGED
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">Auth Misclassification</td>
-                                <td class="py-3 px-4 text-gray-300">Removed 'API Key' from verified auth methods, leaving only OAuth2.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Auth Misclassification</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Removed 'API Key' from verified auth methods, leaving only OAuth2.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://api.slack.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -974,17 +974,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">22</td>
-                                <td class="py-3 px-4 font-bold text-white">Twilio</td>
-                                <td class="py-3 px-4 text-gray-400">Communications and Messaging</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['HTTP Basic Auth'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Twilio</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Communications and Messaging</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['HTTP Basic Auth'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Keep Pass 1 classification as is.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 classification as is.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://www.twilio.com/docs/iam/credentials/basic-auth" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -993,17 +993,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">23</td>
-                                <td class="py-3 px-4 font-bold text-white">Zoho Cliq</td>
-                                <td class="py-3 px-4 text-gray-400">Communications and Messaging</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2'] | Gating: Self-serve | Verdict: Medium</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Zoho Cliq</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Communications and Messaging</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Gating: Self-serve | Verdict: Medium</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
                                         FLAGGED
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">Auth Misclassification</td>
-                                <td class="py-3 px-4 text-gray-300">Removed 'API Key' from verified_auth_methods, keeping only OAuth2.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Auth Misclassification</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Removed 'API Key' from verified_auth_methods, keeping only OAuth2.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://www.zoho.com/cliq/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -1012,17 +1012,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">24</td>
-                                <td class="py-3 px-4 font-bold text-white">Lark (Larksuite)</td>
-                                <td class="py-3 px-4 text-gray-400">Communications and Messaging</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'App Tenant Access Token', 'User Access Token'] | Gating: Self-serve | Verdict: Medium (App approval / OAuth required)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Lark (Larksuite)</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Communications and Messaging</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'App Tenant Access Token', 'User Access Token'] | Gating: Self-serve | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Keep original classification and buildability status.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep original classification and buildability status.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://open.larksuite.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -1031,17 +1031,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">25</td>
-                                <td class="py-3 px-4 font-bold text-white">Pumble</td>
-                                <td class="py-3 px-4 text-gray-400">Communications and Messaging</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Blocked (No public API)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Pumble</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Communications and Messaging</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Blocked (No public API)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Maintain Pass 1 findings.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Maintain Pass 1 findings.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://pumble.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -1050,17 +1050,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">26</td>
-                                <td class="py-3 px-4 font-bold text-white">Discord</td>
-                                <td class="py-3 px-4 text-gray-400">Communications and Messaging</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'Bot Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Discord</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Communications and Messaging</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'Bot Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Accept Pass 1 findings as verified.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://discord.com/developers/docs" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -1069,17 +1069,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">27</td>
-                                <td class="py-3 px-4 font-bold text-white">Telegram</td>
-                                <td class="py-3 px-4 text-gray-400">Communications and Messaging</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['Bot Token', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Telegram</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Communications and Messaging</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['Bot Token', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
                                         FLAGGED
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">Auth Misclassification</td>
-                                <td class="py-3 px-4 text-gray-300">Removed OAuth2 from the verified auth methods list, leaving Bot Token and API Key as the correct authentication mechanisms.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Auth Misclassification</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Removed OAuth2 from the verified auth methods list, leaving Bot Token and API Key as the correct authentication mechanisms.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://core.telegram.org/bots/api" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -1088,17 +1088,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">28</td>
-                                <td class="py-3 px-4 font-bold text-white">WhatsApp Business</td>
-                                <td class="py-3 px-4 text-gray-400">Communications and Messaging</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'Access Token'] | Gating: Partially Gated | Verdict: Medium (App approval / OAuth required)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">WhatsApp Business</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Communications and Messaging</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'Access Token'] | Gating: Partially Gated | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Keep Pass 1 findings as verified.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/get-started" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -1107,17 +1107,17 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">29</td>
-                                <td class="py-3 px-4 font-bold text-white">Aircall</td>
-                                <td class="py-3 px-4 text-gray-400">Communications and Messaging</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Aircall</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Communications and Messaging</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Keep Pass 1 findings as verified.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://aircall.io/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
@@ -1126,18 +1126,1348 @@
                             
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">30</td>
-                                <td class="py-3 px-4 font-bold text-white">Vonage</td>
-                                <td class="py-3 px-4 text-gray-400">Communications and Messaging</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">Auth: ['API Key', 'OAuth2', 'JWT'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Vonage</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Communications and Messaging</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2', 'JWT'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
                                         ACCURATE
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">None</td>
-                                <td class="py-3 px-4 text-gray-300">Keep Pass 1 findings as verified.</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="https://developer.vonage.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">31</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Google Ads</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Marketing, Ads, Email and Social</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Verdict: Medium</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
+                                        FLAGGED
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Access Token Gating</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Verified that a Developer Token is required alongside OAuth2 for production Google Ads API requests.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developers.google.com/google-ads/api/docs/first-call/overview" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">32</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Meta Ads</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Marketing, Ads, Email and Social</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Gating: Partially Gated | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developers.facebook.com/docs/marketing-apis" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">33</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">LinkedIn Ads</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Marketing, Ads, Email and Social</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Gating: Partially Gated | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://learn.microsoft.com/linkedin/marketing/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">34</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">GoHighLevel</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Marketing, Ads, Email and Social</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://highlevel.stoplight.io/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">35</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Mailchimp</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Marketing, Ads, Email and Social</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://mailchimp.com/developer/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">36</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Klaviyo</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Marketing, Ads, Email and Social</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developers.klaviyo.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">37</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">systeme.io</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Marketing, Ads, Email and Social</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as accurate.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://systeme.io/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">38</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Pinterest</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Marketing, Ads, Email and Social</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Gating: Partially Gated | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developers.pinterest.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">39</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Threads (Meta)</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Marketing, Ads, Email and Social</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Gating: Partially Gated | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developers.facebook.com/docs/threads" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">40</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">SendGrid</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Marketing, Ads, Email and Social</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://docs.sendgrid.com/api-reference/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">41</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Shopify</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Ecommerce</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://www.shopify.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">42</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">WooCommerce</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Ecommerce</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['Basic Auth', 'OAuth1.0a'] | Gating: Open Source / Local | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://woocommerce.com/document/woocommerce-rest-api/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">43</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">BigCommerce</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Ecommerce</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developer.bigcommerce.com/docs/start/authentication" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">44</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Salesforce Commerce Cloud</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Ecommerce</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Gating: Enterprise/Sales Gated (Requires Salesforce B2C Commerce Partner or Customer status, enterprise agreements, and commercial onboarding to provision instances.) | Verdict: Hard (Enterprise / Sales gated)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
+                                        FLAGGED
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Gating Nuance</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Removed API Key from the verified authentication methods as SFCC exclusively uses OAuth2/Account Manager tokens, and corrected the self-serve description to align with Salesforce B2C Commerce onboarding realities.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developer.salesforce.com/docs/commerce" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">45</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Magento (Adobe Commerce)</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Ecommerce</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth 2.0', 'Integration Token', 'Bearer Token'] | Gating: Open Source / Local | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developer.adobe.com/commerce/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">46</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Squarespace</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Ecommerce</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Maintain Pass 1 findings as accurate.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developers.squarespace.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">47</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Ecwid</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Ecommerce</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep original Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://api-docs.ecwid.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">48</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Gumroad</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Ecommerce</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'Access Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://app.gumroad.com/api" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">49</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Amazon Selling Partner</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Ecommerce</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'LWA (Login with Amazon)', 'IAM AWS SigV4'] | Gating: Self-serve | Verdict: Easy</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
+                                        FLAGGED
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Commercial Gating Nuance</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Verified requirement for Amazon Developer Profile vetting and Professional Seller subscription.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developer-docs.amazon.com/sp-api" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">50</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">fanbasis</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Ecommerce</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: [] | Gating: Closed | Verdict: Impossible</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
+                                        FLAGGED
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Semantic Search Collision</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Classify the application as having no public API, making it unbuildable for Composio without a direct enterprise partnership.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://fanbasis.com" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">51</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">DataForSEO</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Data, SEO and Scraping</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['Basic Auth'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://dataforseo.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">52</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">SE Ranking</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Data, SEO and Scraping</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://seranking.com/api" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">53</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Ahrefs</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Data, SEO and Scraping</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Partially Gated | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as accurate.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://ahrefs.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">54</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">MrScraper</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Data, SEO and Scraping</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://docs.mrscraper.com" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">55</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Apify</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Data, SEO and Scraping</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as accurate.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://docs.apify.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">56</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Firecrawl</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Data, SEO and Scraping</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://firecrawl.dev" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">57</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Bright Data</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Data, SEO and Scraping</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Maintain Pass 1 findings as verified and accurate.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://brightdata.com/integration/mcp" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">58</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Sherlock</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Data, SEO and Scraping</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['CLI/None'] | Gating: Open Source / Local | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://github.com/sherlock-project/sherlock" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">59</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Waterfall.io</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Data, SEO and Scraping</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key'] | Gating: Enterprise/Sales Gated | Verdict: Hard (Enterprise / Sales gated)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://waterfall.io" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">60</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Clay</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Data, SEO and Scraping</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Maintain Pass 1 findings.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://clay.com" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">61</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">GitHub</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Developer, Infra and Data platforms</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'Personal Access Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified and correct.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://docs.github.com/rest" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">62</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Vercel</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Developer, Infra and Data platforms</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key', 'Bearer Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://vercel.com/docs/rest-api" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">63</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Netlify</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Developer, Infra and Data platforms</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'Personal Access Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://docs.netlify.com/api/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">64</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Cloudflare</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Developer, Infra and Data platforms</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'Bearer Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developers.cloudflare.com/api/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">65</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Supabase</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Developer, Infra and Data platforms</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'Bearer Token', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://supabase.com/docs" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">66</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Neo4j</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Developer, Infra and Data platforms</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['Basic Auth', 'Bearer Token'] | Gating: Open Source / Local | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://neo4j.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">67</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Snowflake</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Developer, Infra and Data platforms</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key', 'Token', 'Basic Auth'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://docs.snowflake.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">68</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">MongoDB Atlas</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Developer, Infra and Data platforms</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['Digest Access Authentication', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://www.mongodb.com/docs/atlas/api/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">69</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Datadog</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Developer, Infra and Data platforms</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'Application Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://docs.datadoghq.com/api/latest/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">70</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Sentry</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Developer, Infra and Data platforms</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key', 'Bearer Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://sentry.io/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">71</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Notion</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Productivity and Project Management</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developers.notion.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">72</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Airtable</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Productivity and Project Management</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'Personal Access Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://airtable.com/developers" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">73</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Linear</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Productivity and Project Management</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developers.linear.app/docs/graphql/working-with-the-api" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">74</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Jira</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Productivity and Project Management</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developer.atlassian.com/cloud/jira/platform/rest/v3/intro/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">75</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Asana</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Productivity and Project Management</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'Personal Access Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developers.asana.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">76</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Monday.com</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Productivity and Project Management</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key', 'Bearer Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified and correct.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://monday.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">77</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">ClickUp</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Productivity and Project Management</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://clickup.com/api" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">78</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Coda</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Productivity and Project Management</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as fully verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://coda.io/developers" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">79</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Smartsheet</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Productivity and Project Management</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://smartsheet.com/developers" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">80</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Harvest</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Productivity and Project Management</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'Personal Access Token'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://help.getharvest.com/api-v2/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">81</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Stripe</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Finance and Fintech</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://stripe.com/docs/api" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">82</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Plaid</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Finance and Fintech</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Self-serve | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://plaid.com/docs/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">83</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Binance</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Finance and Fintech</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'HMAC SHA256', 'RSA Signature'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://binance-docs.github.io/apidocs/spot/en/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">84</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Paygent Connect</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Finance and Fintech</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'Basic Auth'] | Gating: Enterprise/Sales Gated | Verdict: Hard (Enterprise / Sales gated)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as accurate.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://www.paygent.co.jp/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">85</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">iPayX</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Finance and Fintech</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Enterprise/Sales Gated | Verdict: Hard (Enterprise / Sales gated)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Maintain Pass 1 assessment as accurate.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://ipayx.ai/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">86</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">QuickBooks</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Finance and Fintech</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Gating: Partially Gated | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developer.intuit.com/app/developer/qbo/docs/get-started" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">87</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Xero</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Finance and Fintech</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2'] | Gating: Self-serve | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developer.xero.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">88</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Brex</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Finance and Fintech</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://developer.brex.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">89</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Ramp</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Finance and Fintech</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Partially Gated | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://docs.ramp.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">90</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">PitchBook</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">Finance and Fintech</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key', 'OAuth2'] | Gating: Enterprise/Sales Gated | Verdict: Hard (Enterprise / Sales gated)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://pitchbook.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">91</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">NotebookLM</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">AI, Research and Media-native</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: [] | Gating: Enterprise/Sales Gated | Verdict: Blocked (No public API)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://notebook.google/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">92</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Otter AI</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">AI, Research and Media-native</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: [] | Gating: No | Verdict: Low</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
+                                        FLAGGED
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Semantic Search Collision</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Corrected buildability to Low, verified that self-serve API access is unavailable, and cleared unsupported auth methods.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://otter.ai/start-for-free?msockid=08f1939886e263b30c158b8287c3626c" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">93</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Fathom</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">AI, Research and Media-native</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Medium (App approval / OAuth required)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://fathom.video" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">94</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Consensus</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">AI, Research and Media-native</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key'] | Gating: Not self-serve | Verdict: Blocked</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
+                                        FLAGGED
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Gating Nuance</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Mark as blocked due to lack of open self-serve API availability.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://consensus.app/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">95</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Reducto</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">AI, Research and Media-native</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Keep Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://reducto.ai" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">96</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Devin</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">AI, Research and Media-native</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: [] | Gating: No | Verdict: Impossible</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
+                                        FLAGGED
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Gating Nuance</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Mark buildability as Impossible and auth methods as empty due to the absence of a public developer API surface.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://devin.ai/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">97</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">higgsfield</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">AI, Research and Media-native</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['OAuth2', 'API Key'] | Gating: Self-serve | Verdict: Blocked (No public API)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed Pass 1 buildability status as Blocked due to lack of a public API.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://higgsfield.ai/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">98</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Mermaid CLI</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">AI, Research and Media-native</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['CLI/None'] | Gating: Open Source / Local | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Confirmed via heuristic developer documentation verification.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://github.com/mermaid-js/mermaid-cli" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">99</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">YouTube Transcript</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">AI, Research and Media-native</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: ['API Key'] | Gating: Self-serve | Verdict: Easy (Ready today)</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">
+                                        ACCURATE
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">None</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Accept Pass 1 findings as verified.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://transcriptapi.com" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
+                                        <span>Docs [Link]</span>
+                                    </a>
+                                </td>
+                            </tr>
+                            
+                            <tr class="hover:bg-gray-800/40 transition">
+                                <td class="py-3 px-4 text-center font-mono text-gray-500">100</td>
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">Grain</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">AI, Research and Media-native</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">Auth: [] | Gating: No public API | Verdict: Impossible</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
+                                    <span class="px-2 py-0.5 rounded font-mono font-bold bg-amber-500/20 text-amber-400 border border-amber-500/40">
+                                        FLAGGED
+                                    </span>
+                                </td>
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">Semantic Search Collision</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">Mark the integration as unbuildable due to the lack of a public API surface.</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
+                                    <a href="https://grain.com/" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
                                 </td>
@@ -1147,13 +2477,13 @@
                     </table>
                 </div>
             </div>
-            <div class="text-xs text-gray-500 mt-2 text-right">Showing key audited entries (All apps audited and resolved in dataset)</div>
+            <div class="text-xs text-gray-500 mt-2 text-right">Showing all 100 audited entries (Complete verification audit trail)</div>
         </div>
     </section>
 
     <!-- Modal for App Deep Dive with Evidence Highlights -->
     <div id="appModal" style="display: none;" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm items-center justify-center p-4">
-        <div class="glass-panel bg-dark-900 border border-gray-700 rounded-2xl max-w-2xl w-full p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+        <div class="glass-panel bg-dark-900 border border-gray-700 rounded-2xl max-w-3xl w-full p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
             <div class="flex items-start justify-between border-b border-gray-800 pb-4 mb-4">
                 <div>
                     <div class="flex items-center space-x-2">
@@ -1379,29 +2709,29 @@
 
                 tr.innerHTML = `
                     <td class="py-3 px-4 text-center font-mono text-gray-500">${app.id}</td>
-                    <td class="py-3 px-4 max-w-xs">
+                    <td class="py-3 px-4 min-w-[220px]">
                         <div class="flex items-center space-x-1.5">
                             <span class="font-bold text-white">${app.name}</span>
                             ${app.isCustom ? '<span class="text-[9px] px-1.5 py-0.2 rounded bg-purple-900/60 text-purple-300 font-mono border border-purple-700/50">Custom</span>' : ''}
                             <a href="${primaryDocUrl}" target="_blank" title="Open Official Docs" class="text-gray-500 hover:text-brand-400 font-mono text-[10px] transition">[Docs]</a>
                         </div>
-                        <div class="text-[11px] text-gray-400 font-normal line-clamp-1 mt-0.5 leading-snug" title="${app.description || ''}">
+                        <div class="text-[11px] text-gray-400 font-normal mt-1 leading-relaxed break-words">
                             ${app.description || ''}
                         </div>
                     </td>
-                    <td class="py-3 px-4 text-gray-400">${app.category}</td>
-                    <td class="py-3 px-4 font-mono">${authBadges}</td>
-                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded font-mono text-[11px] ${gatingBadge}">${app.self_serve}</span></td>
-                    <td class="py-3 px-4 font-mono text-gray-300">${app.api_surface} <span class="text-gray-500 text-[10px]">(${app.api_breadth})</span></td>
-                    <td class="py-3 px-4 text-center text-xs font-mono">${mcpBadge}</td>
-                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded font-mono text-[11px] ${verdictBadge}">${app.buildability}</span></td>
-                    <td class="py-3 px-4 max-w-sm">
-                        <div class="flex items-start space-x-1.5">
-                            <span class="px-1.5 py-0.5 rounded font-mono text-[9px] font-bold ${app.human_report_status === 'Corrected in Audit' ? 'bg-amber-950/80 text-amber-300 border border-amber-700/60' : 'bg-emerald-950/80 text-emerald-300 border border-emerald-700/60'} whitespace-nowrap mt-0.5">${app.human_report_status || 'Verified'}</span>
-                            <span class="text-gray-300 text-[11px] leading-snug line-clamp-2" title="${app.human_report || ''}">${app.human_report || ''}</span>
+                    <td class="py-3 px-4 text-gray-400 min-w-[130px]">${app.category}</td>
+                    <td class="py-3 px-4 font-mono min-w-[140px]">${authBadges}</td>
+                    <td class="py-3 px-4 min-w-[130px]"><span class="px-2 py-0.5 rounded font-mono text-[11px] ${gatingBadge}">${app.self_serve}</span></td>
+                    <td class="py-3 px-4 font-mono text-gray-300 min-w-[150px]">${app.api_surface} <span class="text-gray-500 text-[10px]">(${app.api_breadth})</span></td>
+                    <td class="py-3 px-4 text-center text-xs font-mono min-w-[80px]">${mcpBadge}</td>
+                    <td class="py-3 px-4 min-w-[130px]"><span class="px-2 py-0.5 rounded font-mono text-[11px] ${verdictBadge}">${app.buildability}</span></td>
+                    <td class="py-3 px-4 min-w-[340px]">
+                        <div class="flex items-start space-x-2">
+                            <span class="px-1.5 py-0.5 rounded font-mono text-[9px] font-bold ${app.human_report_status === 'Corrected in Audit' ? 'bg-amber-950/80 text-amber-300 border border-amber-700/60' : 'bg-emerald-950/80 text-emerald-300 border border-emerald-700/60'} whitespace-nowrap mt-0.5 shrink-0">${app.human_report_status || 'Verified'}</span>
+                            <span class="text-gray-300 text-[11px] leading-relaxed break-words">${app.human_report || ''}</span>
                         </div>
                     </td>
-                    <td class="py-3 px-4 text-center">
+                    <td class="py-3 px-4 text-center min-w-[90px]">
                         <button onclick="openModal(${app.id})" class="px-2.5 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-brand-300 hover:text-white border border-gray-700 font-mono text-[11px] transition">
                             Evidence
                         </button>

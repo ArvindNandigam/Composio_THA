@@ -436,15 +436,15 @@ def build_html_deliverable():
                         <thead>
                             <tr class="bg-gray-900/80 border-b border-gray-800 text-gray-400 font-semibold uppercase tracking-wider">
                                 <th class="py-3 px-4 w-12 text-center">#</th>
-                                <th class="py-3 px-4">Application</th>
-                                <th class="py-3 px-4">Category</th>
-                                <th class="py-3 px-4">Auth Method(s)</th>
-                                <th class="py-3 px-4">Credential Gating</th>
-                                <th class="py-3 px-4">API Surface</th>
-                                <th class="py-3 px-4 text-center">MCP</th>
-                                <th class="py-3 px-4">Verdict</th>
-                                <th class="py-3 px-4 min-w-[260px]">Human Report</th>
-                                <th class="py-3 px-4 text-center">Evidence</th>
+                                <th class="py-3 px-4 min-w-[220px]">Application</th>
+                                <th class="py-3 px-4 min-w-[130px]">Category</th>
+                                <th class="py-3 px-4 min-w-[140px]">Auth Method(s)</th>
+                                <th class="py-3 px-4 min-w-[130px]">Credential Gating</th>
+                                <th class="py-3 px-4 min-w-[150px]">API Surface</th>
+                                <th class="py-3 px-4 text-center min-w-[80px]">MCP</th>
+                                <th class="py-3 px-4 min-w-[130px]">Verdict</th>
+                                <th class="py-3 px-4 min-w-[340px]">Human Report</th>
+                                <th class="py-3 px-4 text-center min-w-[90px]">Evidence</th>
                             </tr>
                         </thead>
                         <tbody id="matrixTableBody" class="divide-y divide-gray-800/60 font-sans">
@@ -594,47 +594,47 @@ def build_html_deliverable():
                         <thead>
                             <tr class="bg-gray-900/80 border-b border-gray-800 text-gray-400 font-semibold uppercase tracking-wider">
                                 <th class="py-3 px-4 w-12 text-center">#</th>
-                                <th class="py-3 px-4">Application</th>
-                                <th class="py-3 px-4">Category</th>
-                                <th class="py-3 px-4">Pass 1 Finding</th>
-                                <th class="py-3 px-4 text-center">Discrepancy?</th>
-                                <th class="py-3 px-4">Type</th>
-                                <th class="py-3 px-4">Verification Resolution</th>
-                                <th class="py-3 px-4">Verified Evidence Link</th>
+                                <th class="py-3 px-4 min-w-[140px]">Application</th>
+                                <th class="py-3 px-4 min-w-[140px]">Category</th>
+                                <th class="py-3 px-4 min-w-[220px]">Pass 1 Finding</th>
+                                <th class="py-3 px-4 text-center min-w-[110px]">Discrepancy?</th>
+                                <th class="py-3 px-4 min-w-[140px]">Type</th>
+                                <th class="py-3 px-4 min-w-[300px]">Verification Resolution</th>
+                                <th class="py-3 px-4 min-w-[120px]">Verified Evidence Link</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-800/60 font-sans">
                             {"".join([f'''
                             <tr class="hover:bg-gray-800/40 transition">
                                 <td class="py-3 px-4 text-center font-mono text-gray-500">{item["app_id"]}</td>
-                                <td class="py-3 px-4 font-bold text-white">{item["app_name"]}</td>
-                                <td class="py-3 px-4 text-gray-400">{item["category"]}</td>
-                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px]">{item.get("pass1_summary", "")}</td>
-                                <td class="py-3 px-4 text-center">
+                                <td class="py-3 px-4 font-bold text-white whitespace-nowrap">{item["app_name"]}</td>
+                                <td class="py-3 px-4 text-gray-400 whitespace-nowrap">{item["category"]}</td>
+                                <td class="py-3 px-4 text-gray-300 font-mono text-[11px] leading-relaxed break-words">{item.get("pass1_summary", "")}</td>
+                                <td class="py-3 px-4 text-center whitespace-nowrap">
                                     <span class="px-2 py-0.5 rounded font-mono font-bold {("bg-amber-500/20 text-amber-400 border border-amber-500/40" if item["discrepancy_found"] else "bg-emerald-500/20 text-emerald-400 border border-emerald-500/40")}">
                                         {("FLAGGED" if item["discrepancy_found"] else "ACCURATE")}
                                     </span>
                                 </td>
-                                <td class="py-3 px-4 text-gray-400 font-mono">{item["discrepancy_type"]}</td>
-                                <td class="py-3 px-4 text-gray-300">{item["resolution"]}</td>
-                                <td class="py-3 px-4 font-mono">
+                                <td class="py-3 px-4 text-gray-400 font-mono whitespace-nowrap">{item["discrepancy_type"]}</td>
+                                <td class="py-3 px-4 text-gray-300 leading-relaxed break-words">{item["resolution"]}</td>
+                                <td class="py-3 px-4 font-mono whitespace-nowrap">
                                     <a href="{item.get('verified_evidence_url', '#')}" target="_blank" class="text-brand-400 hover:underline flex items-center space-x-1">
                                         <span>Docs [Link]</span>
                                     </a>
                                 </td>
                             </tr>
-                            ''' for item in audit_records[:30]])}
+                            ''' for item in audit_records])}
                         </tbody>
                     </table>
                 </div>
             </div>
-            <div class="text-xs text-gray-500 mt-2 text-right">Showing key audited entries (All apps audited and resolved in dataset)</div>
+            <div class="text-xs text-gray-500 mt-2 text-right">Showing all {len(audit_records)} audited entries (Complete verification audit trail)</div>
         </div>
     </section>
 
     <!-- Modal for App Deep Dive with Evidence Highlights -->
     <div id="appModal" style="display: none;" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm items-center justify-center p-4">
-        <div class="glass-panel bg-dark-900 border border-gray-700 rounded-2xl max-w-2xl w-full p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
+        <div class="glass-panel bg-dark-900 border border-gray-700 rounded-2xl max-w-3xl w-full p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
             <div class="flex items-start justify-between border-b border-gray-800 pb-4 mb-4">
                 <div>
                     <div class="flex items-center space-x-2">
@@ -860,29 +860,29 @@ def build_html_deliverable():
 
                 tr.innerHTML = `
                     <td class="py-3 px-4 text-center font-mono text-gray-500">${{app.id}}</td>
-                    <td class="py-3 px-4 max-w-xs">
+                    <td class="py-3 px-4 min-w-[220px]">
                         <div class="flex items-center space-x-1.5">
                             <span class="font-bold text-white">${{app.name}}</span>
                             ${{app.isCustom ? '<span class="text-[9px] px-1.5 py-0.2 rounded bg-purple-900/60 text-purple-300 font-mono border border-purple-700/50">Custom</span>' : ''}}
                             <a href="${{primaryDocUrl}}" target="_blank" title="Open Official Docs" class="text-gray-500 hover:text-brand-400 font-mono text-[10px] transition">[Docs]</a>
                         </div>
-                        <div class="text-[11px] text-gray-400 font-normal line-clamp-1 mt-0.5 leading-snug" title="${{app.description || ''}}">
+                        <div class="text-[11px] text-gray-400 font-normal mt-1 leading-relaxed break-words">
                             ${{app.description || ''}}
                         </div>
                     </td>
-                    <td class="py-3 px-4 text-gray-400">${{app.category}}</td>
-                    <td class="py-3 px-4 font-mono">${{authBadges}}</td>
-                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded font-mono text-[11px] ${{gatingBadge}}">${{app.self_serve}}</span></td>
-                    <td class="py-3 px-4 font-mono text-gray-300">${{app.api_surface}} <span class="text-gray-500 text-[10px]">(${{app.api_breadth}})</span></td>
-                    <td class="py-3 px-4 text-center text-xs font-mono">${{mcpBadge}}</td>
-                    <td class="py-3 px-4"><span class="px-2 py-0.5 rounded font-mono text-[11px] ${{verdictBadge}}">${{app.buildability}}</span></td>
-                    <td class="py-3 px-4 max-w-sm">
-                        <div class="flex items-start space-x-1.5">
-                            <span class="px-1.5 py-0.5 rounded font-mono text-[9px] font-bold ${{app.human_report_status === 'Corrected in Audit' ? 'bg-amber-950/80 text-amber-300 border border-amber-700/60' : 'bg-emerald-950/80 text-emerald-300 border border-emerald-700/60'}} whitespace-nowrap mt-0.5">${{app.human_report_status || 'Verified'}}</span>
-                            <span class="text-gray-300 text-[11px] leading-snug line-clamp-2" title="${{app.human_report || ''}}">${{app.human_report || ''}}</span>
+                    <td class="py-3 px-4 text-gray-400 min-w-[130px]">${{app.category}}</td>
+                    <td class="py-3 px-4 font-mono min-w-[140px]">${{authBadges}}</td>
+                    <td class="py-3 px-4 min-w-[130px]"><span class="px-2 py-0.5 rounded font-mono text-[11px] ${{gatingBadge}}">${{app.self_serve}}</span></td>
+                    <td class="py-3 px-4 font-mono text-gray-300 min-w-[150px]">${{app.api_surface}} <span class="text-gray-500 text-[10px]">(${{app.api_breadth}})</span></td>
+                    <td class="py-3 px-4 text-center text-xs font-mono min-w-[80px]">${{mcpBadge}}</td>
+                    <td class="py-3 px-4 min-w-[130px]"><span class="px-2 py-0.5 rounded font-mono text-[11px] ${{verdictBadge}}">${{app.buildability}}</span></td>
+                    <td class="py-3 px-4 min-w-[340px]">
+                        <div class="flex items-start space-x-2">
+                            <span class="px-1.5 py-0.5 rounded font-mono text-[9px] font-bold ${{app.human_report_status === 'Corrected in Audit' ? 'bg-amber-950/80 text-amber-300 border border-amber-700/60' : 'bg-emerald-950/80 text-emerald-300 border border-emerald-700/60'}} whitespace-nowrap mt-0.5 shrink-0">${{app.human_report_status || 'Verified'}}</span>
+                            <span class="text-gray-300 text-[11px] leading-relaxed break-words">${{app.human_report || ''}}</span>
                         </div>
                     </td>
-                    <td class="py-3 px-4 text-center">
+                    <td class="py-3 px-4 text-center min-w-[90px]">
                         <button onclick="openModal(${{app.id}})" class="px-2.5 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-brand-300 hover:text-white border border-gray-700 font-mono text-[11px] transition">
                             Evidence
                         </button>
