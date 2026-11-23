@@ -4,10 +4,13 @@ Autonomous AI research agent that analyzes **100 enterprise and consumer platfor
 
 ---
 
-## Live Deliverable & Case Study
+## Live Deliverables & Case Study
 
-- **Live Case Study Dashboard:** https://arvindnandigam.github.io/Composio_THA/
-- **Deliverable File:** `index.html` (Single self-contained, responsive dashboard with zero narration required)
+- **2-Minute Executive Case Study (Fast Skim):** https://arvindnandigam.github.io/Composio_THA/
+- **Detailed Deep-Dive Case Study & Evidence Archive:** https://arvindnandigam.github.io/Composio_THA/detailed.html
+- **Deliverable Files:**
+  - `index.html` (Dedicated 2-minute executive edition with headline patterns, 4 roadmap tiers, agent architecture & proof, 3-stage verification funnel, and paginated 100-app matrix)
+  - `detailed.html` (Full deep-dive edition with interactive Chart.js visualizations, mathematical formula verification proofs, and raw 20-row sample verification audit)
 
 ---
 
@@ -160,11 +163,11 @@ python -m agent.analyzer
 ```
 *Computes statistical distributions, gating cross-tabulations, and roadmap tiers.*
 
-### 7. Build HTML Deliverable
+### 7. Build HTML Deliverables
 ```bash
 python generate_html.py
 ```
-*Generates the standalone, interactive dashboard at `index.html`.*
+*Generates both `index.html` (2-minute executive edition) and `detailed.html` (complete deep-dive archive), mirroring them to `output/`.*
 
 ---
 
@@ -172,11 +175,12 @@ python generate_html.py
 
 ```
 Composio_THA/
-├── index.html                  # Deployed Deliverable (Self-contained dashboard)
+├── index.html                  # 2-Minute Executive Case Study (Fast-track skim)
+├── detailed.html               # Detailed Deep-Dive Case Study & Evidence Archive
 ├── README.md                   # Project overview & reproduction guide
 ├── requirements.txt            # Python dependencies
 ├── run_research.py             # Main research orchestrator
-├── generate_html.py            # Dashboard compilation script
+├── generate_html.py            # Dashboard compilation script (generates both editions)
 ├── agent/
 │   ├── models.py               # Pydantic data schemas
 │   ├── tools.py                # Bing web search, doc scraper, MCP registry
@@ -203,4 +207,5 @@ Composio_THA/
 - **LinkedIn:** https://linkedin.com/in/arvind-nandigam-329635286
 - **GitHub:** https://github.com/ArvindNandigam
 - **Take-Home Assignment Repository:** https://github.com/ArvindNandigam/Composio_THA
-- **Live Deliverable Dashboard:** https://arvindnandigam.github.io/Composio_THA/
+- **2-Minute Executive Deliverable:** https://arvindnandigam.github.io/Composio_THA/
+- **Detailed Deep-Dive Archive:** https://arvindnandigam.github.io/Composio_THA/detailed.html

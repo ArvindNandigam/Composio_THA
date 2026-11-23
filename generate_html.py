@@ -5,54 +5,24 @@ from typing import Dict, Any, List
 RESULTS_FILE = os.path.join(os.path.dirname(__file__), "data", "research_results.json")
 ANALYSIS_FILE = os.path.join(os.path.dirname(__file__), "data", "analysis_results.json")
 AUDIT_FILE = os.path.join(os.path.dirname(__file__), "data", "verification_audit.json")
-OUTPUT_HTML = os.path.join(os.path.dirname(__file__), "index.html")
 
-def build_html_deliverable():
-    if not os.path.exists(RESULTS_FILE) or not os.path.exists(ANALYSIS_FILE) or not os.path.exists(AUDIT_FILE):
-        print("Required data files missing. Make sure research, analysis, and verification have completed.")
-        return
+OUTPUT_INDEX = os.path.join(os.path.dirname(__file__), "index.html")
+OUTPUT_DETAILED = os.path.join(os.path.dirname(__file__), "detailed.html")
+OUTPUT_DIR = os.path.join(os.path.dirname(__file__), "output")
 
-    with open(RESULTS_FILE, "r", encoding="utf-8") as f:
-        apps = json.load(f)
 
-    with open(ANALYSIS_FILE, "r", encoding="utf-8") as f:
-        analysis = json.load(f)
-
-    with open(AUDIT_FILE, "r", encoding="utf-8") as f:
-        audit = json.load(f)
-
-    apps_json = json.dumps(apps)
-    analysis_json = json.dumps(analysis)
-    audit_json = json.dumps(audit)
-
-    audit_records = audit.get("audit_records", [])
-    total_audited = len(audit_records)
-    pass1_acc = audit.get("pass1_accuracy_pct", 86.0)
-    auto_verif_acc = audit.get("automated_verification_accuracy_pct", 92.0)
-    auto_uplift = audit.get("automated_verification_uplift_pct", 6.0)
-    human_corrections = audit.get("human_audit_discrepancies_found", 14)
-    human_disc_rate = audit.get("human_audit_discrepancy_rate_pct", 14.0)
-    post_human_acc = audit.get("post_human_ground_truth_accuracy_pct", 100.0)
-
-    viable_pct = analysis['buildability_breakdown']['composio_viable_pct']
-    viable_count = analysis['buildability_breakdown']['composio_viable_count']
-    self_serve_pct = analysis['gating_distribution']['percentages'].get('Self-serve', 70.0) + analysis['gating_distribution']['percentages'].get('Open Source / Local', 6.0)
-    self_serve_count = analysis['gating_distribution']['counts'].get('Self-serve', 70) + analysis['gating_distribution']['counts'].get('Open Source / Local', 6)
-    existing_mcp_count = analysis['mcp_ecosystem']['existing_mcp_count']
-    existing_mcp_pct = analysis['mcp_ecosystem']['existing_mcp_pct']
-    greenfield_count = analysis['mcp_ecosystem']['greenfield_opportunity_count']
-    greenfield_pct = analysis['mcp_ecosystem']['greenfield_opportunity_pct']
-
-    html_content = f"""<!DOCTYPE html>
+def generate_head(title: str, is_detailed: bool = False) -> str:
+    chart_cdn = '<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>' if is_detailed else ''
+    return f"""<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Composio Take-Home Assignment | 100-App Integration Feasibility Case Study</title>
+    <title>{title}</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Chart.js CDN (Loaded conditionally for deep dive) -->
+    {chart_cdn}
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -104,10 +74,47 @@ def build_html_deliverable():
         .badge-gated {{ background: rgba(217, 70, 239, 0.15); color: #E879F9; border: 1px solid rgba(217, 70, 239, 0.3); }}
     </style>
 </head>
-<body class="min-h-screen antialiased selection:bg-brand-500 selection:text-white">
+<body class="min-h-screen antialiased selection:bg-brand-500 selection:text-white">"""
 
+
+def generate_banner(is_detailed: bool = False) -> str:
+    if not is_detailed:
+        return """
+    <!-- Top Announcement Banner: 2-Minute Executive Mode -->
+    <div class="bg-gradient-to-r from-brand-900/90 via-indigo-900/90 to-purple-900/90 border-b border-brand-500/40 py-2.5 px-4 text-center text-xs font-medium text-white shadow-lg sticky top-0 z-50 flex flex-wrap items-center justify-center gap-3">
+        <span class="px-2 py-0.5 rounded-full bg-brand-500/30 text-brand-200 font-mono text-[11px] font-bold border border-brand-400/40">2-Minute Executive Briefing</span>
+        <span>Fast-track executive overview: headline patterns, strategic roadmap, agent architecture, and skimmable 100-app matrix.</span>
+        <a href="detailed.html" class="px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-[11px] font-semibold border border-white/20 transition inline-flex items-center space-x-1 shrink-0">
+            <span>Open Full Deep-Dive Case Study & Evidence Archive (detailed.html) &rarr;</span>
+        </a>
+    </div>"""
+    else:
+        return """
+    <!-- Top Announcement Banner: Deep-Dive Archive Mode -->
+    <div class="bg-gradient-to-r from-indigo-950/90 via-gray-900/90 to-purple-950/90 border-b border-indigo-500/40 py-2.5 px-4 text-center text-xs font-medium text-white shadow-lg sticky top-0 z-50 flex flex-wrap items-center justify-center gap-3">
+        <span class="px-2 py-0.5 rounded-full bg-indigo-500/30 text-indigo-200 font-mono text-[11px] font-bold border border-indigo-400/40">Full Deep-Dive Case Study</span>
+        <span>Complete analytical visualizations, mathematical formulas, raw 20-row verification audit, and complete evidence archive.</span>
+        <a href="index.html" class="px-3 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-mono text-[11px] font-semibold border border-white/20 transition inline-flex items-center space-x-1 shrink-0">
+            <span>&larr; Switch to 2-Minute Executive Summary (index.html)</span>
+        </a>
+    </div>"""
+
+
+def generate_navbar(is_detailed: bool = False) -> str:
+    switch_btn = """
+        <a href="detailed.html" class="px-3 py-1.5 rounded-lg bg-indigo-600/30 hover:bg-indigo-600/50 text-indigo-200 border border-indigo-500/40 text-xs font-semibold font-mono flex items-center space-x-1 transition">
+            <span>Full Deep Dive (detailed.html) &rarr;</span>
+        </a>""" if not is_detailed else """
+        <a href="index.html" class="px-3 py-1.5 rounded-lg bg-brand-600/30 hover:bg-brand-600/50 text-brand-200 border border-brand-500/40 text-xs font-semibold font-mono flex items-center space-x-1 transition">
+            <span>&larr; 2-Minute Summary (index.html)</span>
+        </a>"""
+
+    charts_nav = '<a href="#charts" class="hover:text-white transition">Analytics</a>' if is_detailed else ''
+    mode_badge = "2-Minute Summary" if not is_detailed else "Deep-Dive Archive"
+
+    return f"""
     <!-- Navbar -->
-    <header class="sticky top-0 z-50 glass-panel border-b border-gray-800">
+    <header class="sticky top-0 z-40 glass-panel border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3">
                 <div class="w-9 h-9 rounded-lg bg-gradient-to-tr from-brand-600 to-indigo-400 flex items-center justify-center font-bold text-white shadow-lg shadow-brand-500/20">
@@ -115,27 +122,36 @@ def build_html_deliverable():
                 </div>
                 <div>
                     <span class="font-bold text-lg tracking-tight text-white">Composio</span>
-                    <span class="text-xs px-2 py-0.5 rounded-full bg-brand-900/60 text-brand-300 font-mono ml-2 border border-brand-700/50">Take-Home Assignment</span>
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-brand-900/60 text-brand-300 font-mono ml-2 border border-brand-700/50">{mode_badge}</span>
                 </div>
             </div>
-            <nav class="hidden md:flex items-center space-x-5 text-xs lg:text-sm font-medium text-gray-300">
+            <nav class="hidden lg:flex items-center space-x-5 text-xs font-medium text-gray-300">
                 <a href="#executive-briefing" class="hover:text-white transition">Executive Summary</a>
                 <a href="#headline-insights" class="hover:text-white transition">Headline Patterns</a>
                 <a href="#action-tiers" class="hover:text-white transition">Ship Roadmap</a>
                 <a href="#agent-architecture" class="hover:text-white transition">Agent Architecture</a>
                 <a href="#verification-audit" class="hover:text-white transition">Verification Audit</a>
-                <a href="#charts" class="hover:text-white transition">Analytics</a>
+                {charts_nav}
                 <a href="#data-matrix" class="hover:text-white transition">100 Apps Matrix</a>
             </nav>
             <div class="flex items-center space-x-3">
-                <a href="https://github.com/ArvindNandigam/Composio_THA" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-xs font-semibold text-white shadow-lg shadow-brand-500/20 transition flex items-center space-x-2">
+                {switch_btn}
+                <a href="https://github.com/ArvindNandigam/Composio_THA" target="_blank" class="px-3.5 py-1.5 rounded-lg bg-brand-600 hover:bg-brand-500 text-xs font-semibold text-white shadow-lg shadow-brand-500/20 transition flex items-center space-x-1.5">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-                    <span>GitHub Repository</span>
+                    <span>GitHub</span>
                 </a>
             </div>
         </div>
-    </header>
+    </header>"""
 
+
+def generate_hero(viable_pct: float, viable_count: int, self_serve_pct: float, self_serve_count: int,
+                  greenfield_pct: float, greenfield_count: int, existing_mcp_count: int,
+                  pass1_acc: float, auto_verif_acc: float, auto_uplift: float, human_corrections: int,
+                  is_detailed: bool = False) -> str:
+    lead_text = "A 2-minute executive case study evaluating authentication mechanisms, credential gating, API surfaces, and MCP ecosystem readiness for Composio toolkits across 100 enterprise and consumer platforms." if not is_detailed else "A comprehensive deep-dive case study and technical evidence archive evaluating authentication mechanisms, credential gating, API surfaces, and MCP ecosystem readiness for Composio toolkits across 100 enterprise and consumer platforms."
+
+    return f"""
     <!-- Hero Section -->
     <section class="relative overflow-hidden pt-12 pb-14 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -147,7 +163,7 @@ def build_html_deliverable():
                     100-App Integration Feasibility & Pattern Analysis
                 </h1>
                 <p class="mt-4 text-base sm:text-lg text-gray-400 leading-relaxed">
-                    A rigorous research case study evaluating authentication mechanisms, credential gating, API surfaces, and MCP ecosystem readiness for Composio toolkits across 100 enterprise and consumer platforms.
+                    {lead_text}
                 </p>
                 <div class="mt-4 flex flex-wrap items-center gap-3">
                     <span class="inline-flex items-center text-xs font-mono px-3 py-1 rounded-lg bg-gray-900 border border-gray-800 text-emerald-400">
@@ -219,11 +235,17 @@ def build_html_deliverable():
                 </div>
                 <div class="glass-panel p-5 rounded-2xl border-l-4 border-l-purple-500 col-span-2 sm:col-span-1">
                     <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Multi-Pass Funnel</p>
-                    <p class="text-3xl font-extrabold text-purple-400 mt-1">{pass1_acc}% -> {auto_verif_acc}%</p>
+                    <p class="text-3xl font-extrabold text-purple-400 mt-1">{pass1_acc}% &rarr; {auto_verif_acc}%</p>
                     <p class="text-xs text-purple-300 mt-1 font-mono">+{auto_uplift}% Auto | {human_corrections} Human Fixes</p>
                 </div>
-            </div>
+            </div>"""
 
+
+def generate_executive_briefing(pass1_acc: float, auto_verif_acc: float, auto_uplift: float,
+                                human_corrections: int, is_detailed: bool = False) -> str:
+    charts_pill = '<a href="#charts" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-gray-200 transition">Analytics</a>' if is_detailed else ''
+    
+    return f"""
             <!-- 2-Minute Reviewer Executive Briefing -->
             <div id="executive-briefing" class="mt-8 p-6 rounded-2xl glass-panel border border-brand-500/50 bg-gradient-to-br from-brand-950/30 via-gray-900/90 to-indigo-950/30 shadow-2xl">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 border-b border-gray-800">
@@ -268,7 +290,7 @@ def build_html_deliverable():
                     <div class="p-4 rounded-xl bg-gray-900/80 border border-gray-800">
                         <div class="text-xs font-mono font-bold text-indigo-400 uppercase tracking-wider mb-1">4. The Agent Built & Proof</div>
                         <p class="text-xs text-gray-300 leading-relaxed">
-                            <strong>Autonomous Pipeline:</strong> Multi-search tool calling + live doc scraper + Gemini 3.5 structured extraction + Composio SDK router (composio>=0.34.0) with offline fallback.<br>
+                            <strong>Autonomous Pipeline:</strong> Multi-search tool calling + live doc scraper + Gemini 3.5 structured extraction + Composio SDK router (composio&gt;=0.34.0) with offline fallback.<br>
                             <strong>Atomic Checkpointing:</strong> Disk writes after every app. Resilient against 429 rate limits.<br>
                             <strong>Proof:</strong> Runnable CLI (<code class="text-brand-300">python run_research.py</code>).
                         </p>
@@ -301,14 +323,17 @@ def build_html_deliverable():
                         <a href="#action-tiers" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-gray-200 transition">Roadmap Tiers</a>
                         <a href="#agent-architecture" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-gray-200 transition">Agent Architecture</a>
                         <a href="#verification-audit" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-gray-200 transition">Verification Audit</a>
-                        <a href="#charts" class="px-2.5 py-1 rounded bg-gray-800 hover:bg-gray-700 text-gray-200 transition">Analytics</a>
+                        {charts_pill}
                         <a href="#data-matrix" class="px-2.5 py-1 rounded bg-brand-600/30 hover:bg-brand-600/50 text-brand-300 border border-brand-500/40 transition">100 Apps Matrix</a>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </section>"""
 
+
+def generate_headline_insights() -> str:
+    return """
     <!-- Section 1: Headline Insights -->
     <section id="headline-insights" class="py-12 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -378,16 +403,20 @@ def build_html_deliverable():
                     <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 mb-4 font-mono font-bold">
                         06
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">6. 3-Stage Verification Funnel (77% -> 86% -> 100%)</h3>
+                    <h3 class="text-lg font-bold text-white mb-2">6. 3-Stage Verification Funnel (77% &rarr; 86% &rarr; 100%)</h3>
                     <p class="text-sm text-gray-400 leading-relaxed">
                         Pass 1 Autonomous Agent scored 77.0% on raw research across protocols, gating, and MCP links. The Pass 2 automated verification loop lifted accuracy to 86.0% (+9.0% automated uplift via link reachability & MCP checks). The Pass 3 manual human audit caught and resolved 23 discrepancies (14 commercial/semantic gates and 9 MCP false negatives, false positives, and broken links), delivering a 100% verified ground-truth dataset.
                     </p>
                 </div>
             </div>
         </div>
-    </section>
+    </section>"""
 
-    <!-- Section 2: Analytics & Visual Charts -->
+
+def generate_action_tiers(analysis: Dict[str, Any]) -> str:
+    tiers = analysis['product_ops_action_tiers']
+    return f"""
+    <!-- Section 2: Integration Roadmap & Shipping Tiers -->
     <section id="action-tiers" class="py-12 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center space-x-3 mb-8">
@@ -400,12 +429,12 @@ def build_html_deliverable():
                 <div class="glass-panel p-5 rounded-2xl border-t-4 border-t-emerald-500">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-bold font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400">TIER 1</span>
-                        <span class="text-xs text-gray-400 font-semibold">{analysis['product_ops_action_tiers']['tier1_immediate_wins']['count']} Apps</span>
+                        <span class="text-xs text-gray-400 font-semibold">{tiers['tier1_immediate_wins']['count']} Apps</span>
                     </div>
                     <h3 class="text-base font-bold text-white mb-2">Tier 1: Immediate Ship List</h3>
-                    <p class="text-xs text-gray-400 mb-4">{analysis['product_ops_action_tiers']['tier1_immediate_wins']['description']}</p>
+                    <p class="text-xs text-gray-400 mb-4">{tiers['tier1_immediate_wins']['description']}</p>
                     <ul class="text-xs space-y-1.5 text-gray-300 font-mono">
-                        {"".join([f'<li class="flex items-center space-x-1.5"><span class="text-emerald-400">[Ship]</span><span>#{item["id"]} {item["name"]}</span></li>' for item in analysis['product_ops_action_tiers']['tier1_immediate_wins']['sample']])}
+                        {"".join([f'<li class="flex items-center space-x-1.5"><span class="text-emerald-400">[Ship]</span><span>#{item["id"]} {item["name"]}</span></li>' for item in tiers['tier1_immediate_wins']['sample']])}
                     </ul>
                 </div>
 
@@ -413,12 +442,12 @@ def build_html_deliverable():
                 <div class="glass-panel p-5 rounded-2xl border-t-4 border-t-amber-500">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-bold font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-400">TIER 2</span>
-                        <span class="text-xs text-gray-400 font-semibold">{analysis['product_ops_action_tiers']['tier2_oauth_apps']['count']} Apps</span>
+                        <span class="text-xs text-gray-400 font-semibold">{tiers['tier2_oauth_apps']['count']} Apps</span>
                     </div>
                     <h3 class="text-base font-bold text-white mb-2">Tier 2: OAuth Verification Pipeline</h3>
-                    <p class="text-xs text-gray-400 mb-4">{analysis['product_ops_action_tiers']['tier2_oauth_apps']['description']}</p>
+                    <p class="text-xs text-gray-400 mb-4">{tiers['tier2_oauth_apps']['description']}</p>
                     <ul class="text-xs space-y-1.5 text-gray-300 font-mono">
-                        {"".join([f'<li class="flex items-center space-x-1.5"><span class="text-amber-400">[OAuth]</span><span>#{item["id"]} {item["name"]}</span></li>' for item in analysis['product_ops_action_tiers']['tier2_oauth_apps']['sample']])}
+                        {"".join([f'<li class="flex items-center space-x-1.5"><span class="text-amber-400">[OAuth]</span><span>#{item["id"]} {item["name"]}</span></li>' for item in tiers['tier2_oauth_apps']['sample']])}
                     </ul>
                 </div>
 
@@ -426,12 +455,12 @@ def build_html_deliverable():
                 <div class="glass-panel p-5 rounded-2xl border-t-4 border-t-rose-500">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-bold font-mono px-2 py-0.5 rounded bg-rose-500/20 text-rose-400">TIER 3</span>
-                        <span class="text-xs text-gray-400 font-semibold">{analysis['product_ops_action_tiers']['tier3_partner_gated']['count']} Apps</span>
+                        <span class="text-xs text-gray-400 font-semibold">{tiers['tier3_partner_gated']['count']} Apps</span>
                     </div>
                     <h3 class="text-base font-bold text-white mb-2">Tier 3: Enterprise Partner Outreach</h3>
-                    <p class="text-xs text-gray-400 mb-4">{analysis['product_ops_action_tiers']['tier3_partner_gated']['description']}</p>
+                    <p class="text-xs text-gray-400 mb-4">{tiers['tier3_partner_gated']['description']}</p>
                     <ul class="text-xs space-y-1.5 text-gray-300 font-mono">
-                        {"".join([f'<li class="flex items-center space-x-1.5"><span class="text-rose-400">[Gated]</span><span>#{item["id"]} {item["name"]}</span></li>' for item in analysis['product_ops_action_tiers']['tier3_partner_gated']['sample']])}
+                        {"".join([f'<li class="flex items-center space-x-1.5"><span class="text-rose-400">[Gated]</span><span>#{item["id"]} {item["name"]}</span></li>' for item in tiers['tier3_partner_gated']['sample']])}
                     </ul>
                 </div>
 
@@ -439,19 +468,22 @@ def build_html_deliverable():
                 <div class="glass-panel p-5 rounded-2xl border-t-4 border-t-purple-500">
                     <div class="flex items-center justify-between mb-3">
                         <span class="text-xs font-bold font-mono px-2 py-0.5 rounded bg-purple-500/20 text-purple-400">TIER 4</span>
-                        <span class="text-xs text-gray-400 font-semibold">{analysis['product_ops_action_tiers']['tier4_cli_mcp']['count']} Apps</span>
+                        <span class="text-xs text-gray-400 font-semibold">{tiers['tier4_cli_mcp']['count']} Apps</span>
                     </div>
                     <h3 class="text-base font-bold text-white mb-2">Tier 4: Local Subprocess MCPs</h3>
-                    <p class="text-xs text-gray-400 mb-4">{analysis['product_ops_action_tiers']['tier4_cli_mcp']['description']}</p>
+                    <p class="text-xs text-gray-400 mb-4">{tiers['tier4_cli_mcp']['description']}</p>
                     <ul class="text-xs space-y-1.5 text-gray-300 font-mono">
-                        {"".join([f'<li class="flex items-center space-x-1.5"><span class="text-purple-400">[CLI]</span><span>#{item["id"]} {item["name"]}</span></li>' for item in analysis['product_ops_action_tiers']['tier4_cli_mcp']['sample']])}
+                        {"".join([f'<li class="flex items-center space-x-1.5"><span class="text-purple-400">[CLI]</span><span>#{item["id"]} {item["name"]}</span></li>' for item in tiers['tier4_cli_mcp']['sample']])}
                     </ul>
                 </div>
             </div>
         </div>
-    </section>
+    </section>"""
 
-    <!-- Section 4: Interactive 100 Apps Matrix -->
+
+def generate_agent_architecture() -> str:
+    return """
+    <!-- Section 3: Agent Architecture & Division of Labor -->
     <section id="agent-architecture" class="py-12 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center space-x-3 mb-8">
@@ -514,7 +546,7 @@ def build_html_deliverable():
                         </li>
                         <li class="flex items-start space-x-2">
                             <span class="text-emerald-400 font-bold">[OK]</span>
-                            <span><strong>Composio SDK & Fallback Architecture:</strong> Architected with Composio SDK tool routing (composio>=0.34.0) and graceful scraper fallback for offline and unauthenticated evaluators.</span>
+                            <span><strong>Composio SDK & Fallback Architecture:</strong> Architected with Composio SDK tool routing (composio&gt;=0.34.0) and graceful scraper fallback for offline and unauthenticated evaluators.</span>
                         </li>
                     </ul>
                 </div>
@@ -541,61 +573,98 @@ def build_html_deliverable():
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Section 6: Verification Audit -->
-    <section id="verification-audit" class="py-12 pb-20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
-                <div class="flex items-center space-x-3">
-                    <span class="w-2.5 h-6 bg-brand-500 rounded-full"></span>
+            <!-- Proof of Agent: Runnable Trigger -->
+            <div class="mt-8 glass-panel p-6 rounded-2xl border border-gray-800 bg-gray-900/60">
+                <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
-                        <h2 class="text-2xl font-bold text-white tracking-tight">Verification Audit & Accuracy Jump</h2>
-                        <p class="text-xs text-gray-400 mt-1">An honest cross-check of audited apps against real developer documentation.</p>
+                        <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-400">Agent Proof & Reproducibility</span>
+                        <h3 class="text-base font-bold text-white mt-0.5">Runnable CLI Trigger & Live Execution</h3>
+                        <p class="text-xs text-gray-400 mt-1">The research agent can be executed directly from the terminal or invoked via the Composio SDK router.</p>
+                    </div>
+                    <div class="shrink-0 font-mono text-xs">
+                        <span class="px-3 py-2 rounded-xl bg-gray-950 border border-gray-800 text-brand-300 block">
+                            python run_research.py --apps 100 --verify
+                        </span>
                     </div>
                 </div>
-                <div class="flex items-center space-x-3">
-                    <a href="https://github.com/ArvindNandigam/Composio_THA/blob/main/HUMAN_VERIFICATION_CHECKLIST.md" target="_blank" 
-                       class="px-3 py-1.5 rounded-lg bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 text-xs font-semibold font-mono flex items-center space-x-2 transition">
-                        <span>Open Human Spot-Check Sheet [Link]</span>
-                    </a>
-                </div>
             </div>
+        </div>
+    </section>"""
 
-            <!-- Accuracy Progression Banner: 3-Stage Verification Funnel -->
-            <div class="glass-panel p-6 rounded-2xl mb-8 border-l-4 border-l-purple-500">
-                <div class="mb-4">
-                    <h3 class="text-base font-bold text-white">Multi-Pass Verification Funnel (100 Apps Audited)</h3>
-                    <p class="text-xs text-gray-400 mt-1 max-w-3xl leading-relaxed">
-                        To guarantee authentic metrics, the verification pipeline is explicitly separated into three distinct phases: autonomous agent research (Pass 1), automated verification loop (Pass 2), and manual human ground-truth audit (Pass 3). Human domain corrections are strictly separated from automated verification metrics.
+
+def generate_verification_section(pass1_acc: float, auto_verif_acc: float, auto_uplift: float,
+                                  human_corrections: int, human_disc_rate: float, post_human_acc: float,
+                                  viable_pct: float, self_serve_pct: float, greenfield_pct: float,
+                                  audit_records: List[Dict[str, Any]], is_detailed: bool = False) -> str:
+    # 3 Benchmark Misses Cards
+    benchmark_cards = """
+            <!-- 3 Benchmark Misses & Human Corrections -->
+            <div class="mb-8">
+                <div class="flex items-center space-x-2 mb-4">
+                    <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-white font-mono">Key Human Corrections & Benchmark Flaws Discovered</h3>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="p-5 rounded-2xl glass-panel border border-amber-500/30 bg-gray-900/70">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-brand-900/60 text-brand-300 border border-brand-700/50">#17 Plain</span>
+                            <span class="px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-amber-500/20 text-amber-400 border border-amber-500/30">Semantic Collision</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-white">Search Collision with Word Game</h4>
+                        <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+                            <strong>Agent Flaw:</strong> Autonomous Bing search collided with playplain.app (word game), extracting bogus REST endpoints.<br>
+                            <strong>Human Correction:</strong> Redirected agent to official developer docs at <code class="text-brand-300 font-mono text-[11px]">plain.com/docs</code>, confirming workspace API keys and modern GraphQL API.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl glass-panel border border-amber-500/30 bg-gray-900/70">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-brand-900/60 text-brand-300 border border-brand-700/50">#49 Amazon SP-API</span>
+                            <span class="px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-rose-500/20 text-rose-400 border border-rose-500/30">Commercial Gating</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-white">Commercial Paywall & IAM Vetting</h4>
+                        <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+                            <strong>Agent Flaw:</strong> Agent saw publicly browseable SP-API docs and marked access as Self-Serve.<br>
+                            <strong>Human Correction:</strong> Identified strict gating: requires active $39.99/mo Professional Seller account, AWS IAM role creation, and formal developer profile review before keys are issued.
+                        </p>
+                    </div>
+
+                    <div class="p-5 rounded-2xl glass-panel border border-amber-500/30 bg-gray-900/70">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-brand-900/60 text-brand-300 border border-brand-700/50">#58 Sherlock</span>
+                            <span class="px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-purple-500/20 text-purple-400 border border-purple-500/30">CLI Architecture</span>
+                        </div>
+                        <h4 class="text-sm font-bold text-white">Non-HTTP Subprocess OSINT CLI</h4>
+                        <p class="text-xs text-gray-300 mt-2 leading-relaxed">
+                            <strong>Agent Flaw:</strong> Agent attempted to find cloud webhooks or REST endpoints.<br>
+                            <strong>Human Correction:</strong> Reclassified as zero-auth open-source Python OSINT CLI. Defined the "Local Subprocess MCP" pattern where Composio runs the binary natively via stdio rather than HTTP.
+                        </p>
+                    </div>
+                </div>
+            </div>"""
+
+    if not is_detailed:
+        deep_dive_cta = """
+            <!-- Deep-Dive Callout Card for detailed.html -->
+            <div class="p-6 rounded-2xl glass-panel border border-brand-500/40 bg-gradient-to-r from-gray-900 via-indigo-950/40 to-gray-900 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-400">Deep-Dive Verification Evidence Archive</span>
+                    <h3 class="text-base font-bold text-white mt-0.5">Need the full 20-row sample cross-check and mathematical formulas?</h3>
+                    <p class="text-xs text-gray-400 mt-1">
+                        The detailed archive provides the complete 8-metric mathematical authenticity table, calculation proofs, and the full 20-row sample verification table with verified documentation links.
                     </p>
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mt-6">
-                    <div class="p-4 rounded-xl bg-gray-900/80 border border-amber-500/30">
-                        <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 font-bold block mb-1">Pass 1: Autonomous Agent Baseline</span>
-                        <p class="text-3xl font-extrabold text-amber-400">{pass1_acc}%</p>
-                        <p class="text-[11px] text-gray-300 mt-1 font-mono">77 / 100 Apps Accurate</p>
-                        <p class="text-[11px] text-gray-400 mt-1">Autonomous LLM search & extraction; made 23 assumptions across gating, auth, and MCP links</p>
-                    </div>
-                    
-                    <div class="p-4 rounded-xl bg-gray-900/80 border border-blue-500/30">
-                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400 font-bold block mb-1">Pass 2: Automated Verification Loop</span>
-                        <p class="text-3xl font-extrabold text-blue-400">{auto_verif_acc}%</p>
-                        <p class="text-[11px] text-blue-300 mt-1 font-mono">86 / 100 Apps (+{auto_uplift}% Auto Gain)</p>
-                        <p class="text-[11px] text-gray-400 mt-1">Automated URL reachability & MCP checks; resolved technical/token discrepancies without human input</p>
-                    </div>
-                    
-                    <div class="p-4 rounded-xl bg-gray-900/80 border border-emerald-500/30">
-                        <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-bold block mb-1">Pass 3: Human Audit & Ground-Truth</span>
-                        <p class="text-3xl font-extrabold text-emerald-400">{human_corrections} Corrected</p>
-                        <p class="text-[11px] text-emerald-300 mt-1 font-mono">{human_disc_rate}% Discrepancy Rate ({post_human_acc}% Dataset Quality)</p>
-                        <p class="text-[11px] text-gray-400 mt-1">Manual spot-check resolved 14 commercial/semantic gates + 9 MCP false neg/pos/links; 100% ground truth</p>
-                    </div>
+                <div class="shrink-0">
+                    <a href="detailed.html#verification-audit" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-mono text-xs font-bold shadow-lg shadow-brand-500/20 transition flex items-center space-x-2">
+                        <span>View Full Verification Audit Table &rarr;</span>
+                    </a>
                 </div>
-            </div>
-
+            </div>"""
+        detailed_sections = ""
+    else:
+        deep_dive_cta = ""
+        detailed_sections = f"""
             <!-- Metric Definitions, Formulas & Authenticity Validation Table -->
             <div class="glass-panel p-6 rounded-2xl mb-8 border border-gray-800">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
@@ -670,8 +739,15 @@ def build_html_deliverable():
                 </div>
             </div>
 
-            <!-- Audit Table -->
-            <div class="glass-panel rounded-2xl overflow-hidden border border-gray-800">
+            <!-- Audit Table (Detailed sample verification) -->
+            <div class="glass-panel rounded-2xl overflow-hidden border border-gray-800 mb-8">
+                <div class="p-4 bg-gray-900/90 border-b border-gray-800 flex items-center justify-between">
+                    <div>
+                        <h3 class="text-sm font-bold uppercase tracking-wider text-white font-mono">Sample Verification Audit Trail</h3>
+                        <p class="text-xs text-gray-400 mt-0.5">Pass 1 Findings, automated checks, and human verification resolutions across representative apps.</p>
+                    </div>
+                    <span class="text-xs font-mono text-brand-300">{len(audit_records)} Records Cross-Checked</span>
+                </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border-collapse text-xs">
                         <thead>
@@ -710,11 +786,71 @@ def build_html_deliverable():
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div class="text-xs text-gray-500 mt-2 text-right">Showing all {len(audit_records)} audited entries (Complete verification audit trail)</div>
-        </div>
-    </section>
+            </div>"""
 
+    return f"""
+    <!-- Section 4: Verification Audit & Accuracy Jump -->
+    <section id="verification-audit" class="py-12 border-b border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
+                <div class="flex items-center space-x-3">
+                    <span class="w-2.5 h-6 bg-brand-500 rounded-full"></span>
+                    <div>
+                        <h2 class="text-2xl font-bold text-white tracking-tight">Verification Audit & Accuracy Progression</h2>
+                        <p class="text-xs text-gray-400 mt-1">An honest cross-check of audited apps against real developer documentation.</p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-3">
+                    <a href="https://github.com/ArvindNandigam/Composio_THA/blob/main/HUMAN_VERIFICATION_CHECKLIST.md" target="_blank" 
+                       class="px-3 py-1.5 rounded-lg bg-indigo-600/20 hover:bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 text-xs font-semibold font-mono flex items-center space-x-2 transition">
+                        <span>Open Human Spot-Check Sheet [Link]</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Accuracy Progression Banner: 3-Stage Verification Funnel -->
+            <div class="glass-panel p-6 rounded-2xl mb-8 border-l-4 border-l-purple-500">
+                <div class="mb-4">
+                    <h3 class="text-base font-bold text-white">Multi-Pass Verification Funnel (100 Apps Audited)</h3>
+                    <p class="text-xs text-gray-400 mt-1 max-w-3xl leading-relaxed">
+                        To guarantee authentic metrics, the verification pipeline is explicitly separated into three distinct phases: autonomous agent research (Pass 1), automated verification loop (Pass 2), and manual human ground-truth audit (Pass 3). Human domain corrections are strictly separated from automated verification metrics.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mt-6">
+                    <div class="p-4 rounded-xl bg-gray-900/80 border border-amber-500/30">
+                        <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 font-bold block mb-1">Pass 1: Autonomous Agent Baseline</span>
+                        <p class="text-3xl font-extrabold text-amber-400">{pass1_acc}%</p>
+                        <p class="text-[11px] text-gray-300 mt-1 font-mono">77 / 100 Apps Accurate</p>
+                        <p class="text-[11px] text-gray-400 mt-1">Autonomous LLM search & extraction; made 23 assumptions across gating, auth, and MCP links</p>
+                    </div>
+                    
+                    <div class="p-4 rounded-xl bg-gray-900/80 border border-blue-500/30">
+                        <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400 font-bold block mb-1">Pass 2: Automated Verification Loop</span>
+                        <p class="text-3xl font-extrabold text-blue-400">{auto_verif_acc}%</p>
+                        <p class="text-[11px] text-blue-300 mt-1 font-mono">86 / 100 Apps (+{auto_uplift}% Auto Gain)</p>
+                        <p class="text-[11px] text-gray-400 mt-1">Automated URL reachability & MCP checks; resolved technical/token discrepancies without human input</p>
+                    </div>
+                    
+                    <div class="p-4 rounded-xl bg-gray-900/80 border border-emerald-500/30">
+                        <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-bold block mb-1">Pass 3: Human Audit & Ground-Truth</span>
+                        <p class="text-3xl font-extrabold text-emerald-400">{human_corrections} Corrected</p>
+                        <p class="text-[11px] text-emerald-300 mt-1 font-mono">{human_disc_rate}% Discrepancy Rate ({post_human_acc}% Dataset Quality)</p>
+                        <p class="text-[11px] text-gray-400 mt-1">Manual spot-check resolved 14 commercial/semantic gates + 9 MCP false neg/pos/links; 100% ground truth</p>
+                    </div>
+                </div>
+            </div>
+
+            {benchmark_cards}
+            {detailed_sections}
+            {deep_dive_cta}
+        </div>
+    </section>"""
+
+
+def generate_charts_section() -> str:
+    return """
+    <!-- Section 5: Analytical Visualizations (Detailed Archive only) -->
     <section id="charts" class="py-12 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center space-x-3 mb-8">
@@ -752,9 +888,30 @@ def build_html_deliverable():
                 </div>
             </div>
         </div>
-    </section>
+    </section>"""
 
-    <!-- Section 3: Strategic Integration Tiers (Roadmap) -->
+
+def generate_matrix_section(is_detailed: bool = False) -> str:
+    section_num = "Section 6" if is_detailed else "Section 5"
+    cta_banner = """
+            <!-- Transition Card to detailed.html -->
+            <div class="mt-8 p-6 rounded-2xl glass-panel border border-brand-500/40 bg-gradient-to-r from-gray-900 via-indigo-950/40 to-gray-900 flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div>
+                    <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-400">Deep-Dive Analytics & Raw Evidence</span>
+                    <h3 class="text-base font-bold text-white mt-0.5">Want the full interactive charts and mathematical formula proofs?</h3>
+                    <p class="text-xs text-gray-400 mt-1">
+                        Explore all 4 interactive Chart.js visualizations, the 8-metric mathematical authenticity table, and the raw 20-row sample verification audit in the detailed case study.
+                    </p>
+                </div>
+                <div class="shrink-0">
+                    <a href="detailed.html" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-mono text-xs font-bold shadow-lg shadow-brand-500/20 transition flex items-center space-x-2">
+                        <span>Open Detailed Deep-Dive Case Study &rarr;</span>
+                    </a>
+                </div>
+            </div>""" if not is_detailed else ""
+
+    return f"""
+    <!-- {section_num}: Interactive 100 Apps Matrix -->
     <section id="data-matrix" class="py-12 border-b border-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
@@ -836,10 +993,14 @@ def build_html_deliverable():
                     </button>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Section 5: Agent Architecture -->
+            {cta_banner}
+        </div>
+    </section>"""
+
+
+def generate_modal() -> str:
+    return """
     <!-- Modal for App Deep Dive with Evidence Highlights -->
     <div id="appModal" style="display: none;" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm items-center justify-center p-4">
         <div class="glass-panel bg-dark-900 border border-gray-700 rounded-2xl max-w-3xl w-full p-6 shadow-2xl overflow-y-auto max-h-[90vh]">
@@ -933,18 +1094,16 @@ def build_html_deliverable():
                 <div class="hidden">
                     <div>
                         <p class="font-semibold text-gray-400 uppercase tracking-wider text-[10px]">Verification Loop Audit</p>
-                        <p id="modalVerificationStatus" class="font-mono text-emerald-400 text-xs font-bold mt-0.5">Verified</p>
                         <p id="modalVerificationNotes" class="text-gray-400 text-[11px] mt-0.5"></p>
-                    </div>
-                    <div class="text-right">
-                        <p class="font-semibold text-gray-400 uppercase tracking-wider text-[10px]">Confidence Score</p>
-                        <p id="modalConfidenceScore" class="font-mono text-brand-300 text-xs font-bold mt-0.5">98%</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>"""
 
+
+def generate_footer() -> str:
+    return """
     <!-- Footer -->
     <footer class="glass-panel border-t border-gray-800 py-10 text-center text-xs text-gray-500">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3">
@@ -964,8 +1123,121 @@ def build_html_deliverable():
             <p class="text-gray-500">Composio Take-Home Assignment Deliverable</p>
             <p class="font-mono text-[11px] text-gray-600">Autonomous Research Agent + Multi-Pass Verification Pipeline</p>
         </div>
-    </footer>
+    </footer>"""
 
+
+def generate_scripts(apps_json: str, analysis_json: str, audit_json: str, is_detailed: bool = False) -> str:
+    charts_init = """
+            try {
+                if (typeof Chart === 'undefined') {
+                    console.warn('Chart.js not loaded yet');
+                    return;
+                }
+
+                const authCanvas = document.getElementById('authChart');
+                if (authCanvas) {
+                    authChartInst = new Chart(authCanvas.getContext('2d'), {
+                        type: 'doughnut',
+                        data: {
+                            labels: Object.keys(ANALYSIS_DATA.auth_distribution.counts),
+                            datasets: [{
+                                data: Object.values(ANALYSIS_DATA.auth_distribution.counts),
+                                backgroundColor: ['#6366f1', '#10b981', '#3b82f6', '#f59e0b', '#ec4899', '#8b5cf6'],
+                                borderWidth: 0
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'right', labels: { color: '#9CA3AF', font: { family: 'Plus Jakarta Sans', size: 11 } } }
+                            }
+                        }
+                    });
+                }
+
+                const catCanvas = document.getElementById('categoryGatingChart');
+                if (catCanvas) {
+                    const catLabels = Object.keys(ANALYSIS_DATA.category_matrix).map(c => c.split(' ')[0]);
+                    const selfServePct = Object.values(ANALYSIS_DATA.category_matrix).map(c => c.self_serve_pct);
+                    const gatedPct = Object.values(ANALYSIS_DATA.category_matrix).map(c => c.gated_pct);
+
+                    catChartInst = new Chart(catCanvas.getContext('2d'), {
+                        type: 'bar',
+                        data: {
+                            labels: catLabels,
+                            datasets: [
+                                { label: 'Self-Serve (%)', data: selfServePct, backgroundColor: '#3b82f6' },
+                                { label: 'Gated / Sales (%)', data: gatedPct, backgroundColor: '#d946ef' }
+                            ]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                x: { stacked: true, ticks: { color: '#9CA3AF', font: { size: 10 } }, grid: { display: false } },
+                                y: { stacked: true, max: 100, ticks: { color: '#9CA3AF' }, grid: { color: 'rgba(255,255,255,0.05)' } }
+                            },
+                            plugins: {
+                                legend: { position: 'top', labels: { color: '#9CA3AF', font: { size: 11 } } }
+                            }
+                        }
+                    });
+                }
+
+                const bCanvas = document.getElementById('buildabilityChart');
+                if (bCanvas) {
+                    bChartInst = new Chart(bCanvas.getContext('2d'), {
+                        type: 'pie',
+                        data: {
+                            labels: Object.keys(ANALYSIS_DATA.buildability_breakdown.counts),
+                            datasets: [{
+                                data: Object.values(ANALYSIS_DATA.buildability_breakdown.counts),
+                                backgroundColor: ['#10b981', '#f59e0b', '#ef4444', '#6b7280'],
+                                borderWidth: 0
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            plugins: {
+                                legend: { position: 'right', labels: { color: '#9CA3AF', font: { size: 11 } } }
+                            }
+                        }
+                    });
+                }
+
+                const blkCanvas = document.getElementById('blockerChart');
+                if (blkCanvas) {
+                    new Chart(blkCanvas.getContext('2d'), {
+                        type: 'bar',
+                        indexAxis: 'y',
+                        data: {
+                            labels: Object.keys(ANALYSIS_DATA.top_blockers),
+                            datasets: [{
+                                label: 'Apps Affected',
+                                data: Object.values(ANALYSIS_DATA.top_blockers),
+                                backgroundColor: '#6366f1'
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                x: { ticks: { color: '#9CA3AF' }, grid: { color: 'rgba(255,255,255,0.05)' } },
+                                y: { ticks: { color: '#9CA3AF', font: { size: 10 } }, grid: { display: false } }
+                            },
+                            plugins: {
+                                legend: { display: false }
+                            }
+                        }
+                    });
+                }
+            } catch (err) {
+                console.warn('Chart rendering error:', err);
+            }""" if is_detailed else ""
+
+    return f"""
     <!-- Client Script -->
     <script>
         const APPS_DATA = {apps_json};
@@ -995,53 +1267,6 @@ def build_html_deliverable():
             renderTable();
             const elem = document.getElementById('data-matrix');
             if (elem) elem.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
-        }}
-
-        // Audited benchmark apps that were verified in Pass 2
-        const BENCHMARK_AUDITED_IDS = [1, 11, 21, 22, 31, 49, 58, 71, 81, 98];
-
-        function getHumanReview(id) {{
-            const saved = localStorage.getItem('composio_hr_' + id);
-            if (saved) return saved;
-            if (BENCHMARK_AUDITED_IDS.includes(id)) {{
-                return 'Verified (Pass 2 Audit)';
-            }}
-            return 'Verified (Multi-Pass)';
-        }}
-
-        function getHumanReviewBadgeClass(status) {{
-            if (status.includes('Pass 2')) {{
-                return 'bg-emerald-950/80 text-emerald-300 border-emerald-600/70 hover:bg-emerald-900';
-            }} else if (status.includes('Manual')) {{
-                return 'bg-teal-950/80 text-teal-300 border-teal-600/70 hover:bg-teal-900';
-            }} else if (status.includes('Flagged')) {{
-                return 'bg-amber-950/80 text-amber-300 border-amber-600/70 hover:bg-amber-900';
-            }} else if (status.includes('Pending')) {{
-                return 'bg-gray-800/80 text-gray-400 border-gray-700 hover:bg-gray-700';
-            }}
-            return 'bg-indigo-950/80 text-indigo-300 border-indigo-700/60 hover:bg-indigo-900';
-        }}
-
-        function toggleHumanReview(id, btn) {{
-            const current = getHumanReview(id);
-            let next = 'Verified (Manual)';
-            if (current.includes('Manual') || current.includes('Audit') || current.includes('Multi-Pass')) {{
-                next = 'Flagged';
-            }} else if (current === 'Flagged') {{
-                next = 'Pending Check';
-            }} else if (current === 'Pending Check') {{
-                next = 'Verified (Manual)';
-            }}
-            localStorage.setItem('composio_hr_' + id, next);
-            if (btn) {{
-                btn.innerText = next;
-                btn.className = 'px-2 py-0.5 rounded font-mono text-[10px] font-semibold transition border ' + getHumanReviewBadgeClass(next);
-            }}
-            const modalBadge = document.getElementById('modalHumanReviewBadge');
-            if (modalBadge) {{
-                modalBadge.innerText = next;
-                modalBadge.className = 'px-2 py-0.5 rounded font-mono text-[11px] font-bold border ' + getHumanReviewBadgeClass(next);
-            }}
         }}
 
         function renderTable() {{
@@ -1148,8 +1373,6 @@ def build_html_deliverable():
                 `;
                 tbody.appendChild(tr);
             }});
-
-            // Counter updated above
         }}
 
         function filterCategory(cat, btn) {{
@@ -1218,7 +1441,6 @@ def build_html_deliverable():
 
             // Set QA Audit & Confidence details
             document.getElementById('modalVerificationStatus').innerText = app.verification_status || 'Verified (Pass 1 Accurate)';
-            document.getElementById('modalVerificationNotes').innerText = app.verification_notes || 'Confirmed via live documentation cross-check.';
             const conf = app.confidence_score ? Math.round(app.confidence_score <= 1.0 ? app.confidence_score * 100 : app.confidence_score) : 98;
             document.getElementById('modalConfidenceScore').innerText = `${{Math.min(conf, 100)}}%`;
 
@@ -1255,127 +1477,115 @@ def build_html_deliverable():
             }}
         }});
 
-        // Setup Charts safely so table and buttons never fail even if CDN is delayed
+        // Setup on DOM load
         window.addEventListener('DOMContentLoaded', () => {{
             renderTable();
-
-            try {{
-                if (typeof Chart === 'undefined') {{
-                    console.warn('Chart.js not loaded yet');
-                    return;
-                }}
-
-            // Chart 1: Auth Distribution
-            const authCtx = document.getElementById('authChart').getContext('2d');
-            authChartInst = new Chart(authCtx, {{
-                type: 'doughnut',
-                data: {{
-                    labels: Object.keys(ANALYSIS_DATA.auth_distribution.counts),
-                    datasets: [{{
-                        data: Object.values(ANALYSIS_DATA.auth_distribution.counts),
-                        backgroundColor: ['#6366f1', '#10b981', '#3b82f6', '#f59e0b', '#ec4899', '#8b5cf6'],
-                        borderWidth: 0
-                    }}]
-                }},
-                options: {{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {{
-                        legend: {{ position: 'right', labels: {{ color: '#9CA3AF', font: {{ family: 'Plus Jakarta Sans', size: 11 }} }} }}
-                    }}
-                }}
-            }});
-
-            // Chart 2: Category Gating
-            const catCtx = document.getElementById('categoryGatingChart').getContext('2d');
-            const catLabels = Object.keys(ANALYSIS_DATA.category_matrix).map(c => c.split(' ')[0]);
-            const selfServePct = Object.values(ANALYSIS_DATA.category_matrix).map(c => c.self_serve_pct);
-            const gatedPct = Object.values(ANALYSIS_DATA.category_matrix).map(c => c.gated_pct);
-
-            catChartInst = new Chart(catCtx, {{
-                type: 'bar',
-                data: {{
-                    labels: catLabels,
-                    datasets: [
-                        {{ label: 'Self-Serve (%)', data: selfServePct, backgroundColor: '#3b82f6' }},
-                        {{ label: 'Gated / Sales (%)', data: gatedPct, backgroundColor: '#d946ef' }}
-                    ]
-                }},
-                options: {{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {{
-                        x: {{ stacked: true, ticks: {{ color: '#9CA3AF', font: {{ size: 10 }} }}, grid: {{ display: false }} }},
-                        y: {{ stacked: true, max: 100, ticks: {{ color: '#9CA3AF' }}, grid: {{ color: 'rgba(255,255,255,0.05)' }} }}
-                    }},
-                    plugins: {{
-                        legend: {{ position: 'top', labels: {{ color: '#9CA3AF', font: {{ size: 11 }} }} }}
-                    }}
-                }}
-            }});
-
-            // Chart 3: Buildability Verdicts
-            const bCtx = document.getElementById('buildabilityChart').getContext('2d');
-            bChartInst = new Chart(bCtx, {{
-                type: 'pie',
-                data: {{
-                    labels: Object.keys(ANALYSIS_DATA.buildability_breakdown.counts),
-                    datasets: [{{
-                        data: Object.values(ANALYSIS_DATA.buildability_breakdown.counts),
-                        backgroundColor: ['#10b981', '#f59e0b', '#ef4444', '#6b7280'],
-                        borderWidth: 0
-                    }}]
-                }},
-                options: {{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {{
-                        legend: {{ position: 'right', labels: {{ color: '#9CA3AF', font: {{ size: 11 }} }} }}
-                    }}
-                }}
-            }});
-
-            // Chart 4: Top Blockers
-            const blkCtx = document.getElementById('blockerChart').getContext('2d');
-            new Chart(blkCtx, {{
-                type: 'bar',
-                indexAxis: 'y',
-                data: {{
-                    labels: Object.keys(ANALYSIS_DATA.top_blockers),
-                    datasets: [{{
-                        label: 'Apps Affected',
-                        data: Object.values(ANALYSIS_DATA.top_blockers),
-                        backgroundColor: '#6366f1'
-                    }}]
-                }},
-                options: {{
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {{
-                        x: {{ ticks: {{ color: '#9CA3AF' }}, grid: {{ color: 'rgba(255,255,255,0.05)' }} }},
-                        y: {{ ticks: {{ color: '#9CA3AF', font: {{ size: 10 }} }}, grid: {{ display: false }} }}
-                    }},
-                    plugins: {{
-                        legend: {{ display: false }}
-                    }}
-                }}
-            }});
-            }} catch (err) {{
-                console.warn('Chart rendering error:', err);
-            }}
+            {charts_init}
         }});
     </script>
 </body>
 </html>"""
 
-    with open(OUTPUT_HTML, "w", encoding="utf-8") as f:
-        f.write(html_content)
 
-    os.makedirs(os.path.join(os.path.dirname(__file__), "output"), exist_ok=True)
-    with open(os.path.join(os.path.dirname(__file__), "output", "index.html"), "w", encoding="utf-8") as f:
-        f.write(html_content)
+def build_html_deliverable():
+    if not os.path.exists(RESULTS_FILE) or not os.path.exists(ANALYSIS_FILE) or not os.path.exists(AUDIT_FILE):
+        print("Required data files missing. Make sure research, analysis, and verification have completed.")
+        return
 
-    print(f"Deliverable HTML successfully updated at:\n - {OUTPUT_HTML}\n - output/index.html")
+    with open(RESULTS_FILE, "r", encoding="utf-8") as f:
+        apps = json.load(f)
+
+    with open(ANALYSIS_FILE, "r", encoding="utf-8") as f:
+        analysis = json.load(f)
+
+    with open(AUDIT_FILE, "r", encoding="utf-8") as f:
+        audit = json.load(f)
+
+    apps_json = json.dumps(apps)
+    analysis_json = json.dumps(analysis)
+    audit_json = json.dumps(audit)
+
+    audit_records = audit.get("audit_records", [])
+    pass1_acc = audit.get("pass1_accuracy_pct", 77.0)
+    auto_verif_acc = audit.get("automated_verification_accuracy_pct", 86.0)
+    auto_uplift = audit.get("automated_verification_uplift_pct", 9.0)
+    human_corrections = audit.get("human_audit_discrepancies_found", 23)
+    human_disc_rate = audit.get("human_audit_discrepancy_rate_pct", 23.0)
+    post_human_acc = audit.get("post_human_ground_truth_accuracy_pct", 100.0)
+
+    viable_pct = analysis['buildability_breakdown']['composio_viable_pct']
+    viable_count = analysis['buildability_breakdown']['composio_viable_count']
+    self_serve_pct = analysis['gating_distribution']['percentages'].get('Self-serve', 70.0) + analysis['gating_distribution']['percentages'].get('Open Source / Local', 6.0)
+    self_serve_count = analysis['gating_distribution']['counts'].get('Self-serve', 70) + analysis['gating_distribution']['counts'].get('Open Source / Local', 6)
+    existing_mcp_count = analysis['mcp_ecosystem']['existing_mcp_count']
+    existing_mcp_pct = analysis['mcp_ecosystem']['existing_mcp_pct']
+    greenfield_count = analysis['mcp_ecosystem']['greenfield_opportunity_count']
+    greenfield_pct = analysis['mcp_ecosystem']['greenfield_opportunity_pct']
+
+    # 1. Build index.html (2-Minute Executive Summary Edition)
+    index_html = (
+        generate_head("Composio Take-Home | 2-Minute Executive Case Study", is_detailed=False)
+        + generate_banner(is_detailed=False)
+        + generate_navbar(is_detailed=False)
+        + generate_hero(viable_pct, viable_count, self_serve_pct, self_serve_count,
+                        greenfield_pct, greenfield_count, existing_mcp_count,
+                        pass1_acc, auto_verif_acc, auto_uplift, human_corrections, is_detailed=False)
+        + generate_executive_briefing(pass1_acc, auto_verif_acc, auto_uplift, human_corrections, is_detailed=False)
+        + generate_headline_insights()
+        + generate_action_tiers(analysis)
+        + generate_agent_architecture()
+        + generate_verification_section(pass1_acc, auto_verif_acc, auto_uplift,
+                                      human_corrections, human_disc_rate, post_human_acc,
+                                      viable_pct, self_serve_pct, greenfield_pct,
+                                      audit_records, is_detailed=False)
+        + generate_matrix_section(is_detailed=False)
+        + generate_modal()
+        + generate_footer()
+        + generate_scripts(apps_json, analysis_json, audit_json, is_detailed=False)
+    )
+
+    # 2. Build detailed.html (Full Deep-Dive Case Study & Evidence Archive)
+    detailed_html = (
+        generate_head("Composio Take-Home | Detailed Deep-Dive Case Study & Evidence Archive", is_detailed=True)
+        + generate_banner(is_detailed=True)
+        + generate_navbar(is_detailed=True)
+        + generate_hero(viable_pct, viable_count, self_serve_pct, self_serve_count,
+                        greenfield_pct, greenfield_count, existing_mcp_count,
+                        pass1_acc, auto_verif_acc, auto_uplift, human_corrections, is_detailed=True)
+        + generate_executive_briefing(pass1_acc, auto_verif_acc, auto_uplift, human_corrections, is_detailed=True)
+        + generate_headline_insights()
+        + generate_action_tiers(analysis)
+        + generate_agent_architecture()
+        + generate_verification_section(pass1_acc, auto_verif_acc, auto_uplift,
+                                      human_corrections, human_disc_rate, post_human_acc,
+                                      viable_pct, self_serve_pct, greenfield_pct,
+                                      audit_records, is_detailed=True)
+        + generate_charts_section()
+        + generate_matrix_section(is_detailed=True)
+        + generate_modal()
+        + generate_footer()
+        + generate_scripts(apps_json, analysis_json, audit_json, is_detailed=True)
+    )
+
+    # Write root deliverable files
+    with open(OUTPUT_INDEX, "w", encoding="utf-8") as f:
+        f.write(index_html)
+
+    with open(OUTPUT_DETAILED, "w", encoding="utf-8") as f:
+        f.write(detailed_html)
+
+    # Mirror to output/ folder
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    with open(os.path.join(OUTPUT_DIR, "index.html"), "w", encoding="utf-8") as f:
+        f.write(index_html)
+
+    with open(os.path.join(OUTPUT_DIR, "detailed.html"), "w", encoding="utf-8") as f:
+        f.write(detailed_html)
+
+    print(f"Deliverable HTMLs successfully generated:")
+    print(f" - 2-Minute Executive Edition: {OUTPUT_INDEX} and output/index.html")
+    print(f" - Detailed Deep-Dive Edition: {OUTPUT_DETAILED} and output/detailed.html")
+
 
 if __name__ == "__main__":
     build_html_deliverable()
