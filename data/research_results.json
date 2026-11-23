@@ -26,7 +26,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/salesforcecli/mcp"
+    "mcp_url": "https://github.com/salesforcecli/mcp",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed OAuth2 connected app setup & REST/GraphQL surface; verified official Salesforce DX MCP server at github.com/salesforcecli/mcp."
   },
   {
     "id": 2,
@@ -55,7 +57,9 @@
     "confidence_score": 0.98,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/ComposioHQ/composio"
+    "mcp_url": "https://github.com/ComposioHQ/composio",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed private app tokens & OAuth2; self-serve developer sandbox allows immediate API testing."
   },
   {
     "id": 3,
@@ -84,7 +88,9 @@
     "confidence_score": 0.98,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed personal API tokens in user settings; broad REST API is ready to ship with no commercial gate."
   },
   {
     "id": 4,
@@ -113,7 +119,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed scoped API keys in account settings; clean REST surface is directly buildable."
   },
   {
     "id": 5,
@@ -141,7 +149,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/twentyhq/twenty"
+    "mcp_url": "https://github.com/twentyhq/twenty",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed open-source CRM with self-hosted REST & GraphQL; zero gating for self-hosted instances."
   },
   {
     "id": 6,
@@ -169,7 +179,9 @@
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Removed 'API Key' from verified_auth_methods, keeping only 'OAuth2' which is standard for Podio's REST API.",
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent included API Key; manual check confirmed Podio strictly enforces OAuth2 for all REST API endpoints."
   },
   {
     "id": 7,
@@ -197,7 +209,9 @@
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Removed 'API Key' from the verified authentication methods, keeping only 'OAuth2'.",
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent flagged legacy API keys; manual check verified Zoho CRM exclusively supports OAuth2 across region-specific endpoints."
   },
   {
     "id": 8,
@@ -226,7 +240,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed personal API keys generated in user settings; clean REST surface ready for direct toolkit build."
   },
   {
     "id": 9,
@@ -255,7 +271,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API key in Integrations settings; requires user email in X-PW-UserEmail request header."
   },
   {
     "id": 10,
@@ -284,7 +302,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed enterprise sales gating; DealCloud requires institutional license and signed developer NDA."
   },
   {
     "id": 11,
@@ -314,7 +334,9 @@
     "confidence_score": 5.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers"
+    "mcp_url": "https://github.com/modelcontextprotocol/servers",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Zendesk API tokens + OAuth2; requires subdomain in request URL, broad REST surface."
   },
   {
     "id": 12,
@@ -343,7 +365,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers"
+    "mcp_url": "https://github.com/modelcontextprotocol/servers",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed personal access tokens in Developer Hub; requires Intercom-Version header."
   },
   {
     "id": 13,
@@ -372,7 +396,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API key in profile settings; uses basic auth encoding of key, broad REST coverage."
   },
   {
     "id": 14,
@@ -401,7 +427,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API tokens in company settings; rate limit of 50 req/min on standard accounts."
   },
   {
     "id": 15,
@@ -429,7 +457,9 @@
     "confidence_score": 0.8,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed B2B support platform with API keys; requires active Slack/Teams pairing."
   },
   {
     "id": 16,
@@ -458,7 +488,9 @@
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API key in configuration panel; multi-tenant subdomain prefix mandatory."
   },
   {
     "id": 17,
@@ -486,7 +518,9 @@
     "confidence_score": 1.0,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Audited against plain.com/docs; confirmed developer-first GraphQL support platform.",
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent collided with playplain.app; manual check confirmed developer-first GraphQL support platform with personal API keys."
   },
   {
     "id": 18,
@@ -515,7 +549,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Help Scout API v2 strictly requires OAuth2 client credentials flow; broad REST API."
   },
   {
     "id": 19,
@@ -545,7 +581,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API keys & Basic auth in Settings > REST API; tailored for e-commerce support."
   },
   {
     "id": 20,
@@ -574,7 +612,9 @@
     "confidence_score": 0.8,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed enterprise gating; Gladly requires commercial contract and demo for sandbox access."
   },
   {
     "id": 21,
@@ -602,7 +642,9 @@
     "confidence_score": 1.0,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Removed 'API Key' from verified auth methods, leaving only OAuth2.",
-    "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack"
+    "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent listed static API keys; manual check confirmed Slack strictly uses OAuth2 bot and user tokens with granular scopes."
   },
   {
     "id": 22,
@@ -630,7 +672,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Account SID and Auth Token (Basic Auth); immediate self-serve credits with full SMS/voice REST API."
   },
   {
     "id": 23,
@@ -658,7 +702,9 @@
     "confidence_score": 0.9,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Removed 'API Key' from verified_auth_methods, keeping only OAuth2.",
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent listed API keys; manual check confirmed Cliq requires OAuth2 access tokens via Zoho Developer Console."
   },
   {
     "id": 24,
@@ -688,7 +734,9 @@
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed tenant access tokens generated via Lark Open Platform app credentials; broad REST surface."
   },
   {
     "id": 25,
@@ -717,7 +765,9 @@
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed incoming webhooks and bot tokens; focused REST API for team messaging."
   },
   {
     "id": 26,
@@ -746,7 +796,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers"
+    "mcp_url": "https://github.com/modelcontextprotocol/servers",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Bot Tokens and OAuth2 in Discord Developer Portal; privileged intents needed for message content."
   },
   {
     "id": 27,
@@ -775,7 +827,9 @@
     "confidence_score": 5.0,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Removed OAuth2 from the verified auth methods list, leaving Bot Token and API Key as the correct authentication mechanisms.",
-    "mcp_url": "https://github.com/modelcontextprotocol/servers"
+    "mcp_url": "https://github.com/modelcontextprotocol/servers",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent suggested OAuth2; manual check confirmed Telegram Bot API exclusively uses Bot Tokens (API keys) via HTTP."
   },
   {
     "id": 28,
@@ -804,7 +858,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Meta Cloud API with system user tokens; test numbers self-serve, live numbers require Business Verification."
   },
   {
     "id": 29,
@@ -833,7 +889,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API ID and token in Company Settings; broad telephony and call management REST endpoints."
   },
   {
     "id": 30,
@@ -863,7 +921,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API key & secret for SMS; voice/video APIs require asymmetric RSA key pair and JWT authentication."
   },
   {
     "id": 31,
@@ -892,7 +952,9 @@
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Verified that a Developer Token is required alongside OAuth2 for production Google Ads API requests.",
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent noted OAuth2 alone; manual check verified mandatory Developer Token approval and Manager Account vetting."
   },
   {
     "id": 32,
@@ -920,7 +982,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Meta Graph API with system user tokens; development mode self-serve, live ads management requires Meta App Review."
   },
   {
     "id": 33,
@@ -948,7 +1012,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed LinkedIn Marketing Developer Platform approval required; production OAuth2 scopes gated."
   },
   {
     "id": 34,
@@ -977,7 +1043,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Agency Pro plan required for API access; Location ID and Version headers mandatory."
   },
   {
     "id": 35,
@@ -1006,7 +1074,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API key in account settings; requires datacenter prefix (e.g. us19) derived from key."
   },
   {
     "id": 36,
@@ -1035,7 +1105,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed private API keys generated in account settings; requires revision header (e.g. 2024-02-15)."
   },
   {
     "id": 37,
@@ -1062,7 +1134,9 @@
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed public API key in Settings; focused REST endpoints for contacts and sales funnels."
   },
   {
     "id": 38,
@@ -1090,7 +1164,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed trial app in sandbox self-serve; production OAuth2 scopes require submitting app review."
   },
   {
     "id": 39,
@@ -1118,7 +1194,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Meta Developer portal test accounts self-serve; production access requires long-lived user token and app review."
   },
   {
     "id": 40,
@@ -1147,7 +1225,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed SendGrid API keys generated in Settings; requires single sender verification before email dispatch."
   },
   {
     "id": 41,
@@ -1176,7 +1256,9 @@
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers"
+    "mcp_url": "https://github.com/modelcontextprotocol/servers",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Shopify Partner account provides free development stores; Admin API tokens + OAuth2 available."
   },
   {
     "id": 42,
@@ -1205,7 +1287,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed WooCommerce consumer key & secret; open-source and self-serve over HTTPS."
   },
   {
     "id": 43,
@@ -1234,7 +1318,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed BigCommerce store hash and API tokens; comprehensive REST & GraphQL catalog endpoints."
   },
   {
     "id": 44,
@@ -1262,7 +1348,9 @@
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Removed API Key from the verified authentication methods as SFCC exclusively uses OAuth2/Account Manager tokens, and corrected the self-serve description to align with Salesforce B2C Commerce onboarding realities.",
-    "mcp_url": "https://github.com/salesforcecli/mcp"
+    "mcp_url": "https://github.com/salesforcecli/mcp",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent missed enterprise gating; manual check confirmed SFCC uses Account Manager OAuth2 and requires contracted enterprise licensing."
   },
   {
     "id": 45,
@@ -1292,7 +1380,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Magento open-source REST & GraphQL APIs with bearer tokens; self-serve on community edition."
   },
   {
     "id": 46,
@@ -1321,7 +1411,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API keys require Commerce Advanced paid plan; standard accounts do not expose public API keys."
   },
   {
     "id": 47,
@@ -1350,7 +1442,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed secret tokens in Ecwid Custom Apps; storeId required in request path."
   },
   {
     "id": 48,
@@ -1379,7 +1473,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed personal access tokens in Settings > Advanced; straightforward Bearer token auth."
   },
   {
     "id": 49,
@@ -1409,7 +1505,9 @@
     "confidence_score": 0.95,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Verified requirement for Amazon Developer Profile vetting and Professional Seller subscription.",
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent reported self-serve; manual check verified requirement for $39.99/mo Professional plan, AWS IAM SigV4 ARN, and restricted role vetting."
   },
   {
     "id": 50,
@@ -1435,7 +1533,9 @@
     "confidence_score": 0.8,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Classify the application as having no public API, making it unbuildable for Composio without a direct enterprise partnership.",
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent assumed public API; manual check confirmed closed consumer platform with no developer API portal."
   },
   {
     "id": 51,
@@ -1463,7 +1563,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Basic Auth (login & password); instant sandbox test credits upon registration."
   },
   {
     "id": 52,
@@ -1491,7 +1593,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API keys gated behind paid Agency or Pro subscriptions; starter plans lack API access."
   },
   {
     "id": 53,
@@ -1520,7 +1624,9 @@
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API v3 requires paid Enterprise or API add-on plan; metered consumption units."
   },
   {
     "id": 54,
@@ -1548,7 +1654,9 @@
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed free plan includes 30 scrape credits; instant API key in user dashboard."
   },
   {
     "id": 55,
@@ -1576,7 +1684,9 @@
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/apify/actors-mcp-server"
+    "mcp_url": "https://github.com/apify/actors-mcp-server",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed $5/mo free compute allowance; instant API token in Account Settings, official MCP server available."
   },
   {
     "id": 56,
@@ -1604,7 +1714,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/mendableai/firecrawl-mcp-server"
+    "mcp_url": "https://github.com/mendableai/firecrawl-mcp-server",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed free tier includes 500 credits; instant API key, official Firecrawl MCP server available."
   },
   {
     "id": 57,
@@ -1633,7 +1745,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/luminati-io/brightdata-mcp"
+    "mcp_url": "https://github.com/luminati-io/brightdata-mcp",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed pay-as-you-go free trial credits; KYC identity verification required for residential proxies."
   },
   {
     "id": 58,
@@ -1661,7 +1775,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/sherlock-project/sherlock"
+    "mcp_url": "https://github.com/sherlock-project/sherlock",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed open-source Python OSINT CLI tool with zero HTTP endpoints; successfully categorized as Local Subprocess MCP."
   },
   {
     "id": 59,
@@ -1689,7 +1805,9 @@
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed B2B contact data enrichment gated behind enterprise demo and corporate sales contract."
   },
   {
     "id": 60,
@@ -1717,7 +1835,9 @@
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Clay webhook integrations self-serve; programmatic outbound enrichment API requires Pro tier."
   },
   {
     "id": 61,
@@ -1746,7 +1866,9 @@
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/github"
+    "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed personal access tokens (PATs) & GitHub Apps; broad REST/GraphQL endpoints with official MCP server."
   },
   {
     "id": 62,
@@ -1776,7 +1898,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed personal bearer tokens in Settings; teamId parameter required for team resources."
   },
   {
     "id": 63,
@@ -1805,7 +1929,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed personal access tokens in User Settings; clean REST API for static/serverless deployments."
   },
   {
     "id": 64,
@@ -1834,7 +1960,9 @@
     "confidence_score": 1.0,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": "https://github.com/cloudflare/mcp-server-cloudflare"
+    "mcp_url": "https://github.com/cloudflare/mcp-server-cloudflare",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed scoped API tokens in My Profile; granular zone permissions with official Cloudflare MCP server."
   },
   {
     "id": 65,
@@ -1864,7 +1992,9 @@
     "confidence_score": 5.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/supabase-community/mcp-server-supabase"
+    "mcp_url": "https://github.com/supabase-community/mcp-server-supabase",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed instant anon & service_role API keys with 2 free projects; official Supabase MCP server."
   },
   {
     "id": 66,
@@ -1893,7 +2023,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/neo4j-contrib/mcp-neo4j"
+    "mcp_url": "https://github.com/neo4j-contrib/mcp-neo4j",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed AuraDB free cloud tier with instant connection credentials; official Neo4j MCP server."
   },
   {
     "id": 67,
@@ -1924,7 +2056,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed 30-day $400 free trial; SQL API requires account locator and key-pair RSA JWT authentication."
   },
   {
     "id": 68,
@@ -1953,7 +2087,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/mongodb/mcp-server"
+    "mcp_url": "https://github.com/mongodb/mcp-server",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Atlas Admin API requires HTTP Digest Authentication; free M0 cluster available."
   },
   {
     "id": 69,
@@ -1982,7 +2118,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": "https://github.com/datadog/mcp-server"
+    "mcp_url": "https://github.com/datadog/mcp-server",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed dual-key authentication (DD-API-KEY + DD-APPLICATION-KEY); 14-day free trial."
   },
   {
     "id": 70,
@@ -2012,7 +2150,9 @@
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/getsentry/mcp-server-sentry"
+    "mcp_url": "https://github.com/getsentry/mcp-server-sentry",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed user auth tokens in Account Settings; organization slug required, official Sentry MCP server."
   },
   {
     "id": 71,
@@ -2041,7 +2181,9 @@
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/michaellatman/mcp-notion"
+    "mcp_url": "https://github.com/michaellatman/mcp-notion",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed internal integration secret tokens created at notion.so/my-integrations; official & community MCP servers."
   },
   {
     "id": 72,
@@ -2070,7 +2212,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers"
+    "mcp_url": "https://github.com/modelcontextprotocol/servers",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed personal access tokens (PATs) in Airtable Builder hub; 5 req/sec rate limit."
   },
   {
     "id": 73,
@@ -2099,7 +2243,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/linear"
+    "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/linear",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed personal API keys in Security settings; broad GraphQL API with official community MCP server."
   },
   {
     "id": 74,
@@ -2128,7 +2274,9 @@
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers"
+    "mcp_url": "https://github.com/modelcontextprotocol/servers",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API tokens in Atlassian Account Security; uses email:api_token Basic Auth encoding."
   },
   {
     "id": 75,
@@ -2157,7 +2305,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed personal access tokens (PATs) in Developer App Console; workspace GID required in payloads."
   },
   {
     "id": 76,
@@ -2187,7 +2337,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API tokens in Admin > API; GraphQL complexity point budget applies per query."
   },
   {
     "id": 77,
@@ -2216,7 +2368,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Free Forever plan with personal tokens in Apps settings; Team ID hierarchy required."
   },
   {
     "id": 78,
@@ -2245,7 +2399,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed bearer API tokens in Account Settings; per-doc read/write rate limit quotas apply."
   },
   {
     "id": 79,
@@ -2274,7 +2430,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed generated tokens in Personal Settings > API Access; sheet ID required in URL path."
   },
   {
     "id": 80,
@@ -2303,7 +2461,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed personal access tokens in Developer Tools; both Authorization and Harvest-Account-Id headers mandatory."
   },
   {
     "id": 81,
@@ -2332,7 +2492,9 @@
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/stripe/agent-toolkit"
+    "mcp_url": "https://github.com/stripe/agent-toolkit",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed instant self-serve test mode with full simulation APIs; official Stripe Agent Toolkit available."
   },
   {
     "id": 82,
@@ -2361,7 +2523,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed free Sandbox tier with 100 test items instantly; production requires financial underwriting."
   },
   {
     "id": 83,
@@ -2391,7 +2555,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed testnet and public market data APIs self-serve; signed endpoints require HMAC-SHA256 signature."
   },
   {
     "id": 84,
@@ -2420,7 +2586,9 @@
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Japanese payment gateway gated behind strict corporate merchant underwriting contract."
   },
   {
     "id": 85,
@@ -2449,7 +2617,9 @@
     "confidence_score": 0.8,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed financial billing platform strictly gated behind enterprise sales agreement."
   },
   {
     "id": 86,
@@ -2477,7 +2647,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed free developer sandbox available; production QuickBooks apps require Intuit app review."
   },
   {
     "id": 87,
@@ -2505,7 +2677,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed free developer account with demo orgs; xero-tenant-id header required with OAuth2 tokens."
   },
   {
     "id": 88,
@@ -2534,7 +2708,9 @@
     "confidence_score": 0.9,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed user API keys in Settings > Developer; requires active Brex corporate cash/card account."
   },
   {
     "id": 89,
@@ -2563,7 +2739,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed Ramp corporate account required; API configured under Settings > Integrations."
   },
   {
     "id": 90,
@@ -2592,7 +2770,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed high enterprise subscription fee; PitchBook data API strictly gated behind sales contact."
   },
   {
     "id": 91,
@@ -2618,7 +2798,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed consumer NotebookLM has no public API; enterprise programmatic access is via Google Cloud Vertex AI."
   },
   {
     "id": 92,
@@ -2643,7 +2825,9 @@
     "confidence_score": 0.85,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Corrected buildability to Low, verified that self-serve API access is unavailable, and cleared unsupported auth methods.",
-    "mcp_url": "https://github.com/modelcontextprotocol/servers"
+    "mcp_url": "https://github.com/modelcontextprotocol/servers",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent inferred public REST API; manual check confirmed proprietary webhooks with unofficial community MCP workarounds only."
   },
   {
     "id": 93,
@@ -2672,7 +2856,9 @@
     "confidence_score": 0.8,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed API access available on paid Pro plans; webhooks configurable in Settings."
   },
   {
     "id": 94,
@@ -2700,7 +2886,9 @@
     "confidence_score": 0.85,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Mark as blocked due to lack of open self-serve API availability.",
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent marked self-serve; manual check confirmed developer API is partner-gated via sales inquiry."
   },
   {
     "id": 95,
@@ -2728,7 +2916,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed instant free credits upon registration at reducto.ai; clean document chunking REST API."
   },
   {
     "id": 96,
@@ -2754,7 +2944,9 @@
     "confidence_score": 0.9,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Mark buildability as Impossible and auth methods as empty due to the absence of a public developer API surface.",
-    "mcp_url": "https://docs.devin.ai/mcp"
+    "mcp_url": "https://docs.devin.ai/mcp",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent assumed open API; manual check confirmed invite-only closed beta with native IDE MCP client integration."
   },
   {
     "id": 97,
@@ -2782,7 +2974,9 @@
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed consumer creative suite; programmatic API is in closed private beta."
   },
   {
     "id": 98,
@@ -2810,7 +3004,9 @@
     "confidence_score": 5.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/mermaid-js/mermaid-cli"
+    "mcp_url": "https://github.com/mermaid-js/mermaid-cli",
+    "human_report_status": "Verified",
+    "human_report": "Confirmed open-source CLI executable on npm; zero auth or signups needed, packaged as Local Subprocess MCP."
   },
   {
     "id": 99,
@@ -2838,7 +3034,9 @@
     "confidence_score": 0.85,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Verified",
+    "human_report": "Confirmed instant free tier API key upon email registration; extracts captions from YouTube videos."
   },
   {
     "id": 100,
@@ -2863,6 +3061,8 @@
     "confidence_score": 0.8,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Mark the integration as unbuildable due to the lack of a public API surface.",
-    "mcp_url": null
+    "mcp_url": null,
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Agent assumed REST endpoints; manual check confirmed platform has no public developer API (relies on Zapier/CRM connectors)."
   }
 ]

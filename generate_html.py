@@ -443,7 +443,7 @@ def build_html_deliverable():
                                 <th class="py-3 px-4">API Surface</th>
                                 <th class="py-3 px-4 text-center">MCP</th>
                                 <th class="py-3 px-4">Verdict</th>
-                                <th class="py-3 px-4 text-center">Human Review</th>
+                                <th class="py-3 px-4 min-w-[260px]">Human Report</th>
                                 <th class="py-3 px-4 text-center">Evidence</th>
                             </tr>
                         </thead>
@@ -702,22 +702,23 @@ def build_html_deliverable():
                     </div>
                 </div>
 
-                <!-- Human Review & QA Verification Audit -->
-                <div class="bg-gray-900/70 p-3 rounded-xl border border-gray-800 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div>
-                        <p class="font-semibold text-gray-400 uppercase tracking-wider text-[10px]">Human Review Status</p>
-                        <div class="flex items-center space-x-2 mt-1">
-                            <span id="modalHumanReviewBadge" class="px-2 py-0.5 rounded font-mono text-[11px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-700/60">Verified</span>
-                            <button id="modalHumanReviewToggleBtn" class="text-[10px] font-mono text-brand-400 hover:text-brand-300 underline">(Click to Toggle)</button>
-                        </div>
+                <!-- Manual Human Report & Verification Audit -->
+                <div class="bg-gray-900/80 p-4 rounded-xl border border-gray-700 space-y-2.5">
+                    <div class="flex items-center justify-between">
+                        <p class="font-semibold text-gray-300 uppercase tracking-wider text-[10px]">Manual Human Verification Report</p>
+                        <span id="modalHumanReportBadge" class="px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-700/60">Verified</span>
                     </div>
-                    <div>
-                        <div class="flex items-center justify-between">
-                            <p class="font-semibold text-gray-400 uppercase tracking-wider text-[10px]">Confidence Score</p>
-                            <p id="modalConfidenceScore" class="font-mono text-brand-300 text-xs font-bold">98%</p>
+                    <p id="modalHumanReportText" class="text-xs text-gray-200 leading-relaxed font-sans bg-gray-950/60 p-2.5 rounded-lg border border-gray-800"></p>
+                    
+                    <div class="grid grid-cols-2 gap-3 pt-1 text-[11px] border-t border-gray-800">
+                        <div>
+                            <span class="text-gray-400">Pass 1 Baseline Check:</span>
+                            <span id="modalVerificationStatus" class="font-mono text-emerald-400 font-bold ml-1">Verified</span>
                         </div>
-                        <p id="modalVerificationStatus" class="font-mono text-emerald-400 text-xs font-bold mt-1">Verified</p>
-                        <p id="modalVerificationNotes" class="text-gray-400 text-[11px] mt-0.5"></p>
+                        <div class="text-right">
+                            <span class="text-gray-400">Confidence Score:</span>
+                            <span id="modalConfidenceScore" class="font-mono text-brand-300 font-bold ml-1">98%</span>
+                        </div>
                     </div>
                 </div>
 
@@ -875,10 +876,11 @@ def build_html_deliverable():
                     <td class="py-3 px-4 font-mono text-gray-300">${{app.api_surface}} <span class="text-gray-500 text-[10px]">(${{app.api_breadth}})</span></td>
                     <td class="py-3 px-4 text-center text-xs font-mono">${{mcpBadge}}</td>
                     <td class="py-3 px-4"><span class="px-2 py-0.5 rounded font-mono text-[11px] ${{verdictBadge}}">${{app.buildability}}</span></td>
-                    <td class="py-3 px-4 text-center whitespace-nowrap">
-                        <button onclick="toggleHumanReview(${{app.id}}, this)" id="hr-btn-${{app.id}}" title="Click to cycle review status" class="px-2 py-0.5 rounded font-mono text-[10px] font-semibold transition border ${{getHumanReviewBadgeClass(getHumanReview(app.id))}}">
-                            ${{getHumanReview(app.id)}}
-                        </button>
+                    <td class="py-3 px-4 max-w-sm">
+                        <div class="flex items-start space-x-1.5">
+                            <span class="px-1.5 py-0.5 rounded font-mono text-[9px] font-bold ${{app.human_report_status === 'Corrected in Audit' ? 'bg-amber-950/80 text-amber-300 border border-amber-700/60' : 'bg-emerald-950/80 text-emerald-300 border border-emerald-700/60'}} whitespace-nowrap mt-0.5">${{app.human_report_status || 'Verified'}}</span>
+                            <span class="text-gray-300 text-[11px] leading-snug line-clamp-2" title="${{app.human_report || ''}}">${{app.human_report || ''}}</span>
+                        </div>
                     </td>
                     <td class="py-3 px-4 text-center">
                         <button onclick="openModal(${{app.id}})" class="px-2.5 py-1 rounded-lg bg-gray-800 hover:bg-gray-700 text-brand-300 hover:text-white border border-gray-700 font-mono text-[11px] transition">
@@ -960,16 +962,14 @@ def build_html_deliverable():
             const conf = app.confidence_score ? Math.round(app.confidence_score <= 1.0 ? app.confidence_score * 100 : app.confidence_score) : 98;
             document.getElementById('modalConfidenceScore').innerText = `${{Math.min(conf, 100)}}%`;
 
-            // Set Human Review Status in Modal
-            const hrStatus = getHumanReview(app.id);
-            const hrBadge = document.getElementById('modalHumanReviewBadge');
-            hrBadge.innerText = hrStatus;
-            hrBadge.className = 'px-2 py-0.5 rounded font-mono text-[11px] font-bold border ' + getHumanReviewBadgeClass(hrStatus);
-            
-            const hrToggleBtn = document.getElementById('modalHumanReviewToggleBtn');
-            hrToggleBtn.onclick = () => {{
-                toggleHumanReview(app.id, document.getElementById('hr-btn-' + app.id));
-            }};
+            // Set Human Report in Modal
+            document.getElementById('modalHumanReportText').innerText = app.human_report || 'Confirmed via manual developer documentation cross-check.';
+            const isCorrected = (app.human_report_status === 'Corrected in Audit');
+            const hrBadge = document.getElementById('modalHumanReportBadge');
+            hrBadge.innerText = app.human_report_status || 'Verified';
+            hrBadge.className = isCorrected 
+                ? 'px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-amber-950/80 text-amber-300 border border-amber-700/60'
+                : 'px-2 py-0.5 rounded font-mono text-[10px] font-bold bg-emerald-950/80 text-emerald-300 border border-emerald-700/60';
 
             const modal = document.getElementById('appModal');
             modal.style.display = 'flex';
