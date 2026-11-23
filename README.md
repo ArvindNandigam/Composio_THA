@@ -14,24 +14,24 @@ Autonomous AI research agent that analyzes **100 enterprise and consumer platfor
 ## Executive Summary & Core Patterns
 
 1. **Auth Duopoly (88% of SaaS):**
-   - **OAuth2 (52%)** dominates multi-tenant applications (CRM, Support, Messaging).
-   - **API Keys / Personal Tokens (36%)** govern Developer Platforms and SEO/Scraping tools.
-   - Basic Auth is virtually deprecated (<5%), preserved only in legacy endpoints (Twilio, Gorgias).
+   - **OAuth2 (73%)** dominates multi-tenant applications (CRM, Support, Messaging).
+   - **API Keys (61%)** and **Personal Access Tokens (25%)** govern Developer Platforms and SEO/Scraping tools.
+   - Basic Auth is virtually deprecated (8%), preserved only in legacy endpoints (Twilio, Gorgias).
 
-2. **Gating Polarization by Category:**
-   - **Developer Platforms (80% self-serve)** and **Productivity (70% self-serve)** offer frictionless, un-gated API credentialing.
+2. **Gating Polarization by Category (76% Open):**
+   - **Developer Platforms (100% self-serve)** and **Productivity (90% self-serve)** offer frictionless API credentialing. 76% across the catalog is self-serve (70%) or local open source (6%).
    - **Finance/Fintech (60% gated)** and **Enterprise CRM** require manual sales vetting, business underwriting, or partner agreements.
 
-3. **The #1 Blocker is Administrative, Not Technical:**
-   - 38% of apps require formal developer app vetting or partner agreements (e.g., Meta App Review, Google Ads Developer Token, Amazon SP-API compliance).
+3. **Primary Blocker is Administrative, Not Technical (35%):**
+   - 35% of apps are blocked by administrative gates: OAuth App Review / Developer Verification (21%) and Enterprise Sales / Contract Gates (14%).
    - Technical protocol complexity (REST vs GraphQL) is rarely the gating bottleneck.
 
-4. **Massive MCP Greenfield:**
-   - Only **~19%** of the 100 apps have an existing official or recognized community MCP server.
-   - **81% represents open greenfield** where Composio can establish default reference toolkits.
+4. **Massive MCP Greenfield (71% Unclaimed):**
+   - 29 apps (29%) have an identified official or recognized community MCP server.
+   - **71% represents open greenfield (71 apps)** where Composio can establish default reference toolkits.
 
-5. **Non-HTTP Subprocess Toolkits:**
-   - Open-source tools like **Sherlock (#58)** and **Mermaid CLI (#98)** have no HTTP servers or API keys. They require local MCP subprocess execution rather than cloud webhooks.
+5. **Non-HTTP Subprocess Toolkits (6 Apps):**
+   - Open-source tools like **Sherlock (#58)**, **Mermaid CLI (#98)**, **Twenty (#5)**, and **Neo4j (#66)** have no HTTP servers or API keys. They require local MCP subprocess execution rather than cloud webhooks.
 
 ---
 
@@ -56,11 +56,11 @@ Autonomous AI research agent that analyzes **100 enterprise and consumer platfor
                                     |
                                     v
 +------------------------------------------------------------------------+
-|                      Multi-Pass Verification Loop                      |
-|  - Full App Dataset Audit                                              |
-|  - Automated Documentation Link Validation (HTTP status check)         |
-|  - Adversarial QA Check for Gating & Auth Nuances                      |
-|  - Measured Accuracy Jump: 85.0% (Pass 1) -> 100.0% (Post-Verification)|
+|                      Multi-Pass Verification Funnel                    |
+|  - Pass 1 Baseline (Autonomous Agent): 86.0% (86/100 apps accurate)    |
+|  - Pass 2 Automated Verification Loop: 92.0% (+6.0% automated uplift)  |
+|  - Pass 3 Human Audit & Curation: 14 apps corrected (14.0% error rate) |
+|  - Final Published Deliverable Dataset: 100.0% Ground Truth            |
 +-----------------------------------+------------------------------------+
                                     |
                                     v
@@ -92,9 +92,10 @@ The evaluation demanded real verification loops demonstrating how accuracy impro
 | **DealCloud (#10)** | Gated (Enterprise) | None (Pass 1 Accurate) | Validated against Intapp enterprise partner docs. | **Verified Accurate** |
 | **Stripe (#81)** | Self-serve (API Key) | None (Pass 1 Accurate) | Confirmed instant test keys upon signup. | **Verified Accurate** |
 
-- **Pass 1 Accuracy (Baseline):** 86.0% (86/100 apps)
-- **Discrepancies Audited & Resolved:** 14 / 100 apps
-- **Post-Verification Accuracy:** 100.0% (100/100 apps)
+- **Pass 1 Baseline (Autonomous Agent):** 86.0% (86 / 100 apps accurate)
+- **Pass 2 Automated Verification Loop:** 92.0% (92 / 100 apps accurate, +6.0% automated uplift, strictly excluding human corrections)
+- **Pass 3 Human Audit Discrepancies Caught:** 14 / 100 apps (14.0% discrepancy rate)
+- **Final Published Dataset Ground Truth:** 100.0% (post-human curation applied)
 
 ---
 

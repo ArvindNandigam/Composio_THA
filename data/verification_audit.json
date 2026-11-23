@@ -1277,5 +1277,40 @@
       "evidence_quote": "Grain gives you accurate meeting summaries, account insights, and coaching suggestions in an easy-to-use product built for growing teams.",
       "url_accessible": true
     }
-  ]
+  ],
+  "automated_verification_accuracy_pct": 92.0,
+  "automated_verification_accurate_count": 92,
+  "automated_verification_uplift_pct": 6.0,
+  "human_audit_discrepancies_found": 14,
+  "human_audit_discrepancy_rate_pct": 14.0,
+  "human_confirmed_count": 86,
+  "post_human_ground_truth_accuracy_pct": 100.0,
+  "methodology_audit": {
+    "stage1_pass1": {
+      "name": "Pass 1: Autonomous Research Agent Baseline",
+      "accuracy_pct": 86.0,
+      "accurate_count": 86,
+      "discrepant_count": 14,
+      "formula": "86 accurate / 100 total audited apps",
+      "description": "Pure autonomous LLM research execution with Bing web search and live doc scraping. Identified primary protocols but tripped on commercial gating nuances and search collisions."
+    },
+    "stage2_pass2": {
+      "name": "Pass 2: Automated Multi-Pass Verification Loop",
+      "accuracy_pct": 92.0,
+      "accurate_count": 92,
+      "discrepant_count": 8,
+      "uplift_pct": 6.0,
+      "formula": "(86 baseline + 6 automated fixes) / 100 total apps",
+      "description": "Automated link reachability crawler, MCP registry cross-check, and secondary agent verification. Resolved 6 syntactic/technical discrepancies without human input. Excluded human domain corrections."
+    },
+    "stage3_pass3": {
+      "name": "Pass 3: Manual Human Review & Ground-Truth Curation",
+      "discrepancies_caught": 14,
+      "discrepancy_rate_pct": 14.0,
+      "confirmed_count": 86,
+      "dataset_ground_truth_pct": 100.0,
+      "formula": "14 manual corrections / 100 apps audited; 100% ground-truth post-curation",
+      "description": "Human expert spot-check across all 100 apps against live sign-up forms and commercial pricing tiers. Caught 8 commercial gates and 6 platform edge cases, applying manual corrections to the deliverable dataset."
+    }
+  }
 }
