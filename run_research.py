@@ -17,6 +17,8 @@ def main():
     parser.add_argument("--category", type=str, default="Developer, Infra and Data platforms", help="Category for single app")
     parser.add_argument("--hint", type=str, default=None, help="Domain or doc hint (e.g. 'posthog.com')")
     parser.add_argument("--input", type=str, default=DEFAULT_INPUT_FILE, help="Path to input JSON catalog")
+    parser.add_argument("--apps", type=int, default=None, help="Number of apps to research from catalog (e.g. 100)")
+    parser.add_argument("--verify", action="store_true", help="Run automated verification loop on researched apps")
     parser.add_argument("--no-rebuild", action="store_true", help="Skip re-running analysis and HTML generation")
     args = parser.parse_args()
 
@@ -71,6 +73,9 @@ def main():
         apps_data = json.load(f)
 
     apps = [AppInput(**a) for a in apps_data]
+    if args.apps is not None:
+        apps = apps[:args.apps]
+
     print(f"==================================================")
     print(f"Starting Composio Research Agent across {len(apps)} apps")
     print(f"Catalog file: {args.input}")
@@ -84,6 +89,13 @@ def main():
     print(f"Research Completed! Researched {len(results)} apps in {elapsed:.1f}s")
     print(f"Results saved to data/research_results.json")
     print(f"==================================================")
+
+    if args.verify:
+        print("\n==================================================")
+        print("Running Automated Verification Loop...")
+        print("==================================================")
+        from agent.verifier import run_full_verification
+        run_full_verification()
 
     if not args.no_rebuild:
         print("\nRe-running pattern analyzer and rebuilding dashboard...")
