@@ -26,9 +26,9 @@ Autonomous AI research agent that analyzes **100 enterprise and consumer platfor
    - 35% of apps are blocked by administrative gates: OAuth App Review / Developer Verification (21%) and Enterprise Sales / Contract Gates (14%).
    - Technical protocol complexity (REST vs GraphQL) is rarely the gating bottleneck.
 
-4. **Massive MCP Greenfield (71% Unclaimed):**
+4. **Massive MCP Greenfield (70% Unclaimed):**
    - 29 apps (29%) have an identified official or recognized community MCP server.
-   - **71% represents open greenfield (71 apps)** where Composio can establish default reference toolkits.
+   - **70% represents open greenfield (70 apps)** where Composio can establish default reference toolkits.
 
 5. **Non-HTTP Subprocess Toolkits (6 Apps):**
    - Open-source tools like **Sherlock (#58)**, **Mermaid CLI (#98)**, **Twenty (#5)**, and **Neo4j (#66)** have no HTTP servers or API keys. They require local MCP subprocess execution rather than cloud webhooks.
@@ -57,9 +57,9 @@ Autonomous AI research agent that analyzes **100 enterprise and consumer platfor
                                     v
 +------------------------------------------------------------------------+
 |                      Multi-Pass Verification Funnel                    |
-|  - Pass 1 Baseline (Autonomous Agent): 86.0% (86/100 apps accurate)    |
-|  - Pass 2 Automated Verification Loop: 92.0% (+6.0% automated uplift)  |
-|  - Pass 3 Human Audit & Curation: 14 apps corrected (14.0% error rate) |
+|  - Pass 1 Baseline (Autonomous Agent): 77.0% (77/100 apps accurate)    |
+|  - Pass 2 Automated Verification Loop: 86.0% (+9.0% automated uplift)  |
+|  - Pass 3 Human Audit & Curation: 23 apps corrected (23.0% discrepancy rate) |
 |  - Final Published Deliverable Dataset: 100.0% Ground Truth            |
 +-----------------------------------+------------------------------------+
                                     |
@@ -92,9 +92,9 @@ The evaluation demanded real verification loops demonstrating how accuracy impro
 | **DealCloud (#10)** | Gated (Enterprise) | None (Pass 1 Accurate) | Validated against Intapp enterprise partner docs. | **Verified Accurate** |
 | **Stripe (#81)** | Self-serve (API Key) | None (Pass 1 Accurate) | Confirmed instant test keys upon signup. | **Verified Accurate** |
 
-- **Pass 1 Baseline (Autonomous Agent):** 86.0% (86 / 100 apps accurate)
-- **Pass 2 Automated Verification Loop:** 92.0% (92 / 100 apps accurate, +6.0% automated uplift, strictly excluding human corrections)
-- **Pass 3 Human Audit Discrepancies Caught:** 14 / 100 apps (14.0% discrepancy rate)
+- **Pass 1 Baseline (Autonomous Agent):** 77.0% (77 / 100 apps accurate)
+- **Pass 2 Automated Verification Loop:** 86.0% (86 / 100 apps accurate, +9.0% automated uplift, strictly excluding human corrections)
+- **Pass 3 Human Audit Discrepancies Caught:** 23 / 100 apps (23.0% discrepancy rate)
 - **Final Published Dataset Ground Truth:** 100.0% (post-human curation applied)
 
 ---

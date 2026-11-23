@@ -61,11 +61,11 @@
     "calculation_note": "Easy (65%) + Medium (21%) = 86% Composio viable today without enterprise sales contracts."
   },
   "mcp_ecosystem": {
-    "existing_mcp_count": 29,
-    "existing_mcp_pct": 29.0,
-    "greenfield_opportunity_count": 71,
-    "greenfield_opportunity_pct": 71.0,
-    "calculation_note": "29 official/community MCPs found (29%), leaving 71 greenfield opportunities (71%)."
+    "existing_mcp_count": 30,
+    "existing_mcp_pct": 30.0,
+    "greenfield_opportunity_count": 70,
+    "greenfield_opportunity_pct": 70.0,
+    "calculation_note": "30 verified official/community MCP servers (30.0%), leaving 70 greenfield opportunities (70.0%)."
   },
   "category_matrix": {
     "AI, Research and Media-native": {

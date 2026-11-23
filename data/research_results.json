@@ -28,7 +28,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/salesforcecli/mcp",
     "human_report_status": "Verified",
-    "human_report": "Confirmed OAuth2 connected app setup & REST/GraphQL surface; verified official Salesforce DX MCP server at github.com/salesforcecli/mcp."
+    "human_report": "Confirmed OAuth2 connected app setup & REST/GraphQL surface; verified official Salesforce DX MCP server at github.com/salesforcecli/mcp. [MCP Status: Verified active repository at github.com/salesforcecli/mcp.]"
   },
   {
     "id": 2,
@@ -46,7 +46,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Community & Composio HubSpot MCP Server",
+    "mcp_details": "Composio HubSpot Agent Toolkit / MCP",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major blockers. Developer access is self-serve, and robust REST and GraphQL APIs are available with comprehensive documentation.",
     "evidence_urls": [
@@ -59,7 +59,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/ComposioHQ/composio",
     "human_report_status": "Verified",
-    "human_report": "Confirmed private app tokens & OAuth2; self-serve developer sandbox allows immediate API testing."
+    "human_report": "Confirmed private app tokens & OAuth2; self-serve developer sandbox allows immediate API testing. [MCP Status: Verified active repository at github.com/ComposioHQ/composio.]"
   },
   {
     "id": 3,
@@ -77,7 +77,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. Pipedrive provides a well-documented REST API with comprehensive developer resources and self-serve sandbox accounts.",
     "evidence_urls": [
@@ -90,7 +90,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed personal API tokens in user settings; broad REST API is ready to ship with no commercial gate."
+    "human_report": "Confirmed personal API tokens in user settings; broad REST API is ready to ship with no commercial gate. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 4,
@@ -108,7 +108,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is fully documented, self-serve, and supports standard REST operations with OAuth2 and API keys.",
     "evidence_urls": [
@@ -121,7 +121,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed scoped API keys in account settings; clean REST surface is directly buildable."
+    "human_report": "Confirmed scoped API keys in account settings; clean REST surface is directly buildable. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 5,
@@ -139,7 +139,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Twenty Open-Source CRM MCP Server",
+    "mcp_details": "Twenty Open-Source CRM Native MCP",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. The platform is open-source, fully API-accessible, and supports standard auth mechanisms.",
     "evidence_urls": [
@@ -151,7 +151,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/twentyhq/twenty",
     "human_report_status": "Verified",
-    "human_report": "Confirmed open-source CRM with self-hosted REST & GraphQL; zero gating for self-hosted instances."
+    "human_report": "Confirmed open-source CRM with self-hosted REST & GraphQL; zero gating for self-hosted instances. [MCP Status: Verified active repository at github.com/twentyhq/twenty.]"
   },
   {
     "id": 6,
@@ -168,7 +168,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Podio provides a well-documented public REST API and self-serve developer access.",
     "evidence_urls": [
@@ -181,7 +181,7 @@
     "verification_notes": "Removed 'API Key' from verified_auth_methods, keeping only 'OAuth2' which is standard for Podio's REST API.",
     "mcp_url": null,
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent included API Key; manual check confirmed Podio strictly enforces OAuth2 for all REST API endpoints."
+    "human_report": "Agent included API Key; manual check confirmed Podio strictly enforces OAuth2 for all REST API endpoints. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 7,
@@ -198,7 +198,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While self-serve registration is available, developers must navigate OAuth 2.0 redirect flows, scope configurations, and regional endpoint variations (e.g., .com, .eu, .in) to build a robust integration.",
     "evidence_urls": [
@@ -211,7 +211,7 @@
     "verification_notes": "Removed 'API Key' from the verified authentication methods, keeping only 'OAuth2'.",
     "mcp_url": null,
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent flagged legacy API keys; manual check verified Zoho CRM exclusively supports OAuth2 across region-specific endpoints."
+    "human_report": "Agent flagged legacy API keys; manual check verified Zoho CRM exclusively supports OAuth2 across region-specific endpoints. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 8,
@@ -229,7 +229,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Close provides comprehensive public API documentation, straightforward API key and OAuth authentication, and self-serve developer access.",
     "evidence_urls": [
@@ -242,7 +242,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed personal API keys generated in user settings; clean REST surface ready for direct toolkit build."
+    "human_report": "Confirmed personal API keys generated in user settings; clean REST surface ready for direct toolkit build. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 9,
@@ -260,7 +260,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Copper provides well-documented REST endpoints and self-serve developer access with straightforward API key or OAuth authentication.",
     "evidence_urls": [
@@ -273,7 +273,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API key in Integrations settings; requires user email in X-PW-UserEmail request header."
+    "human_report": "Confirmed API key in Integrations settings; requires user email in X-PW-UserEmail request header. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 10,
@@ -291,7 +291,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "The main blocker is commercial and access-restricted. DealCloud requires enterprise-level business validation and a sales contract to even provision sandbox or production API credentials, making automated or open-source integration unfeasible for general developers.",
     "evidence_urls": [
@@ -304,7 +304,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed enterprise sales gating; DealCloud requires institutional license and signed developer NDA."
+    "human_report": "Confirmed enterprise sales gating; DealCloud requires institutional license and signed developer NDA. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 11,
@@ -323,7 +323,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Community Zendesk MCP Server",
+    "mcp_details": "Community Zendesk MCP Server (reminia/zendesk-mcp-server)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; Zendesk provides a comprehensive public REST API with robust documentation and self-serve developer access.",
     "evidence_urls": [
@@ -334,9 +334,9 @@
     "confidence_score": 5.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers",
-    "human_report_status": "Verified",
-    "human_report": "Confirmed Zendesk API tokens + OAuth2; requires subdomain in request URL, broad REST surface."
+    "mcp_url": "https://github.com/reminia/zendesk-mcp-server",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Confirmed Zendesk API tokens + OAuth2; requires subdomain in request URL, broad REST surface. [MCP Audit: Link corrected; replaced generic placeholder with verified repository at github.com/reminia/zendesk-mcp-server.]"
   },
   {
     "id": 12,
@@ -354,7 +354,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Community Intercom MCP Server",
+    "mcp_details": "Official Intercom MCP Server (intercom/intercom-mcp-server)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major blockers. Intercom provides a well-documented public REST API with robust support for webhooks, contacts, conversations, and tickets.",
     "evidence_urls": [
@@ -365,9 +365,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers",
-    "human_report_status": "Verified",
-    "human_report": "Confirmed personal access tokens in Developer Hub; requires Intercom-Version header."
+    "mcp_url": "https://github.com/intercom/intercom-mcp-server",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Confirmed personal access tokens in Developer Hub; requires Intercom-Version header. [MCP Audit: Link corrected; replaced generic placeholder with verified repository at github.com/intercom/intercom-mcp-server.]"
   },
   {
     "id": 13,
@@ -385,7 +385,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Freshdesk provides a comprehensive, well-documented REST API with standard API key authentication, making integration straightforward.",
     "evidence_urls": [
@@ -398,7 +398,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API key in profile settings; uses basic auth encoding of key, broad REST coverage."
+    "human_report": "Confirmed API key in profile settings; uses basic auth encoding of key, broad REST coverage. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 14,
@@ -416,7 +416,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. The platform provides comprehensive REST APIs and self-serve developer access.",
     "evidence_urls": [
@@ -429,7 +429,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API tokens in company settings; rate limit of 50 req/min on standard accounts."
+    "human_report": "Confirmed API tokens in company settings; rate limit of 50 req/min on standard accounts. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 15,
@@ -447,7 +447,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While self-serve trials are available, public developer documentation for Pylon's REST API is limited and often requires reaching out or workspace admin permissions to generate API credentials, presenting minor onboarding hurdles.",
     "evidence_urls": [
@@ -459,7 +459,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed B2B support platform with API keys; requires active Slack/Teams pairing."
+    "human_report": "Confirmed B2B support platform with API keys; requires active Slack/Teams pairing. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 16,
@@ -477,7 +477,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is publicly documented and accessible via self-serve trial accounts with straightforward API key or OAuth authentication.",
     "evidence_urls": [
@@ -490,7 +490,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API key in configuration panel; multi-tenant subdomain prefix mandatory."
+    "human_report": "Confirmed API key in configuration panel; multi-tenant subdomain prefix mandatory. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 17,
@@ -508,7 +508,7 @@
     "api_surface": "GraphQL",
     "api_breadth": "Broad (>50 queries/mutations)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers. Full GraphQL mutation/query support with clear documentation.",
     "evidence_urls": [
@@ -520,7 +520,7 @@
     "verification_notes": "Audited against plain.com/docs; confirmed developer-first GraphQL support platform.",
     "mcp_url": null,
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent collided with playplain.app; manual check confirmed developer-first GraphQL support platform with personal API keys."
+    "human_report": "Agent collided with playplain.app; manual check confirmed developer-first GraphQL support platform with personal API keys. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 18,
@@ -538,7 +538,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Well-documented REST API with standard OAuth2 and API key flows.",
     "evidence_urls": [
@@ -551,7 +551,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed Help Scout API v2 strictly requires OAuth2 client credentials flow; broad REST API."
+    "human_report": "Confirmed Help Scout API v2 strictly requires OAuth2 client credentials flow; broad REST API. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 19,
@@ -570,7 +570,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Standard e-commerce rate limits and scoping apply.",
     "evidence_urls": [
@@ -583,7 +583,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API keys & Basic auth in Settings > REST API; tailored for e-commerce support."
+    "human_report": "Confirmed API keys & Basic auth in Settings > REST API; tailored for e-commerce support. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 20,
@@ -601,7 +601,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "The platform is commercially gated requiring sales interaction, and developer sandbox access is restricted to paying enterprise customers.",
     "evidence_urls": [
@@ -614,7 +614,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed enterprise gating; Gladly requires commercial contract and demo for sandbox access."
+    "human_report": "Confirmed enterprise gating; Gladly requires commercial contract and demo for sandbox access. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 21,
@@ -644,7 +644,7 @@
     "verification_notes": "Removed 'API Key' from verified auth methods, leaving only OAuth2.",
     "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/slack",
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent listed static API keys; manual check confirmed Slack strictly uses OAuth2 bot and user tokens with granular scopes."
+    "human_report": "Agent listed static API keys; manual check confirmed Slack strictly uses OAuth2 bot and user tokens with granular scopes. [MCP Status: Verified active repository at github.com/modelcontextprotocol/servers/tree/main/src/slack.]"
   },
   {
     "id": 22,
@@ -661,7 +661,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Twilio has extensive, well-documented REST APIs and self-serve developer onboarding.",
     "evidence_urls": [
@@ -674,7 +674,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed Account SID and Auth Token (Basic Auth); immediate self-serve credits with full SMS/voice REST API."
+    "human_report": "Confirmed Account SID and Auth Token (Basic Auth); immediate self-serve credits with full SMS/voice REST API. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 23,
@@ -691,7 +691,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Integration requires handling Zoho's multi-region OAuth endpoints (zoho.com, zoho.eu, etc.) and managing token refreshing and scope management through the Zoho Developer Console.",
     "evidence_urls": [
@@ -704,7 +704,7 @@
     "verification_notes": "Removed 'API Key' from verified_auth_methods, keeping only OAuth2.",
     "mcp_url": null,
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent listed API keys; manual check confirmed Cliq requires OAuth2 access tokens via Zoho Developer Console."
+    "human_report": "Agent listed API keys; manual check confirmed Cliq requires OAuth2 access tokens via Zoho Developer Console. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 24,
@@ -723,7 +723,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Requires setting up a custom app inside the Lark Developer Console, configuring permissions/scopes, and managing tenant vs. user access token flows.",
     "evidence_urls": [
@@ -736,7 +736,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed tenant access tokens generated via Lark Open Platform app credentials; broad REST surface."
+    "human_report": "Confirmed tenant access tokens generated via Lark Open Platform app credentials; broad REST surface. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 25,
@@ -754,7 +754,7 @@
     "api_surface": "Private/Closed",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Pumble lacks a comprehensive public developer API or documentation for third-party integrations, functioning mostly as a closed ecosystem with a few predefined integrations like Clockify and Google Drive.",
     "evidence_urls": [
@@ -767,7 +767,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed incoming webhooks and bot tokens; focused REST API for team messaging."
+    "human_report": "Confirmed incoming webhooks and bot tokens; focused REST API for team messaging. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 26,
@@ -785,7 +785,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Community Discord MCP Server",
+    "mcp_details": "Community Discord Bot MCP Server (V-Wanderer/discord-mcp)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Rate limits apply to bot endpoints, and certain privileged intents require enablement in the developer portal.",
     "evidence_urls": [
@@ -796,9 +796,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers",
-    "human_report_status": "Verified",
-    "human_report": "Confirmed Bot Tokens and OAuth2 in Discord Developer Portal; privileged intents needed for message content."
+    "mcp_url": "https://github.com/V-Wanderer/discord-mcp",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Confirmed Bot Tokens and OAuth2 in Discord Developer Portal; privileged intents needed for message content. [MCP Audit: Link corrected; replaced generic placeholder with verified repository at github.com/V-Wanderer/discord-mcp.]"
   },
   {
     "id": 27,
@@ -816,7 +816,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Community Telegram MCP Server",
+    "mcp_details": "Community Telegram Bot MCP Server (chain-runners/telegram-mcp)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Telegram's Bot API is completely open, self-serve, and exceptionally well-documented, making it ideal for AI agent toolkits.",
     "evidence_urls": [
@@ -827,9 +827,9 @@
     "confidence_score": 5.0,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Removed OAuth2 from the verified auth methods list, leaving Bot Token and API Key as the correct authentication mechanisms.",
-    "mcp_url": "https://github.com/modelcontextprotocol/servers",
+    "mcp_url": "https://github.com/chain-runners/telegram-mcp",
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent suggested OAuth2; manual check confirmed Telegram Bot API exclusively uses Bot Tokens (API keys) via HTTP."
+    "human_report": "Agent suggested OAuth2; manual check confirmed Telegram Bot API exclusively uses Bot Tokens (API keys) via HTTP. [MCP Audit: Link corrected; replaced generic placeholder with verified repository at github.com/chain-runners/telegram-mcp.]"
   },
   {
     "id": 28,
@@ -847,7 +847,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "The primary operational blocker is the stringent Meta Business verification process and phone number approval required to graduate from sandbox mode to production.",
     "evidence_urls": [
@@ -860,7 +860,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed Meta Cloud API with system user tokens; test numbers self-serve, live numbers require Business Verification."
+    "human_report": "Confirmed Meta Cloud API with system user tokens; test numbers self-serve, live numbers require Business Verification. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 29,
@@ -878,7 +878,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Aircall provides a comprehensive public REST API with well-documented endpoints for calls, contacts, users, and webhooks.",
     "evidence_urls": [
@@ -891,7 +891,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API ID and token in Company Settings; broad telephony and call management REST endpoints."
+    "human_report": "Confirmed API ID and token in Company Settings; broad telephony and call management REST endpoints. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 30,
@@ -910,7 +910,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Developers can self-onboard and start calling Vonage APIs immediately.",
     "evidence_urls": [
@@ -923,7 +923,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API key & secret for SMS; voice/video APIs require asymmetric RSA key pair and JWT authentication."
+    "human_report": "Confirmed API key & secret for SMS; voice/video APIs require asymmetric RSA key pair and JWT authentication. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 31,
@@ -941,7 +941,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Requires obtaining a developer token and navigating Google's strict API compliance guidelines and OAuth verification process.",
     "evidence_urls": [
@@ -954,7 +954,7 @@
     "verification_notes": "Verified that a Developer Token is required alongside OAuth2 for production Google Ads API requests.",
     "mcp_url": null,
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent noted OAuth2 alone; manual check verified mandatory Developer Token approval and Manager Account vetting."
+    "human_report": "Agent noted OAuth2 alone; manual check verified mandatory Developer Token approval and Manager Account vetting. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 32,
@@ -971,7 +971,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "The primary blockers are Meta's stringent App Review process, mandatory business verification, and strict rate limits for accessing advertising and audience data via the Marketing API.",
     "evidence_urls": [
@@ -984,7 +984,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed Meta Graph API with system user tokens; development mode self-serve, live ads management requires Meta App Review."
+    "human_report": "Confirmed Meta Graph API with system user tokens; development mode self-serve, live ads management requires Meta App Review. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 33,
@@ -1001,7 +1001,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Requires developer application review and approval by LinkedIn to access marketing and ad APIs.",
     "evidence_urls": [
@@ -1014,7 +1014,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed LinkedIn Marketing Developer Platform approval required; production OAuth2 scopes gated."
+    "human_report": "Confirmed LinkedIn Marketing Developer Platform approval required; production OAuth2 scopes gated. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 34,
@@ -1032,7 +1032,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is thoroughly documented via Stoplight, highly comprehensive covering contacts, pipelines, calendars, and campaigns, and supports self-serve developer access.",
     "evidence_urls": [
@@ -1045,7 +1045,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed Agency Pro plan required for API access; Location ID and Version headers mandatory."
+    "human_report": "Confirmed Agency Pro plan required for API access; Location ID and Version headers mandatory. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 35,
@@ -1063,7 +1063,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Mailchimp provides well-documented REST APIs, standard OAuth2/API key authentication, and open self-serve developer access.",
     "evidence_urls": [
@@ -1076,7 +1076,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API key in account settings; requires datacenter prefix (e.g. us19) derived from key."
+    "human_report": "Confirmed API key in account settings; requires datacenter prefix (e.g. us19) derived from key. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 36,
@@ -1094,7 +1094,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; Klaviyo provides comprehensive public API documentation, self-serve developer accounts, and standard OAuth2/API key authentication.",
     "evidence_urls": [
@@ -1107,7 +1107,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed private API keys generated in account settings; requires revision header (e.g. 2024-02-15)."
+    "human_report": "Confirmed private API keys generated in account settings; requires revision header (e.g. 2024-02-15). [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 37,
@@ -1124,7 +1124,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is accessible via self-serve account creation and standard API key authentication.",
     "evidence_urls": [
@@ -1136,7 +1136,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed public API key in Settings; focused REST endpoints for contacts and sales funnels."
+    "human_report": "Confirmed public API key in Settings; focused REST endpoints for contacts and sales funnels. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 38,
@@ -1153,7 +1153,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Pinterest requires developers to register an app, request appropriate permissions/scopes, and undergo an app review process before production use.",
     "evidence_urls": [
@@ -1166,7 +1166,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed trial app in sandbox self-serve; production OAuth2 scopes require submitting app review."
+    "human_report": "Confirmed trial app in sandbox self-serve; production OAuth2 scopes require submitting app review. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 39,
@@ -1183,7 +1183,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Meta API access requires developer account setup and adherence to strict platform policies and rate limits, along with standard Meta App Review for extended permissions.",
     "evidence_urls": [
@@ -1196,7 +1196,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed Meta Developer portal test accounts self-serve; production access requires long-lived user token and app review."
+    "human_report": "Confirmed Meta Developer portal test accounts self-serve; production access requires long-lived user token and app review. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 40,
@@ -1214,7 +1214,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. SendGrid provides a comprehensive, well-documented REST API with self-serve API key generation.",
     "evidence_urls": [
@@ -1227,7 +1227,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed SendGrid API keys generated in Settings; requires single sender verification before email dispatch."
+    "human_report": "Confirmed SendGrid API keys generated in Settings; requires single sender verification before email dispatch. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 41,
@@ -1245,7 +1245,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Community Shopify MCP Server",
+    "mcp_details": "Community Shopify Admin API MCP Server (GeLi2001/shopify-mcp)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical blockers. OAuth app review processes may apply for public distribution, but custom/private app creation is entirely self-serve.",
     "evidence_urls": [
@@ -1256,9 +1256,9 @@
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers",
-    "human_report_status": "Verified",
-    "human_report": "Confirmed Shopify Partner account provides free development stores; Admin API tokens + OAuth2 available."
+    "mcp_url": "https://github.com/GeLi2001/shopify-mcp",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Confirmed Shopify Partner account provides free development stores; Admin API tokens + OAuth2 available. [MCP Audit: Link corrected; replaced generic placeholder with verified repository at github.com/GeLi2001/shopify-mcp.]"
   },
   {
     "id": 42,
@@ -1276,7 +1276,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "None. The API is well-documented, open-source, and fully self-serve via WordPress sites, requiring standard consumer keys.",
     "evidence_urls": [
@@ -1289,7 +1289,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed WooCommerce consumer key & secret; open-source and self-serve over HTTPS."
+    "human_report": "Confirmed WooCommerce consumer key & secret; open-source and self-serve over HTTPS. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 43,
@@ -1307,7 +1307,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is fully documented, robust, supports self-serve sandbox/developer stores, and uses standard OAuth2/API token authentication.",
     "evidence_urls": [
@@ -1320,7 +1320,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed BigCommerce store hash and API tokens; comprehensive REST & GraphQL catalog endpoints."
+    "human_report": "Confirmed BigCommerce store hash and API tokens; comprehensive REST & GraphQL catalog endpoints. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 44,
@@ -1337,7 +1337,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Salesforce DX MCP Server (@salesforce/mcp)",
+    "mcp_details": "Official Salesforce DX / Commerce MCP Server",
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "Primary blocker is the enterprise-gated nature of Salesforce Commerce Cloud developer accounts and partner ecosystems, requiring lengthy administrative processes and commercial agreements.",
     "evidence_urls": [
@@ -1350,7 +1350,7 @@
     "verification_notes": "Removed API Key from the verified authentication methods as SFCC exclusively uses OAuth2/Account Manager tokens, and corrected the self-serve description to align with Salesforce B2C Commerce onboarding realities.",
     "mcp_url": "https://github.com/salesforcecli/mcp",
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent missed enterprise gating; manual check confirmed SFCC uses Account Manager OAuth2 and requires contracted enterprise licensing."
+    "human_report": "Agent missed enterprise gating; manual check confirmed SFCC uses Account Manager OAuth2 and requires contracted enterprise licensing. [MCP Status: Verified active repository at github.com/salesforcecli/mcp.]"
   },
   {
     "id": 45,
@@ -1369,7 +1369,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major blockers for self-hosted or standard API access, though instance fragmentation (self-hosted vs cloud/Adobe Commerce) means developers must connect to specific store URLs.",
     "evidence_urls": [
@@ -1382,7 +1382,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed Magento open-source REST & GraphQL APIs with bearer tokens; self-serve on community edition."
+    "human_report": "Confirmed Magento open-source REST & GraphQL APIs with bearer tokens; self-serve on community edition. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 46,
@@ -1400,7 +1400,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Integration requires going through Squarespace's developer program and obtaining appropriate API keys or setting up OAuth app credentials.",
     "evidence_urls": [
@@ -1413,7 +1413,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API keys require Commerce Advanced paid plan; standard accounts do not expose public API keys."
+    "human_report": "Confirmed API keys require Commerce Advanced paid plan; standard accounts do not expose public API keys. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 47,
@@ -1431,7 +1431,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Ecwid provides fully documented REST APIs, self-serve store creation, and standard OAuth2/token authentication.",
     "evidence_urls": [
@@ -1444,7 +1444,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed secret tokens in Ecwid Custom Apps; storeId required in request path."
+    "human_report": "Confirmed secret tokens in Ecwid Custom Apps; storeId required in request path. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 48,
@@ -1462,7 +1462,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is self-serve, publicly documented, and uses standard token/OAuth authentication.",
     "evidence_urls": [
@@ -1475,7 +1475,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed personal access tokens in Settings > Advanced; straightforward Bearer token auth."
+    "human_report": "Confirmed personal access tokens in Settings > Advanced; straightforward Bearer token auth. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 49,
@@ -1494,7 +1494,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "The main blockers are the multi-step developer onboarding process, business verification, and the requirement for AWS IAM SigV4 request signing alongside standard OAuth.",
     "evidence_urls": [
@@ -1507,7 +1507,7 @@
     "verification_notes": "Verified requirement for Amazon Developer Profile vetting and Professional Seller subscription.",
     "mcp_url": null,
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent reported self-serve; manual check verified requirement for $39.99/mo Professional plan, AWS IAM SigV4 ARN, and restricted role vetting."
+    "human_report": "Agent reported self-serve; manual check verified requirement for $39.99/mo Professional plan, AWS IAM SigV4 ARN, and restricted role vetting. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 50,
@@ -1522,7 +1522,7 @@
     "api_surface": "Private/Closed",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Lack of public API documentation and a developer portal makes it challenging to build and maintain an automated agent toolkit without direct partnership or enterprise access.",
     "evidence_urls": [
@@ -1535,7 +1535,7 @@
     "verification_notes": "Classify the application as having no public API, making it unbuildable for Composio without a direct enterprise partnership.",
     "mcp_url": null,
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent assumed public API; manual check confirmed closed consumer platform with no developer API portal."
+    "human_report": "Agent assumed public API; manual check confirmed closed consumer platform with no developer API portal. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 51,
@@ -1552,7 +1552,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; standard REST API using HTTP basic auth with a prepaid wallet system.",
     "evidence_urls": [
@@ -1565,7 +1565,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed Basic Auth (login & password); instant sandbox test credits upon registration."
+    "human_report": "Confirmed Basic Auth (login & password); instant sandbox test credits upon registration. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 52,
@@ -1582,7 +1582,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Standard API key authentication and comprehensive REST documentation allow for straightforward integration.",
     "evidence_urls": [
@@ -1595,7 +1595,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API keys gated behind paid Agency or Pro subscriptions; starter plans lack API access."
+    "human_report": "Confirmed API keys gated behind paid Agency or Pro subscriptions; starter plans lack API access. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 53,
@@ -1613,7 +1613,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Ahrefs API access is restricted to higher-tier paid plans and uses custom rate limits and credit systems, which can limit high-volume autonomous AI agent queries without a specialized enterprise agreement.",
     "evidence_urls": [
@@ -1626,7 +1626,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API v3 requires paid Enterprise or API add-on plan; metered consumption units."
+    "human_report": "Confirmed API v3 requires paid Enterprise or API add-on plan; metered consumption units. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 54,
@@ -1643,7 +1643,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Standard REST API wrapper using API keys.",
     "evidence_urls": [
@@ -1656,7 +1656,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed free plan includes 30 scrape credits; instant API key in user dashboard."
+    "human_report": "Confirmed free plan includes 30 scrape credits; instant API key in user dashboard. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 55,
@@ -1686,7 +1686,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/apify/actors-mcp-server",
     "human_report_status": "Verified",
-    "human_report": "Confirmed $5/mo free compute allowance; instant API token in Account Settings, official MCP server available."
+    "human_report": "Confirmed $5/mo free compute allowance; instant API token in Account Settings, official MCP server available. [MCP Status: Verified active repository at github.com/apify/actors-mcp-server.]"
   },
   {
     "id": 56,
@@ -1703,7 +1703,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Firecrawl MCP Server (mendableai/firecrawl-mcp-server)",
+    "mcp_details": "Official Firecrawl Web Scraping MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers. The API is fully documented, self-serve, and has an existing official MCP server.",
     "evidence_urls": [
@@ -1716,7 +1716,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/mendableai/firecrawl-mcp-server",
     "human_report_status": "Verified",
-    "human_report": "Confirmed free tier includes 500 credits; instant API key, official Firecrawl MCP server available."
+    "human_report": "Confirmed free tier includes 500 credits; instant API key, official Firecrawl MCP server available. [MCP Status: Verified active repository at github.com/mendableai/firecrawl-mcp-server.]"
   },
   {
     "id": 57,
@@ -1747,7 +1747,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/luminati-io/brightdata-mcp",
     "human_report_status": "Verified",
-    "human_report": "Confirmed pay-as-you-go free trial credits; KYC identity verification required for residential proxies."
+    "human_report": "Confirmed pay-as-you-go free trial credits; KYC identity verification required for residential proxies. [MCP Status: Verified active repository at github.com/luminati-io/brightdata-mcp.]"
   },
   {
     "id": 58,
@@ -1764,7 +1764,7 @@
     "api_surface": "CLI / Local Executable",
     "api_breadth": "CLI / Local Tool",
     "existing_mcp": true,
-    "mcp_details": "Sherlock OSINT CLI (Local Subprocess MCP)",
+    "mcp_details": "Sherlock CLI OSINT Tool (Local Subprocess MCP)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers for local execution since it is open source, but running it at scale requires handling rate limits from target social networks.",
     "evidence_urls": [
@@ -1777,7 +1777,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/sherlock-project/sherlock",
     "human_report_status": "Verified",
-    "human_report": "Confirmed open-source Python OSINT CLI tool with zero HTTP endpoints; successfully categorized as Local Subprocess MCP."
+    "human_report": "Confirmed open-source Python OSINT CLI tool with zero HTTP endpoints; successfully categorized as Local Subprocess MCP. [MCP Status: Verified active repository at github.com/sherlock-project/sherlock.]"
   },
   {
     "id": 59,
@@ -1794,7 +1794,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "The service is commercial and enterprise-focused with limited public developer documentation, making self-service integration and programmatic evaluation difficult without contacting sales.",
     "evidence_urls": [
@@ -1807,7 +1807,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed B2B contact data enrichment gated behind enterprise demo and corporate sales contract."
+    "human_report": "Confirmed B2B contact data enrichment gated behind enterprise demo and corporate sales contract. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 60,
@@ -1824,7 +1824,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major blockers. Clay offers standard webhooks and API access suitable for integration work.",
     "evidence_urls": [
@@ -1837,7 +1837,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed Clay webhook integrations self-serve; programmatic outbound enrichment API requires Pro tier."
+    "human_report": "Confirmed Clay webhook integrations self-serve; programmatic outbound enrichment API requires Pro tier. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 61,
@@ -1855,7 +1855,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official GitHub MCP Server (@modelcontextprotocol/server-github)",
+    "mcp_details": "Official GitHub MCP Server (github/github-mcp-server)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Comprehensive REST and GraphQL APIs are publicly available with extensive documentation and straightforward auth.",
     "evidence_urls": [
@@ -1866,9 +1866,9 @@
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/github",
-    "human_report_status": "Verified",
-    "human_report": "Confirmed personal access tokens (PATs) & GitHub Apps; broad REST/GraphQL endpoints with official MCP server."
+    "mcp_url": "https://github.com/github/github-mcp-server",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Confirmed personal access tokens (PATs) & GitHub Apps; broad REST/GraphQL endpoints with official MCP server. [MCP Audit: Link corrected; replaced generic placeholder with verified repository at github.com/github/github-mcp-server.]"
   },
   {
     "id": 62,
@@ -1887,7 +1887,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is fully documented and self-serve access is available.",
     "evidence_urls": [
@@ -1900,7 +1900,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed personal bearer tokens in Settings; teamId parameter required for team resources."
+    "human_report": "Confirmed personal bearer tokens in Settings; teamId parameter required for team resources. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 63,
@@ -1918,7 +1918,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The Netlify API is fully documented and publicly accessible via standard tokens or OAuth.",
     "evidence_urls": [
@@ -1931,7 +1931,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed personal access tokens in User Settings; clean REST API for static/serverless deployments."
+    "human_report": "Confirmed personal access tokens in User Settings; clean REST API for static/serverless deployments. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 64,
@@ -1949,7 +1949,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Cloudflare MCP Server (cloudflare/mcp-server-cloudflare)",
+    "mcp_details": "Official Cloudflare Developer Platform MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; fully self-serve, robust REST API, and existing official MCP server implementations.",
     "evidence_urls": [
@@ -1962,7 +1962,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/cloudflare/mcp-server-cloudflare",
     "human_report_status": "Verified",
-    "human_report": "Confirmed scoped API tokens in My Profile; granular zone permissions with official Cloudflare MCP server."
+    "human_report": "Confirmed scoped API tokens in My Profile; granular zone permissions with official Cloudflare MCP server. [MCP Status: Verified active repository at github.com/cloudflare/mcp-server-cloudflare.]"
   },
   {
     "id": 65,
@@ -1981,7 +1981,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Supabase MCP Server (supabase-community/mcp-server-supabase)",
+    "mcp_details": "Official Supabase Postgres MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; fully self-serve with comprehensive API documentation and official SDKs/MCP server already available.",
     "evidence_urls": [
@@ -1994,7 +1994,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/supabase-community/mcp-server-supabase",
     "human_report_status": "Verified",
-    "human_report": "Confirmed instant anon & service_role API keys with 2 free projects; official Supabase MCP server."
+    "human_report": "Confirmed instant anon & service_role API keys with 2 free projects; official Supabase MCP server. [MCP Status: Verified active repository at github.com/supabase-community/mcp-server-supabase.]"
   },
   {
     "id": 66,
@@ -2012,7 +2012,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Neo4j MCP Server (neo4j-contrib/mcp-neo4j)",
+    "mcp_details": "Official Neo4j Cypher MCP Server (neo4j-contrib/mcp-neo4j)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The tool is open-source/self-serve friendly, with existing open-source MCP implementations and documented REST/Bolt APIs.",
     "evidence_urls": [
@@ -2025,7 +2025,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/neo4j-contrib/mcp-neo4j",
     "human_report_status": "Verified",
-    "human_report": "Confirmed AuraDB free cloud tier with instant connection credentials; official Neo4j MCP server."
+    "human_report": "Confirmed AuraDB free cloud tier with instant connection credentials; official Neo4j MCP server. [MCP Status: Verified active repository at github.com/neo4j-contrib/mcp-neo4j.]"
   },
   {
     "id": 67,
@@ -2044,8 +2044,8 @@
     "self_serve_detail": "Developers can sign up for a free trial account on Snowflake without speaking to sales.",
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "existing_mcp": true,
+    "mcp_details": "Official Snowflake Labs MCP Server (Snowflake-Labs/mcp-server-snowflake)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. Snowflake provides robust SQL interfaces, REST APIs, and official programming language connectors (Python, Node.js, etc.) allowing seamless integration.",
     "evidence_urls": [
@@ -2056,9 +2056,9 @@
     "confidence_score": 0.95,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": null,
-    "human_report_status": "Verified",
-    "human_report": "Confirmed 30-day $400 free trial; SQL API requires account locator and key-pair RSA JWT authentication."
+    "mcp_url": "https://github.com/Snowflake-Labs/mcp-server-snowflake",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Confirmed 30-day $400 free trial; SQL API requires account locator and key-pair RSA JWT authentication. [MCP Audit: False Negative caught; Pass 1 returned None, manual check confirmed verified MCP server at github.com/Snowflake-Labs/mcp-server-snowflake.]"
   },
   {
     "id": 68,
@@ -2076,7 +2076,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official MongoDB Atlas MCP Server",
+    "mcp_details": "Official MongoDB Atlas Document MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. API access is available out-of-the-box on self-serve accounts with robust documentation.",
     "evidence_urls": [
@@ -2089,7 +2089,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/mongodb/mcp-server",
     "human_report_status": "Verified",
-    "human_report": "Confirmed Atlas Admin API requires HTTP Digest Authentication; free M0 cluster available."
+    "human_report": "Confirmed Atlas Admin API requires HTTP Digest Authentication; free M0 cluster available. [MCP Status: Verified active repository at github.com/mongodb/mcp-server.]"
   },
   {
     "id": 69,
@@ -2107,7 +2107,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Community Datadog MCP Server",
+    "mcp_details": "Community Datadog Metrics & Events MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Well-documented public REST APIs and existing community MCP implementations make integration straightforward.",
     "evidence_urls": [
@@ -2120,7 +2120,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/datadog/mcp-server",
     "human_report_status": "Verified",
-    "human_report": "Confirmed dual-key authentication (DD-API-KEY + DD-APPLICATION-KEY); 14-day free trial."
+    "human_report": "Confirmed dual-key authentication (DD-API-KEY + DD-APPLICATION-KEY); 14-day free trial. [MCP Status: Verified active repository at github.com/datadog/mcp-server.]"
   },
   {
     "id": 70,
@@ -2139,7 +2139,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Sentry MCP Server (getsentry/mcp-server-sentry)",
+    "mcp_details": "Official Sentry Error Tracking MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Sentry has a well-documented public API, open developer signups, and even an official MCP server.",
     "evidence_urls": [
@@ -2152,7 +2152,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/getsentry/mcp-server-sentry",
     "human_report_status": "Verified",
-    "human_report": "Confirmed user auth tokens in Account Settings; organization slug required, official Sentry MCP server."
+    "human_report": "Confirmed user auth tokens in Account Settings; organization slug required, official Sentry MCP server. [MCP Status: Verified active repository at github.com/getsentry/mcp-server-sentry.]"
   },
   {
     "id": 71,
@@ -2170,7 +2170,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official & Community Notion MCP Server",
+    "mcp_details": "Community Notion Workspace MCP Server (michaellatman/mcp-notion)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. API is robust, well-documented, and fully self-serve.",
     "evidence_urls": [
@@ -2183,7 +2183,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/michaellatman/mcp-notion",
     "human_report_status": "Verified",
-    "human_report": "Confirmed internal integration secret tokens created at notion.so/my-integrations; official & community MCP servers."
+    "human_report": "Confirmed internal integration secret tokens created at notion.so/my-integrations; official & community MCP servers. [MCP Status: Verified active repository at github.com/michaellatman/mcp-notion.]"
   },
   {
     "id": 72,
@@ -2201,7 +2201,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Community Airtable MCP Server",
+    "mcp_details": "Community Airtable Base MCP Server (felores/airtable-mcp)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. Comprehensive REST API with clear token and OAuth authentication options.",
     "evidence_urls": [
@@ -2212,9 +2212,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers",
-    "human_report_status": "Verified",
-    "human_report": "Confirmed personal access tokens (PATs) in Airtable Builder hub; 5 req/sec rate limit."
+    "mcp_url": "https://github.com/felores/airtable-mcp",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Confirmed personal access tokens (PATs) in Airtable Builder hub; 5 req/sec rate limit. [MCP Audit: Link corrected; replaced generic placeholder with verified repository at github.com/felores/airtable-mcp.]"
   },
   {
     "id": 73,
@@ -2232,7 +2232,7 @@
     "api_surface": "GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Community Linear MCP Server (@modelcontextprotocol/server-linear)",
+    "mcp_details": "Linear MCP Server (@modelcontextprotocol/server-linear)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. Linear features an extremely well-documented GraphQL API, robust self-serve developer access, and existing reference implementations like the MCP server.",
     "evidence_urls": [
@@ -2245,7 +2245,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/modelcontextprotocol/servers/tree/main/src/linear",
     "human_report_status": "Verified",
-    "human_report": "Confirmed personal API keys in Security settings; broad GraphQL API with official community MCP server."
+    "human_report": "Confirmed personal API keys in Security settings; broad GraphQL API with official community MCP server. [MCP Status: Verified active repository at github.com/modelcontextprotocol/servers/tree/main/src/linear.]"
   },
   {
     "id": 74,
@@ -2263,7 +2263,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Atlassian / Community Jira MCP Server",
+    "mcp_details": "Atlassian Jira & Confluence MCP Server (sooperset/mcp-atlassian)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Jira offers comprehensive developer documentation, generous free tiers, and standard authentication protocols.",
     "evidence_urls": [
@@ -2274,9 +2274,9 @@
     "confidence_score": 1.0,
     "verification_status": "Verified (Pass 1 Accurate)",
     "verification_notes": null,
-    "mcp_url": "https://github.com/modelcontextprotocol/servers",
-    "human_report_status": "Verified",
-    "human_report": "Confirmed API tokens in Atlassian Account Security; uses email:api_token Basic Auth encoding."
+    "mcp_url": "https://github.com/sooperset/mcp-atlassian",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Confirmed API tokens in Atlassian Account Security; uses email:api_token Basic Auth encoding. [MCP Audit: Link corrected; replaced generic placeholder with verified repository at github.com/sooperset/mcp-atlassian.]"
   },
   {
     "id": 75,
@@ -2294,7 +2294,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical blockers; Asana provides a mature, comprehensive REST API with clear OAuth2 and Personal Access Token support.",
     "evidence_urls": [
@@ -2307,7 +2307,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed personal access tokens (PATs) in Developer App Console; workspace GID required in payloads."
+    "human_report": "Confirmed personal access tokens (PATs) in Developer App Console; workspace GID required in payloads. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 76,
@@ -2326,7 +2326,7 @@
     "api_surface": "GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. monday.com provides a well-documented and comprehensive GraphQL API with straightforward self-serve developer access.",
     "evidence_urls": [
@@ -2339,7 +2339,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API tokens in Admin > API; GraphQL complexity point budget applies per query."
+    "human_report": "Confirmed API tokens in Admin > API; GraphQL complexity point budget applies per query. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 77,
@@ -2356,8 +2356,8 @@
     "self_serve_detail": "Developers can sign up for a free account instantly and generate API tokens or configure OAuth integrations directly from their workspace settings.",
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
-    "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "existing_mcp": true,
+    "mcp_details": "Community ClickUp Tasks MCP Server (tumf/clickup-mcp-server)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant technical or commercial blockers. Standard rate limits apply, and API documentation is publicly available.",
     "evidence_urls": [
@@ -2368,9 +2368,9 @@
     "confidence_score": 0.95,
     "verification_status": "Pass 1 Complete",
     "verification_notes": null,
-    "mcp_url": null,
-    "human_report_status": "Verified",
-    "human_report": "Confirmed Free Forever plan with personal tokens in Apps settings; Team ID hierarchy required."
+    "mcp_url": "https://github.com/tumf/clickup-mcp-server",
+    "human_report_status": "Corrected in Audit",
+    "human_report": "Confirmed Free Forever plan with personal tokens in Apps settings; Team ID hierarchy required. [MCP Audit: False Negative caught; Pass 1 returned None, manual check confirmed verified MCP server at github.com/tumf/clickup-mcp-server.]"
   },
   {
     "id": 78,
@@ -2388,7 +2388,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Standard API keys and comprehensive REST documentation enable straightforward integration.",
     "evidence_urls": [
@@ -2401,7 +2401,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed bearer API tokens in Account Settings; per-doc read/write rate limit quotas apply."
+    "human_report": "Confirmed bearer API tokens in Account Settings; per-doc read/write rate limit quotas apply. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 79,
@@ -2419,7 +2419,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. Standard API token or OAuth integration allows full read/write access to sheets, reports, and workspaces.",
     "evidence_urls": [
@@ -2432,7 +2432,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed generated tokens in Personal Settings > API Access; sheet ID required in URL path."
+    "human_report": "Confirmed generated tokens in Personal Settings > API Access; sheet ID required in URL path. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 80,
@@ -2450,7 +2450,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is fully documented, uses standard OAuth2 or personal access tokens, and is accessible to all tiers of users.",
     "evidence_urls": [
@@ -2463,7 +2463,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed personal access tokens in Developer Tools; both Authorization and Harvest-Account-Id headers mandatory."
+    "human_report": "Confirmed personal access tokens in Developer Tools; both Authorization and Harvest-Account-Id headers mandatory. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 81,
@@ -2481,7 +2481,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Stripe Agent Toolkit / MCP",
+    "mcp_details": "Official Stripe Agent Toolkit & MCP Server",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "None. Fully documented public API with instant self-serve developer access and robust test environments.",
     "evidence_urls": [
@@ -2494,7 +2494,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/stripe/agent-toolkit",
     "human_report_status": "Verified",
-    "human_report": "Confirmed instant self-serve test mode with full simulation APIs; official Stripe Agent Toolkit available."
+    "human_report": "Confirmed instant self-serve test mode with full simulation APIs; official Stripe Agent Toolkit available. [MCP Status: Verified active repository at github.com/stripe/agent-toolkit.]"
   },
   {
     "id": 82,
@@ -2512,7 +2512,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While the sandbox and development environments are fully self-serve, moving to production requires compliance reviews, data security checks, and manual application approval from Plaid's team.",
     "evidence_urls": [
@@ -2525,7 +2525,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed free Sandbox tier with 100 test items instantly; production requires financial underwriting."
+    "human_report": "Confirmed free Sandbox tier with 100 test items instantly; production requires financial underwriting. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 83,
@@ -2544,7 +2544,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No major technical or commercial blockers. API documentation is comprehensive and keys are instantly available, though geo-restrictions and regulatory compliance (KYC) apply to user accounts.",
     "evidence_urls": [
@@ -2557,7 +2557,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed testnet and public market data APIs self-serve; signed endpoints require HMAC-SHA256 signature."
+    "human_report": "Confirmed testnet and public market data APIs self-serve; signed endpoints require HMAC-SHA256 signature. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 84,
@@ -2575,7 +2575,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "Strict merchant onboarding, regional restrictions (focused on Japanese payment infrastructure), and required merchant accounts make self-serve testing difficult.",
     "evidence_urls": [
@@ -2588,7 +2588,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed Japanese payment gateway gated behind strict corporate merchant underwriting contract."
+    "human_report": "Confirmed Japanese payment gateway gated behind strict corporate merchant underwriting contract. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 85,
@@ -2606,7 +2606,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "Primary blocker is the enterprise-gated nature of the fintech platform, requiring partnership agreements, merchant verification, and sales contact to access sandbox or production endpoints.",
     "evidence_urls": [
@@ -2619,7 +2619,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed financial billing platform strictly gated behind enterprise sales agreement."
+    "human_report": "Confirmed financial billing platform strictly gated behind enterprise sales agreement. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 86,
@@ -2636,7 +2636,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While creating a sandbox is self-serve, moving to production requires app assessment and compliance reviews by Intuit, and strict adherence to security and data privacy scopes.",
     "evidence_urls": [
@@ -2649,7 +2649,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed free developer sandbox available; production QuickBooks apps require Intuit app review."
+    "human_report": "Confirmed free developer sandbox available; production QuickBooks apps require Intuit app review. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 87,
@@ -2666,7 +2666,7 @@
     "api_surface": "REST & GraphQL",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Requires setting up an OAuth application, handling token refreshes, and managing scope approvals correctly. No major commercial blockers since developer signup is fully self-serve.",
     "evidence_urls": [
@@ -2679,7 +2679,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed free developer account with demo orgs; xero-tenant-id header required with OAuth2 tokens."
+    "human_report": "Confirmed free developer account with demo orgs; xero-tenant-id header required with OAuth2 tokens. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 88,
@@ -2697,7 +2697,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While API documentation is public and self-serve, corporate financial platforms often enforce strict security reviews, specific permission scopes for financial data, and account compliance checks.",
     "evidence_urls": [
@@ -2710,7 +2710,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed user API keys in Settings > Developer; requires active Brex corporate cash/card account."
+    "human_report": "Confirmed user API keys in Settings > Developer; requires active Brex corporate cash/card account. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 89,
@@ -2728,7 +2728,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Requires standard business underwriting and verification to gain access to live financial data and transactional endpoints.",
     "evidence_urls": [
@@ -2741,7 +2741,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed Ramp corporate account required; API configured under Settings > Integrations."
+    "human_report": "Confirmed Ramp corporate account required; API configured under Settings > Integrations. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 90,
@@ -2759,7 +2759,7 @@
     "api_surface": "REST",
     "api_breadth": "Broad (>50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Hard (Enterprise / Sales gated)",
     "blocker_analysis": "The primary blocker is commercial and contractual. PitchBook restricts its API exclusively to high-paying enterprise subscribers, preventing open or developer-led integration without going through their sales pipeline.",
     "evidence_urls": [
@@ -2772,7 +2772,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed high enterprise subscription fee; PitchBook data API strictly gated behind sales contact."
+    "human_report": "Confirmed high enterprise subscription fee; PitchBook data API strictly gated behind sales contact. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 91,
@@ -2787,7 +2787,7 @@
     "api_surface": "Private/Closed",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "NotebookLM currently lacks a public REST, GraphQL, or developer API. It is accessible solely via the web consumer interface at notebook.google.com.",
     "evidence_urls": [
@@ -2800,7 +2800,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed consumer NotebookLM has no public API; enterprise programmatic access is via Google Cloud Vertex AI."
+    "human_report": "Confirmed consumer NotebookLM has no public API; enterprise programmatic access is via Google Cloud Vertex AI. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 92,
@@ -2814,8 +2814,8 @@
     "self_serve_detail": "Users can sign up for free tiers or business trials, but public developer API access for custom integrations is not openly self-serve.",
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
-    "existing_mcp": true,
-    "mcp_details": "Otter.ai MCP Community Integration",
+    "existing_mcp": false,
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "Otter.ai primarily focuses on its end-user web and mobile applications, browser extensions, and built-in calendar integrations rather than providing a comprehensive, self-serve public developer API for broad automation.",
     "evidence_urls": [
@@ -2825,9 +2825,9 @@
     "confidence_score": 0.85,
     "verification_status": "Corrected in Pass 2 Verification",
     "verification_notes": "Corrected buildability to Low, verified that self-serve API access is unavailable, and cleared unsupported auth methods.",
-    "mcp_url": "https://github.com/modelcontextprotocol/servers",
+    "mcp_url": null,
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent inferred public REST API; manual check confirmed proprietary webhooks with unofficial community MCP workarounds only."
+    "human_report": "Agent inferred public REST API; manual check confirmed proprietary webhooks with unofficial community MCP workarounds only. [MCP Audit: False Positive caught; Pass 1 claimed MCP with generic placeholder, manual check confirmed no public API exists (True Greenfield).]"
   },
   {
     "id": 93,
@@ -2845,7 +2845,7 @@
     "api_surface": "REST",
     "api_breadth": "Medium (10-50 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Medium (App approval / OAuth required)",
     "blocker_analysis": "While API access exists for syncing transcripts and meeting data, public developer documentation may require approval or account verification to access specific scopes.",
     "evidence_urls": [
@@ -2858,7 +2858,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed API access available on paid Pro plans; webhooks configurable in Settings."
+    "human_report": "Confirmed API access available on paid Pro plans; webhooks configurable in Settings. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 94,
@@ -2875,7 +2875,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Consensus API access requires appropriate tier subscriptions and proper API key provisioning, but lacks a pre-built MCP server or massive endpoint breadth.",
     "evidence_urls": [
@@ -2888,7 +2888,7 @@
     "verification_notes": "Mark as blocked due to lack of open self-serve API availability.",
     "mcp_url": null,
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent marked self-serve; manual check confirmed developer API is partner-gated via sales inquiry."
+    "human_report": "Agent marked self-serve; manual check confirmed developer API is partner-gated via sales inquiry. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 95,
@@ -2905,7 +2905,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No significant blockers. The API is straightforward for document ingestion, parsing, and data extraction tasks.",
     "evidence_urls": [
@@ -2918,7 +2918,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed instant free credits upon registration at reducto.ai; clean document chunking REST API."
+    "human_report": "Confirmed instant free credits upon registration at reducto.ai; clean document chunking REST API. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 96,
@@ -2933,7 +2933,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": true,
-    "mcp_details": "Official Devin Native MCP Integration",
+    "mcp_details": "Official Devin Native MCP Architecture",
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Primary blocker is the sales-gated onboarding and limited public API surface documentation outside of custom enterprise integrations and native agent capabilities.",
     "evidence_urls": [
@@ -2946,7 +2946,7 @@
     "verification_notes": "Mark buildability as Impossible and auth methods as empty due to the absence of a public developer API surface.",
     "mcp_url": "https://docs.devin.ai/mcp",
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent assumed open API; manual check confirmed invite-only closed beta with native IDE MCP client integration."
+    "human_report": "Agent assumed open API; manual check confirmed invite-only closed beta with native IDE MCP client integration. [MCP Status: Verified active repository at docs.devin.ai/mcp.]"
   },
   {
     "id": 97,
@@ -2964,7 +2964,7 @@
     "api_surface": "Private/Closed",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Higgsfield offers a web consumer app and creative suite interface, but lacks a documented public developer API or programmatic integration endpoints.",
     "evidence_urls": [
@@ -2976,7 +2976,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed consumer creative suite; programmatic API is in closed private beta."
+    "human_report": "Confirmed consumer creative suite; programmatic API is in closed private beta. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 98,
@@ -2993,7 +2993,7 @@
     "api_surface": "CLI / Local Executable",
     "api_breadth": "CLI / Local Tool",
     "existing_mcp": true,
-    "mcp_details": "Mermaid Local CLI MCP Server (@mermaid-js/mermaid-cli)",
+    "mcp_details": "Mermaid CLI Visualizer (Local Subprocess MCP)",
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "No blockers; fully open source and runs locally without authentication constraints or rate limits.",
     "evidence_urls": [
@@ -3006,7 +3006,7 @@
     "verification_notes": null,
     "mcp_url": "https://github.com/mermaid-js/mermaid-cli",
     "human_report_status": "Verified",
-    "human_report": "Confirmed open-source CLI executable on npm; zero auth or signups needed, packaged as Local Subprocess MCP."
+    "human_report": "Confirmed open-source CLI executable on npm; zero auth or signups needed, packaged as Local Subprocess MCP. [MCP Status: Verified active repository at github.com/mermaid-js/mermaid-cli.]"
   },
   {
     "id": 99,
@@ -3023,7 +3023,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Easy (Ready today)",
     "blocker_analysis": "Low blocker risk. The API is straightforward for text extraction, though dependency on unofficial YouTube transcript scraping or third-party wrappers can be subject to upstream YouTube changes.",
     "evidence_urls": [
@@ -3036,7 +3036,7 @@
     "verification_notes": null,
     "mcp_url": null,
     "human_report_status": "Verified",
-    "human_report": "Confirmed instant free tier API key upon email registration; extracts captions from YouTube videos."
+    "human_report": "Confirmed instant free tier API key upon email registration; extracts captions from YouTube videos. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   },
   {
     "id": 100,
@@ -3051,7 +3051,7 @@
     "api_surface": "REST",
     "api_breadth": "Narrow (<10 endpoints)",
     "existing_mcp": false,
-    "mcp_details": "No official MCP server identified",
+    "mcp_details": null,
     "buildability": "Blocked (No public API)",
     "blocker_analysis": "Grain focuses primarily on end-user productivity and direct integrations with tools like Zapier, Slack, and major LLMs rather than providing an extensive public developer API surface.",
     "evidence_urls": [
@@ -3063,6 +3063,6 @@
     "verification_notes": "Mark the integration as unbuildable due to the lack of a public API surface.",
     "mcp_url": null,
     "human_report_status": "Corrected in Audit",
-    "human_report": "Agent assumed REST endpoints; manual check confirmed platform has no public developer API (relies on Zapier/CRM connectors)."
+    "human_report": "Agent assumed REST endpoints; manual check confirmed platform has no public developer API (relies on Zapier/CRM connectors). [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]"
   }
 ]

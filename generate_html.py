@@ -214,12 +214,12 @@ def build_html_deliverable():
                 <div class="glass-panel p-5 rounded-2xl border-l-4 border-l-amber-500">
                     <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">MCP Greenfield</p>
                     <p class="text-3xl font-extrabold text-amber-400 mt-1">{greenfield_pct}%</p>
-                    <p class="text-xs text-gray-400 mt-1">{greenfield_count} Unclaimed (29 Found)</p>
+                    <p class="text-xs text-gray-400 mt-1">{greenfield_count} Unclaimed ({existing_mcp_count} Verified)</p>
                 </div>
                 <div class="glass-panel p-5 rounded-2xl border-l-4 border-l-purple-500 col-span-2 sm:col-span-1">
                     <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Multi-Pass Funnel</p>
                     <p class="text-3xl font-extrabold text-purple-400 mt-1">{pass1_acc}% -> {auto_verif_acc}%</p>
-                    <p class="text-xs text-purple-300 mt-1 font-mono">+{auto_uplift}% Auto | 14 Human Fixes</p>
+                    <p class="text-xs text-purple-300 mt-1 font-mono">+{auto_uplift}% Auto | {human_corrections} Human Fixes</p>
                 </div>
             </div>
         </div>
@@ -272,9 +272,9 @@ def build_html_deliverable():
                     <div class="w-10 h-10 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 mb-4 font-mono font-bold">
                         04
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">4. MCP Greenfield (71% Unclaimed)</h3>
+                    <h3 class="text-lg font-bold text-white mb-2">4. MCP Greenfield (70% Unclaimed)</h3>
                     <p class="text-sm text-gray-400 leading-relaxed">
-                        Only 29 apps (29%) currently have an identified official or recognized community MCP server (including Salesforce DX, Twenty, HubSpot, Zendesk, Discord, GitHub, Notion, Stripe). The remaining 71 apps (71%) represent open greenfield where Composio can establish default reference toolkits.
+                        Only 30 apps (30%) currently have an identified official or recognized community MCP server (including Salesforce DX, Twenty, HubSpot, Zendesk, Discord, GitHub, Notion, Stripe, Snowflake Labs, ClickUp). The remaining 70 apps (70%) represent open greenfield where Composio can establish default reference toolkits.
                     </p>
                 </div>
 
@@ -294,9 +294,9 @@ def build_html_deliverable():
                     <div class="w-10 h-10 rounded-xl bg-pink-500/10 border border-pink-500/30 flex items-center justify-center text-pink-400 mb-4 font-mono font-bold">
                         06
                     </div>
-                    <h3 class="text-lg font-bold text-white mb-2">6. 3-Stage Verification Funnel (86% -> 92% -> 100%)</h3>
+                    <h3 class="text-lg font-bold text-white mb-2">6. 3-Stage Verification Funnel (77% -> 86% -> 100%)</h3>
                     <p class="text-sm text-gray-400 leading-relaxed">
-                        Pass 1 Autonomous Agent scored 86.0% (86/100). The Pass 2 automated verification loop lifted automated accuracy to 92.0% (+6.0% gain via link reachability & MCP checks). The Pass 3 manual human audit caught the remaining 14 commercial/semantic gates (14.0% discrepancy rate), correcting all 14 in the final 100% ground-truth deliverable.
+                        Pass 1 Autonomous Agent scored 77.0% on raw research across protocols, gating, and MCP links. The Pass 2 automated verification loop lifted accuracy to 86.0% (+9.0% automated uplift via link reachability & MCP checks). The Pass 3 manual human audit caught and resolved 23 discrepancies (14 commercial/semantic gates and 9 MCP false negatives, false positives, and broken links), delivering a 100% verified ground-truth dataset.
                     </p>
                 </div>
             </div>
@@ -590,22 +590,22 @@ def build_html_deliverable():
                     <div class="p-4 rounded-xl bg-gray-900/80 border border-amber-500/30">
                         <span class="text-[10px] font-mono uppercase tracking-wider text-amber-400 font-bold block mb-1">Pass 1: Autonomous Agent Baseline</span>
                         <p class="text-3xl font-extrabold text-amber-400">{pass1_acc}%</p>
-                        <p class="text-[11px] text-gray-300 mt-1 font-mono">86 / 100 Apps Accurate</p>
-                        <p class="text-[11px] text-gray-400 mt-1">Autonomous LLM search & extraction; made 14 commercial/semantic assumptions</p>
+                        <p class="text-[11px] text-gray-300 mt-1 font-mono">77 / 100 Apps Accurate</p>
+                        <p class="text-[11px] text-gray-400 mt-1">Autonomous LLM search & extraction; made 23 assumptions across gating, auth, and MCP links</p>
                     </div>
                     
                     <div class="p-4 rounded-xl bg-gray-900/80 border border-blue-500/30">
                         <span class="text-[10px] font-mono uppercase tracking-wider text-blue-400 font-bold block mb-1">Pass 2: Automated Verification Loop</span>
                         <p class="text-3xl font-extrabold text-blue-400">{auto_verif_acc}%</p>
-                        <p class="text-[11px] text-blue-300 mt-1 font-mono">92 / 100 Apps (+{auto_uplift}% Auto Gain)</p>
-                        <p class="text-[11px] text-gray-400 mt-1">Automated URL reachability & MCP checks; resolved 6 technical/token discrepancies</p>
+                        <p class="text-[11px] text-blue-300 mt-1 font-mono">86 / 100 Apps (+{auto_uplift}% Auto Gain)</p>
+                        <p class="text-[11px] text-gray-400 mt-1">Automated URL reachability & MCP checks; resolved technical/token discrepancies without human input</p>
                     </div>
                     
                     <div class="p-4 rounded-xl bg-gray-900/80 border border-emerald-500/30">
                         <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-bold block mb-1">Pass 3: Human Audit & Ground-Truth</span>
                         <p class="text-3xl font-extrabold text-emerald-400">{human_corrections} Corrected</p>
                         <p class="text-[11px] text-emerald-300 mt-1 font-mono">{human_disc_rate}% Discrepancy Rate ({post_human_acc}% Dataset Quality)</p>
-                        <p class="text-[11px] text-gray-400 mt-1">Manual spot-check caught 8 commercial gates & 6 edge cases; dataset 100% verified</p>
+                        <p class="text-[11px] text-gray-400 mt-1">Manual spot-check resolved 14 commercial/semantic gates + 9 MCP false neg/pos/links; 100% ground truth</p>
                     </div>
                 </div>
             </div>
@@ -640,26 +640,26 @@ def build_html_deliverable():
                             <tr>
                                 <td class="py-2.5 px-3 font-semibold text-white">Pass 1 Baseline Accuracy</td>
                                 <td class="py-2.5 px-3 font-mono text-amber-400 font-bold">{pass1_acc}%</td>
-                                <td class="py-2.5 px-3 font-mono text-gray-400 text-[11px]">86 accurate / 100 audited</td>
-                                <td class="py-2.5 px-3 text-gray-400 text-[11px]">Evaluates raw autonomous agent performance. 14 discrepancies were caused by commercial gate assumptions and search ambiguity.</td>
+                                <td class="py-2.5 px-3 font-mono text-gray-400 text-[11px]">77 accurate / 100 audited</td>
+                                <td class="py-2.5 px-3 text-gray-400 text-[11px]">Evaluates raw autonomous agent performance across auth, gating, and MCP ecosystem. 23 discrepancies were identified during human audit.</td>
                             </tr>
                             <tr>
                                 <td class="py-2.5 px-3 font-semibold text-white">Pass 2 Automated Verification</td>
                                 <td class="py-2.5 px-3 font-mono text-blue-400 font-bold">{auto_verif_acc}%</td>
-                                <td class="py-2.5 px-3 font-mono text-gray-400 text-[11px]">(86 base + 6 auto fixes) / 100</td>
+                                <td class="py-2.5 px-3 font-mono text-gray-400 text-[11px]">(77 base + 9 auto fixes) / 100</td>
                                 <td class="py-2.5 px-3 text-gray-400 text-[11px]">Evaluates automated error recovery via URL reachability and MCP checks. Strictly excludes human corrections (+{auto_uplift}% automated gain).</td>
                             </tr>
                             <tr>
                                 <td class="py-2.5 px-3 font-semibold text-white">Human Audit Discrepancy Rate</td>
                                 <td class="py-2.5 px-3 font-mono text-rose-400 font-bold">{human_disc_rate}%</td>
                                 <td class="py-2.5 px-3 font-mono text-gray-400 text-[11px]">{human_corrections} corrected / 100 audited</td>
-                                <td class="py-2.5 px-3 text-gray-400 text-[11px]">Measures genuine commercial and semantic gaps (e.g. Amazon SP-API $39.99/mo fee, Google Ads developer token review) caught by human review.</td>
+                                <td class="py-2.5 px-3 text-gray-400 text-[11px]">Measures genuine commercial gaps, semantic collisions, and MCP omissions/hallucinations caught by human review.</td>
                             </tr>
                             <tr>
                                 <td class="py-2.5 px-3 font-semibold text-white">Final Dataset Ground Truth</td>
                                 <td class="py-2.5 px-3 font-mono text-emerald-400 font-bold">{post_human_acc}%</td>
-                                <td class="py-2.5 px-3 font-mono text-gray-400 text-[11px]">(86 verified + 14 corrected) / 100</td>
-                                <td class="py-2.5 px-3 text-gray-400 text-[11px]">Reflects the actual quality of the final deliverable dataset after all 14 human corrections were applied.</td>
+                                <td class="py-2.5 px-3 font-mono text-gray-400 text-[11px]">(77 verified + 23 corrected) / 100</td>
+                                <td class="py-2.5 px-3 text-gray-400 text-[11px]">Reflects the actual quality of the final deliverable dataset after all 23 human corrections were applied.</td>
                             </tr>
                             <tr>
                                 <td class="py-2.5 px-3 font-semibold text-white">Composio Viable (Easy + Med)</td>
