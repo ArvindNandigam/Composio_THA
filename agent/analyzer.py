@@ -1,18 +1,19 @@
 import os
 import json
 from collections import Counter, defaultdict
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 
 RESULTS_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "research_results.json")
 ANALYSIS_FILE = os.path.join(os.path.dirname(__file__), "..", "data", "analysis_results.json")
 
-def analyze_patterns() -> Dict[str, Any]:
+def analyze_patterns(results_path: Optional[str] = None) -> Dict[str, Any]:
     """Analyzes the 100-app dataset to extract statistical patterns and Product Ops insights."""
-    if not os.path.exists(RESULTS_FILE):
-        print(f"Results file {RESULTS_FILE} not found!")
+    target_file = results_path or RESULTS_FILE
+    if not os.path.exists(target_file):
+        print(f"Results file {target_file} not found!")
         return {}
 
-    with open(RESULTS_FILE, "r", encoding="utf-8") as f:
+    with open(target_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
     total_apps = len(data)
@@ -108,30 +109,63 @@ def analyze_patterns() -> Dict[str, Any]:
 
     # 7. MCP Ecosystem Statistics
     existing_mcp_count = sum(1 for app in data if app.get("existing_mcp", False))
+    greenfield_opportunity_count = total_apps - existing_mcp_count
+    greenfield_opportunity_pct = round(greenfield_opportunity_count / total_apps * 100, 1) if total_apps > 0 else 0.0
+
+    # Buildability Composio Viability (Easy + Medium)
+    easy_count = sum(cnt for b, cnt in buildability_counter.items() if "easy" in b.lower())
+    medium_count = sum(cnt for b, cnt in buildability_counter.items() if "medium" in b.lower())
+    composio_viable_count = easy_count + medium_count
+    composio_viable_pct = round(composio_viable_count / total_apps * 100, 1) if total_apps > 0 else 0.0
+
+    headline_insights = [
+        "OAuth2 and API Keys account for over 85% of all authentication surfaces across SaaS, with Developer/Infra favoring API Keys and CRM/Support demanding multi-tenant OAuth2.",
+        "Category gating polarization: Developer Platforms (80% self-serve) and Productivity (70% self-serve) offer frictionless onboarding, whereas Finance/Fintech (60% gated) and Enterprise CRM require manual sales vetting or merchant onboarding.",
+        "The #1 blocker is not technical—it is administrative: 38% of apps require formal developer app vetting or partner agreements before granting production API tokens.",
+        "Massive MCP Greenfield: Only ~19% of the 100 apps have an existing official or recognized community MCP server, representing an enormous first-mover advantage for Composio.",
+        "Local CLI & Open-Source Tools (Sherlock, Mermaid CLI, Twenty) require a distinct toolkit paradigm—running as local MCP subprocesses rather than cloud HTTP webhooks."
+    ]
 
     analysis = {
         "dataset_metadata": {
             "total_apps": total_apps,
             "categories_count": len(category_summary)
         },
+        "total_apps": total_apps,
+        "composio_viable_count": composio_viable_count,
+        "composio_viable_pct": composio_viable_pct,
+        "greenfield_opportunity_count": greenfield_opportunity_count,
+        "greenfield_opportunity_pct": greenfield_opportunity_pct,
         "auth_distribution": {
             "counts": dict(auth_counter),
             "percentages": {k: round(v / sum(auth_counter.values()) * 100, 1) for k, v in auth_counter.items()}
         },
+        "auth_breakdown": dict(auth_counter),
         "gating_distribution": {
             "counts": dict(gating_counter),
             "percentages": {k: round(v / total_apps * 100, 1) for k, v in gating_counter.items()}
         },
         "category_matrix": category_summary,
+        "category_breakdown": category_summary,
         "buildability_breakdown": {
             "counts": dict(buildability_counter),
-            "percentages": {k: round(v / total_apps * 100, 1) for k, v in buildability_counter.items()}
+            "percentages": {k: round(v / total_apps * 100, 1) for k, v in buildability_counter.items()},
+            "composio_viable_count": composio_viable_count,
+            "composio_viable_pct": composio_viable_pct,
+            "calculation_note": f"Easy ({easy_count}) + Medium ({medium_count}) = {composio_viable_count} ({composio_viable_pct}%) Composio viable today without enterprise sales contracts."
         },
         "top_blockers": dict(blocker_categories.most_common()),
         "mcp_ecosystem": {
             "existing_mcp_count": existing_mcp_count,
-            "existing_mcp_pct": round(existing_mcp_count / total_apps * 100, 1),
-            "greenfield_opportunity_count": total_apps - existing_mcp_count
+            "existing_mcp_pct": round(existing_mcp_count / total_apps * 100, 1) if total_apps > 0 else 0.0,
+            "greenfield_opportunity_count": greenfield_opportunity_count,
+            "greenfield_opportunity_pct": greenfield_opportunity_pct,
+            "calculation_note": f"{existing_mcp_count} verified official/community MCP servers ({round(existing_mcp_count / total_apps * 100, 1) if total_apps > 0 else 0.0}%), leaving {greenfield_opportunity_count} greenfield opportunities ({greenfield_opportunity_pct}%)."
+        },
+        "mcp_breakdown": {
+            "existing_mcp_count": existing_mcp_count,
+            "greenfield_opportunity_count": greenfield_opportunity_count,
+            "greenfield_opportunity_pct": greenfield_opportunity_pct
         },
         "product_ops_action_tiers": {
             "tier1_immediate_wins": {
@@ -155,13 +189,8 @@ def analyze_patterns() -> Dict[str, Any]:
                 "sample": tier4_cli_mcp
             }
         },
-        "headline_insights": [
-            "OAuth2 and API Keys account for over 85% of all authentication surfaces across SaaS, with Developer/Infra favoring API Keys and CRM/Support demanding multi-tenant OAuth2.",
-            "Category gating polarization: Developer Platforms (80% self-serve) and Productivity (70% self-serve) offer frictionless onboarding, whereas Finance/Fintech (60% gated) and Enterprise CRM require manual sales vetting or merchant onboarding.",
-            "The #1 blocker is not technical—it is administrative: 38% of apps require formal developer app vetting or partner agreements before granting production API tokens.",
-            "Massive MCP Greenfield: Only ~19% of the 100 apps have an existing official or recognized community MCP server, representing an enormous first-mover advantage for Composio.",
-            "Local CLI & Open-Source Tools (Sherlock, Mermaid CLI, Twenty) require a distinct toolkit paradigm—running as local MCP subprocesses rather than cloud HTTP webhooks."
-        ]
+        "headline_insights": headline_insights,
+        "patterns": headline_insights
     }
 
     with open(ANALYSIS_FILE, "w", encoding="utf-8") as f:

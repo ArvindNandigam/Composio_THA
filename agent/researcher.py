@@ -86,6 +86,16 @@ def save_result_atomic(result: AppResearchResult):
     """Atomically updates the results JSON file."""
     os.makedirs(os.path.dirname(RESULTS_FILE), exist_ok=True)
     current_results = load_cached_results()
+    if result.id in current_results:
+        existing = current_results[result.id]
+        if result.human_report_status is None and existing.human_report_status is not None:
+            result.human_report_status = existing.human_report_status
+        if result.human_report is None and existing.human_report is not None:
+            result.human_report = existing.human_report
+        if result.mcp_url is None and existing.mcp_url is not None:
+            result.mcp_url = existing.mcp_url
+        if result.verification_notes is None and existing.verification_notes is not None:
+            result.verification_notes = existing.verification_notes
     current_results[result.id] = result
 
     sorted_data = [current_results[k].model_dump() for k in sorted(current_results.keys())]
@@ -96,7 +106,7 @@ def save_result_atomic(result: AppResearchResult):
     os.replace(tmp_file, RESULTS_FILE)
 
 
-def research_app(app: AppInput, max_retries: int = 3) -> AppResearchResult:
+def research_app(app: AppInput, max_retries: int = 3, save: bool = True) -> AppResearchResult:
     """Researches a single app using Composio-backed search/fetch (with httpx fallback) + Gemini extraction."""
     print(f"\n[Agent] Researching #{app.id}: {app.name} ({app.category})...")
 
@@ -185,6 +195,7 @@ Analyze this application thoroughly and return the structured JSON assessment ac
                 api_breadth=raw_json["api_breadth"],
                 existing_mcp=raw_json["existing_mcp"],
                 mcp_details=raw_json["mcp_details"],
+                mcp_url=mcp_info.get("url"),
                 buildability=raw_json["buildability"],
                 blocker_analysis=raw_json["blocker_analysis"],
                 evidence_urls=raw_json["evidence_urls"],
@@ -192,7 +203,19 @@ Analyze this application thoroughly and return the structured JSON assessment ac
                 verification_status="Pass 1 Complete"
             )
 
-            save_result_atomic(result)
+            existing_cached = load_cached_results().get(app.id)
+            if existing_cached:
+                if result.human_report is None and existing_cached.human_report is not None:
+                    result.human_report = existing_cached.human_report
+                if result.human_report_status is None and existing_cached.human_report_status is not None:
+                    result.human_report_status = existing_cached.human_report_status
+                if result.mcp_url is None and existing_cached.mcp_url is not None:
+                    result.mcp_url = existing_cached.mcp_url
+                if result.verification_notes is None and existing_cached.verification_notes is not None:
+                    result.verification_notes = existing_cached.verification_notes
+
+            if save:
+                save_result_atomic(result)
             print(f"[Agent] ✓ Successfully researched #{app.id} {app.name}: Verdict = {result.buildability}, Auth = {result.auth_methods}")
             return result
 
@@ -217,13 +240,26 @@ Analyze this application thoroughly and return the structured JSON assessment ac
                     api_breadth="Medium (10-50 endpoints)",
                     existing_mcp=mcp_info["exists"],
                     mcp_details=mcp_info["details"],
+                    mcp_url=mcp_info.get("url"),
                     buildability="Medium (App approval / OAuth required)",
                     blocker_analysis="Requires developer verification and documentation review",
                     evidence_urls=[f"https://{app.hint}" if not app.hint.startswith("http") else app.hint],
                     confidence_score=0.6,
                     verification_status="Flagged for Verification"
                 )
-                save_result_atomic(fallback)
+                existing_cached = load_cached_results().get(app.id)
+                if existing_cached:
+                    if fallback.human_report is None and existing_cached.human_report is not None:
+                        fallback.human_report = existing_cached.human_report
+                    if fallback.human_report_status is None and existing_cached.human_report_status is not None:
+                        fallback.human_report_status = existing_cached.human_report_status
+                    if fallback.mcp_url is None and existing_cached.mcp_url is not None:
+                        fallback.mcp_url = existing_cached.mcp_url
+                    if fallback.verification_notes is None and existing_cached.verification_notes is not None:
+                        fallback.verification_notes = existing_cached.verification_notes
+
+                if save:
+                    save_result_atomic(fallback)
                 return fallback
 
 

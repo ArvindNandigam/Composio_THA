@@ -18,6 +18,8 @@ def main():
     parser.add_argument("--hint", type=str, default=None, help="Domain or doc hint (e.g. 'posthog.com')")
     parser.add_argument("--input", type=str, default=DEFAULT_INPUT_FILE, help="Path to input JSON catalog")
     parser.add_argument("--apps", type=int, default=None, help="Number of apps to research from catalog (e.g. 100)")
+    parser.add_argument("--app-id", "--id", type=int, default=None, help="Specific app ID to research from catalog (e.g. 1)")
+    parser.add_argument("--no-cache", "--refresh", action="store_true", dest="no_cache", help="Do not skip cached apps; re-research and refresh existing data")
     parser.add_argument("--verify", action="store_true", help="Run automated verification loop on researched apps")
     parser.add_argument("--no-rebuild", action="store_true", help="Skip re-running analysis and HTML generation")
     args = parser.parse_args()
@@ -73,16 +75,22 @@ def main():
         apps_data = json.load(f)
 
     apps = [AppInput(**a) for a in apps_data]
-    if args.apps is not None:
+    if args.app_id is not None:
+        apps = [a for a in apps if a.id == args.app_id]
+        if not apps:
+            print(f"Error: App ID #{args.app_id} not found in catalog {args.input}!")
+            sys.exit(1)
+    elif args.apps is not None:
         apps = apps[:args.apps]
 
     print(f"==================================================")
     print(f"Starting Composio Research Agent across {len(apps)} apps")
     print(f"Catalog file: {args.input}")
+    print(f"Cache mode: {'RE-RESEARCH (no-cache/refresh)' if args.no_cache else 'RESUME (cached skipped)'}")
     print(f"==================================================")
 
     start_time = time.time()
-    results = run_research_batch(apps, resume=True)
+    results = run_research_batch(apps, resume=not args.no_cache)
     elapsed = time.time() - start_time
 
     print(f"\n==================================================")
