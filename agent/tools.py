@@ -13,13 +13,15 @@ load_dotenv()
 # COMPOSIO SDK INTEGRATION PROVIDER
 # ============================================================================
 COMPOSIO_API_KEY = os.getenv("COMPOSIO_API_KEY")
+COMPOSIO_USER_ID = os.getenv("COMPOSIO_USER_ID", "default")
 _composio_instance = None
+
 
 def get_composio_client():
     """
     Initializes and returns the Composio SDK client if COMPOSIO_API_KEY is configured.
-    Provides agent tool routing, managed OAuth integrations, and MCP execution.
-    Falls back gracefully to direct scrapers when unauthenticated or running offline.
+    Provides direct tool execution via composio.tools.execute() with graceful fallback
+    to direct httpx scrapers when unauthenticated or running offline.
     """
     global _composio_instance
     if _composio_instance is not None:
@@ -34,13 +36,13 @@ def get_composio_client():
         print(f"[Composio SDK Notice] Fallback to direct scrapers: {e}")
         return None
 
+
 DEFAULT_HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "en-US,en;q=0.9"
 }
 
-# Domains to filter out from evidence URLs (blacklist unofficial and forum sites)
 IGNORE_DOMAINS = [
     "wikipedia.org", "wiktionary.org", "facebook.com", "youtube.com/watch",
     "reddit.com", "quora.com", "tiktok.com", "instagram.com", "pinterest.com",
@@ -48,7 +50,6 @@ IGNORE_DOMAINS = [
     "twitter.com", "x.com"
 ]
 
-# Curated reference map of established MCP servers (Official & Authoritative Community)
 KNOWN_MCP_REGISTRY = {
     "salesforce": {
         "exists": True,
@@ -202,6 +203,7 @@ KNOWN_MCP_REGISTRY = {
     }
 }
 
+
 def decode_bing_url(u_param: str) -> str:
     """Decodes Bing redirect parameter to extract actual destination URL."""
     try:
@@ -213,6 +215,7 @@ def decode_bing_url(u_param: str) -> str:
     except Exception:
         return u_param
 
+
 def is_valid_evidence_url(url: str, app_name: str, hint: str) -> bool:
     """Filters out irrelevant generic links (Wikipedia, generic social)."""
     if not url or not url.startswith("http"):
@@ -223,8 +226,62 @@ def is_valid_evidence_url(url: str, app_name: str, hint: str) -> bool:
             return False
     return True
 
+
+def _extract_composio_search_results(
+    resp: Any, max_results: int, app_name: str, hint: str
+) -> List[Dict[str, str]]:
+    """Normalizes Composio tool execution output into standard search result dicts."""
+    data = resp.get("data", resp) if isinstance(resp, dict) else getattr(resp, "data", resp)
+    if not isinstance(data, dict):
+        return []
+
+    raw_items = (
+        data.get("results")
+        or data.get("organic_results")
+        or data.get("data")
+        or []
+    )
+    if not isinstance(raw_items, list):
+        return []
+
+    parsed: List[Dict[str, str]] = []
+    for item in raw_items:
+        if not isinstance(item, dict):
+            continue
+        dest_url = item.get("url") or item.get("link") or ""
+        if not is_valid_evidence_url(dest_url, app_name, hint):
+            continue
+        parsed.append({
+            "title": str(item.get("title", "")).strip(),
+            "url": dest_url,
+            "snippet": str(item.get("content") or item.get("snippet") or item.get("description") or "").strip(),
+        })
+        if len(parsed) >= max_results:
+            break
+    return parsed
+
+
 def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str = "") -> List[Dict[str, str]]:
-    """Performs web search via Bing web endpoint with decoded URLs and extracted snippets."""
+    """
+    Executes web search via Composio SDK (TAVILY_SEARCH by default)
+    when COMPOSIO_API_KEY is configured, falling back to direct Bing scraping otherwise.
+    """
+    composio = get_composio_client()
+    if composio is not None:
+        search_slug = os.getenv("COMPOSIO_SEARCH_SLUG", "TAVILY_SEARCH")
+        try:
+            resp = composio.tools.execute(
+                slug=search_slug,
+                arguments={"query": query, "max_results": max_results},
+                user_id=COMPOSIO_USER_ID,
+                dangerously_skip_version_check=True,
+            )
+            composio_results = _extract_composio_search_results(resp, max_results, app_name, hint)
+            if composio_results:
+                return composio_results
+        except Exception as e:
+            print(f"[Composio SDK Notice] {search_slug} failed ({e}); falling back to direct search.")
+
     url = f"https://www.bing.com/search?q={urllib.parse.quote(query)}"
     try:
         resp = httpx.get(url, headers=DEFAULT_HEADERS, timeout=8.0, follow_redirects=True)
@@ -235,7 +292,7 @@ def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str =
             if h2 and h2.find("a"):
                 a = h2.find("a")
                 raw_href = a.get("href", "")
-                
+
                 dest_url = raw_href
                 if "bing.com/ck/a" in raw_href:
                     parsed = urllib.parse.urlparse(raw_href)
@@ -249,7 +306,7 @@ def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str =
                 p = li.find("p")
                 snippet = p.get_text(strip=True) if p else ""
                 title = a.get_text(strip=True)
-                
+
                 results.append({
                     "title": title,
                     "url": dest_url,
@@ -261,24 +318,49 @@ def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str =
     except Exception as e:
         return [{"title": "Search Error", "url": "", "snippet": f"Search failed: {e}"}]
 
+
 def fetch_page(url: str, max_chars: int = 3000) -> str:
-    """Fetches text content from a given documentation URL."""
+    """
+    Fetches documentation text via Composio SDK (FIRECRAWL_SCRAPE by default) when configured,
+    falling back to direct httpx + BeautifulSoup extraction.
+    """
     if not url or not url.startswith("http"):
         return ""
+
+    composio = get_composio_client()
+    if composio is not None:
+        fetch_slug = os.getenv("COMPOSIO_FETCH_SLUG", "FIRECRAWL_SCRAPE")
+        try:
+            resp = composio.tools.execute(
+                slug=fetch_slug,
+                arguments={"url": url},
+                user_id=COMPOSIO_USER_ID,
+                dangerously_skip_version_check=True,
+            )
+            data = resp.get("data", resp) if isinstance(resp, dict) else getattr(resp, "data", resp)
+            if isinstance(data, dict):
+                content = data.get("markdown") or data.get("content") or data.get("text") or ""
+                if isinstance(content, str) and content.strip():
+                    cleaned = re.sub(r'\s+', ' ', content.strip())
+                    return cleaned[:max_chars]
+        except Exception as e:
+            print(f"[Composio SDK Notice] {fetch_slug} failed ({e}); falling back to httpx.")
+
     try:
         resp = httpx.get(url, headers=DEFAULT_HEADERS, timeout=7.0, follow_redirects=True)
         if resp.status_code >= 400:
             return f"HTTP {resp.status_code} Error"
-        
+
         soup = BeautifulSoup(resp.text, "html.parser")
         for tag in soup(["script", "style", "nav", "footer", "noscript", "svg"]):
             tag.decompose()
-            
+
         text = soup.get_text(separator=" ", strip=True)
         text = re.sub(r'\s+', ' ', text)
         return text[:max_chars]
     except Exception as e:
         return f"Fetch error: {e}"
+
 
 def verify_url(url: str) -> bool:
     """Checks if a URL is reachable."""
@@ -292,6 +374,7 @@ def verify_url(url: str) -> bool:
         return resp.status_code < 400
     except Exception:
         return False
+
 
 def check_mcp_support(app_name: str) -> Dict[str, Any]:
     """Checks if there is a known MCP server for this app."""
