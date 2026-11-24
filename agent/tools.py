@@ -23,7 +23,7 @@ def execute_composio_mcp(tool_slug: str, arguments: Dict[str, Any], timeout: flo
     Executes a tool on Composio's hosted MCP gateway (https://connect.composio.dev/mcp)
     using the Consumer API Key (ck_...). Returns the parsed inner data response.
     """
-    key = os.getenv("COMPOSIO_API_KEY")
+    key = os.getenv("COMPOSIO_MCP_KEY") or os.getenv("COMPOSIO_API_KEY")
     if not key or not key.startswith("ck_"):
         return None
     headers = {
