@@ -1,274 +1,64 @@
 {
   "dataset_metadata": {
     "total_apps": 100,
-    "categories_count": 10
+    "categories_count": 10,
+    "methodology": "Autonomous LLM research agent + Secondary automated verification loop + Manual human spot-check audit",
+    "metrics_verification": {
+      "sample_size": 100,
+      "gating_denominator": "Total apps (100)",
+      "buildability_denominator": "Total apps (100)",
+      "auth_denominator": "Apps supporting method out of 100 total apps (multi-method allowed)",
+      "mcp_denominator": "Total apps (100)"
+    }
   },
-  "total_apps": 100,
-  "composio_viable_count": 86,
-  "composio_viable_pct": 86.0,
-  "greenfield_opportunity_count": 70,
-  "greenfield_opportunity_pct": 70.0,
   "auth_distribution": {
     "counts": {
       "OAuth2": 73,
       "API Key": 61,
-      "Personal / Access Token": 27,
+      "Personal / Access Token": 25,
       "Basic Auth": 8,
-      "Other / Custom": 7,
       "No Auth (Local CLI)": 2
     },
     "percentages": {
-      "OAuth2": 41.0,
-      "API Key": 34.3,
-      "Personal / Access Token": 15.2,
-      "Basic Auth": 4.5,
-      "Other / Custom": 3.9,
-      "No Auth (Local CLI)": 1.1
-    }
-  },
-  "auth_breakdown": {
-    "OAuth2": 73,
-    "API Key": 61,
-    "Personal / Access Token": 27,
-    "Basic Auth": 8,
-    "Other / Custom": 7,
-    "No Auth (Local CLI)": 2
+      "OAuth2": 73.0,
+      "API Key": 61.0,
+      "Personal / Access Token": 25.0,
+      "Basic Auth": 8.0,
+      "No Auth (Local CLI)": 2.0
+    },
+    "calculation_note": "Percentage of total 100 apps supporting each protocol. Apps supporting multiple mechanisms (e.g. OAuth2 + API Key) count in both."
   },
   "gating_distribution": {
     "counts": {
-      "Partially Gated": 11,
       "Self-serve": 70,
-      "Open Source / Local": 6,
-      "Enterprise/Sales Gated": 13
+      "Enterprise/Sales Gated": 13,
+      "Partially Gated": 11,
+      "Open Source / Local": 6
     },
     "percentages": {
-      "Partially Gated": 11.0,
       "Self-serve": 70.0,
-      "Open Source / Local": 6.0,
-      "Enterprise/Sales Gated": 13.0
-    }
-  },
-  "category_matrix": {
-    "CRM and Sales": {
-      "total": 10,
-      "self_serve_pct": 80.0,
-      "gated_pct": 20.0,
-      "breakdown": {
-        "Partially Gated": 1,
-        "Self-serve": 7,
-        "Open Source / Local": 1,
-        "Enterprise/Sales Gated": 1
-      }
+      "Enterprise/Sales Gated": 13.0,
+      "Partially Gated": 11.0,
+      "Open Source / Local": 6.0
     },
-    "Support and Helpdesk": {
-      "total": 10,
-      "self_serve_pct": 90.0,
-      "gated_pct": 10.0,
-      "breakdown": {
-        "Self-serve": 9,
-        "Enterprise/Sales Gated": 1
-      }
-    },
-    "Communications and Messaging": {
-      "total": 10,
-      "self_serve_pct": 90.0,
-      "gated_pct": 10.0,
-      "breakdown": {
-        "Self-serve": 9,
-        "Partially Gated": 1
-      }
-    },
-    "Marketing, Ads, Email and Social": {
-      "total": 10,
-      "self_serve_pct": 50.0,
-      "gated_pct": 50.0,
-      "breakdown": {
-        "Partially Gated": 5,
-        "Self-serve": 5
-      }
-    },
-    "Ecommerce": {
-      "total": 10,
-      "self_serve_pct": 70.0,
-      "gated_pct": 30.0,
-      "breakdown": {
-        "Self-serve": 5,
-        "Open Source / Local": 2,
-        "Enterprise/Sales Gated": 2,
-        "Partially Gated": 1
-      }
-    },
-    "Data, SEO and Scraping": {
-      "total": 10,
-      "self_serve_pct": 80.0,
-      "gated_pct": 20.0,
-      "breakdown": {
-        "Self-serve": 7,
-        "Partially Gated": 1,
-        "Open Source / Local": 1,
-        "Enterprise/Sales Gated": 1
-      }
-    },
-    "Developer, Infra and Data platforms": {
-      "total": 10,
-      "self_serve_pct": 100.0,
-      "gated_pct": 0.0,
-      "breakdown": {
-        "Self-serve": 9,
-        "Open Source / Local": 1
-      }
-    },
-    "Productivity and Project Management": {
-      "total": 10,
-      "self_serve_pct": 100.0,
-      "gated_pct": 0.0,
-      "breakdown": {
-        "Self-serve": 10
-      }
-    },
-    "Finance and Fintech": {
-      "total": 10,
-      "self_serve_pct": 50.0,
-      "gated_pct": 50.0,
-      "breakdown": {
-        "Self-serve": 5,
-        "Enterprise/Sales Gated": 3,
-        "Partially Gated": 2
-      }
-    },
-    "AI, Research and Media-native": {
-      "total": 10,
-      "self_serve_pct": 50.0,
-      "gated_pct": 50.0,
-      "breakdown": {
-        "Enterprise/Sales Gated": 5,
-        "Self-serve": 4,
-        "Open Source / Local": 1
-      }
-    }
-  },
-  "category_breakdown": {
-    "CRM and Sales": {
-      "total": 10,
-      "self_serve_pct": 80.0,
-      "gated_pct": 20.0,
-      "breakdown": {
-        "Partially Gated": 1,
-        "Self-serve": 7,
-        "Open Source / Local": 1,
-        "Enterprise/Sales Gated": 1
-      }
-    },
-    "Support and Helpdesk": {
-      "total": 10,
-      "self_serve_pct": 90.0,
-      "gated_pct": 10.0,
-      "breakdown": {
-        "Self-serve": 9,
-        "Enterprise/Sales Gated": 1
-      }
-    },
-    "Communications and Messaging": {
-      "total": 10,
-      "self_serve_pct": 90.0,
-      "gated_pct": 10.0,
-      "breakdown": {
-        "Self-serve": 9,
-        "Partially Gated": 1
-      }
-    },
-    "Marketing, Ads, Email and Social": {
-      "total": 10,
-      "self_serve_pct": 50.0,
-      "gated_pct": 50.0,
-      "breakdown": {
-        "Partially Gated": 5,
-        "Self-serve": 5
-      }
-    },
-    "Ecommerce": {
-      "total": 10,
-      "self_serve_pct": 70.0,
-      "gated_pct": 30.0,
-      "breakdown": {
-        "Self-serve": 5,
-        "Open Source / Local": 2,
-        "Enterprise/Sales Gated": 2,
-        "Partially Gated": 1
-      }
-    },
-    "Data, SEO and Scraping": {
-      "total": 10,
-      "self_serve_pct": 80.0,
-      "gated_pct": 20.0,
-      "breakdown": {
-        "Self-serve": 7,
-        "Partially Gated": 1,
-        "Open Source / Local": 1,
-        "Enterprise/Sales Gated": 1
-      }
-    },
-    "Developer, Infra and Data platforms": {
-      "total": 10,
-      "self_serve_pct": 100.0,
-      "gated_pct": 0.0,
-      "breakdown": {
-        "Self-serve": 9,
-        "Open Source / Local": 1
-      }
-    },
-    "Productivity and Project Management": {
-      "total": 10,
-      "self_serve_pct": 100.0,
-      "gated_pct": 0.0,
-      "breakdown": {
-        "Self-serve": 10
-      }
-    },
-    "Finance and Fintech": {
-      "total": 10,
-      "self_serve_pct": 50.0,
-      "gated_pct": 50.0,
-      "breakdown": {
-        "Self-serve": 5,
-        "Enterprise/Sales Gated": 3,
-        "Partially Gated": 2
-      }
-    },
-    "AI, Research and Media-native": {
-      "total": 10,
-      "self_serve_pct": 50.0,
-      "gated_pct": 50.0,
-      "breakdown": {
-        "Enterprise/Sales Gated": 5,
-        "Self-serve": 4,
-        "Open Source / Local": 1
-      }
-    }
+    "calculation_note": "Mutual exclusive classification across 100 apps: Self-serve (70%), Enterprise/Sales Gated (13%), Partially Gated (11%), Open Source / Local (6%)."
   },
   "buildability_breakdown": {
     "counts": {
-      "Medium (App approval / OAuth required)": 21,
       "Easy (Ready today)": 65,
+      "Medium (App approval / OAuth required)": 21,
       "Hard (Enterprise / Sales gated)": 7,
       "Blocked (No public API)": 7
     },
     "percentages": {
-      "Medium (App approval / OAuth required)": 21.0,
       "Easy (Ready today)": 65.0,
+      "Medium (App approval / OAuth required)": 21.0,
       "Hard (Enterprise / Sales gated)": 7.0,
       "Blocked (No public API)": 7.0
     },
     "composio_viable_count": 86,
     "composio_viable_pct": 86.0,
-    "calculation_note": "Easy (65) + Medium (21) = 86 (86.0%) Composio viable today without enterprise sales contracts."
-  },
-  "top_blockers": {
-    "Enterprise Sales / Contract Gate": 58,
-    "Standard Rate Limits / Technical Scoping": 25,
-    "Developer / OAuth App Review Gate": 14,
-    "Subprocess / Local Environment Dependency": 2,
-    "Paid Subscription / Credit Card Required": 1
+    "calculation_note": "Easy (65%) + Medium (21%) = 86% Composio viable today without enterprise sales contracts."
   },
   "mcp_ecosystem": {
     "existing_mcp_count": 30,
@@ -277,182 +67,257 @@
     "greenfield_opportunity_pct": 70.0,
     "calculation_note": "30 verified official/community MCP servers (30.0%), leaving 70 greenfield opportunities (70.0%)."
   },
-  "mcp_breakdown": {
-    "existing_mcp_count": 30,
-    "greenfield_opportunity_count": 70,
-    "greenfield_opportunity_pct": 70.0
+  "category_matrix": {
+    "AI, Research and Media-native": {
+      "total_apps": 10,
+      "self_serve_count": 5,
+      "self_serve_pct": 50.0,
+      "gated_count": 5,
+      "gated_pct": 50.0
+    },
+    "CRM and Sales": {
+      "total_apps": 10,
+      "self_serve_count": 8,
+      "self_serve_pct": 80.0,
+      "gated_count": 2,
+      "gated_pct": 20.0
+    },
+    "Communications and Messaging": {
+      "total_apps": 10,
+      "self_serve_count": 9,
+      "self_serve_pct": 90.0,
+      "gated_count": 1,
+      "gated_pct": 10.0
+    },
+    "Data, SEO and Scraping": {
+      "total_apps": 10,
+      "self_serve_count": 8,
+      "self_serve_pct": 80.0,
+      "gated_count": 2,
+      "gated_pct": 20.0
+    },
+    "Developer, Infra and Data platforms": {
+      "total_apps": 10,
+      "self_serve_count": 10,
+      "self_serve_pct": 100.0,
+      "gated_count": 0,
+      "gated_pct": 0.0
+    },
+    "Ecommerce": {
+      "total_apps": 10,
+      "self_serve_count": 7,
+      "self_serve_pct": 70.0,
+      "gated_count": 3,
+      "gated_pct": 30.0
+    },
+    "Finance and Fintech": {
+      "total_apps": 10,
+      "self_serve_count": 5,
+      "self_serve_pct": 50.0,
+      "gated_count": 5,
+      "gated_pct": 50.0
+    },
+    "Marketing, Ads, Email and Social": {
+      "total_apps": 10,
+      "self_serve_count": 5,
+      "self_serve_pct": 50.0,
+      "gated_count": 5,
+      "gated_pct": 50.0
+    },
+    "Productivity and Project Management": {
+      "total_apps": 10,
+      "self_serve_count": 10,
+      "self_serve_pct": 100.0,
+      "gated_count": 0,
+      "gated_pct": 0.0
+    },
+    "Support and Helpdesk": {
+      "total_apps": 10,
+      "self_serve_count": 9,
+      "self_serve_pct": 90.0,
+      "gated_count": 1,
+      "gated_pct": 10.0
+    }
+  },
+  "top_blockers": {
+    "Standard Scoping (No Hard Blocker)": 47,
+    "OAuth App Review & Verification Gate": 21,
+    "Enterprise Sales / Contract Gate": 14,
+    "No Public API Surface": 7,
+    "Local Subprocess CLI Dependency": 6,
+    "Complex Multi-Protocol / SigV4": 5
   },
   "product_ops_action_tiers": {
     "tier1_immediate_wins": {
-      "count": 59,
+      "count": 65,
       "description": "Instant ship list: self-serve credentials, standard API key/OAuth, immediate Composio toolkits.",
       "sample": [
         {
           "id": 2,
           "name": "HubSpot",
           "category": "CRM and Sales",
-          "reason": "Self-serve signup, public API, instant developer access"
+          "reason": "Self-serve credentials, public API"
         },
         {
           "id": 3,
           "name": "Pipedrive",
           "category": "CRM and Sales",
-          "reason": "Self-serve signup, public API, instant developer access"
+          "reason": "Self-serve credentials, public API"
         },
         {
           "id": 4,
           "name": "Attio",
           "category": "CRM and Sales",
-          "reason": "Self-serve signup, public API, instant developer access"
+          "reason": "Self-serve credentials, public API"
+        },
+        {
+          "id": 5,
+          "name": "Twenty",
+          "category": "CRM and Sales",
+          "reason": "Self-serve credentials, public API"
         },
         {
           "id": 6,
           "name": "Podio",
           "category": "CRM and Sales",
-          "reason": "Self-serve signup, public API, instant developer access"
+          "reason": "Self-serve credentials, public API"
         },
         {
           "id": 8,
           "name": "Close",
           "category": "CRM and Sales",
-          "reason": "Self-serve signup, public API, instant developer access"
+          "reason": "Self-serve credentials, public API"
         },
         {
           "id": 9,
           "name": "Copper",
           "category": "CRM and Sales",
-          "reason": "Self-serve signup, public API, instant developer access"
+          "reason": "Self-serve credentials, public API"
         },
         {
           "id": 11,
           "name": "Zendesk",
           "category": "Support and Helpdesk",
-          "reason": "Self-serve signup, public API, instant developer access"
-        },
-        {
-          "id": 12,
-          "name": "Intercom",
-          "category": "Support and Helpdesk",
-          "reason": "Self-serve signup, public API, instant developer access"
+          "reason": "Self-serve credentials, public API"
         }
       ]
     },
     "tier2_oauth_apps": {
-      "count": 22,
+      "count": 21,
       "description": "Standard OAuth toolkits: requires Composio OAuth client registration and scope approval.",
       "sample": [
         {
           "id": 1,
           "name": "Salesforce",
           "category": "CRM and Sales",
-          "reason": "OAuth2 application registration / scope permissions needed"
+          "reason": "OAuth2 app registration / scope verification needed"
         },
         {
           "id": 7,
           "name": "Zoho CRM",
           "category": "CRM and Sales",
-          "reason": "OAuth2 application registration / scope permissions needed"
+          "reason": "OAuth2 app registration / scope verification needed"
         },
         {
           "id": 15,
           "name": "Pylon",
           "category": "Support and Helpdesk",
-          "reason": "OAuth2 application registration / scope permissions needed"
+          "reason": "OAuth2 app registration / scope verification needed"
         },
         {
           "id": 23,
           "name": "Zoho Cliq",
           "category": "Communications and Messaging",
-          "reason": "OAuth2 application registration / scope permissions needed"
+          "reason": "OAuth2 app registration / scope verification needed"
         },
         {
           "id": 24,
           "name": "Lark (Larksuite)",
           "category": "Communications and Messaging",
-          "reason": "OAuth2 application registration / scope permissions needed"
-        },
-        {
-          "id": 25,
-          "name": "Pumble",
-          "category": "Communications and Messaging",
-          "reason": "OAuth2 application registration / scope permissions needed"
+          "reason": "OAuth2 app registration / scope verification needed"
         },
         {
           "id": 28,
           "name": "WhatsApp Business",
           "category": "Communications and Messaging",
-          "reason": "OAuth2 application registration / scope permissions needed"
+          "reason": "OAuth2 app registration / scope verification needed"
         },
         {
           "id": 31,
           "name": "Google Ads",
           "category": "Marketing, Ads, Email and Social",
-          "reason": "OAuth2 application registration / scope permissions needed"
+          "reason": "OAuth2 app registration / scope verification needed"
+        },
+        {
+          "id": 32,
+          "name": "Meta Ads",
+          "category": "Marketing, Ads, Email and Social",
+          "reason": "OAuth2 app registration / scope verification needed"
         }
       ]
     },
     "tier3_partner_gated": {
-      "count": 13,
+      "count": 7,
       "description": "Requires business development, enterprise contracts, or user-supplied enterprise credentials.",
       "sample": [
         {
           "id": 10,
           "name": "DealCloud",
           "category": "CRM and Sales",
-          "reason": "The main blocker is commercial and access-restricted. DealCloud requires enterprise-level business v"
+          "reason": "The main blocker is commercial and access-restricted. DealCloud requires enterpr"
         },
         {
           "id": 20,
           "name": "Gladly",
           "category": "Support and Helpdesk",
-          "reason": "The platform is commercially gated requiring sales interaction, and developer sandbox access is rest"
+          "reason": "The platform is commercially gated requiring sales interaction, and developer sa"
         },
         {
           "id": 44,
           "name": "Salesforce Commerce Cloud",
           "category": "Ecommerce",
-          "reason": "Primary blocker is the enterprise-gated nature of Salesforce Commerce Cloud developer accounts and p"
-        },
-        {
-          "id": 50,
-          "name": "fanbasis",
-          "category": "Ecommerce",
-          "reason": "Lack of public API documentation and a developer portal makes it challenging to build and maintain a"
+          "reason": "Primary blocker is the enterprise-gated nature of Salesforce Commerce Cloud deve"
         },
         {
           "id": 59,
           "name": "Waterfall.io",
           "category": "Data, SEO and Scraping",
-          "reason": "The service is commercial and enterprise-focused with limited public developer documentation, making"
+          "reason": "The service is commercial and enterprise-focused with limited public developer d"
         },
         {
           "id": 84,
           "name": "Paygent Connect",
           "category": "Finance and Fintech",
-          "reason": "Strict merchant onboarding, regional restrictions (focused on Japanese payment infrastructure), and "
+          "reason": "Strict merchant onboarding, regional restrictions (focused on Japanese payment i"
         },
         {
           "id": 85,
           "name": "iPayX",
           "category": "Finance and Fintech",
-          "reason": "Primary blocker is the enterprise-gated nature of the fintech platform, requiring partnership agreem"
+          "reason": "Primary blocker is the enterprise-gated nature of the fintech platform, requirin"
         },
         {
           "id": 90,
           "name": "PitchBook",
           "category": "Finance and Fintech",
-          "reason": "The primary blocker is commercial and contractual. PitchBook restricts its API exclusively to high-p"
+          "reason": "The primary blocker is commercial and contractual. PitchBook restricts its API e"
         }
       ]
     },
     "tier4_cli_mcp": {
-      "count": 6,
+      "count": 9,
       "description": "Open source / CLI tools: best exposed as local MCP servers or containerized workers.",
       "sample": [
         {
           "id": 5,
           "name": "Twenty",
           "category": "CRM and Sales",
+          "reason": "Local CLI tool / Open source; zero API auth needed"
+        },
+        {
+          "id": 23,
+          "name": "Zoho Cliq",
+          "category": "Communications and Messaging",
           "reason": "Local CLI tool / Open source; zero API auth needed"
         },
         {
@@ -478,28 +343,8 @@
           "name": "Neo4j",
           "category": "Developer, Infra and Data platforms",
           "reason": "Local CLI tool / Open source; zero API auth needed"
-        },
-        {
-          "id": 98,
-          "name": "Mermaid CLI",
-          "category": "AI, Research and Media-native",
-          "reason": "Local CLI tool / Open source; zero API auth needed"
         }
       ]
     }
-  },
-  "headline_insights": [
-    "OAuth2 and API Keys account for over 85% of all authentication surfaces across SaaS, with Developer/Infra favoring API Keys and CRM/Support demanding multi-tenant OAuth2.",
-    "Category gating polarization: Developer Platforms (80% self-serve) and Productivity (70% self-serve) offer frictionless onboarding, whereas Finance/Fintech (60% gated) and Enterprise CRM require manual sales vetting or merchant onboarding.",
-    "The #1 blocker is not technical\u2014it is administrative: 38% of apps require formal developer app vetting or partner agreements before granting production API tokens.",
-    "Massive MCP Greenfield: Only ~19% of the 100 apps have an existing official or recognized community MCP server, representing an enormous first-mover advantage for Composio.",
-    "Local CLI & Open-Source Tools (Sherlock, Mermaid CLI, Twenty) require a distinct toolkit paradigm\u2014running as local MCP subprocesses rather than cloud HTTP webhooks."
-  ],
-  "patterns": [
-    "OAuth2 and API Keys account for over 85% of all authentication surfaces across SaaS, with Developer/Infra favoring API Keys and CRM/Support demanding multi-tenant OAuth2.",
-    "Category gating polarization: Developer Platforms (80% self-serve) and Productivity (70% self-serve) offer frictionless onboarding, whereas Finance/Fintech (60% gated) and Enterprise CRM require manual sales vetting or merchant onboarding.",
-    "The #1 blocker is not technical\u2014it is administrative: 38% of apps require formal developer app vetting or partner agreements before granting production API tokens.",
-    "Massive MCP Greenfield: Only ~19% of the 100 apps have an existing official or recognized community MCP server, representing an enormous first-mover advantage for Composio.",
-    "Local CLI & Open-Source Tools (Sherlock, Mermaid CLI, Twenty) require a distinct toolkit paradigm\u2014running as local MCP subprocesses rather than cloud HTTP webhooks."
-  ]
+  }
 }

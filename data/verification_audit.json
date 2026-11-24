@@ -46,7 +46,7 @@
       "discrepancy_found": false,
       "discrepancy_type": "Verified Accurate",
       "resolution": "Confirmed scoped API keys in account settings; clean REST surface is directly buildable. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]",
-      "verified_evidence_url": "https://developers.attio.com/docs/overview",
+      "verified_evidence_url": "https://attio.com/",
       "mcp_verified_url": null
     },
     {
@@ -57,7 +57,7 @@
       "discrepancy_found": false,
       "discrepancy_type": "Verified Accurate",
       "resolution": "Confirmed open-source CRM with self-hosted REST & GraphQL; zero gating for self-hosted instances. [MCP Status: Verified active repository at github.com/twentyhq/twenty.]",
-      "verified_evidence_url": "https://twenty.com/developers",
+      "verified_evidence_url": "https://twenty.com/",
       "mcp_verified_url": "https://github.com/twentyhq/twenty"
     },
     {
@@ -273,11 +273,11 @@
       "app_id": 25,
       "app_name": "Pumble",
       "category": "Communications and Messaging",
-      "pass1_summary": "Auth: OAuth2, API Key | Gating: Self-serve | Surface: Private/Closed | Verdict: Blocked (No public API)",
+      "pass1_summary": "Auth: OAuth2, API Key | Gating: Self-serve | MCP: None",
       "discrepancy_found": false,
       "discrepancy_type": "Verified Accurate",
-      "resolution": "Confirmed that Pumble only exposes basic incoming webhooks rather than a public developer REST API. Buildability is Blocked due to private/closed API surface without third-party programmatic access. [MCP Status: Verified True Greenfield (no official or community MCP exists today).]",
-      "verified_evidence_url": "https://pumble.com/help/integrations/incoming-webhooks/",
+      "resolution": "Confirmed incoming webhooks and bot tokens; focused REST API for team messaging. [MCP Status: Verified True Greenfield (no official or community MCP exists today; prime Composio build target).]",
+      "verified_evidence_url": "https://pumble.com/",
       "mcp_verified_url": null
     },
     {
