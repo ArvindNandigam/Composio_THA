@@ -1138,7 +1138,7 @@
       "confirmed_count": 77,
       "dataset_ground_truth_pct": 100.0,
       "formula": "23 manual corrections / 100 apps audited; 100% ground-truth post-curation",
-      "description": "Human expert spot-check across all 100 apps against live sign-up forms and commercial pricing tiers. Caught 14 commercial/semantic gates and 9 MCP false negatives/positives/links, applying manual corrections to the deliverable dataset."
+      "description": "Human expert spot-check across all 100 apps against live sign-up forms and commercial pricing tiers. Caught 12 commercial/semantic/auth gates and 11 MCP false negatives/positives/links, applying manual corrections to the deliverable dataset."
     }
   }
 }

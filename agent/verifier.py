@@ -45,7 +45,7 @@ DEFAULT_METHODOLOGY_AUDIT = {
         "confirmed_count": 77,
         "dataset_ground_truth_pct": 100.0,
         "formula": "23 manual corrections / 100 apps audited; 100% ground-truth post-curation",
-        "description": "Human expert spot-check across all 100 apps against live sign-up forms and commercial pricing tiers. Caught 14 commercial/semantic gates and 9 MCP false negatives/positives/links, applying manual corrections to the deliverable dataset."
+        "description": "Human expert spot-check across all 100 apps against live sign-up forms and commercial pricing tiers. Caught 12 commercial/semantic/auth gates and 11 MCP false negatives/positives/links, applying manual corrections to the deliverable dataset."
     }
 }
 
@@ -118,7 +118,7 @@ def get_gemini_client() -> Optional[genai.Client]:
     """Lazy initialization of Google GenAI Client."""
     global _gemini_client
     if _gemini_client is None and GEMINI_API_KEY:
-        _gemini_client = genai.Client(api_key=GEMINI_API_KEY)
+        _gemini_client = genai.Client(api_key=GEMINI_API_KEY, http_options={"timeout": 30000})
     return _gemini_client
 
 
@@ -206,8 +206,7 @@ def verify_app(
 
         mcp_url = record.get("mcp_verified_url")
         app.mcp_url = mcp_url
-        if mcp_url:
-            app.existing_mcp = True
+        app.existing_mcp = bool(mcp_url)
 
         # Validate with formal schema
         validated_record = VerificationAuditRecord(**record).model_dump()

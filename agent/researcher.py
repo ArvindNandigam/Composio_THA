@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import time
 import random
@@ -125,6 +126,33 @@ def load_cached_results() -> Dict[int, AppResearchResult]:
 
 
 _save_lock = threading.Lock()
+_meta_lock = threading.Lock()
+_rate_lock = threading.Lock()
+_last_gemini_call_ts: float = 0.0
+_last_research_meta: Dict[int, Dict[str, Any]] = {}
+
+
+def _acquire_gemini_slot():
+    """Thread-safe pacer to stay under Gemini Free Tier RPM limits (~15 RPM)."""
+    global _last_gemini_call_ts
+    min_interval = float(os.getenv("GEMINI_MIN_INTERVAL_SECONDS", "4.2"))
+    with _rate_lock:
+        now = time.time()
+        elapsed = now - _last_gemini_call_ts
+        if _last_gemini_call_ts > 0 and elapsed < min_interval:
+            time.sleep(min_interval - elapsed)
+        _last_gemini_call_ts = time.time()
+
+
+def get_last_research_meta(app_id: int) -> Dict[str, Any]:
+    """Returns execution provenance metadata for the most recent research_app() call on app_id."""
+    with _meta_lock:
+        return dict(_last_research_meta.get(app_id, {}))
+
+
+def _set_research_meta(app_id: int, meta: Dict[str, Any]):
+    with _meta_lock:
+        _last_research_meta[app_id] = meta
 
 
 def save_result_atomic(result: AppResearchResult):
@@ -163,7 +191,12 @@ def save_result_atomic(result: AppResearchResult):
         os.replace(tmp_file, RESULTS_FILE)
 
 
-def research_app(app: AppInput, max_retries: int = 3, save: bool = True) -> AppResearchResult:
+def research_app(
+    app: AppInput,
+    max_retries: int = 3,
+    save: bool = True,
+    allow_cache_fallback: bool = False
+) -> AppResearchResult:
     """Researches a single app using Composio-backed search/fetch + Gemini extraction."""
     print(f"\n[Agent] Researching #{app.id}: {app.name} ({app.category})...", flush=True)
 
@@ -213,9 +246,12 @@ Analyze this application thoroughly and return the structured JSON assessment ac
     # Ground truth lookup for curated benchmark metrics
     gt = get_ground_truth(app.id)
 
-    # Step 4: LLM Generation with Exponential Backoff and Jitter
+    # Step 4: LLM Generation with Rate-Limit Pacing, Exponential Backoff, and Jitter
+    last_error: Optional[Exception] = None
     for attempt in range(max_retries):
         try:
+            _acquire_gemini_slot()
+            llm_start = time.time()
             config = types.GenerateContentConfig(
                 system_instruction=SYSTEM_PROMPT,
                 response_mime_type="application/json",
@@ -228,6 +264,7 @@ Analyze this application thoroughly and return the structured JSON assessment ac
                 contents=user_prompt,
                 config=config
             )
+            llm_elapsed = time.time() - llm_start
 
             raw_json = json.loads(resp.text)
 
@@ -312,19 +349,55 @@ Analyze this application thoroughly and return the structured JSON assessment ac
 
             if save:
                 save_result_atomic(result)
-            print(f"[Agent] [PASS] Successfully researched #{app.id} {app.name}: Verdict = {result.buildability}, Auth = {result.auth_methods}", flush=True)
+            _set_research_meta(app.id, {
+                "live_gemini": True,
+                "used_cache_fallback": False,
+                "attempts": attempt + 1,
+                "retries": attempt,
+                "llm_latency_s": round(llm_elapsed, 3),
+                "model": GEMINI_MODEL,
+            })
+            print(f"[Agent] [PASS] Successfully researched #{app.id} {app.name} via live Gemini ({llm_elapsed:.2f}s): Verdict = {result.buildability}, Auth = {result.auth_methods}", flush=True)
             return result
 
         except Exception as e:
+            last_error = e
+            err_str = str(e)
             # Exponential backoff with jitter for transient upstream Gemini 503 / 429
-            wait_time = (2 ** attempt) * 1.0 + random.uniform(0.1, 0.5)
+            wait_time = (2 ** attempt) * 2.0 + random.uniform(0.5, 1.5)
+            retry_match = re.search(r"retry in (\d+(?:\.\d+)?)s", err_str, re.IGNORECASE)
+            if retry_match:
+                wait_time = max(wait_time, float(retry_match.group(1)) + 1.5)
+            elif "503" in err_str or "UNAVAILABLE" in err_str:
+                wait_time = max(wait_time, (2 ** attempt) * 3.0 + random.uniform(0.5, 2.0))
             print(f"[Agent] Error researching #{app.id} {app.name} (attempt {attempt+1}/{max_retries}): {e}", flush=True)
             if attempt < max_retries - 1:
                 print(f"[Agent] Backing off for {wait_time:.1f}s...", flush=True)
                 time.sleep(wait_time)
             else:
+                if not allow_cache_fallback:
+                    _set_research_meta(app.id, {
+                        "live_gemini": False,
+                        "used_cache_fallback": False,
+                        "attempts": max_retries,
+                        "retries": max_retries - 1,
+                        "error": str(last_error),
+                        "model": GEMINI_MODEL,
+                    })
+                    raise RuntimeError(
+                        f"Live Gemini extraction failed for #{app.id} {app.name} after {max_retries} attempts: {last_error}"
+                    ) from last_error
+
                 existing_cached = load_cached_results().get(app.id)
                 if existing_cached:
+                    _set_research_meta(app.id, {
+                        "live_gemini": False,
+                        "used_cache_fallback": True,
+                        "attempts": max_retries,
+                        "retries": max_retries - 1,
+                        "error": str(last_error),
+                        "model": GEMINI_MODEL,
+                    })
                     print(f"[Agent] [WARN] Retries exhausted for #{app.id} {app.name}. Preserving cached record.", flush=True)
                     if save:
                         save_result_atomic(existing_cached)
@@ -355,6 +428,14 @@ Analyze this application thoroughly and return the structured JSON assessment ac
                     human_report_status=gt.get("human_report_status", "Verified"),
                     human_report=gt.get("human_report"),
                 )
+                _set_research_meta(app.id, {
+                    "live_gemini": False,
+                    "used_cache_fallback": True,
+                    "attempts": max_retries,
+                    "retries": max_retries - 1,
+                    "error": str(last_error),
+                    "model": GEMINI_MODEL,
+                })
                 if save:
                     save_result_atomic(fallback)
                 return fallback
@@ -389,12 +470,16 @@ def run_research_batch(
 
     if max_workers <= 1:
         for app in to_process:
-            res = research_app(app)
+            res = research_app(app, max_retries=5, allow_cache_fallback=False)
             results_dict[app.id] = res
             time.sleep(1.0)
     else:
+        failed_apps = []
         with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-            future_to_app = {executor.submit(research_app, app): app for app in to_process}
+            future_to_app = {
+                executor.submit(research_app, app, 5, True, False): app
+                for app in to_process
+            }
             for future in concurrent.futures.as_completed(future_to_app):
                 app = future_to_app[future]
                 try:
@@ -402,5 +487,8 @@ def run_research_batch(
                     results_dict[app.id] = res
                 except Exception as exc:
                     print(f"[Agent] [ERROR] Unhandled exception researching #{app.id} {app.name}: {exc}", flush=True)
+                    failed_apps.append((app.id, app.name, str(exc)))
+        if failed_apps:
+            raise RuntimeError(f"Live Gemini extraction failed for {len(failed_apps)} apps: {failed_apps}")
 
     return [results_dict[app.id] for app in apps if app.id in results_dict]

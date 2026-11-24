@@ -165,7 +165,7 @@ def test_telemetry_reporting():
 def test_single_app_research():
     print("\n--- [Step 6] Testing single-app research_app() with Gemini ---")
     from agent.models import AppInput, AppResearchResult
-    from agent.researcher import research_app
+    from agent.researcher import research_app, get_last_research_meta
 
     test_app = AppInput(
         id=1,
@@ -176,8 +176,9 @@ def test_single_app_research():
 
     start = time.time()
     print(f"  Dispatching research for #{test_app.id} {test_app.name}...")
-    result = research_app(test_app, save=False)
+    result = research_app(test_app, save=False, allow_cache_fallback=False)
     elapsed = time.time() - start
+    meta = get_last_research_meta(test_app.id)
 
     assert isinstance(result, AppResearchResult), f"Expected AppResearchResult, got {type(result)}"
     assert result.id == 1, f"Expected app id 1, got {result.id}"
@@ -195,7 +196,25 @@ def test_single_app_research():
     assert 0.0 <= result.confidence_score <= 1.0, f"Confidence score out of bounds: {result.confidence_score}"
     assert result.human_report_status is not None, "human_report_status should be preserved from disk cache!"
 
-    print(f"  [PASS] Research completed in {elapsed:.2f}s:")
+    # Assert genuine live Gemini extraction without cache fallback
+    assert meta.get("live_gemini") is True, f"Expected live Gemini extraction, got meta={meta}"
+    assert meta.get("used_cache_fallback") is False, f"Fell back to cached record! meta={meta}"
+    assert 0 <= meta.get("retries", -1) < 5, f"Unexpected retry count for live Gemini call, got meta={meta}"
+    assert result.verification_status == "Pass 1 Complete", (
+        f"Expected fresh 'Pass 1 Complete' status from live Gemini extraction, got '{result.verification_status}'"
+    )
+
+    backup_path = os.path.join(os.path.dirname(__file__), "backup", "research_results_original.json")
+    if os.path.exists(backup_path):
+        with open(backup_path, "r", encoding="utf-8") as bf:
+            backup_app1 = next((a for a in json.load(bf) if a.get("id") == 1), None)
+        if backup_app1:
+            assert result.description != backup_app1.get("description"), (
+                "Live Gemini description matched backup verbatim; suspected cached fallback!"
+            )
+
+    llm_latency = meta.get("llm_latency_s", elapsed)
+    print(f"  [PASS] Live Gemini research completed in {elapsed:.2f}s (Gemini LLM: {llm_latency:.2f}s, retries={meta.get('retries')}):")
     print(f"    - Verdict:              {result.buildability}")
     print(f"    - Auth Methods:         {result.auth_methods}")
     print(f"    - Self-Serve:           {result.self_serve}")
@@ -203,6 +222,7 @@ def test_single_app_research():
     print(f"    - Confidence:           {result.confidence_score}")
     print(f"    - Human Report Status:  {result.human_report_status}")
     print(f"    - Evidence URLs:        {result.evidence_urls[:2]}")
+    print(f"    - Live Description:     {result.description[:120]}...")
     return True
 
 

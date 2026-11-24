@@ -47,6 +47,12 @@ def build_html_deliverable():
     human_corrections = audit.get("human_audit_discrepancies_found", 23)
     human_disc_rate = audit.get("human_audit_discrepancy_rate_pct", 23.0)
     post_human_acc = audit.get("post_human_ground_truth_accuracy_pct", 100.0)
+    audit_records_list = audit.get("audit_records", [])
+    mcp_disc_count = sum(
+        1 for r in audit_records_list
+        if r.get("discrepancy_found") and "mcp" in str(r.get("discrepancy_type", "")).lower()
+    )
+    non_mcp_disc_count = max(0, human_corrections - mcp_disc_count)
 
     build_counts = analysis['buildability_breakdown']['counts']
     build_pcts = analysis['buildability_breakdown']['percentages']
@@ -623,7 +629,7 @@ def build_html_deliverable():
                     <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-bold block mb-1">Pass 3: Human Ground-Truth Curation</span>
                     <p class="text-2xl font-extrabold text-emerald-400">{human_corrections} Corrected</p>
                     <p class="text-[11px] text-emerald-300 mt-1 font-mono">{human_disc_rate}% Discrepancy Rate ({post_human_acc}% Dataset)</p>
-                    <p class="text-[10px] text-gray-400 mt-1">Spot-checked 14 commercial gates + 9 MCP false neg/pos; 100% ground truth</p>
+                    <p class="text-[10px] text-gray-400 mt-1">Spot-checked {non_mcp_disc_count} commercial/auth/semantic gates + {mcp_disc_count} MCP false neg/pos/links; 100% ground truth</p>
                 </div>
             </div>
 
