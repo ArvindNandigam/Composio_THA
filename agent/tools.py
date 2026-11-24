@@ -280,7 +280,31 @@ def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str =
             if composio_results:
                 return composio_results
         except Exception as e:
-            print(f"[Composio SDK Notice] {search_slug} failed ({e}); falling back to direct search.")
+            print(f"[Composio SDK Notice] {search_slug} failed ({e}); checking direct providers.")
+
+    tavily_key = os.getenv("TAVILY_API_KEY")
+    if tavily_key:
+        try:
+            resp = httpx.post(
+                "https://api.tavily.com/search",
+                json={"api_key": tavily_key, "query": query, "max_results": max_results},
+                timeout=10.0
+            )
+            if resp.status_code == 200:
+                tav_data = resp.json()
+                tav_results = []
+                for item in tav_data.get("results", []):
+                    u = item.get("url", "")
+                    if is_valid_evidence_url(u, app_name, hint):
+                        tav_results.append({
+                            "title": item.get("title", ""),
+                            "url": u,
+                            "snippet": item.get("content", "")
+                        })
+                if tav_results:
+                    return tav_results[:max_results]
+        except Exception as e:
+            print(f"[Tavily Direct Notice] Direct Tavily call failed ({e}); falling back to Bing.")
 
     url = f"https://www.bing.com/search?q={urllib.parse.quote(query)}"
     try:
@@ -344,7 +368,25 @@ def fetch_page(url: str, max_chars: int = 3000) -> str:
                     cleaned = re.sub(r'\s+', ' ', content.strip())
                     return cleaned[:max_chars]
         except Exception as e:
-            print(f"[Composio SDK Notice] {fetch_slug} failed ({e}); falling back to httpx.")
+            print(f"[Composio SDK Notice] {fetch_slug} failed ({e}); checking direct providers.")
+
+    firecrawl_key = os.getenv("FIRECRAWL_API_KEY")
+    if firecrawl_key:
+        try:
+            fc_resp = httpx.post(
+                "https://api.firecrawl.dev/v1/scrape",
+                headers={"Authorization": f"Bearer {firecrawl_key}"},
+                json={"url": url},
+                timeout=12.0
+            )
+            if fc_resp.status_code == 200:
+                fc_data = fc_resp.json().get("data", {})
+                content = fc_data.get("markdown") or fc_data.get("content") or ""
+                if content:
+                    cleaned = re.sub(r'\s+', ' ', content.strip())
+                    return cleaned[:max_chars]
+        except Exception as e:
+            print(f"[Firecrawl Direct Notice] Direct Firecrawl call failed ({e}); falling back to httpx.")
 
     try:
         resp = httpx.get(url, headers=DEFAULT_HEADERS, timeout=7.0, follow_redirects=True)
