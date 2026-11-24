@@ -10,11 +10,59 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # ============================================================================
-# COMPOSIO SDK INTEGRATION PROVIDER
+# COMPOSIO SDK & HOSTED MCP INTEGRATION PROVIDER
 # ============================================================================
 COMPOSIO_API_KEY = os.getenv("COMPOSIO_API_KEY")
 COMPOSIO_USER_ID = os.getenv("COMPOSIO_USER_ID", "default")
+COMPOSIO_MCP_URL = os.getenv("COMPOSIO_MCP_URL", "https://connect.composio.dev/mcp")
 _composio_instance = None
+
+
+def execute_composio_mcp(tool_slug: str, arguments: Dict[str, Any], timeout: float = 20.0) -> Optional[Dict[str, Any]]:
+    """
+    Executes a tool on Composio's hosted MCP gateway (https://connect.composio.dev/mcp)
+    using the Consumer API Key (ck_...). Returns the parsed inner data response.
+    """
+    key = os.getenv("COMPOSIO_API_KEY")
+    if not key or not key.startswith("ck_"):
+        return None
+    headers = {
+        "x-consumer-api-key": key,
+        "Accept": "application/json, text/event-stream",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "jsonrpc": "2.0",
+        "id": 1,
+        "method": "tools/call",
+        "params": {
+            "name": "COMPOSIO_MULTI_EXECUTE_TOOL",
+            "arguments": {
+                "tools": [
+                    {
+                        "tool_slug": tool_slug,
+                        "arguments": arguments
+                    }
+                ]
+            }
+        }
+    }
+    try:
+        import json
+        r = httpx.post(COMPOSIO_MCP_URL, headers=headers, json=payload, timeout=timeout)
+        if r.status_code == 200:
+            for line in r.text.splitlines():
+                if line.startswith("data: "):
+                    parsed = json.loads(line[6:])
+                    content = parsed.get("result", {}).get("content", [])
+                    if content and content[0].get("text"):
+                        inner = json.loads(content[0]["text"])
+                        results = inner.get("data", {}).get("results", [])
+                        if results:
+                            return results[0].get("response", {}).get("data", {})
+    except Exception as e:
+        print(f"[Composio MCP Notice] {tool_slug} execution failed: {e}")
+    return None
 
 
 def get_composio_client():
@@ -263,12 +311,32 @@ def _extract_composio_search_results(
 
 def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str = "") -> List[Dict[str, str]]:
     """
-    Executes web search via Composio SDK (TAVILY_SEARCH by default)
-    when COMPOSIO_API_KEY is configured, falling back to direct Bing scraping otherwise.
+    Executes web search with multi-tier execution:
+    1. Composio Hosted MCP Server (connect.composio.dev/mcp) via Consumer API Key (ck_...)
+    2. Composio Python SDK (via Project API Key ak_...)
+    3. Direct Tavily REST API (if TAVILY_API_KEY configured)
+    4. Resilient direct Bing search fallback.
     """
+    search_slug = os.getenv("COMPOSIO_SEARCH_SLUG", "TAVILY_SEARCH")
+
+    # Tier 1: Composio Hosted MCP Gateway
+    mcp_resp = execute_composio_mcp(search_slug, {"query": query, "max_results": max_results})
+    if mcp_resp:
+        mcp_results = []
+        for item in mcp_resp.get("results", []):
+            u = item.get("url", "")
+            if is_valid_evidence_url(u, app_name, hint):
+                mcp_results.append({
+                    "title": item.get("title", ""),
+                    "url": u,
+                    "snippet": item.get("content", "")
+                })
+        if mcp_results:
+            return mcp_results[:max_results]
+
+    # Tier 2: Composio Python SDK
     composio = get_composio_client()
     if composio is not None:
-        search_slug = os.getenv("COMPOSIO_SEARCH_SLUG", "TAVILY_SEARCH")
         try:
             resp = composio.tools.execute(
                 slug=search_slug,
@@ -345,15 +413,29 @@ def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str =
 
 def fetch_page(url: str, max_chars: int = 3000) -> str:
     """
-    Fetches documentation text via Composio SDK (FIRECRAWL_SCRAPE by default) when configured,
-    falling back to direct httpx + BeautifulSoup extraction.
+    Fetches documentation text with multi-tier execution:
+    1. Composio Hosted MCP Server (connect.composio.dev/mcp) via Consumer API Key (ck_...)
+    2. Composio Python SDK (via Project API Key ak_...)
+    3. Direct Firecrawl Scrape API (if FIRECRAWL_API_KEY configured)
+    4. Resilient httpx + BeautifulSoup extraction.
     """
     if not url or not url.startswith("http"):
         return ""
 
+    fetch_slug = os.getenv("COMPOSIO_FETCH_SLUG", "FIRECRAWL_SCRAPE")
+
+    # Tier 1: Composio Hosted MCP Gateway
+    mcp_resp = execute_composio_mcp(fetch_slug, {"url": url})
+    if mcp_resp:
+        data = mcp_resp.get("data", {})
+        content = data.get("markdown") or data.get("content") or ""
+        if content:
+            cleaned = re.sub(r'\s+', ' ', content.strip())
+            return cleaned[:max_chars]
+
+    # Tier 2: Composio Python SDK
     composio = get_composio_client()
     if composio is not None:
-        fetch_slug = os.getenv("COMPOSIO_FETCH_SLUG", "FIRECRAWL_SCRAPE")
         try:
             resp = composio.tools.execute(
                 slug=fetch_slug,
