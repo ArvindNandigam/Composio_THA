@@ -1,4 +1,7 @@
 import os
+import json
+import time
+import threading
 import httpx
 from bs4 import BeautifulSoup
 import urllib.parse
@@ -13,9 +16,134 @@ load_dotenv()
 # COMPOSIO SDK & HOSTED MCP INTEGRATION PROVIDER
 # ============================================================================
 COMPOSIO_API_KEY = os.getenv("COMPOSIO_API_KEY")
-COMPOSIO_USER_ID = os.getenv("COMPOSIO_USER_ID", "default")
+COMPOSIO_USER_ID = os.getenv("COMPOSIO_USER_ID", "pg-test-e4ea1d05-7823-4343-a164-a33f8ad1d43f")
 COMPOSIO_MCP_URL = os.getenv("COMPOSIO_MCP_URL", "https://connect.composio.dev/mcp")
 _composio_instance = None
+
+
+class ToolTelemetryTracker:
+    """
+    Thread-safe execution telemetry tracker for Composio hosted/SDK tools vs fallback scrapers.
+    Tracks query counts, provider breakdown, per-query details, and latencies.
+    """
+    _instance = None
+    _singleton_lock = threading.Lock()
+
+    def __init__(self):
+        self._lock = threading.Lock()
+        self.reset()
+
+    @classmethod
+    def get_instance(cls) -> "ToolTelemetryTracker":
+        if cls._instance is None:
+            with cls._singleton_lock:
+                if cls._instance is None:
+                    cls._instance = cls()
+        return cls._instance
+
+    def reset(self):
+        with self._lock:
+            self.composio_queries = 0
+            self.composio_search = 0
+            self.composio_fetch = 0
+            self.fallback_queries = 0
+            self.fallback_search = 0
+            self.fallback_fetch = 0
+            self.providers = {
+                "composio_tavily_search": 0,
+                "composio_firecrawl_scrape": 0,
+                "direct_tavily": 0,
+                "direct_firecrawl": 0,
+                "bing_scraper": 0,
+                "direct_httpx": 0,
+            }
+            self.queries: List[Dict[str, Any]] = []
+
+    def record_query(
+        self,
+        tool: str,
+        provider: str,
+        query_or_url: str,
+        success: bool,
+        latency_ms: float = 0.0
+    ):
+        with self._lock:
+            is_composio = provider.startswith("composio")
+            if is_composio:
+                self.composio_queries += 1
+                if tool == "search":
+                    self.composio_search += 1
+                elif tool == "fetch":
+                    self.composio_fetch += 1
+            else:
+                self.fallback_queries += 1
+                if tool == "search":
+                    self.fallback_search += 1
+                elif tool == "fetch":
+                    self.fallback_fetch += 1
+
+            self.providers[provider] = self.providers.get(provider, 0) + 1
+            self.queries.append({
+                "tool": tool,
+                "provider": provider,
+                "query_or_url": query_or_url[:200],
+                "success": success,
+                "latency_ms": round(latency_ms, 2),
+                "timestamp": time.time(),
+            })
+
+    def get_summary(self) -> Dict[str, Any]:
+        with self._lock:
+            total = self.composio_queries + self.fallback_queries
+            share_pct = round((self.composio_queries / total * 100.0), 1) if total > 0 else 0.0
+            return {
+                "total_queries": total,
+                "composio_queries": self.composio_queries,
+                "fallback_queries": self.fallback_queries,
+                "composio_share_pct": share_pct,
+                "composio_search": self.composio_search,
+                "composio_fetch": self.composio_fetch,
+                "fallback_search": self.fallback_search,
+                "fallback_fetch": self.fallback_fetch,
+                "by_tool": {
+                    "composio": {
+                        "search": self.composio_search,
+                        "fetch": self.composio_fetch,
+                        "total": self.composio_queries,
+                    },
+                    "fallback": {
+                        "search": self.fallback_search,
+                        "fetch": self.fallback_fetch,
+                        "total": self.fallback_queries,
+                    },
+                },
+                "providers": dict(self.providers),
+                "queries": list(self.queries),
+            }
+
+    def save_metrics(self, filepath: str):
+        summary = self.get_summary()
+        os.makedirs(os.path.dirname(os.path.abspath(filepath)), exist_ok=True)
+        with open(filepath, "w", encoding="utf-8") as f:
+            json.dump(summary, f, indent=2)
+
+
+telemetry_tracker = ToolTelemetryTracker.get_instance()
+
+
+def get_tool_telemetry() -> Dict[str, Any]:
+    """Returns the current execution telemetry summary."""
+    return telemetry_tracker.get_summary()
+
+
+def reset_tool_telemetry():
+    """Resets all telemetry counters and query logs."""
+    telemetry_tracker.reset()
+
+
+def save_telemetry_metrics(filepath: str):
+    """Saves the current telemetry metrics summary to disk as JSON."""
+    telemetry_tracker.save_metrics(filepath)
 
 
 def execute_composio_mcp(tool_slug: str, arguments: Dict[str, Any], timeout: float = 20.0) -> Optional[Dict[str, Any]]:
@@ -317,6 +445,7 @@ def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str =
     3. Direct Tavily REST API (if TAVILY_API_KEY configured)
     4. Resilient direct Bing search fallback.
     """
+    start_time = time.time()
     search_slug = os.getenv("COMPOSIO_SEARCH_SLUG", "TAVILY_SEARCH")
 
     # Tier 1: Composio Hosted MCP Gateway
@@ -332,6 +461,8 @@ def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str =
                     "snippet": item.get("content", "")
                 })
         if mcp_results:
+            latency = (time.time() - start_time) * 1000.0
+            telemetry_tracker.record_query("search", "composio_tavily_search", query, True, latency)
             return mcp_results[:max_results]
 
     # Tier 2: Composio Python SDK
@@ -346,6 +477,8 @@ def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str =
             )
             composio_results = _extract_composio_search_results(resp, max_results, app_name, hint)
             if composio_results:
+                latency = (time.time() - start_time) * 1000.0
+                telemetry_tracker.record_query("search", "composio_tavily_search", query, True, latency)
                 return composio_results
         except Exception as e:
             print(f"[Composio SDK Notice] {search_slug} failed ({e}); checking direct providers.")
@@ -370,6 +503,8 @@ def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str =
                             "snippet": item.get("content", "")
                         })
                 if tav_results:
+                    latency = (time.time() - start_time) * 1000.0
+                    telemetry_tracker.record_query("search", "direct_tavily", query, True, latency)
                     return tav_results[:max_results]
         except Exception as e:
             print(f"[Tavily Direct Notice] Direct Tavily call failed ({e}); falling back to Bing.")
@@ -406,8 +541,12 @@ def search_web(query: str, max_results: int = 4, app_name: str = "", hint: str =
                 })
             if len(results) >= max_results:
                 break
+        latency = (time.time() - start_time) * 1000.0
+        telemetry_tracker.record_query("search", "bing_scraper", query, len(results) > 0, latency)
         return results
     except Exception as e:
+        latency = (time.time() - start_time) * 1000.0
+        telemetry_tracker.record_query("search", "bing_scraper", query, False, latency)
         return [{"title": "Search Error", "url": "", "snippet": f"Search failed: {e}"}]
 
 
@@ -422,15 +561,27 @@ def fetch_page(url: str, max_chars: int = 3000) -> str:
     if not url or not url.startswith("http"):
         return ""
 
+    start_time = time.time()
     fetch_slug = os.getenv("COMPOSIO_FETCH_SLUG", "FIRECRAWL_SCRAPE")
 
     # Tier 1: Composio Hosted MCP Gateway
     mcp_resp = execute_composio_mcp(fetch_slug, {"url": url})
     if mcp_resp:
         data = mcp_resp.get("data", {})
-        content = data.get("markdown") or data.get("content") or ""
-        if content:
+        inner = data.get("data") if isinstance(data.get("data"), dict) else data
+        content = (
+            inner.get("markdown")
+            or inner.get("content")
+            or inner.get("text")
+            or data.get("markdown")
+            or data.get("content")
+            or data.get("text")
+            or ""
+        )
+        if isinstance(content, str) and content.strip():
             cleaned = re.sub(r'\s+', ' ', content.strip())
+            latency = (time.time() - start_time) * 1000.0
+            telemetry_tracker.record_query("fetch", "composio_firecrawl_scrape", url, True, latency)
             return cleaned[:max_chars]
 
     # Tier 2: Composio Python SDK
@@ -445,9 +596,20 @@ def fetch_page(url: str, max_chars: int = 3000) -> str:
             )
             data = resp.get("data", resp) if isinstance(resp, dict) else getattr(resp, "data", resp)
             if isinstance(data, dict):
-                content = data.get("markdown") or data.get("content") or data.get("text") or ""
+                inner_data = data.get("data") if isinstance(data.get("data"), dict) else data
+                content = (
+                    inner_data.get("markdown")
+                    or inner_data.get("content")
+                    or inner_data.get("text")
+                    or data.get("markdown")
+                    or data.get("content")
+                    or data.get("text")
+                    or ""
+                )
                 if isinstance(content, str) and content.strip():
                     cleaned = re.sub(r'\s+', ' ', content.strip())
+                    latency = (time.time() - start_time) * 1000.0
+                    telemetry_tracker.record_query("fetch", "composio_firecrawl_scrape", url, True, latency)
                     return cleaned[:max_chars]
         except Exception as e:
             print(f"[Composio SDK Notice] {fetch_slug} failed ({e}); checking direct providers.")
@@ -463,9 +625,18 @@ def fetch_page(url: str, max_chars: int = 3000) -> str:
             )
             if fc_resp.status_code == 200:
                 fc_data = fc_resp.json().get("data", {})
-                content = fc_data.get("markdown") or fc_data.get("content") or ""
+                inner_fc = fc_data.get("data") if isinstance(fc_data.get("data"), dict) else fc_data
+                content = (
+                    inner_fc.get("markdown")
+                    or inner_fc.get("content")
+                    or fc_data.get("markdown")
+                    or fc_data.get("content")
+                    or ""
+                )
                 if content:
                     cleaned = re.sub(r'\s+', ' ', content.strip())
+                    latency = (time.time() - start_time) * 1000.0
+                    telemetry_tracker.record_query("fetch", "direct_firecrawl", url, True, latency)
                     return cleaned[:max_chars]
         except Exception as e:
             print(f"[Firecrawl Direct Notice] Direct Firecrawl call failed ({e}); falling back to httpx.")
@@ -473,6 +644,8 @@ def fetch_page(url: str, max_chars: int = 3000) -> str:
     try:
         resp = httpx.get(url, headers=DEFAULT_HEADERS, timeout=7.0, follow_redirects=True)
         if resp.status_code >= 400:
+            latency = (time.time() - start_time) * 1000.0
+            telemetry_tracker.record_query("fetch", "direct_httpx", url, False, latency)
             return f"HTTP {resp.status_code} Error"
 
         soup = BeautifulSoup(resp.text, "html.parser")
@@ -481,8 +654,12 @@ def fetch_page(url: str, max_chars: int = 3000) -> str:
 
         text = soup.get_text(separator=" ", strip=True)
         text = re.sub(r'\s+', ' ', text)
+        latency = (time.time() - start_time) * 1000.0
+        telemetry_tracker.record_query("fetch", "direct_httpx", url, True, latency)
         return text[:max_chars]
     except Exception as e:
+        latency = (time.time() - start_time) * 1000.0
+        telemetry_tracker.record_query("fetch", "direct_httpx", url, False, latency)
         return f"Fetch error: {e}"
 
 

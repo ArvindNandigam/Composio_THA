@@ -1,0 +1,2432 @@
+{
+  "total_queries": 300,
+  "composio_queries": 258,
+  "fallback_queries": 42,
+  "composio_share_pct": 86.0,
+  "composio_search": 199,
+  "composio_fetch": 59,
+  "fallback_search": 1,
+  "fallback_fetch": 41,
+  "by_tool": {
+    "composio": {
+      "search": 199,
+      "fetch": 59,
+      "total": 258
+    },
+    "fallback": {
+      "search": 1,
+      "fetch": 41,
+      "total": 42
+    }
+  },
+  "providers": {
+    "composio_tavily_search": 199,
+    "composio_firecrawl_scrape": 59,
+    "direct_tavily": 0,
+    "direct_firecrawl": 0,
+    "bing_scraper": 1,
+    "direct_httpx": 41
+  },
+  "queries": [
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Pipedrive API developer documentation authentication pipedrive.com",
+      "success": true,
+      "latency_ms": 917.08,
+      "timestamp": 1795536634.113782
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "HubSpot API developer documentation authentication hubspot.com",
+      "success": true,
+      "latency_ms": 919.48,
+      "timestamp": 1795536634.1178458
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Salesforce API developer documentation authentication salesforce.com",
+      "success": true,
+      "latency_ms": 1018.26,
+      "timestamp": 1795536634.2296145
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Pipedrive API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 564.93,
+      "timestamp": 1795536634.678743
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Salesforce API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 532.54,
+      "timestamp": 1795536634.7621806
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "HubSpot API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 646.24,
+      "timestamp": 1795536634.764125
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developers.pipedrive.com/docs/api/v1/Oauth",
+      "success": true,
+      "latency_ms": 1016.34,
+      "timestamp": 1795536635.6951227
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developers.hubspot.com/docs/apps/developer-platform/build-apps/authentication/overview",
+      "success": true,
+      "latency_ms": 1059.48,
+      "timestamp": 1795536635.8236566
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developer.salesforce.com/docs/platform/api-rest/guide/quickstart-oauth.html",
+      "success": true,
+      "latency_ms": 1096.27,
+      "timestamp": 1795536635.8585517
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Attio API developer documentation authentication attio.com",
+      "success": true,
+      "latency_ms": 474.56,
+      "timestamp": 1795536639.7936006
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Twenty API developer documentation authentication twenty.com (open-source CRM)",
+      "success": true,
+      "latency_ms": 559.3,
+      "timestamp": 1795536640.1058142
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Podio API developer documentation authentication podio.com",
+      "success": true,
+      "latency_ms": 552.63,
+      "timestamp": 1795536640.17473
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Attio API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 555.12,
+      "timestamp": 1795536640.3487542
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Twenty API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 468.47,
+      "timestamp": 1795536640.5743008
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Podio API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 494.89,
+      "timestamp": 1795536640.6696382
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://docs.attio.com/rest-api/guides/authentication",
+      "success": true,
+      "latency_ms": 748.05,
+      "timestamp": 1795536641.0968907
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://docs.twenty.com/developers/extend/api",
+      "success": true,
+      "latency_ms": 725.95,
+      "timestamp": 1795536641.300292
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developers.podio.com/authentication",
+      "success": true,
+      "latency_ms": 638.79,
+      "timestamp": 1795536641.3084598
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Zoho CRM API developer documentation authentication zoho.com/crm",
+      "success": true,
+      "latency_ms": 440.99,
+      "timestamp": 1795536645.129777
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Close API developer documentation authentication close.com",
+      "success": true,
+      "latency_ms": 492.13,
+      "timestamp": 1795536645.5164094
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Zoho CRM API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 461.46,
+      "timestamp": 1795536645.5912743
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Copper API developer documentation authentication copper.com",
+      "success": true,
+      "latency_ms": 520.6,
+      "timestamp": 1795536645.792792
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Close API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 506.0,
+      "timestamp": 1795536646.0224428
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Copper API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 478.41,
+      "timestamp": 1795536646.2712533
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://pipeline.zoominfo.com/sales/zoho-crm-api",
+      "success": true,
+      "latency_ms": 801.41,
+      "timestamp": 1795536646.3927388
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developer.close.com/api/overview/oauth-authentication",
+      "success": true,
+      "latency_ms": 690.41,
+      "timestamp": 1795536646.7129042
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developer.copper.com/introduction/authentication.html",
+      "success": true,
+      "latency_ms": 828.78,
+      "timestamp": 1795536647.1000652
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "DealCloud API developer documentation authentication api.docs.dealcloud.com",
+      "success": true,
+      "latency_ms": 527.53,
+      "timestamp": 1795536650.7581575
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Zendesk API developer documentation authentication zendesk.com",
+      "success": true,
+      "latency_ms": 585.32,
+      "timestamp": 1795536651.1414192
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "DealCloud API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 765.16,
+      "timestamp": 1795536651.5233617
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Intercom API developer documentation authentication intercom.com",
+      "success": true,
+      "latency_ms": 462.31,
+      "timestamp": 1795536651.642154
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Zendesk API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 512.17,
+      "timestamp": 1795536651.653608
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Intercom API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 545.31,
+      "timestamp": 1795536652.1874852
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://api.docs.dealcloud.com/docs",
+      "success": true,
+      "latency_ms": 727.59,
+      "timestamp": 1795536652.2510197
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Freshdesk API developer documentation authentication freshdesk.com",
+      "success": true,
+      "latency_ms": 553.48,
+      "timestamp": 1795536656.249592
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Freshdesk API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 444.28,
+      "timestamp": 1795536656.693904
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://developers.intercom.com/docs/build-an-integration/learn-more/authentication",
+      "success": true,
+      "latency_ms": 5588.51,
+      "timestamp": 1795536657.7760599
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://developer.zendesk.com/documentation/conversations/getting-started/api-authentication",
+      "success": true,
+      "latency_ms": 7129.26,
+      "timestamp": 1795536658.782903
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Front API developer documentation authentication front.com",
+      "success": true,
+      "latency_ms": 1089.36,
+      "timestamp": 1795536662.7342334
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Pylon API developer documentation authentication usepylon.com",
+      "success": true,
+      "latency_ms": 503.79,
+      "timestamp": 1795536662.9723742
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Front API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 518.12,
+      "timestamp": 1795536663.2523787
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://community.developers.freshworks.com/t/how-to-use-oauth-authentication-mechanism-for-freshdesk-api/1691",
+      "success": true,
+      "latency_ms": 7695.14,
+      "timestamp": 1795536664.3890934
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Pylon API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1431.49,
+      "timestamp": 1795536664.403983
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://dev.frontapp.com/reference/introduction",
+      "success": true,
+      "latency_ms": 5879.65,
+      "timestamp": 1795536669.1320763
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "LiveAgent API developer documentation authentication liveagent.com",
+      "success": true,
+      "latency_ms": 1149.13,
+      "timestamp": 1795536669.5335944
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://docs.usepylon.com/pylon-docs/developer/api/authentication",
+      "success": true,
+      "latency_ms": 5666.6,
+      "timestamp": 1795536670.0706983
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "LiveAgent API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2423.68,
+      "timestamp": 1795536671.957313
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Plain API developer documentation authentication plain.com",
+      "success": true,
+      "latency_ms": 1343.78,
+      "timestamp": 1795536674.1104558
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Plain API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1718.96,
+      "timestamp": 1795536675.8294528
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Help Scout API developer documentation authentication helpscout.com",
+      "success": true,
+      "latency_ms": 2089.85,
+      "timestamp": 1795536675.9439437
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://faq.liveagent.com/535002-LiveAgent-API-v1-vs-v3-Authentication-Differences-API-Key-Management-and-Resolving-403-Errors",
+      "success": true,
+      "latency_ms": 5770.5,
+      "timestamp": 1795536677.7278912
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Help Scout API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2221.55,
+      "timestamp": 1795536678.1655283
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://www.plain.com/docs/graphql/authentication",
+      "success": true,
+      "latency_ms": 5846.36,
+      "timestamp": 1795536681.6758661
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://developer.helpscout.com/mailbox-api/overview/authentication",
+      "success": true,
+      "latency_ms": 4583.06,
+      "timestamp": 1795536682.7486987
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Gorgias API developer documentation authentication gorgias.com",
+      "success": true,
+      "latency_ms": 3340.54,
+      "timestamp": 1795536684.7486043
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Gladly API developer documentation authentication gladly.com",
+      "success": true,
+      "latency_ms": 1467.09,
+      "timestamp": 1795536686.7525358
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Gorgias API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2349.65,
+      "timestamp": 1795536687.098279
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Slack API developer documentation authentication slack.com",
+      "success": true,
+      "latency_ms": 1385.95,
+      "timestamp": 1795536687.7469144
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Gladly API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2300.48,
+      "timestamp": 1795536689.053052
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Slack API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2387.67,
+      "timestamp": 1795536690.1346247
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://www.ringly.io/blog/gorgias-developer",
+      "success": true,
+      "latency_ms": 5608.17,
+      "timestamp": 1795536692.7065177
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://www.getmacha.com/blog/gladly-api-explained",
+      "success": true,
+      "latency_ms": 5161.88,
+      "timestamp": 1795536694.2149944
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://docs.slack.dev/authentication",
+      "success": true,
+      "latency_ms": 7286.36,
+      "timestamp": 1795536697.4210353
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Twilio API developer documentation authentication twilio.com",
+      "success": true,
+      "latency_ms": 1441.73,
+      "timestamp": 1795536698.073735
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Zoho Cliq API developer documentation authentication zoho.com/cliq",
+      "success": true,
+      "latency_ms": 1383.48,
+      "timestamp": 1795536699.3188627
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Twilio API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1517.48,
+      "timestamp": 1795536699.5912375
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://www.twilio.com/docs/iam/api",
+      "success": true,
+      "latency_ms": 713.89,
+      "timestamp": 1795536700.3051815
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Zoho Cliq API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1990.02,
+      "timestamp": 1795536701.3089182
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://www.zoho.com/cliq/help/restapi/v3/introduction",
+      "success": true,
+      "latency_ms": 722.22,
+      "timestamp": 1795536702.0311792
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Lark (Larksuite) API developer documentation authentication open.larksuite.com",
+      "success": true,
+      "latency_ms": 1390.88,
+      "timestamp": 1795536702.5112886
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Lark (Larksuite) API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1372.53,
+      "timestamp": 1795536703.883845
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://open.larksuite.com/document/common-capabilities/sso/api/obtain-oauth-code",
+      "success": true,
+      "latency_ms": 777.29,
+      "timestamp": 1795536704.6611981
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Pumble API developer documentation authentication pumble.com",
+      "success": true,
+      "latency_ms": 1815.91,
+      "timestamp": 1795536705.8422513
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Discord API developer documentation authentication discord.com",
+      "success": true,
+      "latency_ms": 1610.17,
+      "timestamp": 1795536707.5657241
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Pumble API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2313.99,
+      "timestamp": 1795536708.156283
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://pumble.com/help/integrations/automation-workflow-integrations/api-keys-integration",
+      "success": true,
+      "latency_ms": 665.92,
+      "timestamp": 1795536708.822272
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Telegram API developer documentation authentication core.telegram.org",
+      "success": true,
+      "latency_ms": 1471.9,
+      "timestamp": 1795536709.6819375
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Discord API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2570.47,
+      "timestamp": 1795536710.1362295
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Telegram API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1409.89,
+      "timestamp": 1795536711.0918713
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://apis.io/security/discord/discord-authentication",
+      "success": true,
+      "latency_ms": 1629.61,
+      "timestamp": 1795536711.7658982
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://core.telegram.org/api/obtaining_api_id",
+      "success": true,
+      "latency_ms": 1746.48,
+      "timestamp": 1795536712.8383949
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "WhatsApp Business API developer documentation authentication developers.facebook.com/docs/whatsapp",
+      "success": true,
+      "latency_ms": 1214.01,
+      "timestamp": 1795536713.6807415
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "WhatsApp Business API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1426.36,
+      "timestamp": 1795536715.1071417
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developers.facebook.com/documentation/business-messaging/whatsapp/business-phone-numbers/phone-numbers",
+      "success": true,
+      "latency_ms": 770.63,
+      "timestamp": 1795536715.87784
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Aircall API developer documentation authentication aircall.io",
+      "success": true,
+      "latency_ms": 1663.99,
+      "timestamp": 1795536717.5334635
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Vonage API developer documentation authentication developer.vonage.com",
+      "success": true,
+      "latency_ms": 1842.99,
+      "timestamp": 1795536718.4146166
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Vonage API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1360.82,
+      "timestamp": 1795536719.7755036
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Aircall API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2361.57,
+      "timestamp": 1795536719.8950574
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developer.vonage.com/en/verify/concepts/authentication",
+      "success": true,
+      "latency_ms": 704.94,
+      "timestamp": 1795536720.4805624
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Google Ads API developer documentation authentication developers.google.com/google-ads",
+      "success": true,
+      "latency_ms": 2576.73,
+      "timestamp": 1795536722.0470042
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developers.aircall.io/api-references",
+      "success": true,
+      "latency_ms": 2376.26,
+      "timestamp": 1795536722.2713594
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Google Ads API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1696.56,
+      "timestamp": 1795536723.7435865
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Meta Ads API developer documentation authentication developers.facebook.com/docs/marketing-apis",
+      "success": true,
+      "latency_ms": 1331.67,
+      "timestamp": 1795536725.3844945
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://www.spaceads.agency/blog/google-ads-api-what-it-is-and-what-it-is-used-for",
+      "success": true,
+      "latency_ms": 2233.43,
+      "timestamp": 1795536725.9770732
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Meta Ads API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1822.05,
+      "timestamp": 1795536727.2066414
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "LinkedIn Ads API developer documentation authentication learn.microsoft.com/linkedin/marketing",
+      "success": true,
+      "latency_ms": 1398.43,
+      "timestamp": 1795536727.4367108
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "LinkedIn Ads API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1678.4,
+      "timestamp": 1795536729.115196
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "GoHighLevel API developer documentation authentication highlevel.stoplight.io",
+      "success": true,
+      "latency_ms": 1511.75,
+      "timestamp": 1795536731.3997262
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "GoHighLevel API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1384.67,
+      "timestamp": 1795536732.7844296
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://github.com/emeraldtarek/meta-ads-api-docs-md",
+      "success": true,
+      "latency_ms": 6509.53,
+      "timestamp": 1795536733.7162373
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://learn.microsoft.com/en-us/linkedin/marketing/quick-start?view=li-lms-2026-10",
+      "success": true,
+      "latency_ms": 5605.23,
+      "timestamp": 1795536734.7205102
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://help.gohighlevel.com/support/solutions/articles/48001060529-highlevel-api-documentation",
+      "success": true,
+      "latency_ms": 5585.17,
+      "timestamp": 1795536738.3696826
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Mailchimp API developer documentation authentication mailchimp.com/developer",
+      "success": true,
+      "latency_ms": 1486.11,
+      "timestamp": 1795536738.9648082
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Klaviyo API developer documentation authentication developers.klaviyo.com",
+      "success": true,
+      "latency_ms": 1367.34,
+      "timestamp": 1795536740.0688412
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Mailchimp API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1303.71,
+      "timestamp": 1795536740.2685547
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Klaviyo API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1375.48,
+      "timestamp": 1795536741.4443614
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "systeme.io API developer documentation authentication systeme.io (funnel builder)",
+      "success": true,
+      "latency_ms": 1316.64,
+      "timestamp": 1795536743.1634853
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "systeme.io API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1332.6,
+      "timestamp": 1795536744.496121
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://developers.klaviyo.com/en/reference/api_overview",
+      "success": true,
+      "latency_ms": 5973.44,
+      "timestamp": 1795536747.4182467
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://mailchimp.com/developer/transactional/docs/fundamentals",
+      "success": true,
+      "latency_ms": 7201.06,
+      "timestamp": 1795536747.4696648
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://rollout.com/integration-guides/systeme.io/sdk/step-by-step-guide-to-building-a-systeme.io-api-integration-in-go",
+      "success": true,
+      "latency_ms": 5126.56,
+      "timestamp": 1795536749.622731
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Pinterest API developer documentation authentication developers.pinterest.com",
+      "success": true,
+      "latency_ms": 1302.71,
+      "timestamp": 1795536752.3662684
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Threads (Meta) API developer documentation authentication developers.facebook.com/docs/threads",
+      "success": true,
+      "latency_ms": 1338.24,
+      "timestamp": 1795536752.5731566
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Threads (Meta) API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1330.79,
+      "timestamp": 1795536753.903968
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Pinterest API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1946.78,
+      "timestamp": 1795536754.3130674
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "SendGrid API developer documentation authentication sendgrid.com",
+      "success": true,
+      "latency_ms": 1363.91,
+      "timestamp": 1795536754.8648355
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "SendGrid API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2050.68,
+      "timestamp": 1795536756.9155777
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://developers.facebook.com/documentation/threads/get-started",
+      "success": true,
+      "latency_ms": 6616.87,
+      "timestamp": 1795536760.520902
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://apis.io/providers/sendgrid",
+      "success": true,
+      "latency_ms": 4399.37,
+      "timestamp": 1795536761.3150795
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developers.pinterest.com/docs/getting-started/set-up-authentication-and-authorization",
+      "success": true,
+      "latency_ms": 9142.39,
+      "timestamp": 1795536763.4555051
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Shopify API developer documentation authentication shopify.dev",
+      "success": true,
+      "latency_ms": 1455.23,
+      "timestamp": 1795536765.9470072
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "WooCommerce API developer documentation authentication woocommerce.com/document/woocommerce-rest-api",
+      "success": true,
+      "latency_ms": 1865.45,
+      "timestamp": 1795536767.148833
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Shopify API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1259.61,
+      "timestamp": 1795536767.206657
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://shopify.dev/docs/api/usage/authentication",
+      "success": true,
+      "latency_ms": 694.96,
+      "timestamp": 1795536767.9016676
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "WooCommerce API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1347.26,
+      "timestamp": 1795536768.4961262
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "BigCommerce API developer documentation authentication developer.bigcommerce.com",
+      "success": true,
+      "latency_ms": 1519.49,
+      "timestamp": 1795536768.676823
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developer.woocommerce.com/docs/apis/rest-api/authentication",
+      "success": true,
+      "latency_ms": 823.2,
+      "timestamp": 1795536769.3193736
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "BigCommerce API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1384.87,
+      "timestamp": 1795536770.0617285
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://endgrate.com/blog/using-the-bigcommerce-api-to-create-or-update-products-(with-javascript-examples)",
+      "success": true,
+      "latency_ms": 3285.3,
+      "timestamp": 1795536773.34709
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Salesforce Commerce Cloud API developer documentation authentication developer.salesforce.com/docs/commerce",
+      "success": true,
+      "latency_ms": 2221.69,
+      "timestamp": 1795536773.8667912
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Salesforce Commerce Cloud API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1347.53,
+      "timestamp": 1795536775.2143488
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developer.salesforce.com/docs/commerce/commerce-api/references/about-commerce-api/about.html",
+      "success": true,
+      "latency_ms": 1274.33,
+      "timestamp": 1795536776.4887342
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Magento (Adobe Commerce) API developer documentation authentication developer.adobe.com/commerce",
+      "success": true,
+      "latency_ms": 4090.43,
+      "timestamp": 1795536776.9723482
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Magento (Adobe Commerce) API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1443.08,
+      "timestamp": 1795536778.4154592
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Squarespace API developer documentation authentication developers.squarespace.com",
+      "success": true,
+      "latency_ms": 1652.14,
+      "timestamp": 1795536778.532791
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developer.adobe.com/commerce/webapi/rest",
+      "success": true,
+      "latency_ms": 680.53,
+      "timestamp": 1795536779.0960279
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Squarespace API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1431.23,
+      "timestamp": 1795536779.9640405
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://apis.io/security/squarespace/squarespace-authentication",
+      "success": true,
+      "latency_ms": 1766.09,
+      "timestamp": 1795536781.730175
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Ecwid API developer documentation authentication api-docs.ecwid.com",
+      "success": true,
+      "latency_ms": 1519.12,
+      "timestamp": 1795536782.0042982
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Ecwid API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1559.81,
+      "timestamp": 1795536783.5641458
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Gumroad API developer documentation authentication gumroad.com/api",
+      "success": true,
+      "latency_ms": 1330.92,
+      "timestamp": 1795536784.371587
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Gumroad API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1281.36,
+      "timestamp": 1795536785.6529877
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://gumroad.com/help/article/280-create-application-api",
+      "success": true,
+      "latency_ms": 658.56,
+      "timestamp": 1795536786.3116062
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://github.com/Ecwid/ecwid-api-docs/blob/master/includes/_authentication.md",
+      "success": true,
+      "latency_ms": 2912.94,
+      "timestamp": 1795536786.4771645
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Amazon Selling Partner API developer documentation authentication developer-docs.amazon.com/sp-api",
+      "success": true,
+      "latency_ms": 1908.56,
+      "timestamp": 1795536787.1429477
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Amazon Selling Partner API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1395.42,
+      "timestamp": 1795536788.5384052
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "fanbasis API developer documentation authentication fanbasis.com",
+      "success": true,
+      "latency_ms": 1580.53,
+      "timestamp": 1795536791.6868734
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "DataForSEO API developer documentation authentication docs.dataforseo.com",
+      "success": true,
+      "latency_ms": 2028.6,
+      "timestamp": 1795536792.2238197
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "fanbasis API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1740.73,
+      "timestamp": 1795536793.4276416
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://developer-docs-amazon-shipping.readme.io/apis/docs/connecting-to-the-selling-partner-api",
+      "success": true,
+      "latency_ms": 6207.75,
+      "timestamp": 1795536794.7461998
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "DataForSEO API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 3266.86,
+      "timestamp": 1795536795.4907148
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://www.mintlify.com/MatthewSabia1/AdRecon/api/fanbasis",
+      "success": false,
+      "latency_ms": 5244.75,
+      "timestamp": 1795536798.6725123
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "SE Ranking API developer documentation authentication seranking.com/api",
+      "success": true,
+      "latency_ms": 1481.24,
+      "timestamp": 1795536800.0057814
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "SE Ranking API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1391.34,
+      "timestamp": 1795536801.3971562
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://frontal.so/gtm-apis/signal-apis/dataforseo-api-review",
+      "success": true,
+      "latency_ms": 6040.65,
+      "timestamp": 1795536801.5314245
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Ahrefs API developer documentation authentication ahrefs.com/api",
+      "success": true,
+      "latency_ms": 1418.07,
+      "timestamp": 1795536803.578402
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Ahrefs API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1413.98,
+      "timestamp": 1795536804.992413
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "MrScraper API developer documentation authentication docs.mrscraper.com",
+      "success": true,
+      "latency_ms": 1301.42,
+      "timestamp": 1795536806.5040317
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "MrScraper API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1351.14,
+      "timestamp": 1795536807.8552125
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://seranking.com/api/se-visible/reference",
+      "success": true,
+      "latency_ms": 6765.97,
+      "timestamp": 1795536808.1631873
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://apis.io/providers/ahrefs",
+      "success": true,
+      "latency_ms": 6217.97,
+      "timestamp": 1795536811.2104423
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Apify API developer documentation authentication docs.apify.com",
+      "success": true,
+      "latency_ms": 1328.74,
+      "timestamp": 1795536813.129078
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Apify API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1595.37,
+      "timestamp": 1795536814.724485
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://docs.mrscraper.com/docs/api/authentication",
+      "success": true,
+      "latency_ms": 7226.5,
+      "timestamp": 1795536815.0817688
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Firecrawl API developer documentation authentication firecrawl.dev",
+      "success": true,
+      "latency_ms": 1350.52,
+      "timestamp": 1795536816.3562999
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Firecrawl API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1656.12,
+      "timestamp": 1795536818.0124607
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Bright Data API developer documentation authentication brightdata.com",
+      "success": true,
+      "latency_ms": 1400.17,
+      "timestamp": 1795536820.4764414
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://docs.apify.com/integrations/api",
+      "success": true,
+      "latency_ms": 6172.46,
+      "timestamp": 1795536820.8970063
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Bright Data API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1444.62,
+      "timestamp": 1795536821.9210978
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://docs.firecrawl.dev/api-reference/v2-introduction",
+      "success": true,
+      "latency_ms": 4652.44,
+      "timestamp": 1795536822.664947
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://docs.brightdata.com/api-reference/authentication",
+      "success": true,
+      "latency_ms": 805.78,
+      "timestamp": 1795536822.7269375
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Sherlock API developer documentation authentication github.com/sherlock-project/sherlock",
+      "success": true,
+      "latency_ms": 1332.37,
+      "timestamp": 1795536826.279266
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Sherlock API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1347.09,
+      "timestamp": 1795536827.6263964
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Clay API developer documentation authentication clay.com",
+      "success": true,
+      "latency_ms": 1337.23,
+      "timestamp": 1795536827.7865043
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Waterfall.io API developer documentation authentication waterfall.io (contact/company intel)",
+      "success": true,
+      "latency_ms": 1750.14,
+      "timestamp": 1795536828.1640353
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://github.com/bellingcat/toolkit/blob/main/gitbook/tools/sherlock/README.md",
+      "success": true,
+      "latency_ms": 784.33,
+      "timestamp": 1795536828.4107816
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Clay API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1550.68,
+      "timestamp": 1795536829.3372056
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Waterfall.io API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1332.86,
+      "timestamp": 1795536829.496934
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://pipeline.zoominfo.com/sales/clay-api",
+      "success": true,
+      "latency_ms": 724.7,
+      "timestamp": 1795536830.0619535
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://waterfall.mintlify.app/v1/authentication",
+      "success": true,
+      "latency_ms": 1248.43,
+      "timestamp": 1795536830.7454238
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "GitHub API developer documentation authentication docs.github.com/rest",
+      "success": true,
+      "latency_ms": 1418.72,
+      "timestamp": 1795536833.6144855
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "GitHub API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1989.33,
+      "timestamp": 1795536835.6039572
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Vercel API developer documentation authentication vercel.com/docs/rest-api",
+      "success": true,
+      "latency_ms": 1560.68,
+      "timestamp": 1795536835.6394854
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Netlify API developer documentation authentication docs.netlify.com/api",
+      "success": true,
+      "latency_ms": 2198.41,
+      "timestamp": 1795536836.5898943
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Vercel API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1387.85,
+      "timestamp": 1795536837.0273762
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://vercel.com/docs/rest-api",
+      "success": true,
+      "latency_ms": 602.44,
+      "timestamp": 1795536837.629884
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://docs.github.com/rest/authentication/authenticating-to-the-rest-api",
+      "success": true,
+      "latency_ms": 2508.65,
+      "timestamp": 1795536838.1126747
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Netlify API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1663.74,
+      "timestamp": 1795536838.2536552
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://docs.netlify.com/api-and-cli-guides/api-guides/get-started-with-api",
+      "success": true,
+      "latency_ms": 749.01,
+      "timestamp": 1795536839.0027223
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Cloudflare API developer documentation authentication developers.cloudflare.com/api",
+      "success": true,
+      "latency_ms": 1634.68,
+      "timestamp": 1795536842.855974
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Supabase API developer documentation authentication supabase.com/docs",
+      "success": true,
+      "latency_ms": 1441.97,
+      "timestamp": 1795536843.3025577
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Cloudflare API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1427.34,
+      "timestamp": 1795536844.2833793
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Supabase API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1323.97,
+      "timestamp": 1795536844.6265597
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Neo4j API developer documentation authentication neo4j.com/docs/api",
+      "success": true,
+      "latency_ms": 2163.94,
+      "timestamp": 1795536845.1546817
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://supabase.com/docs/reference/api/introduction",
+      "success": true,
+      "latency_ms": 588.57,
+      "timestamp": 1795536845.215221
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developers.cloudflare.com/api",
+      "success": true,
+      "latency_ms": 2195.9,
+      "timestamp": 1795536846.4793947
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Neo4j API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1429.89,
+      "timestamp": 1795536846.5846195
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Snowflake API developer documentation authentication docs.snowflake.com",
+      "success": true,
+      "latency_ms": 1309.33,
+      "timestamp": 1795536850.5461164
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "MongoDB Atlas API developer documentation authentication mongodb.com/docs/atlas/api",
+      "success": true,
+      "latency_ms": 1355.81,
+      "timestamp": 1795536851.5820265
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Snowflake API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1631.93,
+      "timestamp": 1795536852.1780856
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://apis.apievangelist.com/store/neo4j-authentication-api",
+      "success": true,
+      "latency_ms": 6467.39,
+      "timestamp": 1795536853.0520744
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "MongoDB Atlas API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1472.22,
+      "timestamp": 1795536853.0542598
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://docs.snowflake.com/en/developer-guide/snowflake-rest-api/authentication",
+      "success": true,
+      "latency_ms": 6105.84,
+      "timestamp": 1795536858.2840953
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Datadog API developer documentation authentication docs.datadoghq.com/api",
+      "success": true,
+      "latency_ms": 1672.67,
+      "timestamp": 1795536858.289057
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://www.mongodb.com/docs/atlas/api/api-authentication",
+      "success": true,
+      "latency_ms": 5552.53,
+      "timestamp": 1795536858.6068196
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Datadog API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1534.55,
+      "timestamp": 1795536859.823647
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Sentry API developer documentation authentication docs.sentry.io/api",
+      "success": true,
+      "latency_ms": 1513.68,
+      "timestamp": 1795536863.632872
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Notion API developer documentation authentication developers.notion.com",
+      "success": true,
+      "latency_ms": 1527.07,
+      "timestamp": 1795536864.057247
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Sentry API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1621.07,
+      "timestamp": 1795536865.253994
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Notion API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1459.2,
+      "timestamp": 1795536865.5164728
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://docs.datadoghq.com/api/latest",
+      "success": true,
+      "latency_ms": 7624.21,
+      "timestamp": 1795536867.4479022
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://docs.sentry.io/api/auth",
+      "success": true,
+      "latency_ms": 5104.8,
+      "timestamp": 1795536870.3588388
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://developers.notion.com/reference/authentication",
+      "success": true,
+      "latency_ms": 6157.73,
+      "timestamp": 1795536871.6742463
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Airtable API developer documentation authentication airtable.com/developers",
+      "success": true,
+      "latency_ms": 1482.67,
+      "timestamp": 1795536872.6328824
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Airtable API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2108.68,
+      "timestamp": 1795536874.7416046
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Linear API developer documentation authentication developers.linear.app",
+      "success": true,
+      "latency_ms": 2076.71,
+      "timestamp": 1795536876.2134671
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Jira API developer documentation authentication developer.atlassian.com",
+      "success": true,
+      "latency_ms": 1784.39,
+      "timestamp": 1795536877.0430298
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Linear API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1420.15,
+      "timestamp": 1795536877.633649
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Jira API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2273.45,
+      "timestamp": 1795536879.3165033
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://docs.nexla.com/user-guides/connectors/airtable_api/airtable_api_destination",
+      "success": true,
+      "latency_ms": 5153.88,
+      "timestamp": 1795536879.8955252
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://community.atlassian.com/forums/discussion/814987/how-to-authenticate-to-jira-rest-api",
+      "success": true,
+      "latency_ms": 4733.17,
+      "timestamp": 1795536884.0497363
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://linear.app/developers/graphql",
+      "success": true,
+      "latency_ms": 7504.45,
+      "timestamp": 1795536885.1381629
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Asana API developer documentation authentication developers.asana.com",
+      "success": true,
+      "latency_ms": 1623.58,
+      "timestamp": 1795536885.1412714
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Asana API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1372.49,
+      "timestamp": 1795536886.513801
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developers.asana.com/docs/quick-start",
+      "success": true,
+      "latency_ms": 1612.13,
+      "timestamp": 1795536888.1260104
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Monday.com API developer documentation authentication developer.monday.com",
+      "success": true,
+      "latency_ms": 1519.99,
+      "timestamp": 1795536889.3065734
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "ClickUp API developer documentation authentication clickup.com/api",
+      "success": true,
+      "latency_ms": 1524.61,
+      "timestamp": 1795536890.5314367
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Monday.com API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1435.46,
+      "timestamp": 1795536890.7420635
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developer.monday.com/api-reference/docs/authentication",
+      "success": true,
+      "latency_ms": 762.04,
+      "timestamp": 1795536891.5041614
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "ClickUp API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2019.2,
+      "timestamp": 1795536892.5506802
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Coda API developer documentation authentication coda.io/developers",
+      "success": true,
+      "latency_ms": 1307.89,
+      "timestamp": 1795536893.0190806
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://apis.apievangelist.com/store/clickup-authorization-api",
+      "success": true,
+      "latency_ms": 2175.22,
+      "timestamp": 1795536894.7259681
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Coda API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2553.63,
+      "timestamp": 1795536895.57273
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Smartsheet API developer documentation authentication smartsheet.com/developers",
+      "success": true,
+      "latency_ms": 1422.04,
+      "timestamp": 1795536896.5383027
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://apis.io/providers/coda",
+      "success": true,
+      "latency_ms": 1924.25,
+      "timestamp": 1795536897.497063
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Smartsheet API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1678.76,
+      "timestamp": 1795536898.2171018
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Harvest API developer documentation authentication harvestapp.com (help.getharvest.com/api-v2)",
+      "success": true,
+      "latency_ms": 1488.02,
+      "timestamp": 1795536899.8802955
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Harvest API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2449.58,
+      "timestamp": 1795536902.329903
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Stripe API developer documentation authentication stripe.com/docs/api",
+      "success": true,
+      "latency_ms": 1366.21,
+      "timestamp": 1795536902.4448435
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://help.getharvest.com/api-v2/authentication-api/authentication/authentication",
+      "success": true,
+      "latency_ms": 716.84,
+      "timestamp": 1795536903.0469248
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "http://gt-events.net/api-getting-started.html",
+      "success": true,
+      "latency_ms": 7057.58,
+      "timestamp": 1795536905.274758
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Stripe API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 3012.03,
+      "timestamp": 1795536905.4569173
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://docs.stripe.com/api/authentication",
+      "success": true,
+      "latency_ms": 1279.58,
+      "timestamp": 1795536906.73657
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Plaid API developer documentation authentication plaid.com/docs",
+      "success": true,
+      "latency_ms": 1881.72,
+      "timestamp": 1795536908.5137827
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Plaid API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1443.5,
+      "timestamp": 1795536909.957303
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://plaid.com/docs/api",
+      "success": true,
+      "latency_ms": 1166.15,
+      "timestamp": 1795536911.123502
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Binance API developer documentation authentication binance-docs.github.io",
+      "success": true,
+      "latency_ms": 2501.54,
+      "timestamp": 1795536911.255426
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Paygent Connect API developer documentation authentication paygent (NMI-powered)",
+      "success": true,
+      "latency_ms": 1500.7,
+      "timestamp": 1795536911.763856
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Binance API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1624.15,
+      "timestamp": 1795536912.8796096
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Paygent Connect API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1860.33,
+      "timestamp": 1795536913.6242173
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://apitracker.io/a/binance",
+      "success": true,
+      "latency_ms": 2660.7,
+      "timestamp": 1795536915.5403924
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "iPayX API developer documentation authentication ipayx.ai/docs",
+      "success": true,
+      "latency_ms": 1778.89,
+      "timestamp": 1795536917.0250888
+    },
+    {
+      "tool": "search",
+      "provider": "bing_scraper",
+      "query_or_url": "iPayX API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2338.94,
+      "timestamp": 1795536919.3640647
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "QuickBooks API developer documentation authentication developer.intuit.com",
+      "success": true,
+      "latency_ms": 1556.44,
+      "timestamp": 1795536920.5724027
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://apis.io/providers/nmi",
+      "success": true,
+      "latency_ms": 7032.69,
+      "timestamp": 1795536920.6569602
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "QuickBooks API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1399.03,
+      "timestamp": 1795536921.9714868
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://uatdocs.ipospays.tech/ipos-pays-authentication-token-api",
+      "success": true,
+      "latency_ms": 5756.2,
+      "timestamp": 1795536925.120311
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Xero API developer documentation authentication developer.xero.com",
+      "success": true,
+      "latency_ms": 1396.73,
+      "timestamp": 1795536925.7733433
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Xero API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1514.79,
+      "timestamp": 1795536927.2881567
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Brex API developer documentation authentication developer.brex.com",
+      "success": true,
+      "latency_ms": 1249.84,
+      "timestamp": 1795536930.2009974
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://developer.intuit.com/app/developer/qbo/docs/develop/authentication-and-authorization/oauth-2.0",
+      "success": true,
+      "latency_ms": 8516.04,
+      "timestamp": 1795536930.4876113
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Brex API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2301.8,
+      "timestamp": 1795536932.5028217
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://www.apideck.com/blog/xero-integration-authentication-and-accounts-receivable-best-practices",
+      "success": true,
+      "latency_ms": 6216.07,
+      "timestamp": 1795536933.504272
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Ramp API developer documentation authentication docs.ramp.com",
+      "success": true,
+      "latency_ms": 3617.2,
+      "timestamp": 1795536938.0948627
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://integrations.sh/brex.com/brex-rest-api",
+      "success": true,
+      "latency_ms": 5764.82,
+      "timestamp": 1795536938.2676783
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Ramp API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1521.96,
+      "timestamp": 1795536939.6168814
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "NotebookLM API developer documentation authentication cloud.google.com/gemini (Enterprise API)",
+      "success": true,
+      "latency_ms": 1351.5,
+      "timestamp": 1795536943.434608
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "PitchBook API developer documentation authentication pitchbook.com (research API)",
+      "success": true,
+      "latency_ms": 6785.12,
+      "timestamp": 1795536944.18925
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "NotebookLM API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1678.02,
+      "timestamp": 1795536945.1126692
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "PitchBook API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1491.38,
+      "timestamp": 1795536945.6806638
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://www.kortex-notebooklm.com/blog/gemini-notebook-api",
+      "success": true,
+      "latency_ms": 1872.54,
+      "timestamp": 1795536946.9852748
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://documenter.getpostman.com/view/5190535/TzCV1iRc",
+      "success": true,
+      "latency_ms": 2813.8,
+      "timestamp": 1795536948.4945204
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Otter AI API developer documentation authentication help.otter.ai (MCP server)",
+      "success": true,
+      "latency_ms": 1541.27,
+      "timestamp": 1795536952.3922567
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Fathom API developer documentation authentication fathom.video",
+      "success": true,
+      "latency_ms": 1550.23,
+      "timestamp": 1795536954.07365
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://docs.nexla.com/user-guides/connectors/ramp_api",
+      "success": true,
+      "latency_ms": 14669.87,
+      "timestamp": 1795536954.2868397
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Otter AI API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2431.79,
+      "timestamp": 1795536954.8240883
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Fathom API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1387.04,
+      "timestamp": 1795536955.4607205
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://www.scalekit.com/blog/otter-mcp-vs-api",
+      "success": true,
+      "latency_ms": 720.34,
+      "timestamp": 1795536955.5444639
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://developers.fathom.ai/api-overview",
+      "success": true,
+      "latency_ms": 748.18,
+      "timestamp": 1795536956.2089722
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Consensus API developer documentation authentication consensus.app (OAuth requested)",
+      "success": true,
+      "latency_ms": 1333.29,
+      "timestamp": 1795536959.3356109
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Consensus API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1322.42,
+      "timestamp": 1795536960.6580596
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Reducto API developer documentation authentication reducto.ai (document parsing)",
+      "success": true,
+      "latency_ms": 1458.7,
+      "timestamp": 1795536960.8310592
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://support.goconsensus.com/authenticating-with-the-consensus-api-using-oauth-2.0",
+      "success": true,
+      "latency_ms": 980.31,
+      "timestamp": 1795536961.6384187
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Devin API developer documentation authentication docs.devin.ai (MCP)",
+      "success": true,
+      "latency_ms": 2204.0,
+      "timestamp": 1795536962.3694084
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Reducto API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1774.89,
+      "timestamp": 1795536962.6059618
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Devin API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 2111.85,
+      "timestamp": 1795536964.4812813
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://apitracker.io/a/reducto",
+      "success": true,
+      "latency_ms": 2085.08,
+      "timestamp": 1795536964.6910832
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://docs.devin.ai/work-with-devin/devin-mcp",
+      "success": true,
+      "latency_ms": 1708.93,
+      "timestamp": 1795536966.1902628
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "higgsfield API developer documentation authentication higgsfield.ai/cli (content suite)",
+      "success": true,
+      "latency_ms": 1542.29,
+      "timestamp": 1795536966.9310858
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "higgsfield API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1536.86,
+      "timestamp": 1795536968.4679809
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Mermaid CLI API developer documentation authentication github.com/mermaid-js/mermaid-cli",
+      "success": true,
+      "latency_ms": 1590.83,
+      "timestamp": 1795536969.897433
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://www.mindstudio.ai/blog/higgsfield-cli-claude-code-content-automation",
+      "success": true,
+      "latency_ms": 2068.92,
+      "timestamp": 1795536970.536961
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Mermaid CLI API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1135.61,
+      "timestamp": 1795536971.0330644
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "YouTube Transcript API developer documentation authentication transcriptapi.com",
+      "success": true,
+      "latency_ms": 1433.72,
+      "timestamp": 1795536971.2134638
+    },
+    {
+      "tool": "fetch",
+      "provider": "composio_firecrawl_scrape",
+      "query_or_url": "https://github.com/mermaid-js/mermaid-cli",
+      "success": true,
+      "latency_ms": 705.23,
+      "timestamp": 1795536971.7383242
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "YouTube Transcript API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1396.84,
+      "timestamp": 1795536972.6103237
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Grain API developer documentation authentication grain.com (meeting notes)",
+      "success": true,
+      "latency_ms": 1305.09,
+      "timestamp": 1795536975.7063227
+    },
+    {
+      "tool": "search",
+      "provider": "composio_tavily_search",
+      "query_or_url": "Grain API key OAuth self-serve pricing developer account",
+      "success": true,
+      "latency_ms": 1668.21,
+      "timestamp": 1795536977.3750834
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://transcriptapi.com/docs/api",
+      "success": true,
+      "latency_ms": 7148.56,
+      "timestamp": 1795536979.758958
+    },
+    {
+      "tool": "fetch",
+      "provider": "direct_httpx",
+      "query_or_url": "https://developers.grain.com",
+      "success": true,
+      "latency_ms": 6537.5,
+      "timestamp": 1795536983.9126422
+    }
+  ]
+}

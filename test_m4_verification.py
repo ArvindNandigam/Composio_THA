@@ -9,13 +9,14 @@ Verifies:
 4. All 100 apps in data/research_results.json have valid human_report_status and human_report matching audit resolutions.
 5. All evidence URLs are sanitized, valid documentation links without forum/spam domains (including Apps 1, 4, 5).
 6. Modular verify_app() and run_full_verification() functions in agent/verifier.py.
-7. HTML deliverables (index.html and output/index.html) match byte-for-byte and render 3-stage funnel metrics.
+7. HTML deliverables (index.html and output/index.html) match byte-for-byte, render 3-stage funnel metrics, and render Composio telemetry metrics in visible DOM.
 """
 
 import os
 import re
 import json
 import urllib.parse
+from html.parser import HTMLParser
 from typing import Dict, Any
 
 from agent.models import AppResearchResult, VerificationAuditRecord
@@ -52,7 +53,7 @@ def test_verification_audit_json():
         assert actual_val == expected_val, (
             f"Metric mismatch for '{key}': expected {expected_val}, got {actual_val}"
         )
-        print(f"  ✓ Metric '{key}': {actual_val}")
+        print(f"  [PASS] Metric '{key}': {actual_val}")
 
     # 2. Methodology Audit Structure
     assert "methodology_audit" in audit, "Missing 'methodology_audit' key"
@@ -61,7 +62,7 @@ def test_verification_audit_json():
         assert stage in methodology, f"Missing stage '{stage}' in methodology_audit"
         assert "name" in methodology[stage]
         assert "description" in methodology[stage]
-    print("  ✓ Methodology audit stages 1, 2, and 3 verified.")
+    print("  [PASS] Methodology audit stages 1, 2, and 3 verified.")
 
     # 3. Audit Records Validation
     assert "audit_records" in audit, "Missing 'audit_records' key"
@@ -90,8 +91,8 @@ def test_verification_audit_json():
 
     assert disc_count == 23, f"Expected 23 discrepancies in audit_records, got {disc_count}"
     assert mcp_count == 30, f"Expected 30 verified MCP URLs, got {mcp_count}"
-    print(f"  ✓ All 100 records validated against VerificationAuditRecord.")
-    print(f"  ✓ Discrepancies: {disc_count}, Verified MCP URLs: {mcp_count}")
+    print(f"  [PASS] All 100 records validated against VerificationAuditRecord.")
+    print(f"  [PASS] Discrepancies: {disc_count}, Verified MCP URLs: {mcp_count}")
 
     # 4. App 25 (Pumble) Reconciliation Check
     pumble_record = next(r for r in records if r["app_id"] == 25)
@@ -99,7 +100,7 @@ def test_verification_audit_json():
     assert "Blocked (No public API)" in pumble_record["pass1_summary"]
     assert "Private/Closed" in pumble_record["pass1_summary"]
     assert "Blocked due to private/closed API surface" in pumble_record["resolution"]
-    print("  ✓ App 25 (Pumble) reconciled to Blocked / Private surface in audit records.")
+    print("  [PASS] App 25 (Pumble) reconciled to Blocked / Private surface in audit records.")
     return audit
 
 
@@ -166,31 +167,31 @@ def test_research_results_json(audit_data: Dict[str, Any]):
 
     assert verified_status_count == 77, f"Expected 77 Verified apps, got {verified_status_count}"
     assert corrected_status_count == 23, f"Expected 23 Corrected in Audit apps, got {corrected_status_count}"
-    print(f"  ✓ All 100 apps match audit parity: 77 Verified, 23 Corrected in Audit.")
-    print(f"  ✓ All evidence URLs clean, valid, and free of spam/forum links.")
+    print(f"  [PASS] All 100 apps match audit parity: 77 Verified, 23 Corrected in Audit.")
+    print(f"  [PASS] All evidence URLs clean, valid, and free of spam/forum links.")
 
     # Spot-check Apps 1, 4, 5
     app1 = next(a for a in results if a["id"] == 1)
     assert any("developer.salesforce.com" in u for u in app1["evidence_urls"])
     assert not any("edu-kingdom" in u for u in app1["evidence_urls"])
-    print(f"  ✓ App #1 (Salesforce) sanitized: {app1['evidence_urls']}")
+    print(f"  [PASS] App #1 (Salesforce) sanitized: {app1['evidence_urls']}")
 
     app4 = next(a for a in results if a["id"] == 4)
     assert any("developers.attio.com" in u for u in app4["evidence_urls"])
     assert not any("justdial" in u for u in app4["evidence_urls"])
-    print(f"  ✓ App #4 (Attio) sanitized: {app4['evidence_urls']}")
+    print(f"  [PASS] App #4 (Attio) sanitized: {app4['evidence_urls']}")
 
     app5 = next(a for a in results if a["id"] == 5)
     assert any("twenty.com" in u for u in app5["evidence_urls"])
     assert any("github.com/twentyhq/twenty" in u for u in app5["evidence_urls"])
     assert not any("zhihu" in u for u in app5["evidence_urls"])
-    print(f"  ✓ App #5 (Twenty) sanitized: {app5['evidence_urls']}")
+    print(f"  [PASS] App #5 (Twenty) sanitized: {app5['evidence_urls']}")
 
     # Check App 25 (Pumble)
     app25 = next(a for a in results if a["id"] == 25)
     assert app25["buildability"] == "Blocked (No public API)"
     assert app25["api_surface"] == "Private/Closed"
-    print(f"  ✓ App #25 (Pumble) research verified as Blocked (No public API).")
+    print(f"  [PASS] App #25 (Pumble) research verified as Blocked (No public API).")
     return results
 
 
@@ -222,13 +223,48 @@ def test_modular_verifier_functions():
     assert updated_app.mcp_url == "https://github.com/salesforcecli/mcp"
     assert updated_app.existing_mcp is True
     assert rec["app_id"] == 1
-    print("  ✓ verify_app() successfully verified single app with ground-truth preservation.")
+    print("  [PASS] verify_app() successfully verified single app with ground-truth preservation.")
 
     # Test run_full_verification with subset of IDs without disk mutation
     summary = run_full_verification(app_ids=[1, 25], refresh_llm=False, update_results=False)
     assert summary["total_apps_audited"] == 100
     assert summary["pass1_accuracy_pct"] == 77.0
-    print("  ✓ run_full_verification() executed without error and returned full 13-key summary.")
+    print("  [PASS] run_full_verification() executed without error and returned full 13-key summary.")
+
+
+class _VisibleTextExtractor(HTMLParser):
+    """Extracts visible DOM text while excluding <script>, <style>, comments, and tag attributes."""
+
+    IGNORED_TAGS = {"script", "style", "noscript", "template"}
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self._skip_stack = []
+        self._parts = []
+
+    def handle_starttag(self, tag, attrs):
+        t = tag.lower()
+        if t in self.IGNORED_TAGS:
+            self._skip_stack.append(t)
+
+    def handle_endtag(self, tag):
+        t = tag.lower()
+        if self._skip_stack and self._skip_stack[-1] == t:
+            self._skip_stack.pop()
+
+    def handle_data(self, data):
+        if not self._skip_stack and data and not data.isspace():
+            self._parts.append(data)
+
+    def get_text(self) -> str:
+        return re.sub(r"\s+", " ", " ".join(self._parts)).strip()
+
+
+def extract_visible_html_text(html_str: str) -> str:
+    parser = _VisibleTextExtractor()
+    parser.feed(html_str)
+    parser.close()
+    return parser.get_text()
 
 
 def test_html_deliverable_parity(results_data: list):
@@ -245,17 +281,98 @@ def test_html_deliverable_parity(results_data: list):
 
     assert content1 == content2, "index.html and output/index.html do not match byte-for-byte!"
     assert len(content1) > 100000, f"HTML file too small: {len(content1)} bytes"
-    print(f"  ✓ index.html and output/index.html match byte-for-byte ({len(content1)} bytes).")
+    print(f"  [PASS] index.html and output/index.html match byte-for-byte ({len(content1)} bytes).")
 
     html_str = content1.decode("utf-8")
+    visible_text = extract_visible_html_text(html_str)
+    assert "APPS_DATA" not in visible_text and "ANALYSIS_DATA" not in visible_text, (
+        "Script variable leaked into extracted visible DOM text"
+    )
 
-    # Funnel metrics check
-    assert "77.0%" in html_str, "77.0% missing from rendered HTML"
-    assert "86.0%" in html_str, "86.0% missing from rendered HTML"
-    assert "+9.0%" in html_str, "+9.0% missing from rendered HTML"
-    assert "23" in html_str and ("Human Fixes" in html_str or "Corrected" in html_str), "23 human fixes missing"
-    assert "100.0%" in html_str, "100.0% missing from rendered HTML"
-    print("  ✓ All 3-Stage Verification Funnel metrics present in rendered HTML.")
+    # Funnel metrics check (verified in visible DOM outside <script> and comments)
+    assert "77.0%" in visible_text, "77.0% missing from visible HTML DOM"
+    assert "86.0%" in visible_text, "86.0% missing from visible HTML DOM"
+    assert "+9.0%" in visible_text, "+9.0% missing from visible HTML DOM"
+    assert "23" in visible_text and ("Human Fixes" in visible_text or "Corrected" in visible_text), (
+        "23 human fixes missing from visible HTML DOM"
+    )
+    assert "100.0%" in visible_text, "100.0% missing from visible HTML DOM"
+    print("  [PASS] All 3-Stage Verification Funnel metrics present in visible HTML DOM.")
+
+    # Composio telemetry visible DOM check (cross-checked against data/telemetry_metrics.json)
+    telemetry_path = os.path.join("data", "telemetry_metrics.json")
+    assert os.path.exists(telemetry_path), f"Missing telemetry file: {telemetry_path}"
+    with open(telemetry_path, "r", encoding="utf-8") as f:
+        telemetry = json.load(f)
+
+    total_queries = telemetry["total_queries"]
+    composio_queries = telemetry["composio_queries"]
+    composio_share_pct = telemetry["composio_share_pct"]
+    fallback_queries = telemetry["fallback_queries"]
+    composio_search = telemetry["composio_search"]
+    composio_fetch = telemetry["composio_fetch"]
+
+    assert total_queries == 300, f"Expected 300 total_queries, got {total_queries}"
+    assert composio_queries == 258, f"Expected 258 composio_queries, got {composio_queries}"
+    assert composio_share_pct == 86.0, f"Expected 86.0 composio_share_pct, got {composio_share_pct}"
+    assert fallback_queries == 42, f"Expected 42 fallback_queries, got {fallback_queries}"
+    assert composio_search == 199, f"Expected 199 composio_search, got {composio_search}"
+    assert composio_fetch == 59, f"Expected 59 composio_fetch, got {composio_fetch}"
+
+    visible_lower = visible_text.lower()
+    assert "telemetry" in visible_lower, (
+        "Composio telemetry section/heading missing from visible HTML DOM (outside <script> and comments)"
+    )
+    assert re.search(rf"(?<!#)\b{total_queries}\b", visible_text), (
+        f"Total queries ({total_queries}) missing from visible HTML DOM"
+    )
+    assert re.search(rf"(?<!#)\b{composio_queries}\b", visible_text), (
+        f"Composio queries ({composio_queries}) missing from visible HTML DOM"
+    )
+    assert re.search(rf"\b{re.escape(f'{composio_share_pct:.1f}')}%", visible_text), (
+        f"Composio share ({composio_share_pct:.1f}%) missing from visible HTML DOM"
+    )
+    assert re.search(rf"(?<!#)\b{fallback_queries}\b", visible_text), (
+        f"Fallback queries ({fallback_queries}) missing from visible HTML DOM (ignoring #42 app ID)"
+    )
+    assert re.search(rf"(?<!#)\b{composio_search}\b", visible_text) and "tavily" in visible_lower, (
+        f"Composio Tavily search count ({composio_search}) missing from visible HTML DOM"
+    )
+    assert re.search(rf"(?<!#)\b{composio_fetch}\b", visible_text) and "firecrawl" in visible_lower, (
+        f"Composio Firecrawl scrape count ({composio_fetch}) missing from visible HTML DOM"
+    )
+    assert "TAVILY_SEARCH" in visible_text and "FIRECRAWL_SCRAPE" in visible_text, (
+        "TAVILY_SEARCH or FIRECRAWL_SCRAPE tool slug missing from visible HTML DOM"
+    )
+
+    # Co-location check: prevents unrelated sections (#42 WooCommerce, Tier 1 59 Apps, Pass 2 86.0%) from spoofing telemetry
+    def _has_telemetry_cluster(slice_text: str) -> bool:
+        low = slice_text.lower()
+        return (
+            "telemetry" in low
+            and "composio" in low
+            and "fallback" in low
+            and "tavily" in low
+            and "firecrawl" in low
+            and re.search(rf"(?<!#)\b{total_queries}\b", slice_text) is not None
+            and re.search(rf"(?<!#)\b{composio_queries}\b", slice_text) is not None
+            and re.search(rf"\b{re.escape(f'{composio_share_pct:.1f}')}%", slice_text) is not None
+            and re.search(rf"(?<!#)\b{fallback_queries}\b", slice_text) is not None
+            and re.search(rf"(?<!#)\b{composio_search}\b", slice_text) is not None
+            and re.search(rf"(?<!#)\b{composio_fetch}\b", slice_text) is not None
+        )
+
+    anchors = re.finditer(rf"(?:telemetry|(?<!#)\b{composio_queries}\b)", visible_text, re.IGNORECASE)
+    windows = [visible_text[max(0, m.start() - 1200) : m.end() + 3500] for m in anchors]
+    assert any(_has_telemetry_cluster(w) for w in windows), (
+        "Visible HTML DOM lacks a co-located Composio telemetry panel rendering all required metrics "
+        "(300 total, 258 Composio / 86.0% share, 42 fallback, 199 Tavily search, 59 Firecrawl scrape)"
+    )
+    print(
+        f"  [PASS] Visible HTML DOM renders Composio telemetry metrics: "
+        f"{total_queries} total, {composio_queries} Composio ({composio_share_pct:.1f}%), "
+        f"{fallback_queries} fallback, {composio_search} Tavily search, {composio_fetch} Firecrawl scrape."
+    )
 
     # Check embedded APPS_DATA matches research_results.json
     match = re.search(r"const APPS_DATA = (\[.*?\]);\s*const ANALYSIS_DATA", html_str, re.DOTALL)
@@ -263,7 +380,7 @@ def test_html_deliverable_parity(results_data: list):
     embedded_apps = json.loads(match.group(1))
     assert len(embedded_apps) == 100, f"Expected 100 apps in APPS_DATA, found {len(embedded_apps)}"
     assert embedded_apps == results_data, "Embedded APPS_DATA does not match data/research_results.json"
-    print("  ✓ Embedded APPS_DATA in index.html matches data/research_results.json perfectly.")
+    print("  [PASS] Embedded APPS_DATA in index.html matches data/research_results.json perfectly.")
 
 
 def main():
