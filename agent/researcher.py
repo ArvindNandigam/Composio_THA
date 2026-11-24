@@ -68,6 +68,7 @@ RESEARCH_SCHEMA = {
     ]
 }
 
+
 def load_cached_results() -> Dict[int, AppResearchResult]:
     """Loads existing results from disk for atomic checkpointing."""
     if not os.path.exists(RESULTS_FILE):
@@ -80,48 +81,51 @@ def load_cached_results() -> Dict[int, AppResearchResult]:
         print(f"Warning loading cache: {e}")
         return {}
 
+
 def save_result_atomic(result: AppResearchResult):
     """Atomically updates the results JSON file."""
     os.makedirs(os.path.dirname(RESULTS_FILE), exist_ok=True)
     current_results = load_cached_results()
     current_results[result.id] = result
-    
-    # Sort by ID
+
     sorted_data = [current_results[k].model_dump() for k in sorted(current_results.keys())]
-    
+
     tmp_file = f"{RESULTS_FILE}.tmp"
     with open(tmp_file, "w", encoding="utf-8") as f:
         json.dump(sorted_data, f, indent=2)
     os.replace(tmp_file, RESULTS_FILE)
 
+
 def research_app(app: AppInput, max_retries: int = 3) -> AppResearchResult:
-    """Researches a single app using live web search + page scraping + Gemini extraction."""
+    """Researches a single app using Composio-backed search/fetch (with httpx fallback) + Gemini extraction."""
     print(f"\n[Agent] Researching #{app.id}: {app.name} ({app.category})...")
-    
-    # Check Composio SDK availability
+
     composio_client = get_composio_client()
     if composio_client:
-        print(f"[Composio SDK] Routing tools via Composio ToolSet for #{app.id} {app.name}")
-    
-    # Step 1: Tool call - Web search
+        print(f"[Composio SDK] Executing search & fetch tools via Composio for #{app.id} {app.name}")
+    else:
+        print(f"[Scraper] COMPOSIO_API_KEY not set; using direct httpx fallback for #{app.id} {app.name}")
+
+    # Step 1: Web search (routes through Composio SDK when configured)
     query1 = f"{app.name} API developer documentation authentication {app.hint}"
     query2 = f"{app.name} API key OAuth self-serve pricing developer account"
-    
+
     search_results = search_web(query1, max_results=3, app_name=app.name, hint=app.hint)
     search_results += search_web(query2, max_results=2, app_name=app.name, hint=app.hint)
-    
+
     # Step 2: Check MCP registry
     mcp_info = check_mcp_support(app.name)
-    
-    # Step 3: Fetch top docs snippet if URL found
+
+    # Step 3: Fetch top docs snippet if URL found (routes through Composio SDK when configured)
     doc_text = ""
     top_urls = [r["url"] for r in search_results if r["url"].startswith("http")]
     if top_urls:
         doc_text = fetch_page(top_urls[0], max_chars=1800)
-    
-    # Construct context for LLM
-    search_context = "\n".join([f"- Title: {r['title']}\n  URL: {r['url']}\n  Snippet: {r['snippet']}" for r in search_results])
-    
+
+    search_context = "\n".join(
+        [f"- Title: {r['title']}\n  URL: {r['url']}\n  Snippet: {r['snippet']}" for r in search_results]
+    )
+
     user_prompt = f"""Target Application:
 Name: {app.name}
 Category: {app.category}
@@ -148,28 +152,25 @@ Analyze this application thoroughly and return the structured JSON assessment ac
                 response_schema=RESEARCH_SCHEMA,
                 temperature=0.1
             )
-            
+
             resp = client.models.generate_content(
                 model=GEMINI_MODEL,
                 contents=user_prompt,
                 config=config
             )
-            
+
             raw_json = json.loads(resp.text)
-            
-            # Merge known MCP info if model missed it
+
             if mcp_info["exists"] and not raw_json.get("existing_mcp"):
                 raw_json["existing_mcp"] = True
                 raw_json["mcp_details"] = mcp_info["details"]
-            
-            # Ensure hint is in evidence if valid
+
             evidence = raw_json.get("evidence_urls", [])
             for u in top_urls[:2]:
                 if u not in evidence:
                     evidence.append(u)
             raw_json["evidence_urls"] = evidence[:3]
-            
-            # Construct model
+
             result = AppResearchResult(
                 id=app.id,
                 name=app.name,
@@ -190,8 +191,7 @@ Analyze this application thoroughly and return the structured JSON assessment ac
                 confidence_score=raw_json.get("confidence_score", 0.92),
                 verification_status="Pass 1 Complete"
             )
-            
-            # Save checkpoint immediately
+
             save_result_atomic(result)
             print(f"[Agent] ✓ Successfully researched #{app.id} {app.name}: Verdict = {result.buildability}, Auth = {result.auth_methods}")
             return result
@@ -203,7 +203,6 @@ Analyze this application thoroughly and return the structured JSON assessment ac
                 print(f"[Agent] Backing off for {wait_time:.1f}s...")
                 time.sleep(wait_time)
             else:
-                # Fallback resilient entry
                 fallback = AppResearchResult(
                     id=app.id,
                     name=app.name,
@@ -227,23 +226,22 @@ Analyze this application thoroughly and return the structured JSON assessment ac
                 save_result_atomic(fallback)
                 return fallback
 
+
 def run_research_batch(apps: List[AppInput], resume: bool = True) -> List[AppResearchResult]:
     """Runs research across the list of apps with checkpointing and polite rate-limiting."""
     cached = load_cached_results() if resume else {}
     results = []
-    
+
     print(f"Starting research batch. Total apps: {len(apps)}. Already cached: {len(cached)}")
-    
+
     for app in apps:
         if resume and app.id in cached:
             print(f"[Agent] Skipping #{app.id} {app.name} (already cached)")
             results.append(cached[app.id])
             continue
-            
+
         res = research_app(app)
         results.append(res)
-        
-        # Polite spacing to prevent 429 rate limits
         time.sleep(1.2)
-        
+
     return results
